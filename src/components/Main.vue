@@ -2,26 +2,28 @@
   <Header></Header>
   <div class="main">
     <h3>Game Mode</h3>
-    <ul class="cards">
-      <li>
-        <Card
-          imageName="singleplayer"
-          title="Singleplayer"
-          height="50"
-          width="50"
-          v-on:click="test('singleplayer')"
-        />
-      </li>
-      <li>
-        <Card
-          imageName="multiplayer"
-          title="Multiplayer"
-          height="50"
-          width="50"
-          v-on:click="test('multiplayer')"
-        />
-      </li>
-    </ul>
+    <div>
+      <ul class="cards">
+        <li>
+          <Card
+            imageName="singleplayer"
+            title="Singleplayer"
+            height="50"
+            width="50"
+            v-on:click="test('singleplayer')"
+          />
+        </li>
+        <li>
+          <Card
+            imageName="multiplayer"
+            title="Multiplayer"
+            height="50"
+            width="50"
+            v-on:click="test('multiplayer')"
+          />
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
