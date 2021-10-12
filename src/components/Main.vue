@@ -3,26 +3,20 @@
   <div class="main">
     <h3>Game Mode</h3>
     <div v-if="!playing">
-      <ul class="cards">
-        <li>
-          <Card
-            imageName="singleplayer"
-            title="Singleplayer"
-            height="50"
-            width="50"
-            v-on:click="play('singleplayer')"
-          />
-        </li>
-        <li>
-          <Card
-            imageName="multiplayer"
-            title="Multiplayer"
-            height="50"
-            width="50"
-            v-on:click="play('multiplayer')"
-          />
-        </li>
-      </ul>
+      <Card
+        imageName="singleplayer"
+        title="Singleplayer"
+        height="50"
+        width="50"
+        v-on:click="play('singleplayer')"
+      />
+      <Card
+        imageName="multiplayer"
+        title="Multiplayer"
+        height="50"
+        width="50"
+        v-on:click="play('multiplayer')"
+      />
     </div>
     <div v-if="playing">
       <Scene />
@@ -59,6 +53,11 @@ export default {
 </script>
 
 <style scoped>
+.main {
+  display: flex;
+  flex-direction: column;
+  /* background-color: green; */
+}
 .cards {
   display: inline;
 }

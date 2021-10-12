@@ -1,7 +1,6 @@
 <template>
   <div>
     <div class="player">
-      <!-- <youtube :video-id="videoId" ref="youtube" @playing="playing" /> -->
       <iframe
         :src="youtubePrefix + videoId + videoControlSettings"
         width="100%"
