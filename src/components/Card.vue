@@ -1,6 +1,6 @@
 <template>
-  <div class="card">
-    <img class="image" :src="require(`@/assets/${imageName}.png`)" />
+  <div class="card" :style="{ 'background-image': `url(${this.image})` }">
+    <!-- <img class="image" :src="require(`@/assets/${imageName}.png`)" /> -->
     <p>{{ title }}</p>
   </div>
 </template>
@@ -14,7 +14,10 @@ export default {
     height: String,
     width: String,
   },
-  mounted() {},
+  data() {
+    return { image: `../assets/${this.imageName}.png` };
+  },
+  computed: {},
   methods: {},
 };
 </script>
@@ -23,12 +26,14 @@ export default {
 .card {
   height: 200px;
   width: 25%;
-  background-color: gray;
+  /* background-color: gray; */
   margin: 5px;
 }
+
 .card:hover {
   cursor: pointer;
 }
+
 img {
   max-width: 90%;
   max-height: 90%;
