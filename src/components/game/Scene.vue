@@ -1,13 +1,17 @@
 <template>
   <div>
-    <div class="player">
-      <iframe
-        :src="youtubePrefix + videoId + videoControlSettings"
-        width="100%"
-        height="100%"
-        frameborder="0"
-      />
+    <div class="video-container">
+      <div class="video-foreground">
+        <YouTube
+          :src="youtubePrefix + videoId"
+          ref="youtube"
+          :vars="playerVars"
+          @ready="ready"
+        >
+        </YouTube>
+      </div>
     </div>
+    <div id="player"></div>
     <div>
       <Scores />
     </div>
@@ -20,28 +24,56 @@
 <script>
 import Scores from "./Scores";
 import Guess from "./Guess";
+import YouTube from "vue3-youtube";
 
 export default {
   name: "Scene",
   components: {
     Scores,
     Guess,
+    YouTube,
   },
   data() {
     return {
-      videoId: "lG0Ys-2d4MA",
-      youtubePrefix: "https://www.youtube.com/embed/",
-      //Disable video controls, turn on autoplay, loop video,
-      //disable keyboard controls, enable javascript controls
-      videoControlSettings:
-        "?controls=0&autoplay=1&loop=1&t=0&disablekb=1&enablejsapi=1",
+      videoId: "gMllzBuAbBg",
+      youtubePrefix: "https://www.youtube-nocookie.com/embed/",
+      playerVars: {
+        autoplay: 1,
+        controls: 0,
+        loop: 1,
+        disablekb: 1,
+        modestbranding: 1,
+        start: 40,
+        iv_load_policy: 3,
+        playsinline: 1,
+        rel: 0,
+      },
+      player: null,
     };
+  },
+  mounted() {
+    this.player = this.$refs.youtube;
+    console.log("player: ", this.player);
+  },
+  methods: {
+    ready() {
+      console.log("ready");
+      // this.player.playVideo();
+      this.player.mute();
+    },
   },
 };
 </script>
 
 <style scoped>
-.player {
+.video-container {
+  position: absolute;
+  top: -60px;
+  left: 0;
+  width: 100%;
+  height: calc(100% + 120px);
+}
+.video-foreground {
   pointer-events: none;
 }
 </style>
