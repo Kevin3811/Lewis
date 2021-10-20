@@ -1,5 +1,7 @@
 <template>
-  <Main />
+  <div class="app">
+    <Main />
+  </div>
 </template>
 
 <script>
@@ -13,4 +15,11 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100%;
+}
+</style>
