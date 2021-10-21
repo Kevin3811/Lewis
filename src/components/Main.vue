@@ -1,39 +1,50 @@
 <template>
-  <Header></Header>
-  <div class="main">
-    <h3>Game Mode</h3>
-    <div v-if="!playing">
-      <Card
-        imageName="singleplayer"
-        title="Singleplayer"
-        height="50"
-        width="50"
-        v-on:click="play('singleplayer')"
-      />
-      <Card
-        imageName="multiplayer"
-        title="Multiplayer"
-        height="50"
-        width="50"
-        v-on:click="play('multiplayer')"
-      />
-    </div>
-    <div v-if="playing">
-      <Scene />
+  <div>
+    <b-navbar toggleable="lg" variant="info" type="info">
+      <b-navbar-brand
+        tag="h1"
+        style="cursor: pointer; color: white; font-size: 2em;"
+        >Lewis & Clark</b-navbar-brand
+      >
+    </b-navbar>
+    <div class="main">
+      <h3>Game Mode</h3>
+      <div v-if="!playing">
+        <div class="deck">
+          <b-card
+            footer="Singleplayer"
+            img-top
+            img-src="./singleplayer.png"
+            img-height="300px;"
+            :style="cardStyle"
+            class="mb-2"
+            v-on:click="play('singleplayer')"
+          >
+          </b-card>
+          <b-card
+            footer="Multiplayer"
+            img-top
+            img-src="./multiplayer.png"
+            img-height="300px;"
+            :style="cardStyle"
+            class="mb-2"
+            v-on:click="play('multiplayer')"
+          ></b-card>
+        </div>
+      </div>
+      <div v-if="playing">
+        <Scene />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import Header from "./Header";
-import Card from "./Card";
 import Scene from "./game/Scene";
 
 export default {
   name: "Main",
   components: {
-    Header,
-    Card,
     Scene,
   },
   data() {
@@ -41,6 +52,7 @@ export default {
       playing: false,
       singleplayer: false,
       multiplayer: false,
+      cardStyle: `max-width: 20rem; cursor: pointer; background-color:gray; max-height: 25rem; min-height: 25rem; text-align: center;`,
     };
   },
   methods: {
@@ -56,9 +68,16 @@ export default {
 .main {
   display: flex;
   flex-direction: column;
-  /* background-color: green; */
 }
-.cards {
-  display: inline;
+h3 {
+  text-align: center;
+  padding-top: 1em;
+  padding-bottom: 1.5em;
+}
+.deck {
+  flex-flow: row wrap;
+  display: flex;
+  justify-content: center;
+  column-gap: 4em;
 }
 </style>

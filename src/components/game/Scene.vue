@@ -2,13 +2,14 @@
   <div>
     <div class="video-container">
       <div class="video-foreground">
-        <YouTube
-          :src="youtubePrefix + videoId"
+        <youtube
+          :video-id="videoId"
           ref="youtube"
-          :vars="playerVars"
-          @ready="ready"
-        >
-        </YouTube>
+          @playing="playing"
+          :nocookie="true"
+          :fitParent="true"
+          :playerVars="playerVars"
+        ></youtube>
       </div>
     </div>
     <div id="player"></div>
@@ -24,14 +25,12 @@
 <script>
 import Scores from "./Scores";
 import Guess from "./Guess";
-import YouTube from "vue3-youtube";
 
 export default {
   name: "Scene",
   components: {
     Scores,
     Guess,
-    YouTube,
   },
   data() {
     return {
@@ -48,20 +47,19 @@ export default {
         playsinline: 1,
         rel: 0,
       },
-      player: null,
     };
   },
-  mounted() {
-    this.player = this.$refs.youtube;
-    console.log("player: ", this.player);
-  },
-  methods: {
-    ready() {
-      console.log("ready");
-      // this.player.playVideo();
-      this.player.mute();
+  computed: {
+    player() {
+      return this.$refs.youtube.player;
     },
   },
+  mounted() {
+    console.log("Player: ", this.player);
+    this.player.playVideo();
+    this.player.mute();
+  },
+  methods: {},
 };
 </script>
 
