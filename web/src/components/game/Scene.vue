@@ -70,6 +70,8 @@ export default {
   left: 0;
   width: 100%;
   height: calc(100% + 120px);
+  /* height: 100%; */
+  z-index: -1;
 }
 .video-foreground {
   pointer-events: none;
