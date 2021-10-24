@@ -1,4 +1,5 @@
 import Vue from "vue";
+import store from "./store";
 import App from "./App.vue";
 import VueYoutube from "vue-youtube";
 import { BootstrapVue, IconsPlugin, CardPlugin } from "bootstrap-vue";
@@ -16,4 +17,5 @@ Vue.use(CardPlugin);
 
 new Vue({
   render: (h) => h(App),
+  store,
 }).$mount("#app");

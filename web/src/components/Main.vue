@@ -4,12 +4,13 @@
       <b-navbar-brand
         tag="h1"
         style="cursor: pointer; color: white; font-size: 2em;"
+        v-on:click="returnHome"
         >Lewis & Clark</b-navbar-brand
       >
     </b-navbar>
     <div class="main">
-      <h3>Game Mode</h3>
       <div v-if="!playing">
+        <h3>Game Mode</h3>
         <div class="deck">
           <b-card
             footer="Singleplayer"
@@ -49,16 +50,24 @@ export default {
   },
   data() {
     return {
-      playing: false,
       singleplayer: false,
       multiplayer: false,
       cardStyle: `max-width: 20rem; cursor: pointer; background-color:gray; max-height: 25rem; min-height: 25rem; text-align: center;`,
     };
   },
+  computed: {
+    playing() {
+      return this.$store.getters.getPlaying;
+    },
+  },
   methods: {
     play(gamemode) {
-      console.log("test! ", gamemode);
-      this.playing = true;
+      this.$store.dispatch("setPlaying", !this.playing);
+      this.$store.dispatch("setGamemode", gamemode);
+    },
+    returnHome() {
+      this.$store.dispatch("setPlaying", false);
+      this.$store.dispatch("setGamemode", "");
     },
   },
 };
