@@ -1,5 +1,5 @@
 <template>
-  <div></div>
+  <div class="scores"></div>
 </template>
 
 <script>
@@ -9,4 +9,15 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.scores {
+  position: absolute;
+  z-index: 2;
+  background-color: gray;
+  min-height: 30px;
+  min-width: 100px;
+  margin-top: 1em;
+  margin-left: 0.5em;
+  opacity: 70%;
+}
+</style>

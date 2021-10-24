@@ -8,8 +8,8 @@
       >
     </b-navbar>
     <div class="main">
-      <h3>Game Mode</h3>
       <div v-if="!playing">
+        <h3>Game Mode</h3>
         <div class="deck">
           <b-card
             footer="Singleplayer"

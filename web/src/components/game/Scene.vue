@@ -5,14 +5,12 @@
         <youtube
           :video-id="videoId"
           ref="youtube"
-          @playing="playing"
           :nocookie="true"
           :fitParent="true"
           :playerVars="playerVars"
         ></youtube>
       </div>
     </div>
-    <div id="player"></div>
     <div>
       <Scores />
     </div>
@@ -35,7 +33,6 @@ export default {
   data() {
     return {
       videoId: "gMllzBuAbBg",
-      youtubePrefix: "https://www.youtube-nocookie.com/embed/",
       playerVars: {
         autoplay: 1,
         controls: 0,
@@ -53,23 +50,41 @@ export default {
     player() {
       return this.$refs.youtube.player;
     },
+    height() {
+      return window.innerHeight;
+    },
+    youtubeContainer() {
+      return this.$refs.youtube;
+    },
   },
-  mounted() {
-    console.log("Player: ", this.player);
-    this.player.playVideo();
+  created() {
+    window.addEventListener("resize", this.resizeEvent);
+  },
+  async mounted() {
+    console.log("player: ", this.player);
     this.player.mute();
   },
-  methods: {},
+  methods: {
+    resizeEvent(event) {
+      console.log("Event: ", event);
+      this.youtubeContainer.onResize();
+    },
+  },
+  onDestroy() {
+    window.removeEventListener("resize", this.resizeEvent);
+  },
 };
 </script>
 
 <style scoped>
 .video-container {
+  display: flex;
+  flex-flow: column;
   position: absolute;
-  top: -60px;
-  left: 0;
   width: 100%;
+  top: -60px;
   height: calc(100% + 120px);
+  z-index: -1;
 }
 .video-foreground {
   pointer-events: none;
