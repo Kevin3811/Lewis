@@ -86,5 +86,7 @@ export default {
 }
 .video-foreground {
   pointer-events: none;
+  top: -60px;
+  height: calc(100% + 120px);
 }
 </style>
