@@ -36,6 +36,7 @@ export default {
   margin-top: 1em;
   margin-left: 0.5em;
   opacity: 60%;
+  padding: 5px;
 }
 .leaderboardheader {
   color: white;
