@@ -12,7 +12,8 @@
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
     "vue-template-compiler": "^2.6.11",
-    "vue-youtube": "^1.4.0"
+    "vue-youtube": "^1.4.0",
+    "vuex": "^3.6.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",

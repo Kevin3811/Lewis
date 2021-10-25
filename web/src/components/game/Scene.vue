@@ -60,13 +60,11 @@ export default {
   created() {
     window.addEventListener("resize", this.resizeEvent);
   },
-  async mounted() {
-    console.log("player: ", this.player);
+  mounted() {
     this.player.mute();
   },
   methods: {
-    resizeEvent(event) {
-      console.log("Event: ", event);
+    resizeEvent() {
       this.youtubeContainer.onResize();
     },
   },
