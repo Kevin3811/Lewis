@@ -1,12 +1,15 @@
 <template>
   <div class="scores">
-    <h4 class="leaderboardheader">Leaderboard</h4>
+    <h4 class="leaderboardheader">Scores</h4>
     <div
       v-for="lobbyUser in lobbyUsers"
       :key="lobbyUser.clientCode"
       :class="lobbyUser.clientCode === clientCode ? 'currentuser' : 'otheruser'"
     >
-      {{ lobbyUser.username }}
+      <p>
+        <span class="username">{{ lobbyUser.username }}</span>
+        <span class="score">{{ lobbyUser.score }}</span>
+      </p>
     </div>
   </div>
 </template>
@@ -32,22 +35,31 @@ export default {
   z-index: 2;
   background-color: gray;
   min-height: 30px;
-  min-width: 100px;
+  min-width: 200px;
+  max-width: 20%;
   margin-top: 1em;
   margin-left: 0.5em;
   opacity: 60%;
   padding: 5px;
+  border-radius: 10px;
 }
 .leaderboardheader {
   color: white;
   opacity: 100%;
   text-decoration: underline;
   font-size: 1.2em;
+  text-align: center;
 }
 .otheruser {
   color: white;
 }
 .currentuser {
   color: rgb(1, 255, 1);
+}
+.username {
+  text-align: left;
+}
+.score {
+  float: right;
 }
 </style>
