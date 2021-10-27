@@ -64,6 +64,11 @@ export default {
     play(gamemode) {
       this.$store.dispatch("setPlaying", !this.playing);
       this.$store.dispatch("setGamemode", gamemode);
+      if (gamemode === "singleplayer") {
+        this.$store.dispatch("setIsHost", true);
+      } else if (gamemode === "multiplayer") {
+        this.$store.dispatch("setIsHost", false);
+      }
     },
     returnHome() {
       this.$store.dispatch("setPlaying", false);

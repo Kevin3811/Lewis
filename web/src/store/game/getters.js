@@ -15,4 +15,7 @@ export default {
   getPlaying: (state) => {
     return state.playing;
   },
+  getIsHost: (state) => {
+    return state.isHost;
+  },
 };

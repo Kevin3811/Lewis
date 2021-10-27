@@ -7,4 +7,8 @@ export default {
   setGamemode(context, gamemode) {
     context.commit("setGamemode", gamemode);
   },
+
+  setIsHost(context, isHost) {
+    context.commit("setIsHost", isHost);
+  },
 };
