@@ -1,13 +1,11 @@
 <template>
   <div class="scores">
-    <h4 class="leaderboardheader">Leaderboard</h4>
+    <h4 class="leaderboardheader">Scores</h4>
     <div
       v-for="lobbyUser in lobbyUsers"
       :key="lobbyUser.clientCode"
       :class="lobbyUser.clientCode === clientCode ? 'currentuser' : 'otheruser'"
     >
-      <!-- <p class="username">{{ lobbyUser.username }}</p>
-      <p class="score">{{ lobbyUser.score }}</p> -->
       <p>
         <span class="username">{{ lobbyUser.username }}</span>
         <span class="score">{{ lobbyUser.score }}</span>
