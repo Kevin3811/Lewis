@@ -1,5 +1,17 @@
 //WAY TO SET STATE FOR INDEX.JS AND PERFOM LOGIC USING STATE
 export default {
+  resetGame(context) {
+    context.commit("setPlaying", false);
+    context.commit("setGamemode", "");
+    context.commit("setIsGuessing", false);
+    context.commit("setGuessLat", 0);
+    context.commit("setGuessLon", 0);
+    context.commit("setRoundLat", 0);
+    context.commit("setRoundLon", 0);
+    context.commit("setHasGuessed", false);
+    context.commit("setShowLobbyAnswers", false);
+    context.commit("setIsHost", false);
+  },
   setPlaying(context, playing) {
     context.commit("setPlaying", playing);
   },
