@@ -109,8 +109,7 @@ export default {
     },
     changePlaybackRate() {
       this.player.setPlaybackRate(this.playbackRate);
-      console.log(this.playbackRate);
-      console.log("get: ", this.player.getPlaybackRate());
+      console.log("get: ", this.player);
     },
     changeVolumePercent() {
       this.player.setVolume(this.volumePercent);
@@ -159,5 +158,6 @@ export default {
   background: gray;
   opacity: 60%;
   border-radius: 7px;
+  min-width: 150px;
 }
 </style>

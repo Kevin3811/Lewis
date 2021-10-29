@@ -27,4 +27,7 @@ export default {
   setHasGuessed(state, hasGuessed) {
     state.hasguessed = hasGuessed;
   },
+  setShowLobbyAnswers(state, showLobbyAnswers) {
+    state.showLobbyAnswers = showLobbyAnswers;
+  },
 };

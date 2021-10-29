@@ -4,7 +4,7 @@ export default {
     return state.playerUsername;
   },
   getLobbyUsers: (state) => {
-    return state.lobbyUsernames;
+    return state.lobbyUsers;
   },
   getLobbyInScoreOrder: (state) => {
     return state.lobbyUsers.sort((a, b) => (a.score < b.score ? 1 : -1));
@@ -35,5 +35,8 @@ export default {
   },
   getHasGuessed: (state) => {
     return state.hasguessed;
+  },
+  getShowLobbyAnswers: (state) => {
+    return state.showLobbyAnswers;
   },
 };

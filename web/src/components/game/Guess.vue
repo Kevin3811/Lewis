@@ -12,12 +12,32 @@
       <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
       <!-- Guess lat lon default to 0. Only display marker once there is a guess -->
       <div v-if="guessLat !== 0 || guessLon !== 0">
-        <l-marker :lat-lng="[guessLat, guessLon]"></l-marker>
+        <l-marker :lat-lng="[guessLat, guessLon]">
+          <l-icon icon-url="./redmarker.png"> </l-icon>
+          <l-tooltip :options="{ opacity: 0.4 }">{{
+            playerUsername
+          }}</l-tooltip>
+        </l-marker>
       </div>
+      <!-- Show Answer -->
       <div v-if="hasGuessed">
         <l-marker :lat-lng="[roundLat, roundLon]">
-          <l-icon icon-url="./redmarker.png"></l-icon>
+          <l-icon icon-url="./greenmarker.png"> </l-icon>
+          <l-tooltip :options="{ opacity: 0.4 }">Correct Answer</l-tooltip>
         </l-marker>
+      </div>
+      <!-- Show all other player answers -->
+      <div v-if="showLobbyAnswers && hasGuessed">
+        <div v-for="lobbyUser in lobbyUsers" :key="lobbyUser.clientCode">
+          <div v-if="lobbyUser.clientCode !== playerClientCode">
+            <l-marker :lat-lng="[lobbyUser.latGuess, lobbyUser.lonGuess]">
+              <l-icon icon-url="./bluemarker.png"> </l-icon>
+              <l-tooltip :options="{ opacity: 0.4 }">{{
+                lobbyUser.username
+              }}</l-tooltip>
+            </l-marker>
+          </div>
+        </div>
       </div>
     </l-map>
     <div class="footer">
@@ -31,22 +51,16 @@
 </template>
 
 <script>
-import { LMap, LTileLayer, LMarker, LIcon } from "vue2-leaflet";
-import { icon } from "leaflet";
+import { LMap, LTileLayer, LMarker, LIcon, LTooltip } from "vue2-leaflet";
 
 export default {
   name: "Guess",
-  components: { LMap, LTileLayer, LMarker, LIcon },
+  components: { LMap, LTileLayer, LMarker, LIcon, LTooltip },
   data() {
     return {
       zoom: 1,
       center: [47.41322, -1.219482],
       url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-      redIcon: icon({
-        iconUrl: "./redmarker.png",
-        iconSize: [32, 37],
-        iconAnchor: [16, 37],
-      }),
       attribution: "attribution",
       english: true,
       nativeLanguages: false,
@@ -67,6 +81,18 @@ export default {
     },
     hasGuessed() {
       return this.$store.getters.getHasGuessed;
+    },
+    playerUsername() {
+      return this.$store.getters.getPlayerUsername;
+    },
+    playerClientCode() {
+      return this.$store.getters.getClientCode;
+    },
+    lobbyUsers() {
+      return this.$store.getters.getLobbyUsers;
+    },
+    showLobbyAnswers() {
+      return this.$store.getters.getShowLobbyAnswers;
     },
   },
   methods: {

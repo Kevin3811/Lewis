@@ -27,4 +27,7 @@ export default {
   setHasGuessed(context, hasGuessed) {
     context.commit("setHasGuessed", hasGuessed);
   },
+  setShowLobbyAnswers(context, showLobbyAnswers) {
+    context.commit("setShowLobbyAnswers", showLobbyAnswers);
+  },
 };
