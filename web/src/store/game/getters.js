@@ -18,4 +18,22 @@ export default {
   getIsHost: (state) => {
     return state.isHost;
   },
+  getIsGuessing: (state) => {
+    return state.isguessing;
+  },
+  getGuessLat: (state) => {
+    return state.guesslat;
+  },
+  getGuessLon: (state) => {
+    return state.guesslon;
+  },
+  getRoundLat: (state) => {
+    return state.roundlat;
+  },
+  getRoundLon: (state) => {
+    return state.roundlon;
+  },
+  getHasGuessed: (state) => {
+    return state.hasguessed;
+  },
 };

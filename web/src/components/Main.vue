@@ -73,6 +73,11 @@ export default {
     returnHome() {
       this.$store.dispatch("setPlaying", false);
       this.$store.dispatch("setGamemode", "");
+      this.$store.dispatch("setIsGuessing", false);
+      this.$store.dispatch("setGuessLat", 0);
+      this.$store.dispatch("setGuessLon", 0);
+      this.$store.dispatch("setRoundLat", 0);
+      this.$store.dispatch("setRoundLon", 0);
     },
   },
 };

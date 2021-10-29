@@ -12,6 +12,12 @@ export default {
     playing: false,
     gamemode: "",
     ishost: false,
+    isguessing: false,
+    guesslat: 0,
+    guesslon: 0,
+    roundlat: 40,
+    roundlon: 40,
+    hasguessed: false,
     lobbyUsers: [
       {
         username: "Nick",
