@@ -38,9 +38,27 @@
           v-on:input="changePlaybackRate"
         />
       </div>
-      <div>
-        <button></button>
-        <button></button>
+      <div class="video-buttons">
+        <!-- restart button -->
+        <div class="restart" v-on:click="restart">
+          <img
+            :src="'./restart.png'"
+            alt="restart"
+            width="30"
+            height="30"
+            title="restart"
+          />
+        </div>
+        <!-- rewind button -->
+        <div class="rewind" v-on:click="rewind">
+          <img
+            :src="'./rewind.png'"
+            alt="rewind"
+            width="30"
+            height="30"
+            title="rewind"
+          />
+        </div>
       </div>
     </div>
     <div v-if="isGuessing">
@@ -114,6 +132,12 @@ export default {
     changeVolumePercent() {
       this.player.setVolume(this.volumePercent);
     },
+    rewind() {
+      console.log("rewind");
+    },
+    restart() {
+      console.log("restart");
+    },
   },
   onDestroy() {
     window.removeEventListener("resize", this.resizeEvent);
@@ -156,8 +180,37 @@ export default {
   text-align: center;
   color: white;
   background: gray;
-  opacity: 60%;
+  opacity: 80%;
   border-radius: 7px;
   min-width: 150px;
+}
+.video-buttons {
+  flex-flow: row;
+}
+.restart {
+  background-color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  padding-top: 4px;
+  margin-left: 30px;
+  margin-bottom: 10px;
+  float: left;
+}
+.restart:hover {
+  cursor: pointer;
+}
+.rewind {
+  background-color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  padding-top: 4px;
+  margin-right: 30px;
+  margin-bottom: 10px;
+  float: right;
+}
+.rewind:hover {
+  cursor: pointer;
 }
 </style>

@@ -39,7 +39,7 @@ export default {
   max-width: 20%;
   margin-top: 1em;
   margin-left: 0.5em;
-  opacity: 60%;
+  opacity: 80%;
   padding: 5px;
   border-radius: 10px;
 }
