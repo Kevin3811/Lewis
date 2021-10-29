@@ -188,7 +188,7 @@ export default {
   flex-flow: row;
 }
 .restart {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.664);
   width: 40px;
   height: 40px;
   border-radius: 4px;
@@ -199,9 +199,10 @@ export default {
 }
 .restart:hover {
   cursor: pointer;
+  background-color: white;
 }
 .rewind {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.664);
   width: 40px;
   height: 40px;
   border-radius: 4px;
@@ -212,5 +213,6 @@ export default {
 }
 .rewind:hover {
   cursor: pointer;
+  background-color: white;
 }
 </style>
