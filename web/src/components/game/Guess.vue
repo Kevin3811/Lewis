@@ -1,7 +1,9 @@
 <template>
   <div class="guess">
     <div class="guess-header">
-      <span>Place Guess</span><span class="exit" v-on:click="exit">x</span>
+      <span class="guess-text">Place Guess</span>
+      <span class="distance">{{ distance }}</span>
+      <span class="exit" v-on:click="exit">x</span>
     </div>
     <l-map
       style="height: 300px"
@@ -25,6 +27,8 @@
           <l-icon icon-url="./greenmarker.png"> </l-icon>
           <l-tooltip :options="{ opacity: 0.4 }">Correct Answer</l-tooltip>
         </l-marker>
+        <!-- Line connecting answer and player guess -->
+        <l-geo-json :geojson="guessGeoJson"></l-geo-json>
       </div>
       <!-- Show all other player answers -->
       <div v-if="showLobbyAnswers && hasGuessed">
@@ -51,11 +55,18 @@
 </template>
 
 <script>
-import { LMap, LTileLayer, LMarker, LIcon, LTooltip } from "vue2-leaflet";
+import {
+  LMap,
+  LTileLayer,
+  LMarker,
+  LIcon,
+  LTooltip,
+  LGeoJson,
+} from "vue2-leaflet";
 
 export default {
   name: "Guess",
-  components: { LMap, LTileLayer, LMarker, LIcon, LTooltip },
+  components: { LMap, LTileLayer, LMarker, LIcon, LTooltip, LGeoJson },
   data() {
     return {
       zoom: 1,
@@ -64,6 +75,7 @@ export default {
       attribution: "attribution",
       english: true,
       nativeLanguages: false,
+      distance: "3 miles",
     };
   },
   computed: {
@@ -93,6 +105,28 @@ export default {
     },
     showLobbyAnswers() {
       return this.$store.getters.getShowLobbyAnswers;
+    },
+    guessGeoJson() {
+      let line = undefined;
+      if (this.hasGuessed) {
+        line = {
+          type: "FeatureCollection",
+          features: [
+            {
+              type: "Feature",
+              properties: {},
+              geometry: {
+                type: "LineString",
+                coordinates: [
+                  [this.roundLon, this.roundLat],
+                  [this.guessLon, this.guessLat],
+                ],
+              },
+            },
+          ],
+        };
+      }
+      return line;
     },
   },
   methods: {
@@ -127,9 +161,19 @@ export default {
 }
 .guess-header {
   color: white;
-  text-align: center;
   background-color: gray;
-  opacity: 60%;
+  opacity: 80%;
+}
+.guess-text {
+  margin-left: 5px;
+  text-align: left;
+}
+.distance {
+  color: blue;
+  text-align: center;
+  position: absolute;
+  float: right;
+  left: 48%;
 }
 .exit {
   color: red;
