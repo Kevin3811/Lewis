@@ -46,7 +46,7 @@
             alt="restart"
             width="30"
             height="30"
-            title="restart"
+            title="Restart from Beginning"
           />
         </div>
         <!-- rewind button -->
@@ -56,7 +56,7 @@
             alt="rewind"
             width="30"
             height="30"
-            title="rewind"
+            title="Rewind 5 Seconds"
           />
         </div>
       </div>
@@ -116,11 +116,14 @@ export default {
   },
   mounted() {
     this.player.setVolume(this.volumePercent);
-    console.log(this.player.getAvailablePlaybackRates());
   },
   methods: {
     resizeEvent() {
-      this.youtubeContainer.onResize();
+      if (this.youtubeContainer !== undefined) {
+        this.youtubeContainer.onResize();
+      } else {
+        console.log("youtube container undefined");
+      }
     },
     guessButton() {
       this.$store.dispatch("setIsGuessing", !this.isGuessing);
@@ -132,11 +135,18 @@ export default {
     changeVolumePercent() {
       this.player.setVolume(this.volumePercent);
     },
-    rewind() {
-      console.log("rewind");
+    async rewind() {
+      let duration = await this.player.getCurrentTime();
+      let seekToTime;
+      if (duration - 5 < this.playerVars.start) {
+        seekToTime = this.playerVars.start;
+      } else {
+        seekToTime = duration - 5;
+      }
+      this.player.seekTo(seekToTime);
     },
     restart() {
-      console.log("restart");
+      this.player.seekTo(this.playerVars.start);
     },
   },
   onDestroy() {
