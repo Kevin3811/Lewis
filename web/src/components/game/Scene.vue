@@ -116,11 +116,14 @@ export default {
   },
   mounted() {
     this.player.setVolume(this.volumePercent);
-    console.log(this.player.getAvailablePlaybackRates());
   },
   methods: {
     resizeEvent() {
-      this.youtubeContainer.onResize();
+      if (this.youtubeContainer !== undefined) {
+        this.youtubeContainer.onResize();
+      } else {
+        console.log("youtube container undefined");
+      }
     },
     guessButton() {
       this.$store.dispatch("setIsGuessing", !this.isGuessing);
