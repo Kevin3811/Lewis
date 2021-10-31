@@ -46,7 +46,6 @@ export default {
 .leaderboardheader {
   color: white;
   opacity: 100%;
-  text-decoration: underline;
   font-size: 1.2em;
   text-align: center;
 }
