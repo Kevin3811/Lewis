@@ -1,0 +1,14 @@
+game:
+  playlists:
+    - World
+    - North America
+    - South America
+    - Africa
+    - Europe
+    - Asia
+    - Australia
+  videos:
+    - url: testUrl
+      start-time: 40
+    - url: testUrl2
+      start-time: 50
