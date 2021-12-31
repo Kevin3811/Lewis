@@ -5,9 +5,11 @@ import VueYoutube from "vue-youtube";
 import { BootstrapVue, IconsPlugin, CardPlugin } from "bootstrap-vue";
 import "leaflet/dist/leaflet.css";
 import { Icon } from "leaflet";
+import VueRouter from "vue-router";
 
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
+import router from "./router";
 
 Vue.config.productionTip = false;
 
@@ -16,6 +18,7 @@ Vue.use(VueYoutube);
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
 Vue.use(CardPlugin);
+Vue.use(VueRouter);
 
 delete Icon.Default.prototype._getIconUrl;
 Icon.Default.mergeOptions({
@@ -26,5 +29,6 @@ Icon.Default.mergeOptions({
 
 new Vue({
   render: (h) => h(App),
+  router,
   store,
 }).$mount("#app");

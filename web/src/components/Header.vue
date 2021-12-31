@@ -1,22 +1,27 @@
 <template>
-  <div class="header">
-    <h1>L&C</h1>
-  </div>
+  <b-navbar toggleable="lg" variant="info" type="info">
+    <router-link :to="{ name: 'Home' }">
+      <b-navbar-brand
+        tag="h1"
+        style="cursor: pointer; color: white; font-size: 2em;"
+        v-on:click="returnHome"
+        >Lewis & Clark</b-navbar-brand
+      >
+    </router-link>
+  </b-navbar>
 </template>
 
 <script>
 export default {
   name: "Header",
   components: {},
+  mounted() {
+    this.$store.dispatch("resetGame");
+  },
+  methods: {
+    returnHome() {
+      this.$store.dispatch("resetGame");
+    },
+  },
 };
 </script>
-
-<style scoped>
-.header {
-  text-align: center;
-  display: flex;
-  color: green;
-  background-color: #343a40;
-  border-radius: 5px;
-}
-</style>

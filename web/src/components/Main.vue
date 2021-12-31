@@ -1,17 +1,9 @@
 <template>
   <div>
-    <b-navbar toggleable="lg" variant="info" type="info">
-      <b-navbar-brand
-        tag="h1"
-        style="cursor: pointer; color: white; font-size: 2em;"
-        v-on:click="returnHome"
-        >Lewis & Clark</b-navbar-brand
-      >
-    </b-navbar>
     <div class="main">
-      <div v-if="!playing">
-        <h3>Game Mode</h3>
-        <div class="deck">
+      <h3>Game Mode</h3>
+      <div class="deck">
+        <router-link :to="{ name: 'Singleplayer' }">
           <b-card
             footer="Singleplayer"
             img-top
@@ -22,6 +14,11 @@
             v-on:click="play('singleplayer')"
           >
           </b-card>
+        </router-link>
+        <!--TODO: get rid of hard coded lobby code -->
+        <router-link
+          :to="{ name: 'Multiplayer', params: { lobbyCode: '123' } }"
+        >
           <b-card
             footer="Multiplayer"
             img-top
@@ -31,23 +28,16 @@
             class="mb-2"
             v-on:click="play('multiplayer')"
           ></b-card>
-        </div>
-      </div>
-      <div v-if="playing">
-        <Scene />
+        </router-link>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import Scene from "./game/Scene";
-
 export default {
   name: "Main",
-  components: {
-    Scene,
-  },
+  components: {},
   data() {
     return {
       singleplayer: false,
@@ -62,6 +52,7 @@ export default {
   },
   methods: {
     play(gamemode) {
+      console.log("gamemode: ", gamemode);
       this.$store.dispatch("setPlaying", !this.playing);
       this.$store.dispatch("setGamemode", gamemode);
       if (gamemode === "singleplayer") {
@@ -69,9 +60,6 @@ export default {
       } else if (gamemode === "multiplayer") {
         this.$store.dispatch("setIsHost", false);
       }
-    },
-    returnHome() {
-      this.$store.dispatch("resetGame");
     },
   },
 };
@@ -92,5 +80,9 @@ h3 {
   display: flex;
   justify-content: center;
   column-gap: 4em;
+}
+#nav a.router-link-exact-active {
+  background-color: gray;
+  text-align: center;
 }
 </style>
