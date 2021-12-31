@@ -30,11 +30,17 @@
           ></b-card>
         </router-link>
       </div>
+      <!-- <button v-on:click="test">
+        Test
+      </button> -->
     </div>
   </div>
 </template>
 
 <script>
+// import playlist from "../api/playlist.js";
+// import video from "../api/video.js";
+
 export default {
   name: "Main",
   components: {},
@@ -51,6 +57,17 @@ export default {
     },
   },
   methods: {
+    test() {
+      // console.log("Test");
+      // let playlists = playlist.getAllPlaylists();
+      // playlists.forEach((playlist) => {
+      //   console.log("playlist: ", playlist);
+      // });
+      // let playlists = this.$store.getters.getPlaylists;
+      // console.log("test: ", playlists);
+      // let videos = video.getVideosForPlaylist("Cities");
+      // console.log("Ttest: ", videos);
+    },
     play(gamemode) {
       console.log("gamemode: ", gamemode);
       this.$store.dispatch("setPlaying", !this.playing);

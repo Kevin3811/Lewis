@@ -30,4 +30,10 @@ export default {
   setShowLobbyAnswers(state, showLobbyAnswers) {
     state.showLobbyAnswers = showLobbyAnswers;
   },
+  setPlaylists(state, playlists) {
+    state.playlists = playlists;
+  },
+  setVideos(state, videos) {
+    state.videos = videos;
+  },
 };

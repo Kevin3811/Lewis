@@ -19,6 +19,8 @@ export default {
     roundlon: 125,
     hasguessed: false,
     showLobbyAnswers: true,
+    playlists: [],
+    videos: [],
     lobbyUsers: [
       {
         username: "Nick",
