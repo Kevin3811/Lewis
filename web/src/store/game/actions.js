@@ -42,4 +42,10 @@ export default {
   setShowLobbyAnswers(context, showLobbyAnswers) {
     context.commit("setShowLobbyAnswers", showLobbyAnswers);
   },
+  setPlaylists(context, playlists) {
+    context.commit("setPlaylists", playlists);
+  },
+  setVideos(context, videos) {
+    context.commit("setVideos", videos);
+  },
 };

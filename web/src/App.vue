@@ -7,11 +7,16 @@
 
 <script>
 import Header from "./components/Header.vue";
+import playlistApi from "./api/playlist.js";
 
 export default {
   name: "App",
   components: {
     Header,
+  },
+  async mounted() {
+    let playlists = playlistApi.getAllPlaylists();
+    this.$store.dispatch("setPlaylists", playlists);
   },
 };
 </script>

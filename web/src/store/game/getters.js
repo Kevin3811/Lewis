@@ -39,4 +39,10 @@ export default {
   getShowLobbyAnswers: (state) => {
     return state.showLobbyAnswers;
   },
+  getPlaylists: (state) => {
+    return state.playlists;
+  },
+  getVideos: (state) => {
+    return state.videos;
+  },
 };
