@@ -116,6 +116,7 @@ export default {
   },
   mounted() {
     this.player.setVolume(this.volumePercent);
+    console.log("lobby code: ", this.$route.params.lobbyCode);
   },
   methods: {
     resizeEvent() {
