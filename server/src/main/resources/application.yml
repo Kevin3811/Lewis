@@ -10,8 +10,13 @@ spring:
     console:
       enabled: true
 #Access local database console from http://localhost:80/h2-console
+logging:
+  level:
+    root: INFO
 server:
   port: 8081
+  ssl:
+    enabled: false
 
 game:
   playlists:

@@ -1,6 +1,5 @@
 <template>
   <div class="card" :style="{ 'background-image': `url(${this.image})` }">
-    <!-- <img class="image" :src="require(`@/assets/${imageName}.png`)" /> -->
     <p>{{ title }}</p>
   </div>
 </template>
@@ -26,7 +25,6 @@ export default {
 .card {
   height: 200px;
   width: 25%;
-  /* background-color: gray; */
   margin: 5px;
 }
 

@@ -7,7 +7,8 @@
 
 <script>
 import Header from "./components/Header.vue";
-import playlistApi from "./api/playlist.js";
+// import playlistApi from "./api/playlist.js";
+import websocket from "./api/websocket.js";
 
 export default {
   name: "App",
@@ -15,8 +16,9 @@ export default {
     Header,
   },
   async mounted() {
-    let playlists = playlistApi.getAllPlaylists();
-    this.$store.dispatch("setPlaylists", playlists);
+    // let playlists = playlistApi.getAllPlaylists();
+    // this.$store.dispatch("setPlaylists", playlists);
+    websocket.createConnection();
   },
 };
 </script>

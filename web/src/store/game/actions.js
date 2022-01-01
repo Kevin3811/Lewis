@@ -48,4 +48,7 @@ export default {
   setVideos(context, videos) {
     context.commit("setVideos", videos);
   },
+  updateScores(context, scores) {
+    console.log("UPDATE SCORES", context, scores);
+  },
 };
