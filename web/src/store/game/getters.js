@@ -45,4 +45,13 @@ export default {
   getVideos: (state) => {
     return state.videos;
   },
+  getLobbyCode: (state) => {
+    return state.lobbyCode;
+  },
+  getGamemode: (state) => {
+    return state.gamemode;
+  },
+  getCreateGame: (state) => {
+    return state.createGame;
+  },
 };

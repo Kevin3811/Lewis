@@ -50,3 +50,10 @@ game:
       playlists:
         - World
         - Europe
+    - url: testUrl4
+      start-time: 50
+      latitude: 90
+      longitude: 90
+      playlists:
+        - World
+        - Australia

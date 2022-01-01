@@ -6,14 +6,14 @@ const url = "ws://localhost:8081/scores";
 let client;
 let subscription;
 
-function createConnection() {
+function createConnection(lobbyCode) {
   client = new Client({
     brokerURL: url,
     reconnectDelay: 5000,
   });
   //Subscribe to stomp topics when connection is established
   client.onConnect = () => {
-    subscribe();
+    subscribe(lobbyCode);
   };
   //Unsubscribe to stomp topics when connection is disconnected
   client.onDisconnect = () => {
@@ -27,12 +27,12 @@ function createConnection() {
   client.activate();
 }
 
-function subscribe() {
+function subscribe(lobbyCode) {
   if (client) {
-    client.subscribe("/topic/scores", (message) => {
+    client.subscribe("/topic/scores/" + lobbyCode, (message) => {
       store.dispatch("updateScores", message.body);
     });
-    console.log("Websocket subsribed to topics");
+    console.log("Websocket subsribed to topics for lobby: ", lobbyCode);
   }
 }
 

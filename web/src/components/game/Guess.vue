@@ -151,13 +151,15 @@ export default {
 
 <style scoped>
 .guess {
+  resize: both;
   width: 600px;
   height: 600px;
   position: absolute;
-  top: 50%;
-  right: 50%;
+  right: 0;
+  bottom: 0;
   z-index: 100;
   border-radius: 15px;
+  align-content: center;
 }
 .guess-header {
   color: white;

@@ -1,20 +1,23 @@
 <template>
   <div>
+    <div v-if="createGame">
+      <CreateGame :gamemode="selectedGamemode" />
+    </div>
     <div class="main">
       <h3>Game Mode</h3>
       <div class="deck">
-        <router-link :to="{ name: 'Singleplayer' }">
-          <b-card
-            footer="Singleplayer"
-            img-top
-            img-src="./singleplayer.png"
-            img-height="300px;"
-            :style="cardStyle"
-            class="mb-2"
-            v-on:click="play('singleplayer')"
-          >
-          </b-card>
-        </router-link>
+        <!-- <router-link :to="{ name: 'Singleplayer' }"> -->
+        <b-card
+          footer="Singleplayer"
+          img-top
+          img-src="./singleplayer.png"
+          img-height="300px;"
+          :style="cardStyle"
+          class="mb-2"
+          v-on:click="play('singleplayer')"
+        >
+        </b-card>
+        <!-- </router-link> -->
         <!--TODO: get rid of hard coded lobby code -->
         <router-link
           :to="{ name: 'Multiplayer', params: { lobbyCode: '123' } }"
@@ -40,20 +43,30 @@
 <script>
 // import playlist from "../api/playlist.js";
 // import video from "../api/video.js";
+import CreateGame from "./CreateGame.vue";
 
 export default {
   name: "Main",
-  components: {},
+  components: {
+    CreateGame,
+  },
   data() {
     return {
-      singleplayer: false,
-      multiplayer: false,
+      // singleplayer: false,
+      // multiplayer: false,
+      selectedGamemode: "",
       cardStyle: `max-width: 20rem; cursor: pointer; background-color:gray; max-height: 25rem; min-height: 25rem; text-align: center;`,
     };
   },
   computed: {
     playing() {
       return this.$store.getters.getPlaying;
+    },
+    gamemode() {
+      return this.$store.getters.getGamemode;
+    },
+    createGame() {
+      return this.$store.getters.getCreateGame;
     },
   },
   methods: {
@@ -69,9 +82,9 @@ export default {
       // console.log("Ttest: ", videos);
     },
     play(gamemode) {
-      console.log("gamemode: ", gamemode);
+      this.selectedGamemode = gamemode;
       this.$store.dispatch("setPlaying", !this.playing);
-      this.$store.dispatch("setGamemode", gamemode);
+      this.$store.dispatch("setCreateGame", true);
       if (gamemode === "singleplayer") {
         this.$store.dispatch("setIsHost", true);
       } else if (gamemode === "multiplayer") {

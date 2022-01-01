@@ -21,6 +21,8 @@ export default {
     showLobbyAnswers: true,
     playlists: [],
     videos: [],
+    lobbyCode: undefined,
+    createGame: false,
     lobbyUsers: [
       {
         username: "Nick",

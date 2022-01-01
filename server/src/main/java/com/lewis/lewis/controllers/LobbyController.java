@@ -70,4 +70,20 @@ public class LobbyController {
         return videos;
     }
 
+    @GetMapping("/playlists-videos")
+    public Set<Videos.Video> getVideosInPlaylist(List<String> playlist){
+        Set<Videos.Video> videos = new HashSet<>();
+        videoRepository.findByPlaylistsIn(playlist).forEach(video ->{
+            videos.add(Videos.Video.builder()
+                    .latitude(video.getLatitude())
+                    .longitude(video.getLongitude())
+                    .playlists(video.getPlaylists())
+                    .startTime(video.getStartTime())
+                    .url(video.getUrl())
+                    .build());
+        });
+        log.info("Videos: [{}]", videos);
+        return videos;
+    }
+
 }

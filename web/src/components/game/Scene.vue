@@ -72,6 +72,7 @@
 <script>
 import Scores from "./Scores";
 import Guess from "./Guess";
+import websocket from "../../api/websocket.js";
 
 export default {
   name: "Scene",
@@ -116,7 +117,12 @@ export default {
   },
   mounted() {
     this.player.setVolume(this.volumePercent);
-    console.log("lobby code: ", this.$route.params.lobbyCode);
+    this.player.playVideo();
+    //Set lobbycode variable from route parameter
+    this.$store.dispatch("setLobbyCode", this.$route.params.lobbyCode);
+    console.log("lobbyCode: ", this.$store.getters.getLobbyCode);
+    //subscribe to websocket for lobby
+    websocket.createConnection(this.$route.params.lobbyCode);
   },
   methods: {
     resizeEvent() {
@@ -130,8 +136,11 @@ export default {
       this.$store.dispatch("setIsGuessing", !this.isGuessing);
     },
     changePlaybackRate() {
+      //TODO: Fix playback rate changer
       this.player.setPlaybackRate(this.playbackRate);
-      console.log("get: ", this.player);
+      // console.log("localplayback rate: ", this.playbackRate);
+      console.log("player playback rate: ", this.player.getPlaybackRate());
+      // console.log("available rates: ", this.player.getAvailablePlaybackRates());
     },
     changeVolumePercent() {
       this.player.setVolume(this.volumePercent);

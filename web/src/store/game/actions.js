@@ -48,7 +48,13 @@ export default {
   setVideos(context, videos) {
     context.commit("setVideos", videos);
   },
+  setLobbyCode(context, code) {
+    context.commit("setLobbyCode", code);
+  },
   updateScores(context, scores) {
     console.log("UPDATE SCORES", context, scores);
+  },
+  setCreateGame(context, createGame) {
+    context.commit("setCreateGame", createGame);
   },
 };
