@@ -19,11 +19,13 @@ public class WebSocket {
     @SendTo("/topic/scores")
     public void test(String message){
 //        log.info("TEST");
-        messagingTemplate.convertAndSend("/topic/scores", "testMessage");
+//        messagingTemplate.convertAndSend("/topic/scores", "testMessage");
+        //Only send to specific lobbies
+        messagingTemplate.convertAndSend("/topic/scores/123", "lobby123 message");
     }
 
-    @Scheduled(fixedRate = 2000)
-    public void test2(){
-        test("message");
-    }
+//    @Scheduled(fixedRate = 2000)
+//    public void test2(){
+//        test("message");
+//    }
 }

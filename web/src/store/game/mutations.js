@@ -36,4 +36,10 @@ export default {
   setVideos(state, videos) {
     state.videos = videos;
   },
+  setLobbyCode(state, lobbyCode) {
+    state.lobbyCode = lobbyCode;
+  },
+  setCreateGame(state, createGame) {
+    state.createGame = createGame;
+  },
 };
