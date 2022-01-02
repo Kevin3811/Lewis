@@ -12,7 +12,7 @@ spring:
 #Access local database console from http://localhost:80/h2-console
 logging:
   level:
-    root: INFO
+    root: DEBUG
 server:
   port: 8081
   ssl:

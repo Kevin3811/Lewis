@@ -68,6 +68,8 @@
 </template>
 
 <script>
+import videoApi from "../api/video.js";
+
 export default {
   name: "gamemode",
   props: {
@@ -121,8 +123,10 @@ export default {
     console.log("create game for:", this.gamemode);
   },
   methods: {
-    submit() {
-      console.log("submit");
+    async submit() {
+      let videos = await videoApi.getVideosForPlaylists(this.selectedPlaylists);
+      this.$store.dispatch("setVideos", videos);
+      console.log("videos: ", videos);
     },
     cancel() {
       console.log("cancel");
