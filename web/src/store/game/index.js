@@ -6,7 +6,7 @@ export default {
   state: {
     //TODO: get rid of hard coded state values used for testing
     playlist: "US",
-    playerUsername: "Skateoriginal1",
+    username: "",
     clientCode: "1a2b3c",
     score: 500,
     playing: false,
@@ -22,7 +22,9 @@ export default {
     playlists: [],
     videos: [],
     lobbyCode: undefined,
-    createGame: false,
+    roundLength: undefined,
+    roundCount: undefined,
+    currentRound: undefined,
     lobbyUsers: [
       {
         username: "Nick",

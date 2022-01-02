@@ -85,6 +85,8 @@ public class LobbyController {
                     .build());
         });
         log.info("Videos: [{}]", videos);
+        //randomize order of videos
+        Collections.shuffle(videos);
         return videos;
     }
 

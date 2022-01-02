@@ -39,7 +39,16 @@ export default {
   setLobbyCode(state, lobbyCode) {
     state.lobbyCode = lobbyCode;
   },
-  setCreateGame(state, createGame) {
-    state.createGame = createGame;
+  setRoundLength(state, roundLength) {
+    state.roundLength = roundLength;
+  },
+  setRoundCount(state, roundCount) {
+    state.roundCount = roundCount;
+  },
+  setUsername(state, username) {
+    state.username = username;
+  },
+  setCurrentRound(state, currentRound) {
+    state.currentRound = currentRound;
   },
 };

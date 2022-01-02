@@ -29,7 +29,7 @@ game:
     - Australia
     - Cities
   videos:
-    - url: testUrl
+    - url: testUrl1
       start-time: 40
       latitude: 90
       longitude: 90

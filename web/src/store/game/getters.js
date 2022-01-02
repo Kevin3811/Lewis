@@ -1,7 +1,7 @@
 //WAY TO ACCESS AND FORMAT STATE VARIABLES
 export default {
-  getPlayerUsername: (state) => {
-    return state.playerUsername;
+  getUsername: (state) => {
+    return state.username;
   },
   getLobbyUsers: (state) => {
     return state.lobbyUsers;
@@ -50,8 +50,5 @@ export default {
   },
   getGamemode: (state) => {
     return state.gamemode;
-  },
-  getCreateGame: (state) => {
-    return state.createGame;
   },
 };

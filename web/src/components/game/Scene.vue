@@ -111,6 +111,9 @@ export default {
     isGuessing() {
       return this.$store.getters.getIsGuessing;
     },
+    gamemode() {
+      return this.$route.name.toLowerCase();
+    },
   },
   created() {
     window.addEventListener("resize", this.resizeEvent);
