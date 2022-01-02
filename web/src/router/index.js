@@ -10,6 +10,7 @@ const routes = [
     path: "/singleplayer",
     name: "Singleplayer",
     component: Scene,
+    props: true,
   },
   {
     path: "/multiplayer/:lobbyCode",

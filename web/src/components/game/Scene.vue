@@ -3,7 +3,7 @@
     <div class="video-container">
       <div class="video-foreground">
         <youtube
-          :video-id="videoId"
+          :video-id="currentVideo.url"
           ref="youtube"
           :nocookie="true"
           :fitParent="true"
@@ -15,6 +15,8 @@
       <Scores />
     </div>
     <div class="controls">
+      <div>Round: {{ currentRound }} / {{ roundCount }}</div>
+      <div>Time Left:</div>
       <div class="slider">
         <p>Volume ({{ volumePercent }}%)</p>
         <input
@@ -62,7 +64,7 @@
       </div>
     </div>
     <div v-if="isGuessing">
-      <Guess />
+      <Guess :video="currentVideo" />
     </div>
     <!--Guess Button-->
     <div v-on:click="guessButton" class="guess-button">Guess</div>
@@ -82,18 +84,6 @@ export default {
   },
   data() {
     return {
-      videoId: "gMllzBuAbBg",
-      playerVars: {
-        autoplay: 1,
-        controls: 0,
-        loop: 1,
-        disablekb: 1,
-        modestbranding: 1,
-        start: 40,
-        iv_load_policy: 3,
-        playsinline: 1,
-        rel: 0,
-      },
       volumePercent: 0,
       playbackRate: 1,
     };
@@ -110,6 +100,34 @@ export default {
     },
     isGuessing() {
       return this.$store.getters.getIsGuessing;
+    },
+    gamemode() {
+      return this.$route.name.toLowerCase();
+    },
+    currentRound() {
+      return this.$store.getters.getCurrentRound;
+    },
+    roundCount() {
+      return this.$store.getters.getRoundCount;
+    },
+    currentVideo() {
+      let videos = this.$store.getters.getVideos;
+      let currentVideo = videos[(this.currentRound - 1) % videos.length];
+      console.log("currentVideo: ", this.$store.getters.getVideos);
+      return currentVideo;
+    },
+    playerVars() {
+      return {
+        autoplay: 1,
+        controls: 0,
+        loop: 1,
+        disablekb: 1,
+        modestbranding: 1,
+        start: this.currentVideo.startTime,
+        iv_load_policy: 3,
+        playsinline: 1,
+        rel: 0,
+      };
     },
   },
   created() {

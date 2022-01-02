@@ -1,7 +1,7 @@
 //WAY TO ACCESS AND FORMAT STATE VARIABLES
 export default {
-  getPlayerUsername: (state) => {
-    return state.playerUsername;
+  getUsername: (state) => {
+    return state.username;
   },
   getLobbyUsers: (state) => {
     return state.lobbyUsers;
@@ -21,18 +21,6 @@ export default {
   getIsGuessing: (state) => {
     return state.isguessing;
   },
-  getGuessLat: (state) => {
-    return state.guesslat;
-  },
-  getGuessLon: (state) => {
-    return state.guesslon;
-  },
-  getRoundLat: (state) => {
-    return state.roundlat;
-  },
-  getRoundLon: (state) => {
-    return state.roundlon;
-  },
   getHasGuessed: (state) => {
     return state.hasguessed;
   },
@@ -51,7 +39,10 @@ export default {
   getGamemode: (state) => {
     return state.gamemode;
   },
-  getCreateGame: (state) => {
-    return state.createGame;
+  getRoundCount: (state) => {
+    return state.roundCount;
+  },
+  getCurrentRound: (state) => {
+    return state.currentRound;
   },
 };

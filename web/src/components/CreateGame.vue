@@ -1,7 +1,7 @@
 <template>
   <div class="createGame">
     <div class="form">
-      <b-form @submit="submit">
+      <b-form @submit="submit" autocomplete="off">
         <!--username-->
         <b-form-group
           id="input-group-1"
@@ -44,30 +44,31 @@
             required
           ></b-form-select>
         </b-form-group>
+        <div class="playlists">
+          <div
+            v-for="playlist in playlists"
+            :key="playlist"
+            :class="{
+              playlist: true,
+              selectedPlaylist: selectedPlaylists.includes(playlist),
+            }"
+            v-on:click="togglePlaylist(playlist)"
+          >
+            {{ playlist }}
+          </div>
+        </div>
+        <div class="footer">
+          <b-button v-on:click="cancel" variant="danger">Cancel</b-button>
+          <b-button type="submit" variant="primary">{{ startButton }}</b-button>
+        </div>
       </b-form>
-    </div>
-    <!--playlists-->
-    <div class="playlists">
-      <div
-        v-for="playlist in playlists"
-        :key="playlist"
-        :class="{
-          playlist: true,
-          selectedPlaylist: selectedPlaylists.includes(playlist),
-        }"
-        v-on:click="togglePlaylist(playlist)"
-      >
-        {{ playlist }}
-      </div>
-    </div>
-    <div class="footer">
-      <span class="cancel-button" v-on:click="cancel">Cancel</span>
-      <span class="submit-button" v-on:click="submit">{{ startButton }}</span>
     </div>
   </div>
 </template>
 
 <script>
+import videoApi from "../api/video.js";
+
 export default {
   name: "gamemode",
   props: {
@@ -118,15 +119,33 @@ export default {
     },
   },
   mounted() {
-    console.log("create game for:", this.gamemode);
+    // console.log("create game for:", this.gamemode);
   },
   methods: {
-    submit() {
-      console.log("submit");
+    async submit(event) {
+      //Prevent default to prevent page from refreshing when submitting form
+      event.preventDefault();
+      console.log("submit"); //if Singleplayer
+      if (this.gamemode === "singleplayer") {
+        let videos = await videoApi.getVideosForPlaylists(
+          this.selectedPlaylists
+        );
+        this.$store.dispatch("setVideos", videos);
+        this.$store.dispatch("setUsername", this.username);
+        this.$store.dispatch("setRoundLength", this.roundLength);
+        this.$store.dispatch("setRoundCount", this.roundCount);
+        this.$store.dispatch("setCurrentRound", 1);
+        this.$store.dispatch("setPlaylists", this.playlists);
+        console.log("videos: ", videos);
+        this.$router.push({ name: "Singleplayer" });
+      }
+      //If Multiplayer
+      else {
+        console.log("multiplayer submit");
+      }
     },
     cancel() {
-      console.log("cancel");
-      this.$store.dispatch("setCreateGame", false);
+      this.$emit("cancel-create-game");
     },
     togglePlaylist(playlist) {
       if (this.selectedPlaylists.includes(playlist)) {
@@ -176,7 +195,8 @@ export default {
   bottom: 10px;
   left: 0;
   right: 0;
-  justify-content: center;
+  justify-content: space-between;
+  margin: 0 7% 3% 7%;
 }
 .playlists {
   display: flex;

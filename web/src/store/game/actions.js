@@ -4,13 +4,12 @@ export default {
     context.commit("setPlaying", false);
     context.commit("setGamemode", "");
     context.commit("setIsGuessing", false);
-    context.commit("setGuessLat", 0);
-    context.commit("setGuessLon", 0);
-    context.commit("setRoundLat", 0);
-    context.commit("setRoundLon", 0);
-    context.commit("setHasGuessed", false);
     context.commit("setShowLobbyAnswers", false);
     context.commit("setIsHost", false);
+    context.commit("setRoundLength", undefined);
+    context.commit("setRoundCount", undefined);
+    context.commit("setUsername", "");
+    context.commit("setPlaylists", []);
   },
   setPlaying(context, playing) {
     context.commit("setPlaying", playing);
@@ -23,21 +22,6 @@ export default {
   },
   setIsGuessing(context, isGuessing) {
     context.commit("setIsGuessing", isGuessing);
-  },
-  setGuessLat(context, lat) {
-    context.commit("setGuessLat", lat);
-  },
-  setGuessLon(context, lon) {
-    context.commit("setGuessLon", lon);
-  },
-  setRoundLat(context, lat) {
-    context.commit("setRoundLat", lat);
-  },
-  setRoundLon(context, lon) {
-    context.commit("setRoundLon", lon);
-  },
-  setHasGuessed(context, hasGuessed) {
-    context.commit("setHasGuessed", hasGuessed);
   },
   setShowLobbyAnswers(context, showLobbyAnswers) {
     context.commit("setShowLobbyAnswers", showLobbyAnswers);
@@ -54,7 +38,16 @@ export default {
   updateScores(context, scores) {
     console.log("UPDATE SCORES", context, scores);
   },
-  setCreateGame(context, createGame) {
-    context.commit("setCreateGame", createGame);
+  setRoundLength(context, roundLength) {
+    context.commit("setRoundLength", roundLength);
+  },
+  setRoundCount(context, roundCount) {
+    context.commit("setRoundCount", roundCount);
+  },
+  setUsername(context, username) {
+    context.commit("setUsername", username);
+  },
+  setCurrentRound(context, currentRound) {
+    context.commit("setCurrentRound", currentRound);
   },
 };

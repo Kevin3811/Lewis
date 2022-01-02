@@ -7,12 +7,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @RestController
 @RequestMapping(path = "/lobby")
@@ -71,9 +69,13 @@ public class LobbyController {
     }
 
     @GetMapping("/playlists-videos")
-    public Set<Videos.Video> getVideosInPlaylist(List<String> playlist){
-        Set<Videos.Video> videos = new HashSet<>();
-        videoRepository.findByPlaylistsIn(playlist).forEach(video ->{
+    public List<Videos.Video> getVideosInPlaylist(@RequestParam(value="playlists") List<String> playlists){
+        List<Videos.Video> videos = new ArrayList<>();
+        if(playlists == null || playlists.isEmpty()){
+            playlists = new ArrayList<>();
+            playlists.add("World");
+        }
+        videoRepository.findByPlaylistsIn(playlists).forEach(video ->{
             videos.add(Videos.Video.builder()
                     .latitude(video.getLatitude())
                     .longitude(video.getLongitude())
@@ -83,6 +85,8 @@ public class LobbyController {
                     .build());
         });
         log.info("Videos: [{}]", videos);
+        //randomize order of videos
+        Collections.shuffle(videos);
         return videos;
     }
 

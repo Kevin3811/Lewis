@@ -1,7 +1,10 @@
 <template>
   <div>
     <div v-if="createGame">
-      <CreateGame :gamemode="selectedGamemode" />
+      <CreateGame
+        :gamemode="selectedGamemode"
+        v-on:cancel-create-game="cancelCreateGame"
+      />
     </div>
     <div class="main">
       <h3>Game Mode</h3>
@@ -41,7 +44,7 @@
 </template>
 
 <script>
-// import playlist from "../api/playlist.js";
+import playlistApi from "../api/playlist.js";
 // import video from "../api/video.js";
 import CreateGame from "./CreateGame.vue";
 
@@ -52,26 +55,23 @@ export default {
   },
   data() {
     return {
-      // singleplayer: false,
-      // multiplayer: false,
       selectedGamemode: "",
       cardStyle: `max-width: 20rem; cursor: pointer; background-color:gray; max-height: 25rem; min-height: 25rem; text-align: center;`,
+      createGame: false,
     };
   },
   computed: {
-    playing() {
-      return this.$store.getters.getPlaying;
-    },
     gamemode() {
       return this.$store.getters.getGamemode;
     },
-    createGame() {
-      return this.$store.getters.getCreateGame;
-    },
+  },
+  async mounted() {
+    this.resetVariables();
+    let playlists = await playlistApi.getAllPlaylists();
+    this.$store.dispatch("setPlaylists", playlists);
   },
   methods: {
     test() {
-      // console.log("Test");
       // let playlists = playlist.getAllPlaylists();
       // playlists.forEach((playlist) => {
       //   console.log("playlist: ", playlist);
@@ -79,17 +79,23 @@ export default {
       // let playlists = this.$store.getters.getPlaylists;
       // console.log("test: ", playlists);
       // let videos = video.getVideosForPlaylist("Cities");
-      // console.log("Ttest: ", videos);
+      // console.log("Test: ", videos);
     },
     play(gamemode) {
       this.selectedGamemode = gamemode;
-      this.$store.dispatch("setPlaying", !this.playing);
-      this.$store.dispatch("setCreateGame", true);
+      this.createGame = true;
       if (gamemode === "singleplayer") {
         this.$store.dispatch("setIsHost", true);
       } else if (gamemode === "multiplayer") {
         this.$store.dispatch("setIsHost", false);
       }
+    },
+    cancelCreateGame() {
+      this.createGame = false;
+    },
+    resetVariables() {
+      console.log("reset");
+      this.$store.dispatch("resetGame");
     },
   },
 };

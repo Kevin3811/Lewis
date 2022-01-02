@@ -12,21 +12,6 @@ export default {
   setIsGuessing(state, isGuessing) {
     state.isguessing = isGuessing;
   },
-  setGuessLat(state, lat) {
-    state.guesslat = lat;
-  },
-  setGuessLon(state, lon) {
-    state.guesslon = lon;
-  },
-  setRoundLat(state, lat) {
-    state.roundlat = lat;
-  },
-  setRoundLon(state, lon) {
-    state.roundlon = lon;
-  },
-  setHasGuessed(state, hasGuessed) {
-    state.hasguessed = hasGuessed;
-  },
   setShowLobbyAnswers(state, showLobbyAnswers) {
     state.showLobbyAnswers = showLobbyAnswers;
   },
@@ -39,7 +24,16 @@ export default {
   setLobbyCode(state, lobbyCode) {
     state.lobbyCode = lobbyCode;
   },
-  setCreateGame(state, createGame) {
-    state.createGame = createGame;
+  setRoundLength(state, roundLength) {
+    state.roundLength = roundLength;
+  },
+  setRoundCount(state, roundCount) {
+    state.roundCount = roundCount;
+  },
+  setUsername(state, username) {
+    state.username = username;
+  },
+  setCurrentRound(state, currentRound) {
+    state.currentRound = currentRound;
   },
 };
