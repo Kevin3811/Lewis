@@ -12,7 +12,7 @@ spring:
 #Access local database console from http://localhost:80/h2-console
 logging:
   level:
-    root: DEBUG
+    root: INFO
 server:
   port: 8081
   ssl:
@@ -29,31 +29,49 @@ game:
     - Australia
     - Cities
   videos:
-    - url: testUrl1
-      start-time: 40
-      latitude: 90
-      longitude: 90
+    - url: WruNXhtEbdM
+      start-time: 000113
+      latitude: 40.758
+      longitude: -73.9855
+      description: Times Square
       playlists:
+        - World
+        - North America
         - Cities
-        - World
-    - url: testUrl2
-      start-time: 50
-      latitude: 90
-      longitude: 90
+    - url: UtcZHutaI4g
+      start-time: 000300
+      latitude: 37.7897
+      longitude: -122.3972
+      description: San Francisco
       playlists:
+        - World
+        - North America
         - Cities
-        - World
-    - url: testUrl3
-      start-time: 50
-      latitude: 90
-      longitude: 90
-      playlists:
-        - World
-        - Europe
-    - url: testUrl4
-      start-time: 50
-      latitude: 90
-      longitude: 90
-      playlists:
-        - World
-        - Australia
+#    - url: testUrl1
+#      start-time: 40
+#      latitude: 90
+#      longitude: 90
+#      playlists:
+#        - Cities
+#        - World
+#    - url: testUrl2
+#      start-time: 50
+#      latitude: 90
+#      longitude: 90
+#      playlists:
+#        - Cities
+#        - World
+#    - url: testUrl3
+#      start-time: 50
+#      latitude: 90
+#      longitude: 90
+#      playlists:
+#        - World
+#        - Europe
+#    - url: testUrl4
+#      start-time: 50
+#      latitude: 90
+#      longitude: 90
+#      playlists:
+#        - World
+#        - Australia

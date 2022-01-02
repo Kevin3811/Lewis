@@ -13,7 +13,7 @@
     >
       <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
       <!-- Guess lat lon default to 0. Only display marker once there is a guess -->
-      <div v-if="guessLat !== 0 || guessLon !== 0">
+      <div v-if="guessLat !== undefined || guessLon !== undefined">
         <l-marker :lat-lng="[guessLat, guessLon]">
           <l-icon icon-url="./redmarker.png"> </l-icon>
           <l-tooltip :options="{ opacity: 0.4 }">{{
@@ -23,7 +23,7 @@
       </div>
       <!-- Show Answer -->
       <div v-if="hasGuessed">
-        <l-marker :lat-lng="[roundLat, roundLon]">
+        <l-marker :lat-lng="[this.video.latitude, this.video.longitude]">
           <l-icon icon-url="./greenmarker.png"> </l-icon>
           <l-tooltip :options="{ opacity: 0.4 }">Correct Answer</l-tooltip>
         </l-marker>
@@ -67,6 +67,9 @@ import {
 export default {
   name: "Guess",
   components: { LMap, LTileLayer, LMarker, LIcon, LTooltip, LGeoJson },
+  props: {
+    video: Object,
+  },
   data() {
     return {
       zoom: 1,
@@ -76,24 +79,15 @@ export default {
       english: true,
       nativeLanguages: false,
       distance: "3 miles",
+      guessLat: undefined,
+      guessLon: undefined,
+      hasGuessed: false,
     };
   },
+  mounted() {
+    console.log("Current Video: ", this.video);
+  },
   computed: {
-    guessLat() {
-      return this.$store.getters.getGuessLat;
-    },
-    guessLon() {
-      return this.$store.getters.getGuessLon;
-    },
-    roundLat() {
-      return this.$store.getters.getRoundLat;
-    },
-    roundLon() {
-      return this.$store.getters.getRoundLon;
-    },
-    hasGuessed() {
-      return this.$store.getters.getHasGuessed;
-    },
     playerUsername() {
       return this.$store.getters.getPlayerUsername;
     },
@@ -118,7 +112,7 @@ export default {
               geometry: {
                 type: "LineString",
                 coordinates: [
-                  [this.roundLon, this.roundLat],
+                  [this.video.longitude, this.video.latitude],
                   [this.guessLon, this.guessLat],
                 ],
               },
@@ -135,15 +129,21 @@ export default {
     },
     mapClick(event) {
       if (event && !this.hasGuessed) {
-        this.$store.dispatch("setGuessLat", event.latlng.lat);
-        this.$store.dispatch("setGuessLon", event.latlng.lng);
+        this.guessLat = event.latlng.lat;
+        this.guessLon = event.latlng.lng;
       }
     },
     guess() {
-      this.$store.dispatch("setHasGuessed", true);
+      this.hasGuessed = true;
     },
     next() {
-      console.log("next");
+      this.$store.dispatch(
+        "setCurrentRound",
+        this.$store.getters.getCurrentRound + 1
+      );
+      this.hasGuessed = false;
+      this.guessLat = undefined;
+      this.guessLon = undefined;
     },
   },
 };

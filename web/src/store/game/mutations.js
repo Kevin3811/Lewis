@@ -12,21 +12,6 @@ export default {
   setIsGuessing(state, isGuessing) {
     state.isguessing = isGuessing;
   },
-  setGuessLat(state, lat) {
-    state.guesslat = lat;
-  },
-  setGuessLon(state, lon) {
-    state.guesslon = lon;
-  },
-  setRoundLat(state, lat) {
-    state.roundlat = lat;
-  },
-  setRoundLon(state, lon) {
-    state.roundlon = lon;
-  },
-  setHasGuessed(state, hasGuessed) {
-    state.hasguessed = hasGuessed;
-  },
   setShowLobbyAnswers(state, showLobbyAnswers) {
     state.showLobbyAnswers = showLobbyAnswers;
   },

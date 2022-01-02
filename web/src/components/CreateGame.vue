@@ -130,11 +130,11 @@ export default {
         let videos = await videoApi.getVideosForPlaylists(
           this.selectedPlaylists
         );
-        console.log("videos: ", this.videos);
         this.$store.dispatch("setVideos", videos);
         this.$store.dispatch("setUsername", this.username);
         this.$store.dispatch("setRoundLength", this.roundLength);
         this.$store.dispatch("setRoundCount", this.roundCount);
+        this.$store.dispatch("setCurrentRound", 1);
         this.$store.dispatch("setPlaylists", this.playlists);
         console.log("videos: ", videos);
         this.$router.push({ name: "Singleplayer" });

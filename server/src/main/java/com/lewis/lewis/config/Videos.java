@@ -27,6 +27,7 @@ public class Videos {
         private String startTime;
         private String latitude;
         private String longitude;
+        private String description;
 
         private Set<String> playlists;
     }
