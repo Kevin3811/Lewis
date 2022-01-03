@@ -25,6 +25,7 @@ public class VideoEntity {
     private String startTime;
     private String latitude;
     private String longitude;
+    private String description;
 
     @ElementCollection
     private Set<String> playlists;

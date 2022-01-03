@@ -46,6 +46,7 @@ public class LobbyController {
                     .playlists(video.getPlaylists())
                     .startTime(video.getStartTime())
                     .url(video.getUrl())
+                    .description(video.getDescription())
                     .build());
         });
         log.info("Videos: [{}]", videos);
@@ -62,6 +63,7 @@ public class LobbyController {
                     .playlists(video.getPlaylists())
                     .startTime(video.getStartTime())
                     .url(video.getUrl())
+                    .description(video.getDescription())
                     .build());
         });
         log.info("Videos: [{}]", videos);
@@ -82,6 +84,7 @@ public class LobbyController {
                     .playlists(video.getPlaylists())
                     .startTime(video.getStartTime())
                     .url(video.getUrl())
+                    .description(video.getDescription())
                     .build());
         });
         log.info("Videos: [{}]", videos);

@@ -45,4 +45,7 @@ export default {
   getCurrentRound: (state) => {
     return state.currentRound;
   },
+  getRoundLength: (state) => {
+    return state.roundLength;
+  },
 };
