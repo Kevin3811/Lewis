@@ -28,7 +28,9 @@ game:
     - Asia
     - Australia
     - Cities
+    - Small Towns
   videos:
+    #NA
     - url: WruNXhtEbdM
       start-time: 000113
       latitude: 40.758
@@ -42,36 +44,1153 @@ game:
       start-time: 000300
       latitude: 37.7897
       longitude: -122.3972
-      description: San Francisco
+      description: San Francisco (check coordinates)
       playlists:
         - World
         - North America
         - Cities
-#    - url: testUrl1
-#      start-time: 40
-#      latitude: 90
-#      longitude: 90
-#      playlists:
-#        - Cities
-#        - World
-#    - url: testUrl2
-#      start-time: 50
-#      latitude: 90
-#      longitude: 90
-#      playlists:
-#        - Cities
-#        - World
-#    - url: testUrl3
-#      start-time: 50
-#      latitude: 90
-#      longitude: 90
-#      playlists:
-#        - World
-#        - Europe
-#    - url: testUrl4
-#      start-time: 50
-#      latitude: 90
-#      longitude: 90
-#      playlists:
-#        - World
-#        - Australia
+    - url: K92ipWWn2Hs
+      start-time: 000001
+      latitude: 37.7897
+      longitude: -122.3972
+      description: San Francisco Sales Force Tower
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: ymuN7-3MklE
+      start-time: 0
+      latitude: 37.7897
+      longitude: -122.3972
+      description: San Francisco Trans America Pyramid (check coordinates)
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: zd6BYcjNMYw
+      start-time: 000303
+      latitude: 37.7897
+      longitude: -122.3972
+      description: San Francisco Golden Gate Bridge (check coordinates)
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: YcjA-aig2Rk
+      start-time: 000029
+      latitude: 40.68981019798533
+      longitude: -74.04722079999631
+      description: New York Statue of Liberty
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: U5I0o2JTtug
+      start-time: 000077
+      latitude: 37.762256
+      longitude: -122.435177
+      description: San Francisco (check coordinates)
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: I8YGf7d7GsA
+      start-time: 000056
+      latitude: 38.6247
+      longitude: -90.1848
+      description: Saint Louis Arch
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: Fhg8tvyJbAo
+      start-time: 000039
+      latitude: 33.984763
+      longitude: -118.471835
+      description: Venice Beach California
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: 4xgbnavlloM
+      start-time: 000040
+      latitude: 21.3069
+      longitude: -157.8583
+      description: Honolulu Hawaii
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: 7NpUMxETJa8
+      start-time: 000268
+      latitude: 34.011281
+      longitude: -118.495102
+      description: Santa Monica Pier California
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: JB0A8Me8EKk
+      start-time: 000001
+      latitude: 42.357113
+      longitude: -71.071741
+      description: Boston Massachusetts
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: QpepXSfYEBk
+      start-time: 000011
+      latitude: 38.903159
+      longitude: -77.039775
+      description: Washington DC
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: AXgg0GSp2oE
+      start-time: 000030
+      latitude: 45.521962
+      longitude: -122.678228
+      description: Portland Oregon
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: 2sXWZaGG7RM
+      start-time: 000010
+      latitude: 45.4997
+      longitude: -122.431
+      description: Portland Oregon
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: ZovWiY9xJME
+      start-time: 000018
+      latitude: 45.0051
+      longitude: -122.7831
+      description: Silverton Oregon
+      playlists:
+        - World
+        - North America
+        - Small Towns
+    - url: mUfVm5IQXBw
+      start-time: 000030
+      latitude: 44.938753
+      longitude: -123.038275
+      description: Salem Oregon
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: 3AL8Egrtyz4
+      start-time: 000040
+      latitude: 45.210015
+      longitude: -123.197393
+      description: McMinnville Oregon
+      playlists:
+        - World
+        - North America
+        - Small Towns
+    - url: 3AL8Egrtyz4
+      start-time: 000020
+      latitude: 45.300316
+      longitude: -122.976765
+      description: Newberg Oregon
+      playlists:
+        - World
+        - North America
+        - Small Towns
+    - url: Nj5caHcD-_E
+      start-time: 000020
+      latitude: 45.356076
+      longitude: -122.840742
+      description: Sherwood Oregon
+      playlists:
+        - World
+        - North America
+        - Small Towns
+    - url: Nj5caHcD-_E
+      start-time: 000020
+      latitude: 45.382163
+      longitude: -122.761511
+      description: Tualtin Oregon
+      playlists:
+        - World
+        - North America
+        - Small Towns
+    - url: pWD_6BlMWLA
+      start-time: 000020
+      latitude: 45.519733
+      longitude: -122.678061
+      description: Portland Oregon
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: RIQ35VH6Dh0
+      start-time: 000015
+      latitude: 37.335711
+      longitude: -121.886309
+      description: San Jose California
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: oW2fFqhhM74
+      start-time: 000013
+      latitude: 43.4799
+      longitude: -110.7624
+      description: Sacramento California Capitol Building
+      playlists:
+        - World
+        - North America
+    - url: GjIkrB4lpc8
+      start-time: 000013
+      latitude: 41.13355
+      longitude: -104.816074
+      description: Jackson Wyoming
+      playlists:
+        - World
+        - North America
+        - Small Towns
+    - url: DSMWWvA_aYw
+      start-time: 000148
+      latitude: 32.785386
+      longitude: -96.799413
+      description: Cheyenne Wyoming
+      playlists:
+        - World
+        - North America
+        - Small Towns
+    - url: 0XQauZHzVx4
+      start-time: 000045
+      latitude: 29.424709
+      longitude: -98.488525
+      description: Dallas Texas
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: iNUoL1K-VY4
+      start-time: 000012
+      latitude: 25.776288
+      longitude: -80.187334
+      description: Manhattan New York
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: NDED6BcBr-s
+      start-time: 000021
+      latitude: 40.6413
+      longitude: -73.7781
+      description: Miami Florida
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: VRmh2gGeBiE
+      start-time: 000037
+      latitude: 41.9742
+      longitude: -87.9073
+      description: JFK Airport New York
+      playlists:
+        - World
+        - North America
+    - url: rpR463QSL_I
+      start-time: 000009
+      latitude: 33.6407
+      longitude: -84.4277
+      description: O'Hare Airport Chicago Illinois
+      playlists:
+        - World
+        - North America
+    - url: 3N0oVxBrGuU
+      start-time: 000035
+      latitude: 33.759415
+      longitude: -84.38767
+      description: Hartsfield Jackson Airport Atlanta Georgia
+      playlists:
+        - World
+        - North America
+    - url: jSRRaMSRZOE
+      start-time: 000060
+      latitude: 30.422107
+      longitude: -84.293102
+      description: Atlanta Georgia
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: 3WLRRAJdpnE
+      start-time: 000021
+      latitude: 36.1147
+      longitude: -115.1728
+      description: Las Vegas Nevada
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: 8fRVUzNEOrM
+      start-time: 000025
+      latitude: 37.769912
+      longitude: -122.447572
+      description: Las Vegas Nevada
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: hamFV1rwJxo
+      start-time: 000244
+      latitude: 37.770274
+      longitude: -122.444657
+      description: San Francisco California
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: uLUriQM4NN0
+      start-time: 000010
+      latitude: 43.658001
+      longitude: -70.257072
+      description: Portland Maine
+      playlists:
+        - World
+        - North America
+        - Small Towns
+    - url: Ze94WzmmFY0
+      start-time: 000004
+      latitude: 44.260289
+      longitude: -72.576222
+      description: Montpelier Vermont
+      playlists:
+        - World
+        - North America
+        - Small Towns
+    - url: TEQCi6LU-4g
+      start-time: 000021
+      latitude: 45.521734
+      longitude: -122.692957
+      description: Portland Oregon
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: B84UXGFVl6E
+      start-time: 000030
+      latitude: 45.531077
+      longitude: -122.653685
+      description: Portland Oregon
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: N6KWvkqVgEI
+      start-time: 000071
+      latitude: 47.609711
+      longitude: -122.34097
+      description: Seattle Washington
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: N6KWvkqVgEI
+      start-time: 000421
+      latitude: 47.610237
+      longitude: -122.336727
+      description: Seattle Washington
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: 4qX4xZS6Wj0
+      start-time: 000009
+      latitude: 30.282061
+      longitude: -81.389363
+      description: Jacksonville Florida
+      playlists:
+        - World
+        - North America
+        - Small Towns
+    - url: VBXXBnpO4TM
+      start-time: 000024
+      latitude: 38.2532
+      longitude: -85.7538
+      description: Louisville Kentucky
+      playlists:
+        - World
+        - North America
+        - Small Towns
+    - url: SsymLcBMi3s
+      start-time: 000060
+      latitude: 42.955692
+      longitude: -85.67261
+      description: Grand Rapids Michigan
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: vsiGQpDbbz8
+      start-time: 000017
+      latitude: 41.894996
+      longitude: -87.624357
+      description: Chicago Michigan
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: tTUwmi0olXI
+      start-time: 000020
+      latitude: 21.313024
+      longitude: -157.861629
+      description: Honolulu Hawaii
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: Jf3MrsUej98
+      start-time: 000028
+      latitude: 21.276675
+      longitude: -157.826222
+      description: Honolulu Hawaii
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: I0Gq41AjiBc
+      start-time: 000001
+      latitude: 21.309927
+      longitude: -157.861102
+      description: Honolulu Hawaii
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: 181Tfbzs84k
+      start-time: 000009
+      latitude: 61.219515
+      longitude: -149.891288
+      description: Anchorage Alaska
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: gR7TsoSbaXk
+      start-time: 000034
+      latitude: 58.300543
+      longitude: -134.405572
+      description: Juneau Alaska
+      playlists:
+        - World
+        - North America
+        - Small Towns
+    - url: yHCpq9ls_As
+      start-time: 000060
+      latitude: 55.34118
+      longitude: -131.646621
+      description: Ketchikan Alaska
+      playlists:
+        - World
+        - North America
+        - Small Towns
+    - url: mGyc_dr_JWk
+      start-time: 000005
+      latitude: 40.709954
+      longitude: -73.962473
+      description: Brooklyn New York
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: Md7UC97MbNA
+      start-time: 000060
+      latitude: 33.154567
+      longitude: -117.350423
+      description: San Diego California
+      playlists:
+        - World
+        - North America
+        - Small Towns
+    - url: Uey_mvR3kSI
+      start-time: 000013
+      latitude: 33.819365
+      longitude: -116.546696
+      description: Palm Springs California
+      playlists:
+        - World
+        - North America
+        - Small Towns
+    - url: iWvr7ySTjvY
+      start-time: 000095
+      latitude: 33.754739
+      longitude: -118.121942
+      description: Long Beach California
+      playlists:
+        - World
+        - North America
+        - Small Towns
+    - url: f4gCduK2lH8
+      start-time: 000014
+      latitude: 33.659799
+      longitude: -117.999351
+      description: Huntington Beach California
+      playlists:
+        - World
+        - North America
+        - Small Towns
+    - url: Vc5PnKohfas
+      start-time: 000015
+      latitude: 37.795937
+      longitude: -122.407711
+      description: San Francisco California
+      playlists:
+        - World
+        - North America
+        - Small Towns
+    - url: hHA47enXuQc
+      start-time: 000016
+      latitude: 32.747586
+      longitude: -117.160499
+      description: San Diego California
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: rny9bLHRN4Y
+      start-time: 000019
+      latitude: 41.2132
+      longitude: -124.0046
+      description: Redwoods California
+      playlists:
+        - World
+        - North America
+    - url: t-PbhlgkakI
+      start-time: 000099
+      latitude: 40.759154
+      longitude: -73.984944
+      description: Times Square New York
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: rANRmPPPxGU
+      start-time: 000001
+      latitude: 41.879018
+      longitude: -87.640483
+      description: Chicago Illinois
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: 1o5dfinDZS4
+      start-time: 000001
+      latitude: 41.258151
+      longitude: -95.93255
+      description: Omaha Nebraska
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: vWD8H8iXBXE
+      start-time: 000004
+      latitude: 41.255361
+      longitude: -95.932964
+      description: Omaha Nebraska
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: 7JsOhtl_zG4
+      start-time: 000060
+      latitude: 40.793684
+      longitude: -73.958085
+      description: Central Park New York
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: 7JsOhtl_zG4
+      start-time: 001934
+      latitude: 40.775751973606646
+      longitude: -73.97176102310988
+      description: Central Park New York
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: AAd6JwWNfvo
+      start-time: 000020
+      latitude: 40.614048
+      longitude: -73.981412
+      description: Bronx New York
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: 4WcMFwU6EpE
+      start-time: 000012
+      latitude: 40.725035
+      longitude: -73.999375
+      description: Manhatten New York
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: PkuPVxZnZUs
+      start-time: 000120
+      latitude: 40.818254
+      longitude: -73.960735
+      description: Harlem New York
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: _D5ljSxYC6o
+      start-time: 000010
+      latitude: 37.540323
+      longitude: -77.43292
+      description: Richmond Virginia
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: g3ZySpbllTQ
+      start-time: 000005
+      latitude: 35.09072
+      longitude: -106.660374
+      description: Albuquerque New Mexico
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: SCudGb7z0OE
+      start-time: 000068
+      latitude: 34.042606
+      longitude: -118.257499
+      description: LA California
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: gJ66mod4ouY
+      start-time: 000001
+      latitude: 36.160739
+      longitude: -86.777807
+      description: Nashville Tennessee
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: uJAhx-Ha--A
+      start-time: 000004
+      latitude: 36.149194
+      longitude: -86.812988
+      description: Nashville Tennessee
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: PZYPYZWfNg4
+      start-time: 000003
+      latitude: 35.22913
+      longitude: -80.839371
+      description: Charlotte North Carolina
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: F5HZQ6P_YsQ
+      start-time: 000072
+      latitude: 35.225655
+      longitude: -80.845213
+      description: Charlotte North Carolina
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: IygYryXJ0MI
+      start-time: 000035
+      latitude: 35.139683
+      longitude: -90.052123
+      description: Memphis Tennessee
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: IYfzyG88xMY
+      start-time: 000100
+      latitude: 31.760667
+      longitude: -106.491447
+      description: El Paso Texas
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: OD7meugDRjY
+      start-time: 000012
+      latitude: 35.776918
+      longitude: -78.638255
+      description: Raleigh North Carolina
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: I7OHMNjWfqw
+      start-time: 000015
+      latitude: 37.443515
+      longitude: -122.169681
+      description: Palo Alto California
+      playlists:
+        - World
+        - North America
+        - Small Towns
+    - url: UQ7rxNfdmkw
+      start-time: 000010
+      latitude: 44.986719
+      longitude: -93.275413
+      description: Minneapolis Minnesota
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: GYBeBWkqZ0M
+      start-time: 000030
+      latitude: 29.954086
+      longitude: -90.069718
+      description: New Orleans Louisiana
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: djJ4N-Y7hZc
+      start-time: 000002
+      latitude: 33.809653
+      longitude: -117.918978
+      description: Disneyland California
+      playlists:
+        - World
+        - North America
+    - url: d1p4Y4N6dYo
+      start-time: 000005
+      latitude: 32.300558
+      longitude: -90.191024
+      description: Jackson Mississippi
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: 4-cwk3DZP3w
+      start-time: 000261
+      latitude: 37.427309
+      longitude: -122.171013
+      description: Palo Alto California
+      playlists:
+        - World
+        - North America
+    - url: 74fvGvcqUhs
+      start-time: 000011
+      latitude: 42.051562
+      longitude: -70.185555
+      description: Cape Cod Massachusetts
+      playlists:
+        - World
+        - North America
+        - Small Towns
+    - url: W_TbkruGZRc
+      start-time: 000013
+      latitude: 28.538624
+      longitude: -81.379126
+      description: Orlando Florida
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: q2uaQww6T3w
+      start-time: 000030
+      latitude: 27.766268
+      longitude: -82.63177
+      description: Saint Petersburg Florida
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: RSa1s-grI9A
+      start-time: 000009
+      latitude: 39.950349
+      longitude: -75.191782
+      description: Philadelphia Pennsylvania
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: RSa1s-grI9A
+      start-time: 000010
+      latitude: 37.604379
+      longitude: -112.156528
+      description: Bryce Canyon National Park Utah
+      playlists:
+        - World
+        - North America
+    - url: bdDtsRh_C1g
+      start-time: 000002
+      latitude: 32.225717
+      longitude: -110.967128
+      description: Tucson Arizona
+      playlists:
+        - World
+        - North America
+        - Small Towns
+    - url: mz97fPJfFvM
+      start-time: 000008
+      latitude: 37.390001
+      longitude: -122.081569
+      description: San Jose California
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: EYp8AcMxrTA
+      start-time: 000050
+      latitude: 27.965646
+      longitude: -82.797204
+      description: Clearwater Florida
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: eXQwfsvCzeA
+      start-time: 000055
+      latitude: 27.940431
+      longitude: -82.459961
+      description: Tampa Florida
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: M2Xqdk_gA8w
+      start-time: 000012
+      latitude: 39.953611
+      longitude: -75.157286
+      description: Philadelphia Pennsylvania
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: nWQ8QlLrb3U
+      start-time: 000001
+      latitude: 37.775448
+      longitude: -81.192638
+      description: Beckley West Virginia
+      playlists:
+        - World
+        - North America
+        - Small Towns
+    - url: sZ42BwugrRU
+      start-time: 000093
+      latitude: 39.631791
+      longitude: -79.956654
+      description: Morgantown West Virginia
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: Xly3YJImi2A
+      start-time: 000040
+      latitude: 39.187117
+      longitude: -106.817918
+      description: Aspen West Virginia
+      playlists:
+        - World
+        - North America
+        - Small Towns
+    - url: xEPIde0qhg0
+      start-time: 000023
+      latitude: 39.642099
+      longitude: -106.377504
+      description: Vali Colorado
+      playlists:
+        - World
+        - North America
+        - Small Towns
+    - url: lrdvh-DfBW0
+      start-time: 000020
+      latitude: 37.810765
+      longitude: -122.262454
+      description: Oakland California
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: 14JALDJKYko
+      start-time: 000070
+      latitude: 42.051953
+      longitude: -70.185578
+      description: Cape Cod Massachusetts
+      playlists:
+        - World
+        - North America
+        - Small Towns
+    - url: rXCVThalXsk
+      start-time: 000002
+      latitude: 40.517568
+      longitude: -74.23884
+      description: Staten Island New York
+      playlists:
+        - World
+        - North America
+        - Small Towns
+    - url: KOniYvMausM
+      start-time: 000017
+      latitude: 40.719718
+      longitude: -74.042467
+      description: Jersey City New Jersey
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: x5_Pr0p-0tI
+      start-time: 000001
+      latitude: 32.70771
+      longitude: -117.160113
+      description: San Diego California
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: RSa1s-grI9A
+      start-time: 000511
+      latitude: 39.94675
+      longitude: -75.186643
+      description: Philadelphia Pennsylvania
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: qYnt1-HaMLA
+      start-time: 000566
+      latitude: 34.096517
+      longitude: -118.370397
+      description: Hollywood California
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: 2aZa16I7rJw
+      start-time: 000190
+      latitude: 25.776611
+      longitude: -80.131476
+      description: Miami Florida
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: HarqoSWaeRU
+      start-time: 000690
+      latitude: 40.65862
+      longitude: -73.890512
+      description: Brooklyn New York
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: u5BIx6tOzxs
+      start-time: 000020
+      latitude: 41.653019
+      longitude: -70.283395
+      description: Chicago Illinois
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: nv5LDZAzXJE
+      start-time: 000115
+      latitude: 37.792167
+      longitude: -122.41079
+      description: Salt Lake City Utah
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: e6eAIV49Ol8
+      start-time: 000111
+      latitude: 35.081991
+      longitude: -106.64482
+      description: Seattle Washington
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: QGXT_8-FwqU
+      start-time: 000050
+      latitude: 47.612323
+      longitude: -122.322524
+      description: Stamford Connecticut
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: H9JHVl_OSe8
+      start-time: 000068
+      latitude: 39.043106
+      longitude: -94.588221
+      description: Kansas City Missouri
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: 1-e8QG8M47Y
+      start-time: 000003
+      latitude: 37.305092
+      longitude: -81.340478
+      description: Pocahontas Virginia
+      playlists:
+        - World
+        - North America
+        - Small Towns
+    - url: f0NSR-w7zjU
+      start-time: 000791
+      latitude: 42.335025
+      longitude: -83.049505
+      description: Detroit Michigan
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: 6WZ7gkaF7hQ
+      start-time: 000505
+      latitude: 33.792914
+      longitude: -84.396863
+      description: Atlanta Georgia
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: x5KoxKXQQA4
+      start-time: 000191
+      latitude: 34.060214
+      longitude: -118.239398
+      description: LA California
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: Yf8J53G0M3Y
+      start-time: 000135
+      latitude: 42.242115
+      longitude: -88.318185
+      description: Crystal Lake Illinois
+      playlists:
+        - World
+        - North America
+        - Small Towns
+    - url: 8GgqAoxlYkY
+      start-time: 000016
+      latitude: 42.31423
+      longitude: -88.4473
+      description: Woodstock Illinois
+      playlists:
+        - World
+        - North America
+        - Small Towns
+    - url: PHXinaaj_FI
+      start-time: 000050
+      latitude: 27.990801
+      longitude: -82.697161
+      description: Safety Harbor Florida
+      playlists:
+        - World
+        - North America
+        - Small Towns
+    - url: Gzc4sEpnu1o
+      start-time: 000499
+      latitude: 25.780044
+      longitude: -80.130723
+      description: Miami Florida
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: 8l8yjGTd5UE
+      start-time: 000130
+      latitude: 47.607422
+      longitude: -122.342123
+      description: Seattle Washington
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: aFBZ6UceO6c
+      start-time: 000131
+      latitude: 39.869671
+      longitude: -86.142443
+      description: Indianapolis Indiana
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: riN9nX5QCWc
+      start-time: 000167
+      latitude: 36.15094
+      longitude: -86.796596
+      description: Nashville Tennessee
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: Bzgg3O7quKw
+      start-time: 000577
+      latitude: 32.458239
+      longitude: -83.73373
+      description: Perry Georgia
+      playlists:
+        - World
+        - North America
+        - Small Towns
+    - url: VijwOOXORzE
+      start-time: 000425
+      latitude: 24.560263
+      longitude: -81.806133
+      description: Key West Florida
+      playlists:
+        - World
+        - North America
+        - Small Towns
+    - url: PVSTPuxtHRo
+      start-time: 000137
+      latitude: 44.637214
+      longitude: -123.107367
+      description: Albany Oregon
+      playlists:
+        - World
+        - North America
+        - Small Towns
+    - url: _tIxUKMmhpk
+      start-time: 000108
+      latitude: 47.810475
+      longitude: -122.377322
+      description: Edmonds Washington
+      playlists:
+        - World
+        - North America
+        - Small Towns
+    - url: D69_mEXboZs
+      start-time: 000303
+      latitude: 32.725387
+      longitude: -117.169077
+      description: San Diego California
+      playlists:
+        - World
+        - North America
+        - Cities
+    #Canada
+    - url: fgbFdV7yL_o
+      start-time: 000007
+      latitude: 43.6426
+      longitude: -79.3871
+      description: CN Tower Toronto Canada
+      playlists:
+        - World
+        - North America
+        - Cities

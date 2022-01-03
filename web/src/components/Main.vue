@@ -9,7 +9,6 @@
     <div class="main">
       <h3>Game Mode</h3>
       <div class="deck">
-        <!-- <router-link :to="{ name: 'Singleplayer' }"> -->
         <b-card
           footer="Singleplayer"
           img-top
@@ -20,7 +19,6 @@
           v-on:click="play('singleplayer')"
         >
         </b-card>
-        <!-- </router-link> -->
         <!--TODO: get rid of hard coded lobby code -->
         <router-link
           :to="{ name: 'Multiplayer', params: { lobbyCode: '123' } }"

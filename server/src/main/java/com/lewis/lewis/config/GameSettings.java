@@ -60,6 +60,7 @@ public class GameSettings {
                     .latitude(video.getLatitude())
                     .longitude(video.getLongitude())
                     .playlists(video.getPlaylists())
+                    .description(video.getDescription())
                     .build();
             videoRepository.save(videoEntity);
             log.info("Added video [{}] to database", video.getUrl());

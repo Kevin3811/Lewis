@@ -2,7 +2,7 @@
   <div class="guess">
     <div class="guess-header">
       <span class="guess-text">Place Guess</span>
-      <span class="distance">{{ distance }}</span>
+      <span v-if="hasGuessed" class="distance">{{ distance }} away</span>
       <span class="exit" v-on:click="exit">x</span>
     </div>
     <l-map
@@ -12,7 +12,7 @@
       v-on:click="mapClick($event)"
     >
       <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
-      <!-- Guess lat lon default to 0. Only display marker once there is a guess -->
+      <!-- Guess lat lon default to undefined. Only display marker once there is a guess -->
       <div v-if="guessLat !== undefined || guessLon !== undefined">
         <l-marker :lat-lng="[guessLat, guessLon]">
           <l-icon icon-url="./redmarker.png"> </l-icon>
@@ -22,16 +22,16 @@
         </l-marker>
       </div>
       <!-- Show Answer -->
-      <div v-if="hasGuessed">
+      <div v-if="hasGuessed || roundOver">
         <l-marker :lat-lng="[this.video.latitude, this.video.longitude]">
           <l-icon icon-url="./greenmarker.png"> </l-icon>
           <l-tooltip :options="{ opacity: 0.4 }">Correct Answer</l-tooltip>
         </l-marker>
-        <!-- Line connecting answer and player guess -->
-        <l-geo-json :geojson="guessGeoJson"></l-geo-json>
+        <!-- Line connecting answer and player guess. Only attempt to draw line if a guess was made -->
+        <l-geo-json v-if="hasGuessed" :geojson="guessGeoJson"></l-geo-json>
       </div>
       <!-- Show all other player answers -->
-      <div v-if="showLobbyAnswers && hasGuessed">
+      <div v-if="showLobbyAnswers && (roundOver || hasGuessed)">
         <div v-for="lobbyUser in lobbyUsers" :key="lobbyUser.clientCode">
           <div v-if="lobbyUser.clientCode !== playerClientCode">
             <l-marker :lat-lng="[lobbyUser.latGuess, lobbyUser.lonGuess]">
@@ -46,7 +46,9 @@
     </l-map>
     <div class="footer">
       <span class="cancel-button" v-on:click="exit">Cancel</span>
-      <span class="next-button" v-on:click="next" v-if="hasGuessed">Next</span>
+      <span class="next-button" v-on:click="next" v-if="hasGuessed || roundOver"
+        >Next</span
+      >
       <span class="guess-button" :disabled="!hasGuessed" v-on:click="guess"
         >Guess</span
       >
@@ -69,6 +71,7 @@ export default {
   components: { LMap, LTileLayer, LMarker, LIcon, LTooltip, LGeoJson },
   props: {
     video: Object,
+    roundOver: Boolean,
   },
   data() {
     return {
@@ -128,7 +131,7 @@ export default {
       this.$store.dispatch("setIsGuessing", false);
     },
     mapClick(event) {
-      if (event && !this.hasGuessed) {
+      if (event && !this.hasGuessed && !this.roundOver) {
         this.guessLat = event.latlng.lat;
         this.guessLon = event.latlng.lng;
       }
@@ -137,13 +140,10 @@ export default {
       this.hasGuessed = true;
     },
     next() {
-      this.$store.dispatch(
-        "setCurrentRound",
-        this.$store.getters.getCurrentRound + 1
-      );
       this.hasGuessed = false;
       this.guessLat = undefined;
       this.guessLon = undefined;
+      this.$emit("nextRound");
     },
   },
 };
@@ -171,11 +171,11 @@ export default {
   text-align: left;
 }
 .distance {
-  color: blue;
+  color: white;
   text-align: center;
   position: absolute;
   float: right;
-  left: 48%;
+  left: 46%;
 }
 .exit {
   color: red;

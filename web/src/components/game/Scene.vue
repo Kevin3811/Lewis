@@ -16,7 +16,7 @@
     </div>
     <div class="controls">
       <div>Round: {{ currentRound }} / {{ roundCount }}</div>
-      <div>Time Left:</div>
+      <div>Time Left: {{ secondsLeft }}</div>
       <div class="slider">
         <p>Volume ({{ volumePercent }}%)</p>
         <input
@@ -64,7 +64,11 @@
       </div>
     </div>
     <div v-if="isGuessing">
-      <Guess :video="currentVideo" />
+      <Guess
+        :video="currentVideo"
+        v-on:nextRound="nextRound"
+        :roundOver="roundOver"
+      />
     </div>
     <!--Guess Button-->
     <div v-on:click="guessButton" class="guess-button">Guess</div>
@@ -86,6 +90,9 @@ export default {
     return {
       volumePercent: 0,
       playbackRate: 1,
+      countDownTimer: undefined,
+      secondsLeft: undefined,
+      roundOver: false,
     };
   },
   computed: {
@@ -113,7 +120,7 @@ export default {
     currentVideo() {
       let videos = this.$store.getters.getVideos;
       let currentVideo = videos[(this.currentRound - 1) % videos.length];
-      console.log("currentVideo: ", this.$store.getters.getVideos);
+      console.log("currentVideo: ", currentVideo);
       return currentVideo;
     },
     playerVars() {
@@ -141,6 +148,8 @@ export default {
     console.log("lobbyCode: ", this.$store.getters.getLobbyCode);
     //subscribe to websocket for lobby
     websocket.createConnection(this.$route.params.lobbyCode);
+    //Start count down timer
+    this.startTimer();
   },
   methods: {
     resizeEvent() {
@@ -175,6 +184,23 @@ export default {
     },
     restart() {
       this.player.seekTo(this.playerVars.start);
+    },
+    nextRound() {
+      this.$store.dispatch(
+        "setCurrentRound",
+        this.$store.getters.getCurrentRound + 1
+      );
+      this.startTimer();
+    },
+    startTimer() {
+      this.secondsLeft = this.$store.getters.getRoundLength;
+      this.countDownTimer = setInterval(() => {
+        this.secondsLeft -= 1;
+        if (this.secondsLeft <= 0) {
+          this.roundOver = true;
+          clearInterval(this.countDownTimer);
+        }
+      }, 1000);
     },
   },
   onDestroy() {
