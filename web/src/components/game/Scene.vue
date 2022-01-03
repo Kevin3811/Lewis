@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="scene">
     <div class="video-container">
       <div class="video-foreground">
         <youtube
@@ -108,9 +108,6 @@ export default {
     youtubeContainer() {
       return this.$refs.youtube;
     },
-    isGuessing() {
-      return this.$store.getters.getIsGuessing;
-    },
     gamemode() {
       return this.$route.name.toLowerCase();
     },
@@ -138,6 +135,9 @@ export default {
         playsinline: 1,
         rel: 0,
       };
+    },
+    isGuessing() {
+      return this.$store.getters.getIsGuessing;
     },
   },
   created() {
@@ -194,13 +194,16 @@ export default {
         this.$store.getters.getCurrentRound + 1
       );
       this.roundOver = false;
+      this.$store.dispatch("setIsGuessing", false);
       this.startTimer();
     },
     startTimer() {
       this.secondsLeft = this.$store.getters.getRoundLength;
+      clearInterval(this.countDownTimer);
       this.countDownTimer = setInterval(() => {
         this.secondsLeft -= 1;
         if (this.secondsLeft <= 0) {
+          console.log("round over: ", this.countDownTimer);
           this.roundOver = true;
           clearInterval(this.countDownTimer);
         }
@@ -217,6 +220,9 @@ export default {
 </script>
 
 <style scoped>
+.scene {
+  user-select: none;
+}
 .video-container {
   display: flex;
   flex-flow: column;

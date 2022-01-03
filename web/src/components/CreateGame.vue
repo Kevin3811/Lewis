@@ -76,9 +76,9 @@ export default {
   },
   data() {
     return {
-      username: "",
-      roundLength: undefined,
-      roundCount: undefined,
+      username: "user",
+      roundLength: 180,
+      roundCount: 10,
       playlist: undefined,
       selectedPlaylists: [],
       roundLengths: [
@@ -125,7 +125,6 @@ export default {
     async submit(event) {
       //Prevent default to prevent page from refreshing when submitting form
       event.preventDefault();
-      console.log("submit"); //if Singleplayer
       if (this.gamemode === "singleplayer") {
         let videos = await videoApi.getVideosForPlaylists(
           this.selectedPlaylists
