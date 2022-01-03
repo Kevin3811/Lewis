@@ -2,7 +2,9 @@
   <div class="guess">
     <div class="guess-header">
       <span class="guess-text">Place Guess</span>
-      <span v-if="hasGuessed" class="distance">{{ distance }} away</span>
+      <span v-if="hasGuessed" class="distance"
+        >{{ distance.distance }} away</span
+      >
       <span class="exit" v-on:click="exit">x</span>
     </div>
     <l-map
@@ -65,6 +67,7 @@ import {
   LTooltip,
   LGeoJson,
 } from "vue2-leaflet";
+import { calculateDistanceAndScore } from "../../scripts/geocalculator.js";
 
 export default {
   name: "Guess",
@@ -81,7 +84,7 @@ export default {
       attribution: "attribution",
       english: true,
       nativeLanguages: false,
-      distance: "3 miles",
+      distance: "",
       guessLat: undefined,
       guessLon: undefined,
       hasGuessed: false,
@@ -138,6 +141,13 @@ export default {
     },
     guess() {
       this.hasGuessed = true;
+      this.distance = calculateDistanceAndScore(
+        this.guessLat,
+        this.guessLon,
+        this.video.latitude,
+        this.video.longitude
+      );
+      console.log("scoring: ", this.distance);
     },
     next() {
       this.hasGuessed = false;
