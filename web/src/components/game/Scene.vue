@@ -193,6 +193,7 @@ export default {
         "setCurrentRound",
         this.$store.getters.getCurrentRound + 1
       );
+      this.roundOver = false;
       this.startTimer();
     },
     startTimer() {

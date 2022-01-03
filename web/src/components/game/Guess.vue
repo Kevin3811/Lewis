@@ -56,7 +56,12 @@
           >Next</span
         >
         <span class="cancel-button" v-on:click="next" v-else>Skip</span>
-        <span class="guess-button" :disabled="!hasGuessed" v-on:click="guess"
+        <span
+          :class="{
+            guessButton: !hasGuessed && !roundOver,
+            disabledGuessButton: hasGuessed || roundOver,
+          }"
+          v-on:click="guess"
           >Guess</span
         >
       </div>
@@ -280,6 +285,7 @@ export default {
   display: inline-block;
   position: relative;
   margin: auto;
+  user-select: none;
 }
 .next-button {
   background: rgb(0, 0, 255);
@@ -291,8 +297,9 @@ export default {
   display: inline-block;
   position: relative;
   margin: auto;
+  user-select: none;
 }
-.guess-button {
+.guessButton {
   padding: 3px;
   background-color: green;
   color: white;
@@ -302,6 +309,7 @@ export default {
   display: inline-block;
   position: relative;
   margin: auto;
+  user-select: none;
 }
 .cancel-button:hover {
   background-color: red;
@@ -311,8 +319,22 @@ export default {
   background-color: rgb(49, 49, 255);
   transform: scale(1.05);
 }
-.guess-button:hover {
+.guessButton:hover {
   background-color: rgb(0, 204, 0);
   transform: scale(1.05);
+}
+.disabledGuessButton {
+  padding: 3px;
+  background-color: green;
+  opacity: 50%;
+  color: white;
+  cursor: not-allowed;
+  border-radius: 5px;
+  align-items: center;
+  display: inline-block;
+  position: relative;
+  margin: auto;
+  pointer-events: none;
+  user-select: none;
 }
 </style>
