@@ -1,6 +1,6 @@
 <template>
-  <div class="guess">
-    <div class="guess-header">
+  <div class="guess" ref="draggableContainer">
+    <div class="guess-header" draggable="true" v-on:mousedown="dragMouseDown">
       <span class="guess-text">Place Guess</span>
       <span v-if="hasGuessed" class="distance"
         >{{ distance.distance }} away</span
@@ -47,13 +47,19 @@
       </div>
     </l-map>
     <div class="footer">
-      <span class="cancel-button" v-on:click="exit">Cancel</span>
-      <span class="next-button" v-on:click="next" v-if="hasGuessed || roundOver"
-        >Next</span
-      >
-      <span class="guess-button" :disabled="!hasGuessed" v-on:click="guess"
-        >Guess</span
-      >
+      <div class="footer-buttons">
+        <span class="cancel-button" v-on:click="exit">Cancel</span>
+        <span
+          class="next-button"
+          v-on:click="next"
+          v-if="hasGuessed || roundOver"
+          >Next</span
+        >
+        <span class="cancel-button" v-on:click="next" v-else>Skip</span>
+        <span class="guess-button" :disabled="!hasGuessed" v-on:click="guess"
+          >Guess</span
+        >
+      </div>
     </div>
   </div>
 </template>
@@ -75,6 +81,7 @@ export default {
   props: {
     video: Object,
     roundOver: Boolean,
+    guessPanel: Object,
   },
   data() {
     return {
@@ -88,10 +95,27 @@ export default {
       guessLat: undefined,
       guessLon: undefined,
       hasGuessed: false,
+      positions: {
+        clientX: undefined,
+        clientY: undefined,
+        movementX: 0,
+        movementY: 0,
+        pixelLeft: undefined,
+        pixelTop: undefined,
+      },
     };
   },
   mounted() {
     console.log("Current Video: ", this.video);
+    //Only reposition guess window if it was already repositioned before
+    if (this.guessPanel !== undefined) {
+      this.positions = this.guessPanel;
+      this.$refs.draggableContainer.style.top = this.positions.pixelTop;
+      this.$refs.draggableContainer.style.left = this.positions.pixelLeft;
+      //TODO: Use relative pixel values so it adjusts for different monitor resolutions when moving to new screen
+      // console.log(this.$refs.draggableContainer.parentNode.clientWidth);
+      // console.log(this.$refs.draggableContainer.parentNode.clientHeight);
+    }
   },
   computed: {
     playerUsername() {
@@ -155,6 +179,38 @@ export default {
       this.guessLon = undefined;
       this.$emit("nextRound");
     },
+    dragMouseDown(event) {
+      event.preventDefault();
+      // get the mouse cursor position at startup:
+      this.positions.clientX = event.clientX;
+      this.positions.clientY = event.clientY;
+      document.onmousemove = this.elementDrag;
+      document.onmouseup = this.closeDragElement;
+    },
+    elementDrag(event) {
+      event.preventDefault();
+      this.positions.movementX = this.positions.clientX - event.clientX;
+      this.positions.movementY = this.positions.clientY - event.clientY;
+      this.positions.clientX = event.clientX;
+      this.positions.clientY = event.clientY;
+      // set the element's new position:
+      this.$refs.draggableContainer.style.top =
+        this.$refs.draggableContainer.offsetTop -
+        this.positions.movementY +
+        "px";
+      this.$refs.draggableContainer.style.left =
+        this.$refs.draggableContainer.offsetLeft -
+        this.positions.movementX +
+        "px";
+      //Keep track of absolute pixel position to place window same spot if guess is re-opened
+      this.positions.pixelLeft = this.$refs.draggableContainer.style.left;
+      this.positions.pixelTop = this.$refs.draggableContainer.style.top;
+    },
+    closeDragElement() {
+      document.onmouseup = null;
+      document.onmousemove = null;
+      this.$emit("guessPanelMoved", this.positions);
+    },
   },
 };
 </script>
@@ -175,25 +231,30 @@ export default {
   color: white;
   background-color: gray;
   opacity: 80%;
+  cursor: grab;
+  width: 100%;
+  min-height: 25px;
+}
+.guess-header:hover {
+  opacity: 100%;
 }
 .guess-text {
   margin-left: 5px;
-  text-align: left;
+  align-items: center;
+  width: 33%;
+  float: left;
 }
 .distance {
   color: white;
-  text-align: center;
-  position: absolute;
-  float: right;
-  left: 46%;
+  align-items: center;
 }
 .exit {
   color: red;
-  float: right;
   padding-left: 10px;
   padding-right: 10px;
   font-size: 1em;
   cursor: pointer;
+  float: right;
 }
 .exit:hover {
   background: white;
@@ -203,46 +264,55 @@ export default {
   opacity: 60%;
   height: 40px;
 }
+.footer-buttons {
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  display: flex;
+}
 .cancel-button {
-  float: left;
-  margin-left: 10px;
-  margin-top: 5px;
   padding: 3px;
   background-color: rgb(141, 0, 0);
   color: white;
-  text-align: center;
   cursor: pointer;
   border-radius: 5px;
-}
-.cancel-button:hover {
-  background-color: red;
-}
-.guess-button {
-  float: right;
-  margin-right: 10px;
-  margin-top: 5px;
-  padding: 3px;
-  background-color: green;
-  color: white;
-  text-align: center;
-  cursor: pointer;
-  border-radius: 5px;
+  align-items: center;
+  display: inline-block;
+  position: relative;
+  margin: auto;
 }
 .next-button {
   background: rgb(0, 0, 255);
-  text-align: center;
-  left: 50%;
-  position: absolute;
-  padding: 3px 7px 3px 7px;
+  padding: 3px;
   color: white;
-  margin-top: 5px;
   border-radius: 5px;
   cursor: pointer;
+  align-items: center;
+  display: inline-block;
+  position: relative;
+  margin: auto;
+}
+.guess-button {
+  padding: 3px;
+  background-color: green;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  align-items: center;
+  display: inline-block;
+  position: relative;
+  margin: auto;
+}
+.cancel-button:hover {
+  background-color: red;
+  transform: scale(1.05);
 }
 .next-button:hover {
   background-color: rgb(49, 49, 255);
+  transform: scale(1.05);
 }
 .guess-button:hover {
   background-color: rgb(0, 204, 0);
+  transform: scale(1.05);
 }
 </style>

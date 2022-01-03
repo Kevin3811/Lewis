@@ -67,7 +67,9 @@
       <Guess
         :video="currentVideo"
         v-on:nextRound="nextRound"
+        v-on:guessPanelMoved="guessPanelMoved"
         :roundOver="roundOver"
+        :guessPanel="guessPanel"
       />
     </div>
     <!--Guess Button-->
@@ -93,6 +95,7 @@ export default {
       countDownTimer: undefined,
       secondsLeft: undefined,
       roundOver: false,
+      guessPanel: undefined,
     };
   },
   computed: {
@@ -201,6 +204,9 @@ export default {
           clearInterval(this.countDownTimer);
         }
       }, 1000);
+    },
+    guessPanelMoved(event) {
+      this.guessPanel = event;
     },
   },
   onDestroy() {
