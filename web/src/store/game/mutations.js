@@ -1,7 +1,25 @@
 //ONLY CALL MUTATIONS FROM ACTIONS
 export default {
-  setPlaying(state, playing) {
-    state.playing = playing;
+  clearUsers(state) {
+    state.lobbyUsers.length = 0;
+    state.lobbyUsers = [];
+  },
+  resetPlayersPreviousRound(state) {
+    state.lobbyUsers.forEach((user) => {
+      user.latGuess = undefined;
+      user.lonGuess = undefined;
+      user.previousScore = undefined;
+    });
+  },
+  incrementPlayersScore(state) {
+    state.lobbyUsers.forEach((user) => {
+      if (user.previousScore !== undefined) {
+        user.score += user.previousScore;
+      }
+    });
+  },
+  addUser(state, user) {
+    state.lobbyUsers.push(user);
   },
   setGamemode(state, gamemode) {
     state.gamemode = gamemode;
@@ -11,6 +29,9 @@ export default {
   },
   setIsGuessing(state, isGuessing) {
     state.isguessing = isGuessing;
+  },
+  setClientCode(state, clientCode) {
+    state.clientCode = clientCode;
   },
   setShowLobbyAnswers(state, showLobbyAnswers) {
     state.showLobbyAnswers = showLobbyAnswers;

@@ -157,6 +157,9 @@ export default {
       }
       return line;
     },
+    currentUser() {
+      return this.$store.getters.getCurrentUser;
+    },
   },
   methods: {
     exit() {
@@ -176,6 +179,9 @@ export default {
         this.video.latitude,
         this.video.longitude
       );
+      this.currentUser.previousScore = Math.ceil(this.distance.score);
+      this.currentUser.latGuess = this.guessLon;
+      this.currentUser.lonGuess = this.guessLon;
       console.log("scoring: ", this.distance);
     },
     next() {

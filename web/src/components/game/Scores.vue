@@ -4,12 +4,25 @@
     <div
       v-for="lobbyUser in lobbyUsers"
       :key="lobbyUser.clientCode"
-      :class="lobbyUser.clientCode === clientCode ? 'currentuser' : 'otheruser'"
+      :class="{
+        currentuser: lobbyUser.clientCode === clientCode,
+        otheruser: lobbyUser.clientCode !== clientCode,
+        user: true,
+      }"
     >
-      <p>
-        <span class="username">{{ lobbyUser.username }}</span>
-        <span class="score">{{ lobbyUser.score }}</span>
-      </p>
+      <div>
+        <div class="leftBox">
+          <div class="username">{{ lobbyUser.username }}</div>
+          <div
+            v-if="lobbyUser.previousScore !== undefined"
+            class="previousScore"
+          >
+            {{ lobbyUser.previousScore }}
+          </div>
+          <div v-else class="previousScore">---</div>
+        </div>
+        <div class="score">{{ lobbyUser.score }}</div>
+      </div>
     </div>
   </div>
 </template>
@@ -48,6 +61,7 @@ export default {
   opacity: 100%;
   font-size: 1.2em;
   text-align: center;
+  text-decoration: underline;
 }
 .otheruser {
   color: white;
@@ -55,10 +69,18 @@ export default {
 .currentuser {
   color: rgb(1, 255, 1);
 }
-.username {
-  text-align: left;
+.user {
+  display: inline-block;
+  width: 100%;
 }
 .score {
   float: right;
+}
+.previousScore {
+  font-size: 0.7em;
+  margin-left: 45%;
+}
+.leftBox {
+  float: left;
 }
 </style>
