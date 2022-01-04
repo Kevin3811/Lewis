@@ -9,11 +9,13 @@ export default {
   getLobbyInScoreOrder: (state) => {
     return state.lobbyUsers.sort((a, b) => (a.score < b.score ? 1 : -1));
   },
+  getCurrentUser: (state) => {
+    return state.lobbyUsers.find((user) => {
+      return user.clientCode === state.clientCode;
+    });
+  },
   getClientCode: (state) => {
     return state.clientCode;
-  },
-  getPlaying: (state) => {
-    return state.playing;
   },
   getIsHost: (state) => {
     return state.isHost;

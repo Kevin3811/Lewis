@@ -29,6 +29,7 @@ game:
     - Australia
     - Cities
     - Small Towns
+    - Test
   videos:
     #NA
     - url: WruNXhtEbdM
@@ -44,7 +45,7 @@ game:
       start-time: 000300
       latitude: 37.7897
       longitude: -122.3972
-      description: San Francisco (check coordinates)
+      description: San Francisco
       playlists:
         - World
         - North America
@@ -60,18 +61,18 @@ game:
         - Cities
     - url: ymuN7-3MklE
       start-time: 0
-      latitude: 37.7897
-      longitude: -122.3972
-      description: San Francisco Trans America Pyramid (check coordinates)
+      latitude: 37.793660
+      longitude: -122.403014
+      description: San Francisco Trans America Pyramid
       playlists:
         - World
         - North America
         - Cities
     - url: zd6BYcjNMYw
       start-time: 000303
-      latitude: 37.7897
-      longitude: -122.3972
-      description: San Francisco Golden Gate Bridge (check coordinates)
+      latitude: 37.814993
+      longitude: -122.478002
+      description: San Francisco Golden Gate Bridge
       playlists:
         - World
         - North America
@@ -89,11 +90,12 @@ game:
       start-time: 000077
       latitude: 37.762256
       longitude: -122.435177
-      description: San Francisco (check coordinates)
+      description: San Francisco
       playlists:
         - World
         - North America
         - Cities
+        - Test
     - url: I8YGf7d7GsA
       start-time: 000056
       latitude: 38.6247

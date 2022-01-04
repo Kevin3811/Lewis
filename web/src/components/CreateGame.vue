@@ -68,6 +68,7 @@
 
 <script>
 import videoApi from "../api/video.js";
+import { v4 as uuidv4 } from "uuid";
 
 export default {
   name: "gamemode",
@@ -130,7 +131,6 @@ export default {
           this.selectedPlaylists
         );
         this.$store.dispatch("setVideos", videos);
-        this.$store.dispatch("setUsername", this.username);
         this.$store.dispatch("setRoundLength", this.roundLength);
         this.$store.dispatch("setRoundCount", this.roundCount);
         this.$store.dispatch("setCurrentRound", 1);
@@ -142,6 +142,29 @@ export default {
       else {
         console.log("multiplayer submit");
       }
+      //Common settings between multiplayer and singleplayer
+      const clientCode = uuidv4();
+      let user = {
+        username: this.username,
+        clientCode: clientCode,
+        score: 0,
+        latGuess: undefined,
+        lonGuess: undefined,
+        previousScore: undefined,
+      };
+      //TODO: get rid of fake user at some point
+      let fakeuser = {
+        username: "Nick",
+        score: 499,
+        clientCode: "987654321",
+        latGuess: 20,
+        lonGuess: 20,
+        previousScore: undefined,
+      };
+      this.$store.dispatch("setUsername", this.username);
+      this.$store.dispatch("setClientCode", clientCode);
+      this.$store.dispatch("addUser", user);
+      this.$store.dispatch("addUser", fakeuser);
     },
     cancel() {
       this.$emit("cancel-create-game");

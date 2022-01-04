@@ -195,6 +195,8 @@ export default {
       );
       this.roundOver = false;
       this.$store.dispatch("setIsGuessing", false);
+      this.$store.dispatch("incrementPlayersScore");
+      this.$store.dispatch("resetPlayersPreviousRound");
       this.startTimer();
     },
     startTimer() {
@@ -203,7 +205,6 @@ export default {
       this.countDownTimer = setInterval(() => {
         this.secondsLeft -= 1;
         if (this.secondsLeft <= 0) {
-          console.log("round over: ", this.countDownTimer);
           this.roundOver = true;
           clearInterval(this.countDownTimer);
         }
