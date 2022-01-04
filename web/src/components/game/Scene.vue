@@ -70,6 +70,7 @@
         v-on:guessPanelMoved="guessPanelMoved"
         :roundOver="roundOver"
         :guessPanel="guessPanel"
+        :gamemode="gamemode"
       />
     </div>
     <!--Guess Button-->
@@ -197,6 +198,7 @@ export default {
       this.$store.dispatch("setIsGuessing", false);
       this.$store.dispatch("incrementPlayersScore");
       this.$store.dispatch("resetPlayersPreviousRound");
+      this.$store.dispatch("setShowLobbyAnswers", false);
       this.startTimer();
     },
     startTimer() {
