@@ -68,8 +68,12 @@
         :video="currentVideo"
         v-on:nextRound="nextRound"
         v-on:guessPanelMoved="guessPanelMoved"
+        v-on:markerPlaced="markerPlaced"
         :roundOver="roundOver"
         :guessPanel="guessPanel"
+        :gamemode="gamemode"
+        :guessLat="markerLat"
+        :guessLon="markerLon"
       />
     </div>
     <!--Guess Button-->
@@ -96,6 +100,8 @@ export default {
       secondsLeft: undefined,
       roundOver: false,
       guessPanel: undefined,
+      markerLat: undefined,
+      markerLon: undefined,
     };
   },
   computed: {
@@ -189,15 +195,25 @@ export default {
       this.player.seekTo(this.playerVars.start);
     },
     nextRound() {
-      this.$store.dispatch(
-        "setCurrentRound",
-        this.$store.getters.getCurrentRound + 1
-      );
-      this.roundOver = false;
-      this.$store.dispatch("setIsGuessing", false);
       this.$store.dispatch("incrementPlayersScore");
-      this.$store.dispatch("resetPlayersPreviousRound");
-      this.startTimer();
+      if (this.currentRound === this.roundCount) {
+        //Change route to "end" instead of pushing to make back button go back to home screen
+        this.$router.replace({ name: "End" });
+      }
+      //Only continue game if the round limit hasn't been reached
+      else {
+        this.$store.dispatch(
+          "setCurrentRound",
+          this.$store.getters.getCurrentRound + 1
+        );
+        this.roundOver = false;
+        this.markerLat = undefined;
+        this.markerLon = undefined;
+        this.$store.dispatch("setIsGuessing", false);
+        this.$store.dispatch("resetPlayersPreviousRound");
+        this.$store.dispatch("setShowLobbyAnswers", false);
+        this.startTimer();
+      }
     },
     startTimer() {
       this.secondsLeft = this.$store.getters.getRoundLength;
@@ -212,6 +228,11 @@ export default {
     },
     guessPanelMoved(event) {
       this.guessPanel = event;
+    },
+    markerPlaced(event) {
+      console.log("event: ", event);
+      this.markerLat = event.guessLat;
+      this.markerLon = event.guessLon;
     },
   },
   onDestroy() {

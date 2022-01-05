@@ -35,7 +35,13 @@
       <!-- Show all other player answers -->
       <div v-if="showLobbyAnswers && (roundOver || hasGuessed)">
         <div v-for="lobbyUser in lobbyUsers" :key="lobbyUser.clientCode">
-          <div v-if="lobbyUser.clientCode !== playerClientCode">
+          <div
+            v-if="
+              lobbyUser.clientCode !== playerClientCode &&
+                (lobbyUser.latGuess !== undefined ||
+                  lobbyUser.lonGuess !== undefined)
+            "
+          >
             <l-marker :lat-lng="[lobbyUser.latGuess, lobbyUser.lonGuess]">
               <l-icon icon-url="./bluemarker.png"> </l-icon>
               <l-tooltip :options="{ opacity: 0.4 }">{{
@@ -46,6 +52,7 @@
         </div>
       </div>
     </l-map>
+    <!--Bottom cance, skip/next, and guess buttons-->
     <div class="footer">
       <div class="footer-buttons">
         <span class="cancel-button" v-on:click="exit">Cancel</span>
@@ -87,6 +94,9 @@ export default {
     video: Object,
     roundOver: Boolean,
     guessPanel: Object,
+    gamemode: String,
+    guessLat: Number,
+    guessLon: Number,
   },
   data() {
     return {
@@ -97,8 +107,8 @@ export default {
       english: true,
       nativeLanguages: false,
       distance: "",
-      guessLat: undefined,
-      guessLon: undefined,
+      // guessLat: undefined,
+      // guessLon: undefined,
       hasGuessed: false,
       positions: {
         clientX: undefined,
@@ -167,8 +177,12 @@ export default {
     },
     mapClick(event) {
       if (event && !this.hasGuessed && !this.roundOver) {
-        this.guessLat = event.latlng.lat;
-        this.guessLon = event.latlng.lng;
+        // this.guessLat = event.latlng.lat;
+        // this.guessLon = event.latlng.lng;
+        this.$emit("markerPlaced", {
+          guessLat: event.latlng.lat,
+          guessLon: event.latlng.lng,
+        });
       }
     },
     guess() {
@@ -182,12 +196,17 @@ export default {
       this.currentUser.previousScore = Math.ceil(this.distance.score);
       this.currentUser.latGuess = this.guessLon;
       this.currentUser.lonGuess = this.guessLon;
-      console.log("scoring: ", this.distance);
+      //If it's single player, show the lobby answers immediately
+      if (this.gamemode === "singleplayer") {
+        this.$store.dispatch("setShowLobbyAnswers", true);
+      }
+      //TODO: If it's multiplayer don't show all answers until the round is actually finished
+      else {
+        console.log("multiplayer");
+      }
     },
     next() {
       this.hasGuessed = false;
-      this.guessLat = undefined;
-      this.guessLon = undefined;
       this.$emit("nextRound");
     },
     dragMouseDown(event) {
