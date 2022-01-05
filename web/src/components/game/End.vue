@@ -42,7 +42,6 @@ export default {
           range: [0, this.roundCount * 1000],
           tick0: 0,
           dtick: 1000,
-          tickformat: ",.2r",
           fixedrange: true,
           gridcolor: "#888888",
         },

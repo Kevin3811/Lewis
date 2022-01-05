@@ -95,6 +95,8 @@ export default {
     roundOver: Boolean,
     guessPanel: Object,
     gamemode: String,
+    guessLat: Number,
+    guessLon: Number,
   },
   data() {
     return {
@@ -105,8 +107,8 @@ export default {
       english: true,
       nativeLanguages: false,
       distance: "",
-      guessLat: undefined,
-      guessLon: undefined,
+      // guessLat: undefined,
+      // guessLon: undefined,
       hasGuessed: false,
       positions: {
         clientX: undefined,
@@ -175,8 +177,12 @@ export default {
     },
     mapClick(event) {
       if (event && !this.hasGuessed && !this.roundOver) {
-        this.guessLat = event.latlng.lat;
-        this.guessLon = event.latlng.lng;
+        // this.guessLat = event.latlng.lat;
+        // this.guessLon = event.latlng.lng;
+        this.$emit("markerPlaced", {
+          guessLat: event.latlng.lat,
+          guessLon: event.latlng.lng,
+        });
       }
     },
     guess() {
@@ -198,12 +204,9 @@ export default {
       else {
         console.log("multiplayer");
       }
-      console.log("scoring: ", this.distance);
     },
     next() {
       this.hasGuessed = false;
-      this.guessLat = undefined;
-      this.guessLon = undefined;
       this.$emit("nextRound");
     },
     dragMouseDown(event) {

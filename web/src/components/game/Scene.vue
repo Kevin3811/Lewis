@@ -68,9 +68,12 @@
         :video="currentVideo"
         v-on:nextRound="nextRound"
         v-on:guessPanelMoved="guessPanelMoved"
+        v-on:markerPlaced="markerPlaced"
         :roundOver="roundOver"
         :guessPanel="guessPanel"
         :gamemode="gamemode"
+        :guessLat="markerLat"
+        :guessLon="markerLon"
       />
     </div>
     <!--Guess Button-->
@@ -97,6 +100,8 @@ export default {
       secondsLeft: undefined,
       roundOver: false,
       guessPanel: undefined,
+      markerLat: undefined,
+      markerLon: undefined,
     };
   },
   computed: {
@@ -202,6 +207,8 @@ export default {
           this.$store.getters.getCurrentRound + 1
         );
         this.roundOver = false;
+        this.markerLat = undefined;
+        this.markerLon = undefined;
         this.$store.dispatch("setIsGuessing", false);
         this.$store.dispatch("resetPlayersPreviousRound");
         this.$store.dispatch("setShowLobbyAnswers", false);
@@ -221,6 +228,11 @@ export default {
     },
     guessPanelMoved(event) {
       this.guessPanel = event;
+    },
+    markerPlaced(event) {
+      console.log("event: ", event);
+      this.markerLat = event.guessLat;
+      this.markerLon = event.guessLon;
     },
   },
   onDestroy() {
