@@ -15,7 +15,10 @@ export default {
     state.lobbyUsers.forEach((user) => {
       if (user.previousScore !== undefined) {
         user.score += user.previousScore;
+      } else {
+        user.score += 0;
       }
+      user.scores.push(user.score);
     });
   },
   addUser(state, user) {

@@ -190,16 +190,23 @@ export default {
       this.player.seekTo(this.playerVars.start);
     },
     nextRound() {
-      this.$store.dispatch(
-        "setCurrentRound",
-        this.$store.getters.getCurrentRound + 1
-      );
-      this.roundOver = false;
-      this.$store.dispatch("setIsGuessing", false);
       this.$store.dispatch("incrementPlayersScore");
-      this.$store.dispatch("resetPlayersPreviousRound");
-      this.$store.dispatch("setShowLobbyAnswers", false);
-      this.startTimer();
+      if (this.currentRound === this.roundCount) {
+        //Change route to "end" instead of pushing to make back button go back to home screen
+        this.$router.replace({ name: "End" });
+      }
+      //Only continue game if the round limit hasn't been reached
+      else {
+        this.$store.dispatch(
+          "setCurrentRound",
+          this.$store.getters.getCurrentRound + 1
+        );
+        this.roundOver = false;
+        this.$store.dispatch("setIsGuessing", false);
+        this.$store.dispatch("resetPlayersPreviousRound");
+        this.$store.dispatch("setShowLobbyAnswers", false);
+        this.startTimer();
+      }
     },
     startTimer() {
       this.secondsLeft = this.$store.getters.getRoundLength;

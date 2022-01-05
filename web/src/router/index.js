@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Scene from "../components/game/Scene.vue";
 import Main from "../components/Main.vue";
+import End from "../components/game/End.vue";
 
 Vue.use(VueRouter);
 
@@ -21,6 +22,11 @@ const routes = [
     path: "/",
     name: "Home",
     component: Main,
+  },
+  {
+    path: "/end-game",
+    name: "End",
+    component: End,
   },
 ];
 

@@ -151,6 +151,7 @@ export default {
         latGuess: undefined,
         lonGuess: undefined,
         previousScore: undefined,
+        scores: [],
       };
       //TODO: get rid of fake user at some point
       let fakeuser = {
@@ -160,6 +161,7 @@ export default {
         latGuess: 20,
         lonGuess: 20,
         previousScore: undefined,
+        scores: [],
       };
       this.$store.dispatch("setUsername", this.username);
       this.$store.dispatch("setClientCode", clientCode);
