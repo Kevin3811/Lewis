@@ -50,4 +50,9 @@ export default {
   getRoundLength: (state) => {
     return state.roundLength;
   },
+  getCurrentVideo: (state) => {
+    let currentVideo =
+      state.videos[(state.currentRound - 1) % state.videos.length];
+    return currentVideo;
+  },
 };

@@ -2,7 +2,7 @@
   <div class="end">
     <div class="header">
       <label class="gameResults">Game Results</label>
-      <b-button variant="primary">Play Again</b-button>
+      <b-button variant="primary" v-on:click="playAgain">Play Again</b-button>
     </div>
     <div class="plot">
       <Plotly :data="data" :layout="layout" :display-mode-bar="false"></Plotly>
@@ -76,6 +76,11 @@ export default {
       data.push(plot);
     });
     this.data = data;
+  },
+  methods: {
+    playAgain() {
+      this.$router.replace({ name: "Home" });
+    },
   },
 };
 </script>
