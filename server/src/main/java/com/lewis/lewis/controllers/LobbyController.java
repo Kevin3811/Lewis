@@ -1,6 +1,7 @@
 package com.lewis.lewis.controllers;
 
 import com.lewis.lewis.config.Videos;
+import com.lewis.lewis.game.GameInstances;
 import com.lewis.lewis.repository.PlaylistRepository;
 import com.lewis.lewis.repository.VideoRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -19,11 +20,13 @@ public class LobbyController {
 
     private PlaylistRepository playlistRepository;
     private VideoRepository videoRepository;
+    private GameInstances gameInstances;
 
     @Autowired
     public LobbyController(PlaylistRepository playlistRepository, VideoRepository videoRepository){
         this.playlistRepository = playlistRepository;
         this.videoRepository = videoRepository;
+        this.gameInstances = GameInstances.getGameInstances();
     }
 
     @GetMapping("/playlists")

@@ -12,17 +12,24 @@ import java.util.Map;
 public class GameInstances {
 
     //Singleton
-    private GameInstances gameInstances;
+    private static GameInstances gameInstances;
 
+    //Key: GameCode, Value: Game
     private Map<String, Game> games = new HashMap<>();
 
     private GameInstances(){}
 
-    public GameInstances getGameInstances(){
+    public static GameInstances getGameInstances(){
         if(gameInstances == null){
             gameInstances = new GameInstances();
         }
         return gameInstances;
+    }
+
+    public static void initGameInstances(){
+        if(gameInstances == null){
+            gameInstances = new GameInstances();
+        }
     }
 
     public Game getGame(String gameCode){

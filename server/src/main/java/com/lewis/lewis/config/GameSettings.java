@@ -2,6 +2,8 @@ package com.lewis.lewis.config;
 
 import com.lewis.lewis.entity.PlaylistEntity;
 import com.lewis.lewis.entity.VideoEntity;
+import com.lewis.lewis.game.Game;
+import com.lewis.lewis.game.GameInstances;
 import com.lewis.lewis.repository.PlaylistRepository;
 import com.lewis.lewis.repository.VideoRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -32,6 +34,7 @@ public class GameSettings {
     public void init(){
         initPlaylists();
         initVideos();
+        initGameInstances();
     }
 
     /**
@@ -65,6 +68,10 @@ public class GameSettings {
             videoRepository.save(videoEntity);
             log.info("Added video [{}] to database", video.getUrl());
         }
+    }
+
+    private void initGameInstances(){
+        GameInstances.initGameInstances();
     }
 
 }
