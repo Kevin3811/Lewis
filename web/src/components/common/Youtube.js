@@ -76,7 +76,7 @@ export default {
       console.log("error: ", e);
       this.$emit("error", e.target);
     },
-    async updatePlayer(videoId) {
+    updatePlayer(videoId) {
       if (!videoId) {
         this.player.stopVideo();
         return;
