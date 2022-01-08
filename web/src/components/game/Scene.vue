@@ -170,11 +170,7 @@ export default {
       this.$store.dispatch("setIsGuessing", !this.isGuessing);
     },
     changePlaybackRate() {
-      //TODO: Fix playback rate changer
-      this.player.setPlaybackRate(this.playbackRate);
-      // console.log("localplayback rate: ", this.playbackRate);
-      console.log("player playback rate: ", this.player.getPlaybackRate());
-      // console.log("available rates: ", this.player.getAvailablePlaybackRates());
+      this.player.setPlaybackRate(Number(this.playbackRate));
     },
     changeVolumePercent() {
       this.player.setVolume(this.volumePercent);

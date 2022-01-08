@@ -73,7 +73,6 @@ export default {
       }
     },
     playerError(e) {
-      console.log("error: ", e);
       this.$emit("error", e.target);
     },
     updatePlayer(videoId) {
