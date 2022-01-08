@@ -21,10 +21,10 @@
     "vue-plotly": "^1.1.0",
     "vue-router": "^3.5.3",
     "vue-template-compiler": "^2.6.11",
-    "vue-youtube": "^1.4.0",
     "vue2-leaflet": "^2.7.1",
     "vuex": "^3.6.2",
-    "websocket": "^1.0.34"
+    "websocket": "^1.0.34",
+    "youtube-player": "^5.5.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
