@@ -152,21 +152,22 @@ export default {
         lonGuess: undefined,
         previousScore: undefined,
         scores: [],
+        guesses: [],
       };
       //TODO: get rid of fake user at some point
-      let fakeuser = {
-        username: "Nick",
-        score: 499,
-        clientCode: "987654321",
-        latGuess: 20,
-        lonGuess: 20,
-        previousScore: undefined,
-        scores: [],
-      };
+      // let fakeuser = {
+      //   username: "Nick",
+      //   score: 499,
+      //   clientCode: "987654321",
+      //   latGuess: 20,
+      //   lonGuess: 20,
+      //   previousScore: undefined,
+      //   scores: [],
+      // };
       this.$store.dispatch("setUsername", this.username);
       this.$store.dispatch("setClientCode", clientCode);
       this.$store.dispatch("addUser", user);
-      this.$store.dispatch("addUser", fakeuser);
+      // this.$store.dispatch("addUser", fakeuser);
     },
     cancel() {
       this.$emit("cancel-create-game");

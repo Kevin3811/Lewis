@@ -2,13 +2,13 @@
   <div class="scene">
     <div class="video-container">
       <div class="video-foreground">
-        <youtube
+        <Youtube
           :video-id="currentVideo.url"
           ref="youtube"
           :nocookie="true"
           :fitParent="true"
           :playerVars="playerVars"
-        ></youtube>
+        ></Youtube>
       </div>
     </div>
     <div>
@@ -85,12 +85,14 @@
 import Scores from "./Scores";
 import Guess from "./Guess";
 import websocket from "../../api/websocket.js";
+import Youtube from "../common/Youtube.js";
 
 export default {
   name: "Scene",
   components: {
     Scores,
     Guess,
+    Youtube,
   },
   data() {
     return {
@@ -124,10 +126,7 @@ export default {
       return this.$store.getters.getRoundCount;
     },
     currentVideo() {
-      let videos = this.$store.getters.getVideos;
-      let currentVideo = videos[(this.currentRound - 1) % videos.length];
-      console.log("currentVideo: ", currentVideo);
-      return currentVideo;
+      return this.$store.getters.getCurrentVideo;
     },
     playerVars() {
       return {
@@ -136,7 +135,7 @@ export default {
         loop: 1,
         disablekb: 1,
         modestbranding: 1,
-        start: this.currentVideo.startTime,
+        start: parseInt(this.$store.getters.getCurrentVideo.startTime),
         iv_load_policy: 3,
         playsinline: 1,
         rel: 0,
@@ -151,7 +150,6 @@ export default {
   },
   mounted() {
     this.player.setVolume(this.volumePercent);
-    this.player.playVideo();
     //Set lobbycode variable from route parameter
     this.$store.dispatch("setLobbyCode", this.$route.params.lobbyCode);
     console.log("lobbyCode: ", this.$store.getters.getLobbyCode);
@@ -172,11 +170,7 @@ export default {
       this.$store.dispatch("setIsGuessing", !this.isGuessing);
     },
     changePlaybackRate() {
-      //TODO: Fix playback rate changer
-      this.player.setPlaybackRate(this.playbackRate);
-      // console.log("localplayback rate: ", this.playbackRate);
-      console.log("player playback rate: ", this.player.getPlaybackRate());
-      // console.log("available rates: ", this.player.getAvailablePlaybackRates());
+      this.player.setPlaybackRate(Number(this.playbackRate));
     },
     changeVolumePercent() {
       this.player.setVolume(this.volumePercent);
@@ -230,7 +224,6 @@ export default {
       this.guessPanel = event;
     },
     markerPlaced(event) {
-      console.log("event: ", event);
       this.markerLat = event.guessLat;
       this.markerLon = event.guessLon;
     },

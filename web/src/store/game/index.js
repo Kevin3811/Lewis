@@ -27,6 +27,7 @@ export default {
     //   lonGuess: 20,
     //   previousScore: 546,
     //   scores: [50, 739],
+    //   guesses: [{lat: 90, lon: 90}, {lat: 80, lon: 80}]
     // };
     lobbyUsers: [],
   },
