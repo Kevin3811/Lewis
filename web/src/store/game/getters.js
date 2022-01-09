@@ -1,7 +1,7 @@
 //WAY TO ACCESS AND FORMAT STATE VARIABLES
 export default {
   getUsername: (state) => {
-    return state.username;
+    return state.player.username;
   },
   getLobbyUsers: (state) => {
     return state.lobbyUsers;
@@ -11,20 +11,17 @@ export default {
   },
   getCurrentUser: (state) => {
     return state.lobbyUsers.find((user) => {
-      return user.clientCode === state.clientCode;
+      return user.clientCode === state.player.clientCode;
     });
   },
   getClientCode: (state) => {
-    return state.clientCode;
+    return state.player.clientCode;
   },
   getIsHost: (state) => {
-    return state.isHost;
+    return state.player.isHost;
   },
   getIsGuessing: (state) => {
-    return state.isguessing;
-  },
-  getHasGuessed: (state) => {
-    return state.hasguessed;
+    return state.player.isGuessing;
   },
   getShowLobbyAnswers: (state) => {
     return state.showLobbyAnswers;
@@ -54,5 +51,8 @@ export default {
     let currentVideo =
       state.videos[(state.currentRound - 1) % state.videos.length];
     return currentVideo;
+  },
+  getPlayer: (state) => {
+    return state.player;
   },
 };

@@ -26,4 +26,13 @@ export default {
     }
     return response.data;
   },
+  async deletePlayerFromLobby(player) {
+    let response;
+    try {
+      response = await instance.post("/remove-player", player);
+    } catch (error) {
+      console.error("Error removing player from lobby: ", response.status);
+    }
+    return response.data;
+  },
 };

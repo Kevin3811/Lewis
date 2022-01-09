@@ -5,12 +5,12 @@ import getters from "./getters";
 export default {
   state: {
     //TODO: get rid of hard coded state values used for testing
-    username: "",
-    clientCode: "",
-    score: 0,
+    // username: "",
+    // clientCode: "",
+    // score: 0,
     gamemode: "",
-    ishost: false,
-    isguessing: false,
+    // ishost: false,
+    // isguessing: false,
     showLobbyAnswers: true,
     playlists: [],
     videos: [],
@@ -27,10 +27,12 @@ export default {
     //   lonGuess: 20,
     //   previousScore: 546,
     //   scores: [50, 739],
-    //   guesses: [{lat: 90, lon: 90}, {lat: 80, lon: 80}]
-    //   lobbyCode
+    //   guesses: [{lat: 90, lon: 90}, {lat: 80, lon: 80}],
+    //   lobbyCode: asdfadf,
+    //   isHost: false
     // };
     lobbyUsers: [],
+    player: {},
   },
   actions,
   mutations,

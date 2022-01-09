@@ -29,8 +29,14 @@ function createConnection(lobbyCode) {
 
 function subscribe(lobbyCode) {
   if (client) {
+    //Updating scores
     client.subscribe("/topic/scores/" + lobbyCode, (message) => {
       store.dispatch("updateScores", message.body);
+    });
+    //Updating players in lobby
+    client.subscribe("/topic/players/" + lobbyCode, (message) => {
+      // store.dispatch("updateScores", message.body);
+      console.log("players: ", message);
     });
     console.log("Websocket subsribed to topics for lobby: ", lobbyCode);
   }

@@ -63,4 +63,7 @@ export default {
   setCurrentRound(context, currentRound) {
     context.commit("setCurrentRound", currentRound);
   },
+  setPlayer(context, player) {
+    context.commit("setPlayer", player);
+  },
 };

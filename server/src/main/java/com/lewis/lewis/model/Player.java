@@ -17,7 +17,7 @@ public class Player {
     private boolean isHost;
     private boolean isGuessing;
 
-    private String lobbyCode;
+    private String gameCode;
 
     private Double latGuess;
     private Double lonGuess;

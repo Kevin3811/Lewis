@@ -1,11 +1,12 @@
 package com.lewis.lewis.messaging;
 
+import com.lewis.lewis.game.Game;
+import com.lewis.lewis.game.GameInstances;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -14,6 +15,8 @@ public class WebSocket {
 
     @Autowired
     private SimpMessagingTemplate messagingTemplate;
+
+    private GameInstances gameInstances = GameInstances.getGameInstances();
 
     @MessageMapping("/scores")
     @SendTo("/topic/scores")
@@ -28,4 +31,10 @@ public class WebSocket {
 //    public void test2(){
 //        test("message");
 //    }
+
+    @SendTo("/topic/players")
+    public void sendPlayerList(String gameCode){
+        Game game = gameInstances.getGame(gameCode);
+        messagingTemplate.convertAndSend("/topic/players/" + game.getGameCode(), game.getPlayers());
+    }
 }
