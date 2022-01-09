@@ -6,6 +6,7 @@ import {
   IconsPlugin,
   CardPlugin,
   FormPlugin,
+  ModalPlugin,
 } from "bootstrap-vue";
 import "leaflet/dist/leaflet.css";
 import { Icon } from "leaflet";
@@ -21,6 +22,7 @@ Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
 Vue.use(CardPlugin);
 Vue.use(FormPlugin);
+Vue.use(ModalPlugin);
 Vue.use(VueRouter);
 
 delete Icon.Default.prototype._getIconUrl;

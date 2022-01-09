@@ -19,7 +19,7 @@ public class Player {
 
     private String lobbyCode;
 
-    private Double latitudeGuess;
-    private Double longitudeGuess;
+    private Double latGuess;
+    private Double lonGuess;
 
 }

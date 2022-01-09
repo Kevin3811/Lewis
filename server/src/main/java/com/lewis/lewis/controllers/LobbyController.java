@@ -1,15 +1,16 @@
 package com.lewis.lewis.controllers;
 
 import com.lewis.lewis.config.Videos;
+import com.lewis.lewis.game.Game;
 import com.lewis.lewis.game.GameInstances;
+import com.lewis.lewis.model.Player;
 import com.lewis.lewis.repository.PlaylistRepository;
 import com.lewis.lewis.repository.VideoRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
 
@@ -96,4 +97,57 @@ public class LobbyController {
         return videos;
     }
 
+    @PostMapping("/create-lobby")
+    public ResponseEntity<List<Videos.Video>> createLobby(@RequestBody Game game){
+        ResponseEntity<List<Videos.Video>> response;
+        log.info("game: [{}]", game);
+        //If there aren't any selected playlists, make world the default
+        if(game.getIncludedPlaylists().isEmpty()){
+            game.getIncludedPlaylists().add("World");
+        }
+        //Create lobby if the required parameters were provided
+        if(game.getGameCode() != null && !game.getGameCode().isEmpty() &&
+            game.getRoundCount() != null && game.getRoundLength() != null){
+            //Set the videos for the lobby and then add the game object to the game instances
+            List<Videos.Video> videos = new ArrayList<>();
+            videoRepository.findByPlaylistsIn(game.getIncludedPlaylists()).forEach(video ->{
+                videos.add(Videos.Video.builder()
+                        .latitude(video.getLatitude())
+                        .longitude(video.getLongitude())
+                        .playlists(video.getPlaylists())
+                        .startTime(video.getStartTime())
+                        .url(video.getUrl())
+                        .description(video.getDescription())
+                        .build());
+            });
+            game.setVideos(videos);
+            gameInstances.addGame(game);
+            response = new ResponseEntity<>(videos, HttpStatus.OK);
+        }else{
+            response = new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
+        }
+        return response;
+    }
+
+    @PostMapping("/add-user")
+    public ResponseEntity<Player> addPlayerToLobby(@RequestBody Player player){
+        ResponseEntity<Player> response;
+        //Make sure Player object has required parameters
+        if(player.getUsername() != null && !player.getUsername().isEmpty() &&
+            player.getClientCode() != null && !player.getClientCode().isEmpty() &&
+            player.getLobbyCode() != null && !player.getLobbyCode().isEmpty()
+        ){
+            Game game = gameInstances.getGame(player.getLobbyCode());
+            if(game != null){
+                game.getPlayers().put(player.getClientCode(), player);
+                response = new ResponseEntity<>(player, HttpStatus.OK);
+            }else{
+                //Game doesn't exist
+                response = new ResponseEntity<>(player, HttpStatus.BAD_REQUEST);
+            }
+        }else{
+            response = new ResponseEntity<>(player, HttpStatus.BAD_REQUEST);
+        }
+        return response;
+    }
 }

@@ -7,8 +7,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 @Component
 @Slf4j
@@ -20,8 +20,10 @@ public class Game {
     private Integer currentRound;
     private Double roundLength;
 
-    private String playlist;
-    private Set<Videos.Video> videos;
+    private List<String> includedPlaylists;
+    private List<String> excludedPlaylists;
+    private List<Videos.Video> videos;
 
+    //Key: ClientCode, Value: Player Object
     private Map<String, Player> players = new HashMap<>();
 }

@@ -19,31 +19,39 @@
           v-on:click="play('singleplayer')"
         >
         </b-card>
-        <!--TODO: get rid of hard coded lobby code -->
-        <router-link
-          :to="{ name: 'Multiplayer', params: { lobbyCode: '123' } }"
-        >
-          <b-card
-            footer="Multiplayer"
-            img-top
-            img-src="./multiplayer.png"
-            img-height="300px;"
-            :style="cardStyle"
-            class="mb-2"
-            v-on:click="play('multiplayer')"
-          ></b-card>
-        </router-link>
+        <b-card
+          footer="Multiplayer"
+          img-top
+          img-src="./multiplayer.png"
+          img-height="300px;"
+          :style="cardStyle"
+          class="mb-2"
+          v-b-modal.lobbyselect
+        ></b-card>
       </div>
-      <!-- <button v-on:click="test">
-        Test
-      </button> -->
+      <!--For multiplayer create or join lobby-->
+      <!--Change ok button to cancel button since there isn't a way to only display cancel-->
+      <b-modal
+        id="lobbyselect"
+        title="Multiplayer Lobby"
+        centered
+        :ok-only="true"
+        :ok-title="'Cancel'"
+        v-model="showModal"
+      >
+        <div class="modalButtons">
+          <b-button class="modalButton" v-on:click="play('multiplayer')"
+            >Create New Lobby</b-button
+          >
+          <b-button class="modalButton">Join Existing Lobby</b-button>
+        </div>
+      </b-modal>
     </div>
   </div>
 </template>
 
 <script>
 import playlistApi from "../api/playlist.js";
-// import video from "../api/video.js";
 import CreateGame from "./CreateGame.vue";
 
 export default {
@@ -56,6 +64,7 @@ export default {
       selectedGamemode: "",
       cardStyle: `max-width: 20rem; cursor: pointer; background-color:gray; max-height: 25rem; min-height: 25rem; text-align: center;`,
       createGame: false,
+      showModal: false,
     };
   },
   computed: {
@@ -69,22 +78,13 @@ export default {
     this.$store.dispatch("setPlaylists", playlists);
   },
   methods: {
-    test() {
-      // let playlists = playlist.getAllPlaylists();
-      // playlists.forEach((playlist) => {
-      //   console.log("playlist: ", playlist);
-      // });
-      // let playlists = this.$store.getters.getPlaylists;
-      // console.log("test: ", playlists);
-      // let videos = video.getVideosForPlaylist("Cities");
-      // console.log("Test: ", videos);
-    },
     play(gamemode) {
       this.selectedGamemode = gamemode;
       this.createGame = true;
       if (gamemode === "singleplayer") {
         this.$store.dispatch("setIsHost", true);
       } else if (gamemode === "multiplayer") {
+        this.showModal = false;
         this.$store.dispatch("setIsHost", false);
       }
     },
@@ -118,5 +118,12 @@ h3 {
 #nav a.router-link-exact-active {
   background-color: gray;
   text-align: center;
+}
+.modalButtons {
+  display: flex;
+  justify-content: center;
+}
+.modalButton {
+  margin: auto;
 }
 </style>
