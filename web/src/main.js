@@ -1,12 +1,12 @@
 import Vue from "vue";
 import store from "./store";
 import App from "./App.vue";
-import VueYoutube from "vue-youtube";
 import {
   BootstrapVue,
   IconsPlugin,
   CardPlugin,
   FormPlugin,
+  ModalPlugin,
 } from "bootstrap-vue";
 import "leaflet/dist/leaflet.css";
 import { Icon } from "leaflet";
@@ -18,12 +18,11 @@ import router from "./router";
 
 Vue.config.productionTip = false;
 
-Vue.use(VueYoutube);
-
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
 Vue.use(CardPlugin);
 Vue.use(FormPlugin);
+Vue.use(ModalPlugin);
 Vue.use(VueRouter);
 
 delete Icon.Default.prototype._getIconUrl;

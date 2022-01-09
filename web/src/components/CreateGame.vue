@@ -68,6 +68,7 @@
 
 <script>
 import videoApi from "../api/video.js";
+import lobbyApi from "../api/lobby.js";
 import { v4 as uuidv4 } from "uuid";
 
 export default {
@@ -126,23 +127,11 @@ export default {
     async submit(event) {
       //Prevent default to prevent page from refreshing when submitting form
       event.preventDefault();
-      if (this.gamemode === "singleplayer") {
-        let videos = await videoApi.getVideosForPlaylists(
-          this.selectedPlaylists
-        );
-        this.$store.dispatch("setVideos", videos);
-        this.$store.dispatch("setRoundLength", this.roundLength);
-        this.$store.dispatch("setRoundCount", this.roundCount);
-        this.$store.dispatch("setCurrentRound", 1);
-        this.$store.dispatch("setPlaylists", this.playlists);
-        console.log("videos: ", videos);
-        this.$router.push({ name: "Singleplayer" });
-      }
-      //If Multiplayer
-      else {
-        console.log("multiplayer submit");
-      }
       //Common settings between multiplayer and singleplayer
+      this.$store.dispatch("setRoundLength", this.roundLength);
+      this.$store.dispatch("setRoundCount", this.roundCount);
+      this.$store.dispatch("setCurrentRound", 1);
+      this.$store.dispatch("setPlaylists", this.playlists);
       const clientCode = uuidv4();
       let user = {
         username: this.username,
@@ -154,20 +143,45 @@ export default {
         scores: [],
         guesses: [],
       };
-      //TODO: get rid of fake user at some point
-      // let fakeuser = {
-      //   username: "Nick",
-      //   score: 499,
-      //   clientCode: "987654321",
-      //   latGuess: 20,
-      //   lonGuess: 20,
-      //   previousScore: undefined,
-      //   scores: [],
-      // };
       this.$store.dispatch("setUsername", this.username);
       this.$store.dispatch("setClientCode", clientCode);
-      this.$store.dispatch("addUser", user);
-      // this.$store.dispatch("addUser", fakeuser);
+
+      //Singleplayer
+      if (this.gamemode === "singleplayer") {
+        let videos = await videoApi.getVideosForPlaylists(
+          this.selectedPlaylists
+        );
+        this.$store.dispatch("setVideos", videos);
+        this.$store.dispatch("addUser", user);
+        console.log("videos: ", videos);
+        this.$router.push({ name: "Singleplayer" });
+      }
+      //Multiplayer
+      else {
+        const lobbyCode = uuidv4();
+        this.$store.dispatch("setLobbyCode", lobbyCode);
+        const game = {
+          gameCode: lobbyCode,
+          roundCount: this.roundCount,
+          currentRound: 0,
+          roundLength: this.roundLength,
+          includedPlaylists: this.selectedPlaylists,
+        };
+        let videos = await lobbyApi.createGame(game);
+        this.$store.dispatch("setVideos", videos);
+        this.$store.dispatch("setIsHost", true);
+        //In multiplayer set the lobby code for the user
+        user.lobbyCode = lobbyCode;
+        let player = await lobbyApi.addPlayerToLobby(user);
+        console.log("player: ", player);
+        this.$store.dispatch("addUser", user);
+        console.log("videos: ", videos);
+        // console.log("game: ", game);
+        // this.$router.replace({
+        //   name: "Multiplayer",
+        //   params: { lobbyCode: lobbyCode },
+        // });
+      }
     },
     cancel() {
       this.$emit("cancel-create-game");
