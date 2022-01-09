@@ -173,7 +173,19 @@ export default {
         user.gameCode = lobbyCode;
         user.isHost = true;
         let player = await lobbyApi.addPlayerToLobby(user);
-        this.$store.dispatch("setPlayer", player);
+        user = {
+          username: player.username,
+          clientCode: player.clientCode,
+          score: player.score,
+          latGuess: player.latGuess,
+          lonGuess: player.lonGuess,
+          previousScore: undefined,
+          scores: [],
+          guesses: [],
+          isGuessing: false,
+          isHost: true,
+        };
+        this.$store.dispatch("setPlayer", user);
         this.$store.dispatch("addUser", user);
         console.log("videos: ", videos);
         this.$router.replace({

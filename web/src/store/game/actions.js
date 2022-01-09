@@ -11,6 +11,7 @@ export default {
     context.commit("setPlaylists", []);
     context.commit("setClientCode", "");
     context.commit("clearUsers");
+    context.commit("setPlayer", {});
   },
   resetPlayersPreviousRound(context) {
     context.commit("resetPlayersPreviousRound");
