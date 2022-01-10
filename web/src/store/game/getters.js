@@ -18,10 +18,10 @@ export default {
     return state.player.clientCode;
   },
   getIsHost: (state) => {
-    return state.player.isHost;
+    return state.player.host;
   },
   getIsGuessing: (state) => {
-    return state.player.isGuessing;
+    return state.player.guessing;
   },
   getShowLobbyAnswers: (state) => {
     return state.showLobbyAnswers;

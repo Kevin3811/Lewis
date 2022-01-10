@@ -45,8 +45,8 @@ export default {
     //Set lobbycode variable from route parameter
     this.$store.dispatch("setLobbyCode", this.lobbyCode);
   },
-  destroyed() {
-    lobbyApi.deletePlayerFromLobby(this.player);
+  async beforeDestroy() {
+    await lobbyApi.deletePlayerFromLobby(this.player);
   },
   methods: {
     enterLobby(event) {
@@ -57,6 +57,7 @@ export default {
       let player = {
         username: this.username,
         clientCode: clientCode,
+        gameCode: this.lobbyCode,
         score: 0,
         latGuess: undefined,
         lonGuess: undefined,
@@ -64,9 +65,11 @@ export default {
         scores: [],
         guesses: [],
         isHost: false,
-        isGuessing: false,
+        guessing: false,
       };
       this.$store.dispatch("setPlayer", player);
+      //Add player to lobby server side
+      lobbyApi.addPlayerToLobby(player);
       console.log("enter");
     },
   },

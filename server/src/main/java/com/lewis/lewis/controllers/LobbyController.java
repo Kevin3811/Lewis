@@ -105,6 +105,7 @@ public class LobbyController {
 
     @PostMapping("/add-user")
     public ResponseEntity<Player> addPlayerToLobby(@RequestBody Player player){
+        log.info("Add player: {}", player);
         ResponseEntity<Player> response;
         //Make sure Player object has required parameters
         if(player.getUsername() != null && !player.getUsername().isEmpty() &&
@@ -130,6 +131,7 @@ public class LobbyController {
 
     @PostMapping("/remove-player")
     public ResponseEntity<Player> removePlayerFromLobby(@RequestBody Player player){
+        log.info("Remove player: {}", player);
         ResponseEntity<Player> response;
         if(player.getClientCode() != null && !player.getClientCode().isEmpty() &&
                 player.getGameCode() != null && !player.getGameCode().isEmpty()

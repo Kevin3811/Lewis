@@ -67,4 +67,7 @@ export default {
   setPlayer(context, player) {
     context.commit("setPlayer", player);
   },
+  setUsers(context, users) {
+    context.commit("setUsers", users);
+  },
 };

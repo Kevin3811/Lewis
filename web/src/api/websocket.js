@@ -35,8 +35,7 @@ function subscribe(lobbyCode) {
     });
     //Updating players in lobby
     client.subscribe("/topic/players/" + lobbyCode, (message) => {
-      // store.dispatch("updateScores", message.body);
-      console.log("players: ", message);
+      store.dispatch("setUsers", JSON.parse(message.body));
     });
     console.log("Websocket subsribed to topics for lobby: ", lobbyCode);
   }

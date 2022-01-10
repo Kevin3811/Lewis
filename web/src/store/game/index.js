@@ -4,13 +4,7 @@ import getters from "./getters";
 
 export default {
   state: {
-    //TODO: get rid of hard coded state values used for testing
-    // username: "",
-    // clientCode: "",
-    // score: 0,
     gamemode: "",
-    // ishost: false,
-    // isguessing: false,
     showLobbyAnswers: true,
     playlists: [],
     videos: [],

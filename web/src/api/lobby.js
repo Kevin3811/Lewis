@@ -13,7 +13,7 @@ export default {
     try {
       response = await instance.post("/create-lobby", game);
     } catch (error) {
-      console.error("Error creating lobby: ", response.status);
+      console.error("Error creating lobby: ", response);
     }
     return response.data;
   },
@@ -22,7 +22,7 @@ export default {
     try {
       response = await instance.post("/add-user", player);
     } catch (error) {
-      console.error("Error creating lobby: ", response.status);
+      console.error("Error creating lobby: ", response);
     }
     return response.data;
   },
@@ -31,7 +31,7 @@ export default {
     try {
       response = await instance.post("/remove-player", player);
     } catch (error) {
-      console.error("Error removing player from lobby: ", response.status);
+      console.error("Error removing player from lobby: ", response);
     }
     return response.data;
   },

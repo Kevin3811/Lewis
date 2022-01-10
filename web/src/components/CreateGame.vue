@@ -133,13 +133,15 @@ export default {
       let user = {
         username: this.username,
         clientCode: clientCode,
+        gameCode: undefined,
         score: 0,
         latGuess: undefined,
         lonGuess: undefined,
         previousScore: undefined,
         scores: [],
         guesses: [],
-        isGuessing: false,
+        guessing: false,
+        host: false,
       };
       this.$store.dispatch("setUsername", this.username);
       this.$store.dispatch("setClientCode", clientCode);
@@ -171,19 +173,20 @@ export default {
         this.$store.dispatch("setIsHost", true);
         //In multiplayer set the lobby code for the user
         user.gameCode = lobbyCode;
-        user.isHost = true;
+        user.host = true;
         let player = await lobbyApi.addPlayerToLobby(user);
         user = {
           username: player.username,
           clientCode: player.clientCode,
+          gameCode: player.gameCode,
           score: player.score,
           latGuess: player.latGuess,
           lonGuess: player.lonGuess,
           previousScore: undefined,
           scores: [],
           guesses: [],
-          isGuessing: false,
-          isHost: true,
+          guessing: false,
+          host: true,
         };
         this.$store.dispatch("setPlayer", user);
         this.$store.dispatch("addUser", user);

@@ -28,10 +28,10 @@ export default {
     state.gamemode = gamemode;
   },
   setIsHost(state, isHost) {
-    state.player.isHost = isHost;
+    state.player.host = isHost;
   },
   setIsGuessing(state, isGuessing) {
-    state.player.isGuessing = isGuessing;
+    state.player.guessing = isGuessing;
   },
   setClientCode(state, clientCode) {
     state.player.clientCode = clientCode;
@@ -62,5 +62,12 @@ export default {
   },
   setPlayer(state, player) {
     state.player = player;
+  },
+  setUsers(state, users) {
+    let lobbyUsers = [];
+    Object.values(users).forEach((user) => {
+      lobbyUsers.push(user);
+    });
+    state.lobbyUsers = lobbyUsers;
   },
 };
