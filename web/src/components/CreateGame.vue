@@ -120,9 +120,6 @@ export default {
       }
     },
   },
-  mounted() {
-    // console.log("create game for:", this.gamemode);
-  },
   methods: {
     async submit(event) {
       //Prevent default to prevent page from refreshing when submitting form
@@ -136,12 +133,15 @@ export default {
       let user = {
         username: this.username,
         clientCode: clientCode,
+        gameCode: undefined,
         score: 0,
         latGuess: undefined,
         lonGuess: undefined,
         previousScore: undefined,
         scores: [],
         guesses: [],
+        guessing: false,
+        host: false,
       };
       this.$store.dispatch("setUsername", this.username);
       this.$store.dispatch("setClientCode", clientCode);
@@ -153,6 +153,7 @@ export default {
         );
         this.$store.dispatch("setVideos", videos);
         this.$store.dispatch("addUser", user);
+        this.$store.dispatch("setPlayer", user);
         console.log("videos: ", videos);
         this.$router.push({ name: "Singleplayer" });
       }
@@ -171,16 +172,29 @@ export default {
         this.$store.dispatch("setVideos", videos);
         this.$store.dispatch("setIsHost", true);
         //In multiplayer set the lobby code for the user
-        user.lobbyCode = lobbyCode;
+        user.gameCode = lobbyCode;
+        user.host = true;
         let player = await lobbyApi.addPlayerToLobby(user);
-        console.log("player: ", player);
+        user = {
+          username: player.username,
+          clientCode: player.clientCode,
+          gameCode: player.gameCode,
+          score: player.score,
+          latGuess: player.latGuess,
+          lonGuess: player.lonGuess,
+          previousScore: undefined,
+          scores: [],
+          guesses: [],
+          guessing: false,
+          host: true,
+        };
+        this.$store.dispatch("setPlayer", user);
         this.$store.dispatch("addUser", user);
         console.log("videos: ", videos);
-        // console.log("game: ", game);
-        // this.$router.replace({
-        //   name: "Multiplayer",
-        //   params: { lobbyCode: lobbyCode },
-        // });
+        this.$router.replace({
+          name: "Multiplayer",
+          params: { lobbyCode: lobbyCode },
+        });
       }
     },
     cancel() {

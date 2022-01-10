@@ -84,7 +84,6 @@
 <script>
 import Scores from "./Scores";
 import Guess from "./Guess";
-import websocket from "../../api/websocket.js";
 import Youtube from "../common/Youtube.js";
 
 export default {
@@ -150,11 +149,6 @@ export default {
   },
   mounted() {
     this.player.setVolume(this.volumePercent);
-    //Set lobbycode variable from route parameter
-    this.$store.dispatch("setLobbyCode", this.$route.params.lobbyCode);
-    console.log("lobbyCode: ", this.$store.getters.getLobbyCode);
-    //subscribe to websocket for lobby
-    websocket.createConnection(this.$route.params.lobbyCode);
     //Start count down timer
     this.startTimer();
   },

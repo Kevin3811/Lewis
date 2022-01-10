@@ -28,13 +28,13 @@ export default {
     state.gamemode = gamemode;
   },
   setIsHost(state, isHost) {
-    state.ishost = isHost;
+    state.player.host = isHost;
   },
   setIsGuessing(state, isGuessing) {
-    state.isguessing = isGuessing;
+    state.player.guessing = isGuessing;
   },
   setClientCode(state, clientCode) {
-    state.clientCode = clientCode;
+    state.player.clientCode = clientCode;
   },
   setShowLobbyAnswers(state, showLobbyAnswers) {
     state.showLobbyAnswers = showLobbyAnswers;
@@ -55,9 +55,19 @@ export default {
     state.roundCount = roundCount;
   },
   setUsername(state, username) {
-    state.username = username;
+    state.player.username = username;
   },
   setCurrentRound(state, currentRound) {
     state.currentRound = currentRound;
+  },
+  setPlayer(state, player) {
+    state.player = player;
+  },
+  setUsers(state, users) {
+    let lobbyUsers = [];
+    Object.values(users).forEach((user) => {
+      lobbyUsers.push(user);
+    });
+    state.lobbyUsers = lobbyUsers;
   },
 };

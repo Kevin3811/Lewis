@@ -7,11 +7,30 @@
 
 <script>
 import Header from "./components/Header.vue";
+import lobbyApi from "./api/lobby.js";
 
 export default {
   name: "App",
   components: {
     Header,
+  },
+  computed: {
+    player() {
+      return this.$store.getters.getPlayer;
+    },
+  },
+  created() {
+    window.addEventListener("beforeunload", this.removePlayer);
+  },
+  methods: {
+    removePlayer() {
+      if (
+        this.player.clientCode !== undefined &&
+        this.player.gameCode !== undefined
+      ) {
+        lobbyApi.deletePlayerFromLobby(this.player);
+      }
+    },
   },
 };
 </script>

@@ -3,6 +3,7 @@ package com.lewis.lewis.controllers;
 import com.lewis.lewis.config.Videos;
 import com.lewis.lewis.game.Game;
 import com.lewis.lewis.game.GameInstances;
+import com.lewis.lewis.messaging.WebSocket;
 import com.lewis.lewis.model.Player;
 import com.lewis.lewis.repository.PlaylistRepository;
 import com.lewis.lewis.repository.VideoRepository;
@@ -22,12 +23,19 @@ public class LobbyController {
     private PlaylistRepository playlistRepository;
     private VideoRepository videoRepository;
     private GameInstances gameInstances;
+    private WebSocket webSocket;
 
     @Autowired
-    public LobbyController(PlaylistRepository playlistRepository, VideoRepository videoRepository){
+    public LobbyController(PlaylistRepository playlistRepository, VideoRepository videoRepository, WebSocket webSocket){
         this.playlistRepository = playlistRepository;
         this.videoRepository = videoRepository;
         this.gameInstances = GameInstances.getGameInstances();
+        this.webSocket = webSocket;
+    }
+
+    @GetMapping("/games")
+    public ResponseEntity<Map<String, Game>> getGames(){
+        return new ResponseEntity<>(gameInstances.getGames(), HttpStatus.OK);
     }
 
     @GetMapping("/playlists")
@@ -38,40 +46,6 @@ public class LobbyController {
         });
         log.info("Playlists: [{}]", playlists);
         return playlists;
-    }
-
-    @GetMapping("/videos")
-    public Set<Videos.Video> getVideos(){
-        Set<Videos.Video> videos = new HashSet<>();
-        videoRepository.findAll().forEach(video -> {
-            videos.add(Videos.Video.builder()
-                    .latitude(video.getLatitude())
-                    .longitude(video.getLongitude())
-                    .playlists(video.getPlaylists())
-                    .startTime(video.getStartTime())
-                    .url(video.getUrl())
-                    .description(video.getDescription())
-                    .build());
-        });
-        log.info("Videos: [{}]", videos);
-        return videos;
-    }
-
-    @GetMapping("/playlist-videos")
-    public Set<Videos.Video> getVideosInPlaylist(String playlist){
-        Set<Videos.Video> videos = new HashSet<>();
-        videoRepository.findByPlaylists(playlist).forEach(video ->{
-            videos.add(Videos.Video.builder()
-                    .latitude(video.getLatitude())
-                    .longitude(video.getLongitude())
-                    .playlists(video.getPlaylists())
-                    .startTime(video.getStartTime())
-                    .url(video.getUrl())
-                    .description(video.getDescription())
-                    .build());
-        });
-        log.info("Videos: [{}]", videos);
-        return videos;
     }
 
     @GetMapping("/playlists-videos")
@@ -131,15 +105,19 @@ public class LobbyController {
 
     @PostMapping("/add-user")
     public ResponseEntity<Player> addPlayerToLobby(@RequestBody Player player){
+        log.info("Add player: {}", player);
         ResponseEntity<Player> response;
         //Make sure Player object has required parameters
         if(player.getUsername() != null && !player.getUsername().isEmpty() &&
             player.getClientCode() != null && !player.getClientCode().isEmpty() &&
-            player.getLobbyCode() != null && !player.getLobbyCode().isEmpty()
+            player.getGameCode() != null && !player.getGameCode().isEmpty()
         ){
-            Game game = gameInstances.getGame(player.getLobbyCode());
+            Game game = gameInstances.getGame(player.getGameCode());
             if(game != null){
+                //Add player
                 game.getPlayers().put(player.getClientCode(), player);
+                //Publish playerlist over websocket for lobby
+                webSocket.sendPlayerList(player.getGameCode());
                 response = new ResponseEntity<>(player, HttpStatus.OK);
             }else{
                 //Game doesn't exist
@@ -147,6 +125,28 @@ public class LobbyController {
             }
         }else{
             response = new ResponseEntity<>(player, HttpStatus.BAD_REQUEST);
+        }
+        return response;
+    }
+
+    @PostMapping("/remove-player")
+    public ResponseEntity<Player> removePlayerFromLobby(@RequestBody Player player){
+        log.info("Remove player: {}", player);
+        ResponseEntity<Player> response;
+        if(player.getClientCode() != null && !player.getClientCode().isEmpty() &&
+                player.getGameCode() != null && !player.getGameCode().isEmpty()
+            ){
+            //Remove the player from the game
+            Game game = gameInstances.getGame(player.getGameCode());
+            game.getPlayers().remove(player.getClientCode());
+            //Remove the lobby if the players list is empty
+            if(game.getPlayers().isEmpty()){
+                GameInstances.getGameInstances().deleteGame(player.getGameCode());
+                log.info("delete game");
+            }
+            response = new ResponseEntity<>(player, HttpStatus.OK);
+        }else{
+            response = new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
         return response;
     }

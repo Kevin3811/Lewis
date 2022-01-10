@@ -4,7 +4,6 @@
       <b-navbar-brand
         tag="h1"
         style="cursor: pointer; color: white; font-size: 2em;"
-        v-on:click="returnHome"
         >Lewis & Clark</b-navbar-brand
       >
     </router-link>
@@ -18,10 +17,6 @@ export default {
   mounted() {
     this.$store.dispatch("resetGame");
   },
-  methods: {
-    returnHome() {
-      this.$store.dispatch("resetGame");
-    },
-  },
+  methods: {},
 };
 </script>

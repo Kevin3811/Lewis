@@ -1,9 +1,12 @@
 package com.lewis.lewis.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Builder
 @NoArgsConstructor
@@ -14,12 +17,14 @@ public class Player {
     private String username;
     private String clientCode;
     private Long score;
-    private boolean isHost;
-    private boolean isGuessing;
+    private boolean host;
+    private boolean guessing;
 
-    private String lobbyCode;
+    private String gameCode;
 
     private Double latGuess;
     private Double lonGuess;
+
+    private List<Guess> guesses;
 
 }

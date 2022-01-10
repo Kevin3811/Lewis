@@ -11,6 +11,7 @@ export default {
     context.commit("setPlaylists", []);
     context.commit("setClientCode", "");
     context.commit("clearUsers");
+    context.commit("setPlayer", {});
   },
   resetPlayersPreviousRound(context) {
     context.commit("resetPlayersPreviousRound");
@@ -62,5 +63,11 @@ export default {
   },
   setCurrentRound(context, currentRound) {
     context.commit("setCurrentRound", currentRound);
+  },
+  setPlayer(context, player) {
+    context.commit("setPlayer", player);
+  },
+  setUsers(context, users) {
+    context.commit("setUsers", users);
   },
 };
