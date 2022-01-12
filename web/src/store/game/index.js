@@ -12,6 +12,8 @@ export default {
     roundLength: undefined,
     roundCount: undefined,
     currentRound: undefined,
+    //For multiplayer
+    gameStarted: false,
     //Sample user object:
     // {
     //   username: "Nick",
