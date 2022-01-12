@@ -37,6 +37,10 @@ function subscribe(lobbyCode) {
     client.subscribe("/topic/players/" + lobbyCode, (message) => {
       store.dispatch("setUsers", JSON.parse(message.body));
     });
+    //Update game rules
+    client.subscribe("/topic/game/" + lobbyCode, (message) => {
+      store.dispatch("setGameRules", JSON.parse(message.body));
+    });
     console.log("Websocket subsribed to topics for lobby: ", lobbyCode);
   }
 }

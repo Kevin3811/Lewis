@@ -55,4 +55,7 @@ export default {
   getPlayer: (state) => {
     return state.player;
   },
+  getGameStarted: (state) => {
+    return state.gameStarted;
+  },
 };

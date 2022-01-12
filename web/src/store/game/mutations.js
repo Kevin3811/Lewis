@@ -70,4 +70,7 @@ export default {
     });
     state.lobbyUsers = lobbyUsers;
   },
+  setGameStarted(state, started) {
+    state.gameStarted = started;
+  },
 };

@@ -150,4 +150,22 @@ public class LobbyController {
         }
         return response;
     }
+
+    @PostMapping("/start-game")
+    public ResponseEntity<Boolean> startGame(@RequestBody String lobbyCode){
+        if(lobbyCode == null){
+            return new ResponseEntity<>(false, HttpStatus.BAD_REQUEST);
+        }
+        lobbyCode = lobbyCode.replace("=", "");
+        ResponseEntity<Boolean> response;
+        Game game = gameInstances.getGame(lobbyCode);
+        if(game != null){
+            webSocket.startGame(lobbyCode);
+            response = new ResponseEntity<>(true, HttpStatus.OK);
+            log.info("start game: {}", lobbyCode);
+        }else{
+            response = new ResponseEntity<>(false, HttpStatus.EXPECTATION_FAILED);
+        }
+        return response;
+    }
 }

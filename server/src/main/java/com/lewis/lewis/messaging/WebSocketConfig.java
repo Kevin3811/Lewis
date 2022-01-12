@@ -26,5 +26,8 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
         //Player added to lobby
         registry.addEndpoint("/players").setAllowedOrigins("http://localhost:8080").withSockJS();
         registry.addEndpoint("/players").setAllowedOrigins("http://localhost:8080");
+        //Game starting
+        registry.addEndpoint("/game").setAllowedOrigins("http://localhost:8080").withSockJS();
+        registry.addEndpoint("/game").setAllowedOrigins("http://localhost:8080");
     }
 }

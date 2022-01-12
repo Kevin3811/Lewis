@@ -10,6 +10,7 @@ export default {
     context.commit("setUsername", "");
     context.commit("setPlaylists", []);
     context.commit("setClientCode", "");
+    context.commit("setGameStarted", false);
     context.commit("clearUsers");
     context.commit("setPlayer", {});
   },
@@ -69,5 +70,18 @@ export default {
   },
   setUsers(context, users) {
     context.commit("setUsers", users);
+  },
+  setGameStarted(context, started) {
+    context.commit("setGameStarted", started);
+  },
+  setGameRules(context, rules) {
+    context.commit("setGamemode", "multiplayer");
+    context.commit("setVideos", rules.videos);
+    context.commit("setCurrentRound", rules.currentRound);
+    context.commit("setRoundCount", rules.roundCount);
+    context.commit("setRoundLength", rules.roundLength);
+    context.commit("setUsers", rules.players);
+    context.commit("setLobbyCode", rules.gameCode);
+    context.commit("setGameStarted", rules.gameStarted);
   },
 };

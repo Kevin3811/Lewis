@@ -20,6 +20,8 @@ public class Game {
     private Integer currentRound;
     private Double roundLength;
 
+    private Boolean gameStarted;
+
     private List<String> includedPlaylists;
     private List<String> excludedPlaylists;
     private List<Videos.Video> videos;

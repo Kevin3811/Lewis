@@ -3,7 +3,7 @@ import VueRouter from "vue-router";
 import Scene from "../components/game/Scene.vue";
 import Main from "../components/Main.vue";
 import End from "../components/game/End.vue";
-import MultiplayerLobby from "../components/MultiplayerLobby.vue";
+import MultiPlayerParent from "../components/MultiplayerParent.vue";
 
 Vue.use(VueRouter);
 
@@ -17,7 +17,7 @@ const routes = [
   {
     path: "/multiplayer/:lobbyCode",
     name: "Multiplayer",
-    component: MultiplayerLobby,
+    component: MultiPlayerParent,
   },
   {
     path: "/",

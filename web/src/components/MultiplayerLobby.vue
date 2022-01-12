@@ -1,8 +1,29 @@
 <template>
   <div class="lobby">
-    <!-- <div class="lobbyHeader">
-      Waiting for game to start
-    </div> -->
+    <div class="lobbyHeader">
+      <h2>
+        Waiting for game to start
+      </h2>
+      <b-button
+        class="linkButton"
+        variant="primary"
+        :title="lobbyCode"
+        v-on:click="copyCode"
+        >Copy Game Code</b-button
+      >
+      <b-button
+        class="linkButton"
+        variant="primary"
+        :title="'localhost:8080/multiplayer/' + lobbyCode"
+        v-on:click="copyLink"
+        >Copy Game Link</b-button
+      >
+    </div>
+    <div>
+      <b-button v-if="isHost" variant="primary" v-on:click="startGameButton"
+        >Start Game</b-button
+      >
+    </div>
     <div v-if="!isHost && !lobbyEntered" class="joinLobby">
       <b-form inline @submit="enterLobby" autocomplete="off">
         <b-form-input
@@ -13,6 +34,9 @@
         ></b-form-input>
         <b-button type="submit" variant="primary">Enter Lobby</b-button>
       </b-form>
+    </div>
+    <div v-for="player in players" :key="player.clientCode">
+      {{ player.username }}
     </div>
   </div>
 </template>
@@ -38,6 +62,12 @@ export default {
     player() {
       return this.$store.getters.getPlayer;
     },
+    players() {
+      return this.$store.getters.getLobbyUsers;
+    },
+    gameStarted() {
+      return this.$store.getters.getGameStarted;
+    },
   },
   mounted() {
     //subscribe to websocket for lobby
@@ -48,7 +78,23 @@ export default {
   async beforeDestroy() {
     await lobbyApi.deletePlayerFromLobby(this.player);
   },
+  watch: {
+    gameStarted(val) {
+      console.log("started: ", val);
+    },
+  },
   methods: {
+    startGameButton() {
+      lobbyApi.startGame(this.lobbyCode);
+    },
+    copyCode() {
+      navigator.clipboard.writeText(this.lobbyCode);
+    },
+    copyLink() {
+      navigator.clipboard.writeText(
+        "localhost:8080/multiplayer/" + this.lobbyCode
+      );
+    },
     enterLobby(event) {
       //Prevent default to prevent page from refreshing when submitting form
       event.preventDefault();
@@ -83,6 +129,9 @@ export default {
   background-color: gray;
   min-width: 100%;
   min-height: 100%;
+}
+.linkButton {
+  margin: 10px;
 }
 .joinLobby {
   display: flex;

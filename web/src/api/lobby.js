@@ -35,4 +35,13 @@ export default {
     }
     return response.data;
   },
+  async startGame(lobbyCode) {
+    let response;
+    console.log("gc: ", lobbyCode);
+    try {
+      response = await instance.post("/start-game", lobbyCode);
+    } catch (error) {
+      console.error("Error starting game: ", response);
+    }
+  },
 };
