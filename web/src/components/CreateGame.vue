@@ -141,7 +141,7 @@ export default {
         scores: [],
         guesses: [],
         guessing: false,
-        host: false,
+        host: true,
       };
       this.$store.dispatch("setUsername", this.username);
       this.$store.dispatch("setClientCode", clientCode);

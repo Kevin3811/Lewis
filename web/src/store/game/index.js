@@ -27,7 +27,7 @@ export default {
     //      1: {latGuess: 90, lonGuess: 90, score: 490, round: 1, runningScore: 490},
     //      2: {latGuess: 80, lonGuess: 80 score: 350, round: 2, runningScore: 840}],
     //   lobbyCode: asdfadf,
-    //   isHost: false
+    //   host: false
     // };
     lobbyUsers: [],
     player: {},

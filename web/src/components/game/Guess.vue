@@ -56,13 +56,15 @@
     <div class="footer">
       <div class="footer-buttons">
         <span class="cancel-button" v-on:click="exit">Cancel</span>
-        <span
-          class="next-button"
-          v-on:click="next"
-          v-if="hasGuessed || roundOver"
-          >Next</span
-        >
-        <span class="cancel-button" v-on:click="next" v-else>Skip</span>
+        <div v-if="currentUser.host">
+          <span
+            class="next-button"
+            v-on:click="next"
+            v-if="hasGuessed || roundOver"
+            >Next</span
+          >
+          <span class="cancel-button" v-on:click="next" v-else>Skip</span>
+        </div>
         <span
           :class="{
             guessButton: !hasGuessed && !roundOver,
