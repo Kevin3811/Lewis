@@ -11,14 +11,13 @@ export default {
       user.previousScore = undefined;
     });
   },
-  incrementPlayersScore(state) {
+  incrementPlayersScore(state, round) {
     state.lobbyUsers.forEach((user) => {
-      if (user.previousScore !== undefined) {
-        user.score += user.previousScore;
-      } else {
-        user.score += 0;
+      let guess = user.guesses.find((g) => g.round === round);
+      if (guess !== undefined) {
+        user.score += guess.score;
+        guess.runningScore = user.score;
       }
-      user.scores.push(user.score);
     });
   },
   addUser(state, user) {
@@ -72,5 +71,8 @@ export default {
   },
   setGameStarted(state, started) {
     state.gameStarted = started;
+  },
+  setGuess(state, guess) {
+    state.player.guesses.push(guess);
   },
 };

@@ -193,11 +193,16 @@ export default {
         this.video.latitude,
         this.video.longitude
       );
-      this.currentUser.previousScore = Math.ceil(this.distance.score);
-      this.currentUser.latGuess = this.guessLon;
-      this.currentUser.lonGuess = this.guessLon;
+      let guess = {
+        latGuess: this.guessLat,
+        lonGuess: this.guessLon,
+        score: Math.ceil(this.distance.score),
+        round: this.$store.getters.getCurrentRound,
+        runningScore: 0,
+      };
       //If it's single player, show the lobby answers immediately
       if (this.gamemode === "singleplayer") {
+        this.$store.dispatch("setGuess", guess);
         this.$store.dispatch("setShowLobbyAnswers", true);
       }
       //TODO: If it's multiplayer don't show all answers until the round is actually finished
@@ -206,6 +211,17 @@ export default {
       }
     },
     next() {
+      //If they didn't guess, create an hollow guess object
+      if (this.hasGuessed === false) {
+        let guess = {
+          latGuess: undefined,
+          lonGuess: undefined,
+          score: 0,
+          round: this.$store.getters.getCurrentRound,
+          runningScore: 0,
+        };
+        this.$store.dispatch("setGuess", guess);
+      }
       this.hasGuessed = false;
       this.$emit("nextRound");
     },

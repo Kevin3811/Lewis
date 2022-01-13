@@ -35,6 +35,7 @@ function subscribe(lobbyCode) {
     });
     //Updating players in lobby
     client.subscribe("/topic/players/" + lobbyCode, (message) => {
+      console.log("players: ", JSON.parse(message.body));
       store.dispatch("setUsers", JSON.parse(message.body));
     });
     //Update game rules

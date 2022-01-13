@@ -14,5 +14,7 @@ public class Guess {
     private Double latGuess;
     private Double lonGuess;
     private Integer score;
+    private Integer round;
+    private Integer runningScore;
 
 }

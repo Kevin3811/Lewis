@@ -44,4 +44,13 @@ export default {
       console.error("Error starting game: ", response);
     }
   },
+  async updatePlayer(player) {
+    let response;
+    try {
+      response = await instance.post("/update-player", player);
+    } catch (error) {
+      console.error("Error updating player: ", response);
+    }
+    return response.data;
+  },
 };

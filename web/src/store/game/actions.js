@@ -17,8 +17,8 @@ export default {
   resetPlayersPreviousRound(context) {
     context.commit("resetPlayersPreviousRound");
   },
-  incrementPlayersScore(context) {
-    context.commit("incrementPlayersScore");
+  incrementPlayersScore(context, round) {
+    context.commit("incrementPlayersScore", round);
   },
   addUser(context, user) {
     context.commit("addUser", user);
@@ -83,5 +83,8 @@ export default {
     context.commit("setUsers", rules.players);
     context.commit("setLobbyCode", rules.gameCode);
     context.commit("setGameStarted", rules.gameStarted);
+  },
+  setGuess(context, guess) {
+    context.commit("setGuess", guess);
   },
 };

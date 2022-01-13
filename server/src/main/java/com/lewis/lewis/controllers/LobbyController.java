@@ -8,6 +8,7 @@ import com.lewis.lewis.model.Player;
 import com.lewis.lewis.repository.PlaylistRepository;
 import com.lewis.lewis.repository.VideoRepository;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -167,5 +168,14 @@ public class LobbyController {
             response = new ResponseEntity<>(false, HttpStatus.EXPECTATION_FAILED);
         }
         return response;
+    }
+
+    @PostMapping("/update-player")
+    public ResponseEntity<Boolean> updatePlayer(@RequestBody Player player){
+        if(player == null || player.getGameCode() == null){
+            return new ResponseEntity<>(false, HttpStatus.BAD_REQUEST);
+        }
+        webSocket.updatePlayer(player);
+        return new ResponseEntity<>(true, HttpStatus.OK);
     }
 }
