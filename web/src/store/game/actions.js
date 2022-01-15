@@ -1,3 +1,4 @@
+import lobbyApi from "../../api/lobby";
 //WAY TO SET STATE FOR INDEX.JS AND PERFOM LOGIC USING STATE
 export default {
   resetGame(context) {
@@ -17,8 +18,15 @@ export default {
   resetPlayersPreviousRound(context) {
     context.commit("resetPlayersPreviousRound");
   },
-  incrementPlayersScore(context, round) {
-    context.commit("incrementPlayersScore", round);
+  // incrementPlayersScore(context, round) {
+  //   context.commit("incrementPlayersScore", round);
+  // },
+  incrementPlayerScore(context, round) {
+    context.commit("incrementPlayerScore", round);
+    if (context.getters.getGamemode === "multiplayer") {
+      //Send player score to server if it's multiplayer and score updated
+      lobbyApi.updatePlayer(context.getters.getPlayer);
+    }
   },
   addUser(context, user) {
     context.commit("addUser", user);
@@ -86,5 +94,11 @@ export default {
   },
   setGuess(context, guess) {
     context.commit("setGuess", guess);
+    let player = context.getters.getPlayer;
+    console.log("player34: ", player);
+    if (context.getters.getGamemode === "multiplayer") {
+      //Send player score to server if it's multiplayer and score updated
+      lobbyApi.updatePlayer(player);
+    }
   },
 };

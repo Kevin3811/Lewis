@@ -25,7 +25,6 @@ export default {
   },
   computed: {
     lobbyUsers() {
-      console.log("players: ", this.$store.getters.getLobbyInScoreOrder);
       return this.$store.getters.getLobbyInScoreOrder;
     },
     clientCode() {

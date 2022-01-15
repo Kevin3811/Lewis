@@ -34,18 +34,17 @@
       </div>
       <!-- Show all other player answers -->
       <div v-if="showLobbyAnswers && (roundOver || hasGuessed)">
-        <div v-for="lobbyUser in lobbyUsers" :key="lobbyUser.clientCode">
+        <div v-for="guess in lobbyGuesses" :key="guess.clientCode">
           <div
             v-if="
-              lobbyUser.clientCode !== playerClientCode &&
-                (lobbyUser.latGuess !== undefined ||
-                  lobbyUser.lonGuess !== undefined)
+              guess.clientCode !== playerClientCode &&
+                (guess.latGuess !== undefined || guess.lonGuess !== undefined)
             "
           >
-            <l-marker :lat-lng="[lobbyUser.latGuess, lobbyUser.lonGuess]">
+            <l-marker :lat-lng="[guess.latGuess, guess.lonGuess]">
               <l-icon icon-url="./bluemarker.png"> </l-icon>
               <l-tooltip :options="{ opacity: 0.4 }">{{
-                lobbyUser.username
+                guess.username
               }}</l-tooltip>
             </l-marker>
           </div>
@@ -144,6 +143,19 @@ export default {
     lobbyUsers() {
       return this.$store.getters.getLobbyUsers;
     },
+    lobbyGuesses() {
+      let guesses = [];
+      const currentRound = this.$store.getters.getCurrentRound;
+      this.lobbyUsers.forEach((user) => {
+        let guess = user.guesses.find((g) => g.round === currentRound);
+        if (guess !== undefined) {
+          guess.username = user.username;
+          guess.clientCode = user.clientCode;
+          guesses.push(guess);
+        }
+      });
+      return guesses;
+    },
     showLobbyAnswers() {
       return this.$store.getters.getShowLobbyAnswers;
     },
@@ -209,7 +221,8 @@ export default {
       }
       //TODO: If it's multiplayer don't show all answers until the round is actually finished
       else {
-        console.log("multiplayer");
+        this.$store.dispatch("setGuess", guess);
+        this.$store.dispatch("setShowLobbyAnswers", true);
       }
     },
     next() {

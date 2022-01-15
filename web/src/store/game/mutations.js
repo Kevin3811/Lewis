@@ -11,14 +11,12 @@ export default {
       user.previousScore = undefined;
     });
   },
-  incrementPlayersScore(state, round) {
-    state.lobbyUsers.forEach((user) => {
-      let guess = user.guesses.find((g) => g.round === round);
-      if (guess !== undefined) {
-        user.score += guess.score;
-        guess.runningScore = user.score;
-      }
-    });
+  incrementPlayerScore(state, round) {
+    let guess = state.player.guesses.find((g) => g.round === round);
+    if (guess !== undefined) {
+      state.player.score += guess.score;
+      guess.runningScore = state.player.score;
+    }
   },
   addUser(state, user) {
     state.lobbyUsers.push(user);

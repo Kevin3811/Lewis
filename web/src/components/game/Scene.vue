@@ -183,7 +183,7 @@ export default {
       this.player.seekTo(this.playerVars.start);
     },
     nextRound() {
-      this.$store.dispatch("incrementPlayersScore", this.currentRound);
+      this.$store.dispatch("incrementPlayerScore", this.currentRound);
       if (this.currentRound === this.roundCount) {
         //Change route to "end" instead of pushing to make back button go back to home screen
         this.$router.replace({ name: "End" });

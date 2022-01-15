@@ -151,6 +151,7 @@ export default {
         let videos = await videoApi.getVideosForPlaylists(
           this.selectedPlaylists
         );
+        this.$store.dispatch("setGamemode", "singleplayer");
         this.$store.dispatch("setVideos", videos);
         this.$store.dispatch("addUser", user);
         this.$store.dispatch("setPlayer", user);
@@ -171,6 +172,7 @@ export default {
         let videos = await lobbyApi.createGame(game);
         this.$store.dispatch("setVideos", videos);
         this.$store.dispatch("setIsHost", true);
+        this.$store.dispatch("setGamemode", "multiplayer");
         //In multiplayer set the lobby code for the user
         user.gameCode = lobbyCode;
         user.host = true;

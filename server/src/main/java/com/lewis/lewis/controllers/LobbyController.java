@@ -95,6 +95,8 @@ public class LobbyController {
                         .description(video.getDescription())
                         .build());
             });
+            //Randomize order of videos
+            Collections.shuffle(videos);
             game.setVideos(videos);
             gameInstances.addGame(game);
             response = new ResponseEntity<>(videos, HttpStatus.OK);
@@ -172,6 +174,7 @@ public class LobbyController {
 
     @PostMapping("/update-player")
     public ResponseEntity<Boolean> updatePlayer(@RequestBody Player player){
+        log.info("UpdatePlayer: {}", player);
         if(player == null || player.getGameCode() == null){
             return new ResponseEntity<>(false, HttpStatus.BAD_REQUEST);
         }

@@ -45,6 +45,7 @@ export default {
     }
   },
   async updatePlayer(player) {
+    console.log("sending: ", player);
     let response;
     try {
       response = await instance.post("/update-player", player);
