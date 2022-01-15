@@ -58,4 +58,13 @@ export default {
   getGameStarted: (state) => {
     return state.gameStarted;
   },
+  getGuess: (state) => {
+    let guess = state.player.guesses.find(
+      (g) => g.round === state.currentRound
+    );
+    if (guess === undefined) {
+      return {};
+    }
+    return guess;
+  },
 };

@@ -18,9 +18,6 @@ export default {
   resetPlayersPreviousRound(context) {
     context.commit("resetPlayersPreviousRound");
   },
-  // incrementPlayersScore(context, round) {
-  //   context.commit("incrementPlayersScore", round);
-  // },
   incrementPlayerScore(context, round) {
     context.commit("incrementPlayerScore", round);
     if (context.getters.getGamemode === "multiplayer") {
@@ -92,10 +89,12 @@ export default {
     context.commit("setLobbyCode", rules.gameCode);
     context.commit("setGameStarted", rules.gameStarted);
   },
+  setGuessed(context, guessed) {
+    context.commit("setGuessed", guessed);
+  },
   setGuess(context, guess) {
     context.commit("setGuess", guess);
     let player = context.getters.getPlayer;
-    console.log("player34: ", player);
     if (context.getters.getGamemode === "multiplayer") {
       //Send player score to server if it's multiplayer and score updated
       lobbyApi.updatePlayer(player);

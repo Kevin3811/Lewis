@@ -2,8 +2,8 @@
   <div class="guess" ref="draggableContainer">
     <div class="guess-header" draggable="true" v-on:mousedown="dragMouseDown">
       <span class="guess-text">Place Guess</span>
-      <span v-if="hasGuessed" class="distance"
-        >{{ distance.distance }} away</span
+      <span v-if="currentUser.guessed" class="distance"
+        >{{ currentGuess.distance }} away</span
       >
       <span class="exit" v-on:click="exit">x</span>
     </div>
@@ -18,22 +18,25 @@
       <div v-if="guessLat !== undefined || guessLon !== undefined">
         <l-marker :lat-lng="[guessLat, guessLon]">
           <l-icon icon-url="./redmarker.png"> </l-icon>
-          <l-tooltip :options="{ opacity: 0.4 }">{{
-            playerUsername
-          }}</l-tooltip>
+          <l-tooltip :options="{ opacity: 0.4 }">
+            {{ playerUsername }}: {{ currentGuess.distance }}
+          </l-tooltip>
         </l-marker>
       </div>
       <!-- Show Answer -->
-      <div v-if="hasGuessed || roundOver">
+      <div v-if="currentUser.guessed || roundOver">
         <l-marker :lat-lng="[this.video.latitude, this.video.longitude]">
           <l-icon icon-url="./greenmarker.png"> </l-icon>
-          <l-tooltip :options="{ opacity: 0.4 }">Correct Answer</l-tooltip>
+          <l-tooltip :options="{ opacity: 0.6 }">Correct Answer</l-tooltip>
         </l-marker>
         <!-- Line connecting answer and player guess. Only attempt to draw line if a guess was made -->
-        <l-geo-json v-if="hasGuessed" :geojson="guessGeoJson"></l-geo-json>
+        <l-geo-json
+          v-if="currentUser.guessed"
+          :geojson="guessGeoJson"
+        ></l-geo-json>
       </div>
       <!-- Show all other player answers -->
-      <div v-if="showLobbyAnswers && (roundOver || hasGuessed)">
+      <div v-if="showLobbyAnswers && (roundOver || currentUser.guessed)">
         <div v-for="guess in lobbyGuesses" :key="guess.clientCode">
           <div
             v-if="
@@ -43,9 +46,9 @@
           >
             <l-marker :lat-lng="[guess.latGuess, guess.lonGuess]">
               <l-icon icon-url="./bluemarker.png"> </l-icon>
-              <l-tooltip :options="{ opacity: 0.4 }">{{
-                guess.username
-              }}</l-tooltip>
+              <l-tooltip :options="{ opacity: 0.6 }">
+                {{ guess.username }}: {{ guess.distance }}
+              </l-tooltip>
             </l-marker>
           </div>
         </div>
@@ -59,15 +62,15 @@
           <span
             class="next-button"
             v-on:click="next"
-            v-if="hasGuessed || roundOver"
+            v-if="currentUser.guessed || roundOver"
             >Next</span
           >
           <span class="cancel-button" v-on:click="next" v-else>Skip</span>
         </div>
         <span
           :class="{
-            guessButton: !hasGuessed && !roundOver,
-            disabledGuessButton: hasGuessed || roundOver,
+            guessButton: !currentUser.guessed && !roundOver,
+            disabledGuessButton: currentUser.guessed || roundOver,
           }"
           v-on:click="guess"
           >Guess</span
@@ -108,9 +111,6 @@ export default {
       english: true,
       nativeLanguages: false,
       distance: "",
-      // guessLat: undefined,
-      // guessLon: undefined,
-      hasGuessed: false,
       positions: {
         clientX: undefined,
         clientY: undefined,
@@ -135,7 +135,7 @@ export default {
   },
   computed: {
     playerUsername() {
-      return this.$store.getters.getPlayerUsername;
+      return this.$store.getters.getUsername;
     },
     playerClientCode() {
       return this.$store.getters.getClientCode;
@@ -161,7 +161,7 @@ export default {
     },
     guessGeoJson() {
       let line = undefined;
-      if (this.hasGuessed) {
+      if (this.currentUser.guessed) {
         line = {
           type: "FeatureCollection",
           features: [
@@ -182,7 +182,10 @@ export default {
       return line;
     },
     currentUser() {
-      return this.$store.getters.getCurrentUser;
+      return this.$store.getters.getPlayer;
+    },
+    currentGuess() {
+      return this.$store.getters.getGuess;
     },
   },
   methods: {
@@ -190,9 +193,7 @@ export default {
       this.$store.dispatch("setIsGuessing", false);
     },
     mapClick(event) {
-      if (event && !this.hasGuessed && !this.roundOver) {
-        // this.guessLat = event.latlng.lat;
-        // this.guessLon = event.latlng.lng;
+      if (event && !this.currentUser.guessed && !this.roundOver) {
         this.$emit("markerPlaced", {
           guessLat: event.latlng.lat,
           guessLon: event.latlng.lng,
@@ -200,7 +201,7 @@ export default {
       }
     },
     guess() {
-      this.hasGuessed = true;
+      this.$store.dispatch("setGuessed", true);
       this.distance = calculateDistanceAndScore(
         this.guessLat,
         this.guessLon,
@@ -213,31 +214,24 @@ export default {
         score: Math.ceil(this.distance.score),
         round: this.$store.getters.getCurrentRound,
         runningScore: 0,
+        distance: this.distance.distance,
       };
-      //If it's single player, show the lobby answers immediately
-      if (this.gamemode === "singleplayer") {
-        this.$store.dispatch("setGuess", guess);
-        this.$store.dispatch("setShowLobbyAnswers", true);
-      }
-      //TODO: If it's multiplayer don't show all answers until the round is actually finished
-      else {
-        this.$store.dispatch("setGuess", guess);
-        this.$store.dispatch("setShowLobbyAnswers", true);
-      }
+      this.$store.dispatch("setGuess", guess);
+      this.$store.dispatch("setShowLobbyAnswers", true);
     },
     next() {
       //If they didn't guess, create an hollow guess object
-      if (this.hasGuessed === false) {
+      if (this.currentUser.guessed === false) {
         let guess = {
           latGuess: undefined,
           lonGuess: undefined,
           score: 0,
           round: this.$store.getters.getCurrentRound,
           runningScore: 0,
+          distance: "---",
         };
         this.$store.dispatch("setGuess", guess);
       }
-      this.hasGuessed = false;
       this.$emit("nextRound");
     },
     dragMouseDown(event) {

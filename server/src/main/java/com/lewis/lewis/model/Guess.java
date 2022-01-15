@@ -16,5 +16,5 @@ public class Guess {
     private Integer score;
     private Integer round;
     private Integer runningScore;
-
+    private String distance;
 }

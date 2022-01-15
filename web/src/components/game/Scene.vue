@@ -200,6 +200,8 @@ export default {
         this.$store.dispatch("setIsGuessing", false);
         this.$store.dispatch("resetPlayersPreviousRound");
         this.$store.dispatch("setShowLobbyAnswers", false);
+        this.$store.dispatch("setGuessed", false);
+        // this.$store.getters.getPlayer.guessed = false;
         this.startTimer();
       }
     },

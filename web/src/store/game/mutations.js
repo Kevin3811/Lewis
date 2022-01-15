@@ -73,4 +73,7 @@ export default {
   setGuess(state, guess) {
     state.player.guesses.push(guess);
   },
+  setGuessed(state, guessed) {
+    state.player.guessed = guessed;
+  },
 };
