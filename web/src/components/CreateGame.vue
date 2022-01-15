@@ -135,10 +135,6 @@ export default {
         clientCode: clientCode,
         gameCode: undefined,
         score: 0,
-        latGuess: undefined,
-        lonGuess: undefined,
-        previousScore: undefined,
-        scores: [],
         guesses: [],
         guessing: false,
         host: true,
@@ -171,7 +167,7 @@ export default {
         };
         let videos = await lobbyApi.createGame(game);
         this.$store.dispatch("setVideos", videos);
-        this.$store.dispatch("setIsHost", true);
+        // this.$store.dispatch("setIsHost", true);
         this.$store.dispatch("setGamemode", "multiplayer");
         //In multiplayer set the lobby code for the user
         user.gameCode = lobbyCode;
@@ -182,10 +178,6 @@ export default {
           clientCode: player.clientCode,
           gameCode: player.gameCode,
           score: player.score,
-          latGuess: player.latGuess,
-          lonGuess: player.lonGuess,
-          previousScore: undefined,
-          scores: [],
           guesses: [],
           guessing: false,
           host: true,

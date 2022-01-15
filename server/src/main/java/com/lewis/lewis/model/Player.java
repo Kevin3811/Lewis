@@ -21,9 +21,6 @@ public class Player {
 
     private String gameCode;
 
-    private Double latGuess;
-    private Double lonGuess;
-
     private List<Guess> guesses;
 
 }
