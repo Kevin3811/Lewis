@@ -75,9 +75,6 @@ export default {
     //Set lobbycode variable from route parameter
     this.$store.dispatch("setLobbyCode", this.lobbyCode);
   },
-  async beforeDestroy() {
-    await lobbyApi.deletePlayerFromLobby(this.player);
-  },
   watch: {
     gameStarted(val) {
       console.log("started: ", val);

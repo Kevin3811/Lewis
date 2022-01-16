@@ -10,33 +10,28 @@
         user: true,
       }"
     >
-      <div>
-        <div class="leftBox">
-          <div class="username">{{ lobbyUser.username }}</div>
-          <div
-            v-if="lobbyUser.previousScore !== undefined"
-            class="previousScore"
-          >
-            {{ lobbyUser.previousScore }}
-          </div>
-          <div v-else class="previousScore">---</div>
-        </div>
-        <div class="score">{{ lobbyUser.score }}</div>
-      </div>
+      <Score :user="lobbyUser" />
     </div>
   </div>
 </template>
 
 <script>
+import Score from "./Score.vue";
+
 export default {
   name: "Scores",
-  components: {},
+  components: {
+    Score,
+  },
   computed: {
     lobbyUsers() {
       return this.$store.getters.getLobbyInScoreOrder;
     },
     clientCode() {
       return this.$store.getters.getClientCode;
+    },
+    currentRound() {
+      return this.$store.getters.getCurrentRound;
     },
   },
 };
@@ -72,15 +67,5 @@ export default {
 .user {
   display: inline-block;
   width: 100%;
-}
-.score {
-  float: right;
-}
-.previousScore {
-  font-size: 0.7em;
-  margin-left: 45%;
-}
-.leftBox {
-  float: left;
 }
 </style>

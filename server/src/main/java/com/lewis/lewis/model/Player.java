@@ -1,6 +1,5 @@
 package com.lewis.lewis.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -21,9 +20,6 @@ public class Player {
     private boolean guessing;
 
     private String gameCode;
-
-    private Double latGuess;
-    private Double lonGuess;
 
     private List<Guess> guesses;
 

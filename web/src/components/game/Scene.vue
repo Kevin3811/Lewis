@@ -44,7 +44,7 @@
         <!-- restart button -->
         <div class="restart" v-on:click="restart">
           <img
-            :src="'./restart.png'"
+            src="/restart.png"
             alt="restart"
             width="30"
             height="30"
@@ -54,7 +54,7 @@
         <!-- rewind button -->
         <div class="rewind" v-on:click="rewind">
           <img
-            :src="'./rewind.png'"
+            src="/rewind.png"
             alt="rewind"
             width="30"
             height="30"
@@ -183,7 +183,7 @@ export default {
       this.player.seekTo(this.playerVars.start);
     },
     nextRound() {
-      this.$store.dispatch("incrementPlayersScore");
+      this.$store.dispatch("incrementPlayerScore", this.currentRound);
       if (this.currentRound === this.roundCount) {
         //Change route to "end" instead of pushing to make back button go back to home screen
         this.$router.replace({ name: "End" });
@@ -200,6 +200,8 @@ export default {
         this.$store.dispatch("setIsGuessing", false);
         this.$store.dispatch("resetPlayersPreviousRound");
         this.$store.dispatch("setShowLobbyAnswers", false);
+        this.$store.dispatch("setGuessed", false);
+        // this.$store.getters.getPlayer.guessed = false;
         this.startTimer();
       }
     },

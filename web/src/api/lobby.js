@@ -44,4 +44,24 @@ export default {
       console.error("Error starting game: ", response);
     }
   },
+  async updatePlayer(player) {
+    console.log("sending: ", player);
+    let response;
+    try {
+      response = await instance.post("/update-player", player);
+    } catch (error) {
+      console.error("Error updating player: ", response);
+    }
+    return response.data;
+  },
+  async nextRound(lobbyCode) {
+    console.log("gc: ", lobbyCode);
+    let response;
+    try {
+      response = await instance.post("/next-round", lobbyCode);
+    } catch (error) {
+      console.error("Error going to next round: ", response);
+    }
+    return response.data;
+  },
 };

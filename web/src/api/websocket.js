@@ -35,11 +35,17 @@ function subscribe(lobbyCode) {
     });
     //Updating players in lobby
     client.subscribe("/topic/players/" + lobbyCode, (message) => {
+      console.log("players: ", JSON.parse(message.body));
       store.dispatch("setUsers", JSON.parse(message.body));
     });
     //Update game rules
     client.subscribe("/topic/game/" + lobbyCode, (message) => {
       store.dispatch("setGameRules", JSON.parse(message.body));
+    });
+    //Update game rules
+    client.subscribe("/topic/round/" + lobbyCode, (message) => {
+      // store.dispatch("setGameRules", JSON.parse(message.body));
+      console.log("next round: ", JSON.parse(message.body));
     });
     console.log("Websocket subsribed to topics for lobby: ", lobbyCode);
   }

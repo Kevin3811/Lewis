@@ -57,12 +57,16 @@ export default {
     let data = [];
     users.forEach((user) => {
       let x = [];
-      for (let i = 1; i <= user.scores.length; i++) {
+      let y = [];
+      for (let i = 1; i <= this.$store.getters.getRoundCount; i++) {
         x.push(i);
       }
       let plot = {};
       plot.x = x;
-      plot.y = user.scores;
+      user.guesses.forEach((guess) => {
+        y.push(guess.runningScore);
+      });
+      plot.y = y;
       plot.name = user.username;
       if (user.clientCode === this.$store.getters.getClientCode) {
         plot.line = {

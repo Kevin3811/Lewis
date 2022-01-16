@@ -8,6 +8,7 @@ import com.lewis.lewis.model.Player;
 import com.lewis.lewis.repository.PlaylistRepository;
 import com.lewis.lewis.repository.VideoRepository;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -94,6 +95,8 @@ public class LobbyController {
                         .description(video.getDescription())
                         .build());
             });
+            //Randomize order of videos
+            Collections.shuffle(videos);
             game.setVideos(videos);
             gameInstances.addGame(game);
             response = new ResponseEntity<>(videos, HttpStatus.OK);
@@ -163,6 +166,33 @@ public class LobbyController {
             webSocket.startGame(lobbyCode);
             response = new ResponseEntity<>(true, HttpStatus.OK);
             log.info("start game: {}", lobbyCode);
+        }else{
+            response = new ResponseEntity<>(false, HttpStatus.EXPECTATION_FAILED);
+        }
+        return response;
+    }
+
+    @PostMapping("/update-player")
+    public ResponseEntity<Boolean> updatePlayer(@RequestBody Player player){
+        log.info("UpdatePlayer: {}", player);
+        if(player == null || player.getGameCode() == null){
+            return new ResponseEntity<>(false, HttpStatus.BAD_REQUEST);
+        }
+        webSocket.updatePlayer(player);
+        return new ResponseEntity<>(true, HttpStatus.OK);
+    }
+
+    @PostMapping("/next-round")
+    public ResponseEntity<Boolean> nextRound(@RequestBody String lobbyCode){
+        if(lobbyCode == null){
+            return new ResponseEntity<>(false, HttpStatus.BAD_REQUEST);
+        }
+        lobbyCode = lobbyCode.replace("=", "");
+        ResponseEntity<Boolean> response;
+        Game game = gameInstances.getGame(lobbyCode);
+        if(game != null){
+            webSocket.nextRound(lobbyCode);
+            response = new ResponseEntity<>(true, HttpStatus.OK);
         }else{
             response = new ResponseEntity<>(false, HttpStatus.EXPECTATION_FAILED);
         }

@@ -9,11 +9,6 @@ export default {
   getLobbyInScoreOrder: (state) => {
     return state.lobbyUsers.sort((a, b) => (a.score < b.score ? 1 : -1));
   },
-  getCurrentUser: (state) => {
-    return state.lobbyUsers.find((user) => {
-      return user.clientCode === state.player.clientCode;
-    });
-  },
   getClientCode: (state) => {
     return state.player.clientCode;
   },
@@ -57,5 +52,14 @@ export default {
   },
   getGameStarted: (state) => {
     return state.gameStarted;
+  },
+  getGuess: (state) => {
+    let guess = state.player.guesses.find(
+      (g) => g.round === state.currentRound
+    );
+    if (guess === undefined) {
+      return {};
+    }
+    return guess;
   },
 };
