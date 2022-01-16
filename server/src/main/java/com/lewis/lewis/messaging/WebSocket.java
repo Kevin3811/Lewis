@@ -40,4 +40,10 @@ public class WebSocket {
             messagingTemplate.convertAndSend("/topic/players/" + game.getGameCode(), game.getPlayers());
         }
     }
+
+    @SendTo("/topic/round")
+    public void nextRound(String gameCode){
+        Game game = gameInstances.getGame(gameCode);
+        messagingTemplate.convertAndSend("/topic/round/" + game.getGameCode(), game);
+    }
 }

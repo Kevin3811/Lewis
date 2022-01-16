@@ -54,4 +54,14 @@ export default {
     }
     return response.data;
   },
+  async nextRound(lobbyCode) {
+    console.log("gc: ", lobbyCode);
+    let response;
+    try {
+      response = await instance.post("/next-round", lobbyCode);
+    } catch (error) {
+      console.error("Error going to next round: ", response);
+    }
+    return response.data;
+  },
 };

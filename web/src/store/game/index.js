@@ -19,13 +19,10 @@ export default {
     //   username: "Nick",
     //   score: 499,
     //   clientCode: "987654321",
-    //   latGuess: 20,
-    //   lonGuess: 20,
     //   previousScore: 546,
-    //   scores: [50, 739],
     //   guesses: [
-    //      1: {latGuess: 90, lonGuess: 90, score: 490, round: 1, runningScore: 490},
-    //      2: {latGuess: 80, lonGuess: 80 score: 350, round: 2, runningScore: 840}],
+    //      1: {latGuess: 90, lonGuess: 90, score: 490, round: 1, runningScore: 490, distance: "3 miles 2 feet"},
+    //      2: {latGuess: 80, lonGuess: 80 score: 350, round: 2, runningScore: 840, distance: "1 mile 34 feet"}],
     //   lobbyCode: asdfadf,
     //   host: false
     // };

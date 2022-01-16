@@ -44,7 +44,7 @@
         <!-- restart button -->
         <div class="restart" v-on:click="restart">
           <img
-            :src="'./restart.png'"
+            src="/restart.png"
             alt="restart"
             width="30"
             height="30"
@@ -54,7 +54,7 @@
         <!-- rewind button -->
         <div class="rewind" v-on:click="rewind">
           <img
-            :src="'./rewind.png'"
+            src="/rewind.png"
             alt="rewind"
             width="30"
             height="30"

@@ -181,4 +181,21 @@ public class LobbyController {
         webSocket.updatePlayer(player);
         return new ResponseEntity<>(true, HttpStatus.OK);
     }
+
+    @PostMapping("/next-round")
+    public ResponseEntity<Boolean> nextRound(@RequestBody String lobbyCode){
+        if(lobbyCode == null){
+            return new ResponseEntity<>(false, HttpStatus.BAD_REQUEST);
+        }
+        lobbyCode = lobbyCode.replace("=", "");
+        ResponseEntity<Boolean> response;
+        Game game = gameInstances.getGame(lobbyCode);
+        if(game != null){
+            webSocket.nextRound(lobbyCode);
+            response = new ResponseEntity<>(true, HttpStatus.OK);
+        }else{
+            response = new ResponseEntity<>(false, HttpStatus.EXPECTATION_FAILED);
+        }
+        return response;
+    }
 }

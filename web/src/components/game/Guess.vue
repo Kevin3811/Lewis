@@ -17,7 +17,8 @@
       <!-- Guess lat lon default to undefined. Only display marker once there is a guess -->
       <div v-if="guessLat !== undefined || guessLon !== undefined">
         <l-marker :lat-lng="[guessLat, guessLon]">
-          <l-icon icon-url="./redmarker.png"> </l-icon>
+          <!-- <l-icon icon-url="./redmarker.png"> </l-icon> -->
+          <l-icon icon-url="/redmarker.png"> </l-icon>
           <l-tooltip :options="{ opacity: 0.4 }">
             {{ playerUsername }}: {{ currentGuess.distance }}
           </l-tooltip>
@@ -26,7 +27,8 @@
       <!-- Show Answer -->
       <div v-if="currentUser.guessed || roundOver">
         <l-marker :lat-lng="[this.video.latitude, this.video.longitude]">
-          <l-icon icon-url="./greenmarker.png"> </l-icon>
+          <!-- <l-icon icon-url="./greenmarker.png"> </l-icon> -->
+          <l-icon icon-url="/greenmarker.png"> </l-icon>
           <l-tooltip :options="{ opacity: 0.6 }">Correct Answer</l-tooltip>
         </l-marker>
         <!-- Line connecting answer and player guess. Only attempt to draw line if a guess was made -->
@@ -45,7 +47,8 @@
             "
           >
             <l-marker :lat-lng="[guess.latGuess, guess.lonGuess]">
-              <l-icon icon-url="./bluemarker.png"> </l-icon>
+              <!-- <l-icon icon-url="./bluemarker.png"> </l-icon> -->
+              <l-icon icon-url="/bluemarker.png"> </l-icon>
               <l-tooltip :options="{ opacity: 0.6 }">
                 {{ guess.username }}: {{ guess.distance }}
               </l-tooltip>
@@ -90,6 +93,7 @@ import {
   LGeoJson,
 } from "vue2-leaflet";
 import { calculateDistanceAndScore } from "../../scripts/geocalculator.js";
+import lobbyApi from "../../api/lobby";
 
 export default {
   name: "Guess",
@@ -232,7 +236,11 @@ export default {
         };
         this.$store.dispatch("setGuess", guess);
       }
-      this.$emit("nextRound");
+      if (this.gamemode === "singleplayer") {
+        this.$emit("nextRound");
+      } else {
+        lobbyApi.nextRound(this.$store.getters.getLobbyCode);
+      }
     },
     dragMouseDown(event) {
       event.preventDefault();
