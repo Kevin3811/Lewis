@@ -76,4 +76,13 @@ export default {
   setGuessed(state, guessed) {
     state.player.guessed = guessed;
   },
+  setRoundOver(state, roundOver) {
+    state.roundOver = roundOver;
+  },
+  setMarkerLat(state, markerLat) {
+    state.markerLat = markerLat;
+  },
+  setMarkerLon(state, markerLon) {
+    state.markerLon = markerLon;
+  },
 };

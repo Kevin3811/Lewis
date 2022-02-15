@@ -15,6 +15,7 @@
 
 <script>
 import { Plotly } from "vue-plotly";
+import websocket from "../../api/websocket";
 export default {
   name: "end",
   components: {
@@ -51,39 +52,50 @@ export default {
     roundCount() {
       return this.$store.getters.getRoundCount;
     },
+    users() {
+      return this.$store.getters.getLobbyUsers;
+    },
   },
   mounted() {
-    let users = this.$store.getters.getLobbyUsers;
-    let data = [];
-    users.forEach((user) => {
-      let x = [];
-      let y = [];
-      for (let i = 1; i <= this.$store.getters.getRoundCount; i++) {
-        x.push(i);
-      }
-      let plot = {};
-      plot.x = x;
-      user.guesses.forEach((guess) => {
-        y.push(guess.runningScore);
-      });
-      plot.y = y;
-      plot.name = user.username;
-      if (user.clientCode === this.$store.getters.getClientCode) {
-        plot.line = {
-          color: "green",
-        };
-      } else {
-        plot.line = {
-          color: "gray",
-        };
-      }
-      data.push(plot);
-    });
-    this.data = data;
+    this.calculateGraphs();
+    websocket.unsubscribe();
+  },
+  watch: {
+    users() {
+      this.calculateGraphs();
+    },
   },
   methods: {
     playAgain() {
       this.$router.replace({ name: "Home" });
+    },
+    calculateGraphs() {
+      let data = [];
+      this.users.forEach((user) => {
+        let x = [];
+        let y = [];
+        for (let i = 1; i <= this.$store.getters.getRoundCount; i++) {
+          x.push(i);
+        }
+        let plot = {};
+        plot.x = x;
+        user.guesses.forEach((guess) => {
+          y.push(guess.runningScore);
+        });
+        plot.y = y;
+        plot.name = user.username;
+        if (user.clientCode === this.$store.getters.getClientCode) {
+          plot.line = {
+            color: "green",
+          };
+        } else {
+          plot.line = {
+            color: "gray",
+          };
+        }
+        data.push(plot);
+      });
+      this.data = data;
     },
   },
 };

@@ -4,7 +4,11 @@ import store from "../store";
 const url = "ws://localhost:8081/scores";
 
 let client;
-let subscription;
+
+let scoreSub;
+let playerSub;
+let gameSub;
+let roundSub;
 
 function createConnection(lobbyCode) {
   client = new Client({
@@ -30,33 +34,35 @@ function createConnection(lobbyCode) {
 function subscribe(lobbyCode) {
   if (client) {
     //Updating scores
-    client.subscribe("/topic/scores/" + lobbyCode, (message) => {
+    scoreSub = client.subscribe("/topic/scores/" + lobbyCode, (message) => {
       store.dispatch("updateScores", message.body);
     });
     //Updating players in lobby
-    client.subscribe("/topic/players/" + lobbyCode, (message) => {
+    playerSub = client.subscribe("/topic/players/" + lobbyCode, (message) => {
       console.log("players: ", JSON.parse(message.body));
       store.dispatch("setUsers", JSON.parse(message.body));
     });
     //Update game rules
-    client.subscribe("/topic/game/" + lobbyCode, (message) => {
+    gameSub = client.subscribe("/topic/game/" + lobbyCode, (message) => {
       store.dispatch("setGameRules", JSON.parse(message.body));
     });
-    //Update game rules
-    client.subscribe("/topic/round/" + lobbyCode, (message) => {
-      // store.dispatch("setGameRules", JSON.parse(message.body));
+    //Update round
+    roundSub = client.subscribe("/topic/round/" + lobbyCode, (message) => {
       console.log("next round: ", JSON.parse(message.body));
+      store.dispatch("nextRound");
     });
     console.log("Websocket subsribed to topics for lobby: ", lobbyCode);
   }
 }
 
 function unsubscribe() {
-  if (!subscription) {
-    subscription.unsubscribe();
-  }
+  scoreSub.unsubscribe();
+  playerSub.unsubscribe();
+  gameSub.unsubscribe();
+  roundSub.unsubscribe();
 }
 
 export default {
   createConnection,
+  unsubscribe,
 };

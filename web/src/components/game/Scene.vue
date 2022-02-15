@@ -66,7 +66,6 @@
     <div v-if="isGuessing">
       <Guess
         :video="currentVideo"
-        v-on:nextRound="nextRound"
         v-on:guessPanelMoved="guessPanelMoved"
         v-on:markerPlaced="markerPlaced"
         :roundOver="roundOver"
@@ -99,10 +98,7 @@ export default {
       playbackRate: 1,
       countDownTimer: undefined,
       secondsLeft: undefined,
-      roundOver: false,
       guessPanel: undefined,
-      markerLat: undefined,
-      markerLon: undefined,
     };
   },
   computed: {
@@ -143,6 +139,29 @@ export default {
     isGuessing() {
       return this.$store.getters.getIsGuessing;
     },
+    roundOver() {
+      return this.$store.getters.getRoundOver;
+    },
+    markerLat() {
+      return this.$store.getters.getMarkerLat;
+    },
+    markerLon() {
+      return this.$store.getters.getMarkerLon;
+    },
+  },
+  watch: {
+    currentRound() {
+      if (this.currentRound - 1 === this.roundCount) {
+        clearInterval(this.countDownTimer);
+        //Add timeout to let player scores get a response from backend before ending game
+        setTimeout(() => {
+          //Change route to "end" instead of pushing to make back button go back to home screen
+          this.$router.replace({ name: "End" });
+        }, 1000);
+      } else {
+        this.startTimer();
+      }
+    },
   },
   created() {
     window.addEventListener("resize", this.resizeEvent);
@@ -182,36 +201,13 @@ export default {
     restart() {
       this.player.seekTo(this.playerVars.start);
     },
-    nextRound() {
-      this.$store.dispatch("incrementPlayerScore", this.currentRound);
-      if (this.currentRound === this.roundCount) {
-        //Change route to "end" instead of pushing to make back button go back to home screen
-        this.$router.replace({ name: "End" });
-      }
-      //Only continue game if the round limit hasn't been reached
-      else {
-        this.$store.dispatch(
-          "setCurrentRound",
-          this.$store.getters.getCurrentRound + 1
-        );
-        this.roundOver = false;
-        this.markerLat = undefined;
-        this.markerLon = undefined;
-        this.$store.dispatch("setIsGuessing", false);
-        this.$store.dispatch("resetPlayersPreviousRound");
-        this.$store.dispatch("setShowLobbyAnswers", false);
-        this.$store.dispatch("setGuessed", false);
-        // this.$store.getters.getPlayer.guessed = false;
-        this.startTimer();
-      }
-    },
     startTimer() {
       this.secondsLeft = this.$store.getters.getRoundLength;
       clearInterval(this.countDownTimer);
       this.countDownTimer = setInterval(() => {
         this.secondsLeft -= 1;
         if (this.secondsLeft <= 0) {
-          this.roundOver = true;
+          this.$store.dispatch("setRoundOver", true);
           clearInterval(this.countDownTimer);
         }
       }, 1000);
@@ -220,8 +216,8 @@ export default {
       this.guessPanel = event;
     },
     markerPlaced(event) {
-      this.markerLat = event.guessLat;
-      this.markerLon = event.guessLon;
+      this.$store.dispatch("setMarkerLat", event.guessLat);
+      this.$store.dispatch("setMarkerLon", event.guessLon);
     },
   },
   onDestroy() {

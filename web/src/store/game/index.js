@@ -28,6 +28,10 @@ export default {
     // };
     lobbyUsers: [],
     player: {},
+
+    roundOver: false,
+    markerLat: undefined,
+    markerLon: undefined,
   },
   actions,
   mutations,
