@@ -18,12 +18,9 @@ export default {
   resetPlayersPreviousRound(context) {
     context.commit("resetPlayersPreviousRound");
   },
-  incrementPlayerScore(context, round) {
+  async incrementPlayerScore(context, round) {
     context.commit("incrementPlayerScore", round);
-    if (context.getters.getGamemode === "multiplayer") {
-      //Send player score to server if it's multiplayer and score updated
-      lobbyApi.updatePlayer(context.getters.getPlayer);
-    }
+    await lobbyApi.updatePlayer(context.getters.getPlayer);
   },
   addUser(context, user) {
     context.commit("addUser", user);
@@ -95,9 +92,44 @@ export default {
   setGuess(context, guess) {
     context.commit("setGuess", guess);
     let player = context.getters.getPlayer;
-    if (context.getters.getGamemode === "multiplayer") {
-      //Send player score to server if it's multiplayer and score updated
-      lobbyApi.updatePlayer(player);
+    //Send player score to server if it's multiplayer and score updated
+    lobbyApi.updatePlayer(player);
+  },
+  setRoundOver(context, roundOver) {
+    context.commit("setRoundOver", roundOver);
+  },
+  setMarkerLat(context, markerLat) {
+    context.commit("setMarkerLat", markerLat);
+  },
+  setMarkerLon(context, markerLon) {
+    context.commit("setMarkerLon", markerLon);
+  },
+  nextRound(context) {
+    console.log("next round");
+    //If they didn't guess, create an hollow guess object
+    if (!context.getters.getPlayer.guessed) {
+      console.log("if");
+      let guess = {
+        latGuess: undefined,
+        lonGuess: undefined,
+        score: 0,
+        round: context.getters.getCurrentRound,
+        runningScore: 0,
+        distance: "---",
+      };
+      context.dispatch("setGuess", guess);
     }
+    context.dispatch("incrementPlayerScore", context.getters.getCurrentRound);
+
+    context.dispatch("setRoundOver", false);
+    context.dispatch("setMarkerLat", undefined);
+    context.dispatch("setMarkerLon", undefined);
+
+    context.dispatch("setIsGuessing", false);
+    context.dispatch("resetPlayersPreviousRound");
+    context.dispatch("setShowLobbyAnswers", false);
+    context.dispatch("setGuessed", false);
+
+    context.dispatch("setCurrentRound", context.getters.getCurrentRound + 1);
   },
 };

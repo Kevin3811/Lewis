@@ -62,4 +62,13 @@ export default {
     }
     return guess;
   },
+  getRoundOver: (state) => {
+    return state.roundOver;
+  },
+  getMarkerLat: (state) => {
+    return state.markerLat;
+  },
+  getMarkerLon: (state) => {
+    return state.markerLon;
+  },
 };

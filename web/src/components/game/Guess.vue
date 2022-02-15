@@ -224,23 +224,7 @@ export default {
       this.$store.dispatch("setShowLobbyAnswers", true);
     },
     next() {
-      //If they didn't guess, create an hollow guess object
-      if (this.currentUser.guessed === false) {
-        let guess = {
-          latGuess: undefined,
-          lonGuess: undefined,
-          score: 0,
-          round: this.$store.getters.getCurrentRound,
-          runningScore: 0,
-          distance: "---",
-        };
-        this.$store.dispatch("setGuess", guess);
-      }
-      if (this.gamemode === "singleplayer") {
-        this.$emit("nextRound");
-      } else {
-        lobbyApi.nextRound(this.$store.getters.getLobbyCode);
-      }
+      lobbyApi.nextRound(this.$store.getters.getLobbyCode);
     },
     dragMouseDown(event) {
       event.preventDefault();
