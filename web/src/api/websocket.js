@@ -17,6 +17,7 @@ function createConnection(lobbyCode) {
   });
   //Subscribe to stomp topics when connection is established
   client.onConnect = () => {
+    console.log("Connected to websocket");
     subscribe(lobbyCode);
   };
   //Unsubscribe to stomp topics when connection is disconnected
@@ -39,7 +40,6 @@ function subscribe(lobbyCode) {
     });
     //Updating players in lobby
     playerSub = client.subscribe("/topic/players/" + lobbyCode, (message) => {
-      console.log("players: ", JSON.parse(message.body));
       store.dispatch("setUsers", JSON.parse(message.body));
     });
     //Update game rules

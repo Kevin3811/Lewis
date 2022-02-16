@@ -37,7 +37,6 @@ export default {
   },
   async startGame(lobbyCode) {
     let response;
-    console.log("gc: ", lobbyCode);
     try {
       response = await instance.post("/start-game", lobbyCode);
     } catch (error) {
@@ -45,7 +44,6 @@ export default {
     }
   },
   async updatePlayer(player) {
-    console.log("sending: ", player);
     let response;
     try {
       response = await instance.post("/update-player", player);
@@ -55,7 +53,6 @@ export default {
     return response.data;
   },
   async nextRound(lobbyCode) {
-    console.log("gc: ", lobbyCode);
     let response;
     try {
       response = await instance.post("/next-round", lobbyCode);
