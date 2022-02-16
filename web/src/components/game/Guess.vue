@@ -277,13 +277,13 @@ export default {
 .guess-header {
   color: white;
   background-color: gray;
-  opacity: 80%;
+  opacity: 0.8;
   cursor: grab;
   width: 100%;
   min-height: 25px;
 }
 .guess-header:hover {
-  opacity: 100%;
+  opacity: 1;
 }
 .guess-text {
   margin-left: 5px;
@@ -308,7 +308,7 @@ export default {
 }
 .footer {
   background-color: gray;
-  opacity: 60%;
+  opacity: 0.6;
   height: 40px;
 }
 .footer-buttons {
@@ -368,7 +368,7 @@ export default {
 .disabledGuessButton {
   padding: 3px;
   background-color: green;
-  opacity: 50%;
+  opacity: 0.5;
   color: white;
   cursor: not-allowed;
   border-radius: 5px;

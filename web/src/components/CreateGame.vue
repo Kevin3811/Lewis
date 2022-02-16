@@ -209,7 +209,7 @@ export default {
   z-index: 100;
   border-radius: 15px;
   background-color: #17a2b8;
-  opacity: 95%;
+  opacity: 0.95;
 
   margin: auto;
 }
@@ -271,7 +271,7 @@ export default {
 }
 .playlist {
   background-color: gray;
-  opacity: 70%;
+  opacity: 0.7;
   border-radius: 5px;
   align-items: center;
   margin: 1.5%;
@@ -286,6 +286,6 @@ export default {
 }
 .selectedPlaylist {
   background-color: gray;
-  opacity: 100%;
+  opacity: 1;
 }
 </style>

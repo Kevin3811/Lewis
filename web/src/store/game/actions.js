@@ -105,10 +105,8 @@ export default {
     context.commit("setMarkerLon", markerLon);
   },
   nextRound(context) {
-    console.log("next round");
     //If they didn't guess, create an hollow guess object
     if (!context.getters.getPlayer.guessed) {
-      console.log("if");
       let guess = {
         latGuess: undefined,
         lonGuess: undefined,

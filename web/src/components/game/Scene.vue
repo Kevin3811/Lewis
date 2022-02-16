@@ -248,7 +248,7 @@ export default {
   background: gray;
   width: 100px;
   height: 30px;
-  opacity: 70%;
+  opacity: 0.7;
   border-radius: 10px;
   text-align: center;
   position: absolute;
@@ -264,7 +264,7 @@ export default {
   text-align: center;
   color: white;
   background: gray;
-  opacity: 80%;
+  opacity: 0.8;
   border-radius: 7px;
   min-width: 150px;
 }
