@@ -43,6 +43,7 @@
           <b-button class="modalButton" v-on:click="play('multiplayer')"
             >Create New Lobby</b-button
           >
+          <!--TODO: Join lobby should do something-->
           <b-button class="modalButton">Join Existing Lobby</b-button>
         </div>
       </b-modal>
