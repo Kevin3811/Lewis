@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const SERVER_URL = "http://localhost:8081/lobby";
+const SERVER_URL = "http://174.105.244.215:8081/lobby";
 
 const instance = axios.create({
   baseURL: SERVER_URL,
