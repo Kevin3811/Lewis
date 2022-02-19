@@ -13,11 +13,14 @@
       :center="center"
       v-on:click="mapClick($event)"
     >
-      <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
+      <l-tile-layer
+        :url="url"
+        :attribution="attribution"
+        :subdomains="subdomains"
+      ></l-tile-layer>
       <!-- Guess lat lon default to undefined. Only display marker once there is a guess -->
       <div v-if="guessLat !== undefined || guessLon !== undefined">
         <l-marker :lat-lng="[guessLat, guessLon]">
-          <!-- <l-icon icon-url="./redmarker.png"> </l-icon> -->
           <l-icon icon-url="/redmarker.png"> </l-icon>
           <l-tooltip :options="{ opacity: 0.4 }">
             {{ playerUsername }}: {{ currentGuess.distance }}
@@ -27,7 +30,6 @@
       <!-- Show Answer -->
       <div v-if="currentUser.guessed || roundOver">
         <l-marker :lat-lng="[this.video.latitude, this.video.longitude]">
-          <!-- <l-icon icon-url="./greenmarker.png"> </l-icon> -->
           <l-icon icon-url="/greenmarker.png"> </l-icon>
           <l-tooltip :options="{ opacity: 0.6 }">Correct Answer</l-tooltip>
         </l-marker>
@@ -47,7 +49,6 @@
             "
           >
             <l-marker :lat-lng="[guess.latGuess, guess.lonGuess]">
-              <!-- <l-icon icon-url="./bluemarker.png"> </l-icon> -->
               <l-icon icon-url="/bluemarker.png"> </l-icon>
               <l-tooltip :options="{ opacity: 0.6 }">
                 {{ guess.username }}: {{ guess.distance }}
@@ -110,8 +111,13 @@ export default {
     return {
       zoom: 1,
       center: [47.41322, -1.219482],
-      url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-      attribution: "attribution",
+      // url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+      url: "https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}&hl=en", //map
+      // url: "https://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}&hl=en",  //terrain (satellite view)
+      // url: "https://{s}.google.com/vt/lyrs=y&x={x}&y={y}&z={z}&hl=en", //hybrid
+      attribution:
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      subdomains: ["mt0", "mt1", "mt2", "mt3"],
       english: true,
       nativeLanguages: false,
       distance: "",
@@ -277,13 +283,13 @@ export default {
 .guess-header {
   color: white;
   background-color: gray;
-  opacity: 80%;
+  opacity: 0.8;
   cursor: grab;
   width: 100%;
   min-height: 25px;
 }
 .guess-header:hover {
-  opacity: 100%;
+  opacity: 1;
 }
 .guess-text {
   margin-left: 5px;
@@ -308,7 +314,7 @@ export default {
 }
 .footer {
   background-color: gray;
-  opacity: 60%;
+  opacity: 0.6;
   height: 40px;
 }
 .footer-buttons {
@@ -368,7 +374,7 @@ export default {
 .disabledGuessButton {
   padding: 3px;
   background-color: green;
-  opacity: 50%;
+  opacity: 0.5;
   color: white;
   cursor: not-allowed;
   border-radius: 5px;

@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const SERVER_URL = "http://localhost:8081/lobby";
+const SERVER_URL = "http://174.105.244.215:8081/lobby";
+// const SERVER_URL = "http://localhost:8081/lobby";
 
 const instance = axios.create({
   baseURL: SERVER_URL,
@@ -13,7 +14,7 @@ export default {
     try {
       playlists = await instance.get("/playlists");
     } catch (error) {
-      console.error("Error getting playlists");
+      console.error("Error getting playlists: ", error);
     }
     return playlists.data;
   },

@@ -89,7 +89,7 @@ export default {
     },
     copyLink() {
       navigator.clipboard.writeText(
-        "localhost:8080/multiplayer/" + this.lobbyCode
+        window.location.origin + "/multiplayer/" + this.lobbyCode
       );
     },
     enterLobby(event) {

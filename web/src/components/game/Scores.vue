@@ -47,13 +47,13 @@ export default {
   max-width: 20%;
   margin-top: 1em;
   margin-left: 0.5em;
-  opacity: 80%;
+  opacity: 0.8;
   padding: 5px;
   border-radius: 10px;
 }
 .leaderboardheader {
   color: white;
-  opacity: 100%;
+  opacity: 1;
   font-size: 1.2em;
   text-align: center;
   text-decoration: underline;

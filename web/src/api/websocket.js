@@ -1,7 +1,8 @@
 import { Client } from "@stomp/stompjs";
 import store from "../store";
 
-const url = "ws://localhost:8081/scores";
+const url = "ws://174.105.244.215:8081/scores";
+// const url = "ws://localhost:8081/scores";
 
 let client;
 
@@ -17,6 +18,7 @@ function createConnection(lobbyCode) {
   });
   //Subscribe to stomp topics when connection is established
   client.onConnect = () => {
+    console.log("Connected to websocket");
     subscribe(lobbyCode);
   };
   //Unsubscribe to stomp topics when connection is disconnected
@@ -39,7 +41,6 @@ function subscribe(lobbyCode) {
     });
     //Updating players in lobby
     playerSub = client.subscribe("/topic/players/" + lobbyCode, (message) => {
-      console.log("players: ", JSON.parse(message.body));
       store.dispatch("setUsers", JSON.parse(message.body));
     });
     //Update game rules
