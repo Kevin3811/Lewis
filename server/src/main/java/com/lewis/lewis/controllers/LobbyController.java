@@ -197,4 +197,21 @@ public class LobbyController {
         }
         return response;
     }
+
+    @PostMapping("/remove-game")
+    public ResponseEntity<Boolean> removeGame(@RequestBody String lobbyCode){
+        if(lobbyCode == null){
+            return new ResponseEntity<>(false, HttpStatus.BAD_REQUEST);
+        }
+        lobbyCode = lobbyCode.replace("=", "");
+        ResponseEntity<Boolean> response;
+        Game game = gameInstances.getGame(lobbyCode);
+        if(game != null){
+            gameInstances.deleteGame(lobbyCode);
+            response = new ResponseEntity<>(true, HttpStatus.OK);
+        }else{
+            response = new ResponseEntity<>(false, HttpStatus.OK);
+        }
+        return response;
+    }
 }

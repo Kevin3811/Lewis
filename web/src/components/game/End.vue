@@ -16,6 +16,7 @@
 <script>
 import { Plotly } from "vue-plotly";
 import websocket from "../../api/websocket";
+import lobbyApi from "../../api/lobby";
 export default {
   name: "end",
   components: {
@@ -59,6 +60,9 @@ export default {
   mounted() {
     this.calculateGraphs();
     websocket.unsubscribe();
+    if (this.$store.getters.getIsHost) {
+      lobbyApi.removeGame(this.$store.getters.getLobbyCode);
+    }
   },
   watch: {
     users() {

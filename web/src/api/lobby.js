@@ -1,10 +1,6 @@
 import axios from "axios";
 
-const SERVER_URL = "http://174.105.244.215:8081/lobby";
-// const SERVER_URL = "http://localhost:8081/lobby";
-
 const instance = axios.create({
-  baseURL: SERVER_URL,
   timeout: 1000,
 });
 
@@ -12,7 +8,7 @@ export default {
   async createGame(game) {
     let response;
     try {
-      response = await instance.post("/create-lobby", game);
+      response = await instance.post("/lobby/create-lobby", game);
     } catch (error) {
       console.error("Error creating lobby: ", response);
     }
@@ -21,7 +17,7 @@ export default {
   async addPlayerToLobby(player) {
     let response;
     try {
-      response = await instance.post("/add-user", player);
+      response = await instance.post("/lobby/add-user", player);
     } catch (error) {
       console.error("Error creating lobby: ", response);
     }
@@ -30,7 +26,7 @@ export default {
   async deletePlayerFromLobby(player) {
     let response;
     try {
-      response = await instance.post("/remove-player", player);
+      response = await instance.post("/lobby/remove-player", player);
     } catch (error) {
       console.error("Error removing player from lobby: ", response);
     }
@@ -39,7 +35,7 @@ export default {
   async startGame(lobbyCode) {
     let response;
     try {
-      response = await instance.post("/start-game", lobbyCode);
+      response = await instance.post("/lobby/start-game", lobbyCode);
     } catch (error) {
       console.error("Error starting game: ", response);
     }
@@ -47,7 +43,7 @@ export default {
   async updatePlayer(player) {
     let response;
     try {
-      response = await instance.post("/update-player", player);
+      response = await instance.post("/lobby/update-player", player);
     } catch (error) {
       console.error("Error updating player: ", response);
     }
@@ -56,9 +52,18 @@ export default {
   async nextRound(lobbyCode) {
     let response;
     try {
-      response = await instance.post("/next-round", lobbyCode);
+      response = await instance.post("/lobby/next-round", lobbyCode);
     } catch (error) {
       console.error("Error going to next round: ", response);
+    }
+    return response.data;
+  },
+  async removeGame(lobbyCode) {
+    let response;
+    try {
+      response = await instance.post("/lobby/remove-game", lobbyCode);
+    } catch (error) {
+      console.error("Error removing game: ", response);
     }
     return response.data;
   },

@@ -1,9 +1,6 @@
 import { Client } from "@stomp/stompjs";
 import store from "../store";
 
-const url = "ws://174.105.244.215:8081/scores";
-// const url = "ws://localhost:8081/scores";
-
 let client;
 
 let scoreSub;
@@ -13,7 +10,7 @@ let roundSub;
 
 function createConnection(lobbyCode) {
   client = new Client({
-    brokerURL: url,
+    brokerURL: process.env.VUE_APP_WS_URL,
     reconnectDelay: 5000,
   });
   //Subscribe to stomp topics when connection is established
