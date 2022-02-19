@@ -66,7 +66,7 @@ public class GameSettings {
                     .description(video.getDescription())
                     .build();
             videoRepository.save(videoEntity);
-            log.info("Added video [{}] to database", video.getUrl());
+            log.debug("Added video [{}] to database", video.getUrl());
         }
     }
 

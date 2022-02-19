@@ -2,6 +2,7 @@ import { Client } from "@stomp/stompjs";
 import store from "../store";
 
 const url = "ws://174.105.244.215:8081/scores";
+// const url = "ws://localhost:8081/scores";
 
 let client;
 

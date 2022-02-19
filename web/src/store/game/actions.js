@@ -14,6 +14,10 @@ export default {
     context.commit("setGameStarted", false);
     context.commit("clearUsers");
     context.commit("setPlayer", {});
+    context.commit("setGuessed", false);
+    context.commit("setRoundOver", false);
+    context.commit("setMarkerLat", undefined);
+    context.commit("setMarkerLon", undefined);
   },
   resetPlayersPreviousRound(context) {
     context.commit("resetPlayersPreviousRound");
