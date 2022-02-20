@@ -97,6 +97,7 @@ public class LobbyController {
             //Randomize order of videos
             Collections.shuffle(videos);
             game.setVideos(videos);
+            game.setLastUpdate(Calendar.getInstance().getTime());
             gameInstances.addGame(game);
             response = new ResponseEntity<>(videos, HttpStatus.OK);
         }else{
@@ -118,6 +119,7 @@ public class LobbyController {
             if(game != null){
                 //Add player
                 game.getPlayers().put(player.getClientCode(), player);
+                game.setLastUpdate(Calendar.getInstance().getTime());
                 //Publish playerlist over websocket for lobby
                 webSocket.sendPlayerList(player.getGameCode());
                 response = new ResponseEntity<>(player, HttpStatus.OK);
@@ -141,6 +143,7 @@ public class LobbyController {
             //Remove the player from the game
             Game game = gameInstances.getGame(player.getGameCode());
             game.getPlayers().remove(player.getClientCode());
+            game.setLastUpdate(Calendar.getInstance().getTime());
             //Remove the lobby if the players list is empty
             if(game.getPlayers().isEmpty()){
                 GameInstances.getGameInstances().deleteGame(player.getGameCode());
@@ -162,6 +165,7 @@ public class LobbyController {
         ResponseEntity<Boolean> response;
         Game game = gameInstances.getGame(lobbyCode);
         if(game != null){
+            game.setLastUpdate(Calendar.getInstance().getTime());
             webSocket.startGame(lobbyCode);
             response = new ResponseEntity<>(true, HttpStatus.OK);
             log.info("start game: {}", lobbyCode);
@@ -190,6 +194,7 @@ public class LobbyController {
         ResponseEntity<Boolean> response;
         Game game = gameInstances.getGame(lobbyCode);
         if(game != null){
+            game.setLastUpdate(Calendar.getInstance().getTime());
             webSocket.nextRound(lobbyCode);
             response = new ResponseEntity<>(true, HttpStatus.OK);
         }else{
