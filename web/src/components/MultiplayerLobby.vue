@@ -14,7 +14,7 @@
       <b-button
         class="linkButton"
         variant="primary"
-        :title="'localhost:8080/multiplayer/' + lobbyCode"
+        :title="hostname + '/multiplayer/' + lobbyCode"
         v-on:click="copyLink"
         >Copy Game Link</b-button
       >
@@ -53,6 +53,7 @@ export default {
       lobbyCode: this.$route.params.lobbyCode,
       username: "",
       lobbyEntered: false,
+      hostname: window.location.origin,
     };
   },
   computed: {
