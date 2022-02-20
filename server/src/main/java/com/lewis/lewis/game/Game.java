@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -28,4 +29,6 @@ public class Game {
 
     //Key: ClientCode, Value: Player Object
     private Map<String, Player> players = new HashMap<>();
+
+    private Date lastUpdate;
 }

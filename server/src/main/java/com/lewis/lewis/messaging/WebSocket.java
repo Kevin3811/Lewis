@@ -9,6 +9,8 @@ import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Component;
 
+import java.util.Calendar;
+
 @Component
 @Slf4j
 public class WebSocket {
@@ -37,6 +39,7 @@ public class WebSocket {
         Game game = gameInstances.getGame(player.getGameCode());
         if(game != null) {
             game.getPlayers().put(player.getClientCode(), player);
+            game.setLastUpdate(Calendar.getInstance().getTime());
             messagingTemplate.convertAndSend("/topic/players/" + game.getGameCode(), game.getPlayers());
         }
     }
