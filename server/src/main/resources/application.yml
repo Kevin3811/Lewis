@@ -2277,7 +2277,115 @@ game:
         - World
         - Europe
         - Cities
-
+    #Asia---------------------------------------------------------------------------------------------------------------
+    - url: XZVBoSteNYA
+      start-time: 1
+      latitude: 28.649460
+      longitude: 77.207522
+      description: Old Delhi India
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: ldWLai0BtmE
+      start-time: 11
+      latitude: 28.661702
+      longitude: 77.181000
+      description: New Delhi India
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: OmgARbYAAvQ
+      start-time: 2
+      latitude: 26.492697
+      longitude: 74.549942
+      description: Pushkar India
+      playlists:
+        - World
+        - Asia
+        - Small Towns
+    - url: 0MiA-5upvEA
+      start-time: 3
+      latitude: 25.315217
+      longitude: 82.998796
+      description: Varanasi India
+      playlists:
+        - World
+        - Asia
+        - Small Towns
+    - url: PUrlmfnysZ8
+      start-time: 120
+      latitude: 25.320668
+      longitude: 83.023103
+      description: Varanasi India
+      playlists:
+        - World
+        - Asia
+        - Small Towns
+    - url: XRU9omrRV64
+      start-time: 1
+      latitude: 25.315974
+      longitude: 83.019205
+      description: Varanasi India
+      playlists:
+        - World
+        - Asia
+        - Small Towns
+    - url: VxetycIW22A
+      start-time: 5
+      latitude: 22.630153
+      longitude: 88.385631
+      description: Kolkata India
+      playlists:
+        - World
+        - Asia
+        - Small Towns
+    - url: APynX3LRinY
+      start-time: 27
+      latitude: 18.936454
+      longitude: 72.835822
+      description: Mumbai India
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: BD_nlE9uiDE
+      start-time: 1
+      latitude: 18.913594
+      longitude: 72.823320
+      description: Mumbai India
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: KzbVYTr04eQ
+      start-time: 4
+      latitude: 18.922550
+      longitude: 72.834467
+      description: Mumbai India
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: 17IajJTlFEU
+      start-time: 685
+      latitude: 32.244381
+      longitude: 77.187516
+      description: Manali India
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: eE3x-ZgaU3s
+      start-time: 585
+      latitude: 32.244339
+      longitude: 77.187904
+      description: Ladakh India
+      playlists:
+        - World
+        - Asia
+        - Cities
 
 
 
