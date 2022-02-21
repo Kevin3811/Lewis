@@ -2386,6 +2386,151 @@ game:
         - World
         - Asia
         - Cities
+    #South America------------------------------------------------------------------------------------------------------
+      #Brazil
+    - url: Nqk9oAHv-NE
+      start-time: 47
+      latitude: -22.970802
+      longitude: -43.186546
+      description: Rio de Janeiro Brazil
+      playlists:
+        - World
+        - South America
+        - Cities
+    - url: RRBi1Qcn-JA
+      start-time: 1
+      latitude: -22.952301
+      longitude: -43.186975
+      description: Rio de Janeiro Brazil
+      playlists:
+        - World
+        - South America
+        - Cities
+    - url: kTAWZS1CdXQ
+      start-time: 14
+      latitude: -23.574827
+      longitude: -46.688067
+      description: Sao Paulo Brazil
+      playlists:
+        - World
+        - South America
+        - Cities
+    - url: kDJruOu5gtU
+      start-time: 522
+      latitude: -22.981807
+      longitude: -43.190289
+      description: Rio de Janeiro Brazil
+      playlists:
+        - World
+        - South America
+        - Cities
+    - url: ALMhsxhjaxg
+      start-time: 75
+      latitude: -22.966844
+      longitude: -43.186835
+      description: Rio de Janeiro Brazil
+      playlists:
+        - World
+        - South America
+        - Cities
+    - url: pvWNQjFUJiA
+      start-time: 11
+      latitude: -22.987779
+      longitude: -43.196431
+      description: Rio de Janeiro Brazil
+      playlists:
+        - World
+        - South America
+        - Cities
+    - url: x5Trk4PsXr0
+      start-time: 9
+      latitude: -23.567702
+      longitude: -46.669417
+      description: Sao Paulo Brazil
+      playlists:
+        - World
+        - South America
+        - Cities
+    - url: 7VOHFV9Pl9M
+      start-time: 30
+      latitude: -25.692320
+      longitude: -54.434670
+      description: Foz do Iguacu Brazil
+      playlists:
+        - World
+        - South America
+    - url: 7VOHFV9Pl9M
+      start-time: 14
+      latitude: -22.950923
+      longitude: -43.213026
+      description: Rio de Janeiro Brazil
+      playlists:
+        - World
+        - South America
+        - Cities
+    - url: aE6BBlB4r_Y
+      start-time: 5
+      latitude: -22.949465
+      longitude: -43.156410
+      description: Rio de Janeiro Brazil
+      playlists:
+        - World
+        - South America
+        - Cities
+    - url: 45hEgiWEE9U
+      start-time: 740
+      latitude: -22.915550
+      longitude: -43.179700
+      description: Rio de Janeiro Brazil
+      playlists:
+        - World
+        - South America
+        - Cities
+    - url: 8nPL9YBWV0o
+      start-time: 9
+      latitude: -15.801817
+      longitude: -47.894947
+      description: Brasilia Brazil
+      playlists:
+        - World
+        - South America
+        - Small Towns
+    - url: 8nPL9YBWV0o
+      start-time: 733
+      latitude: -15.759995
+      longitude: -47.895292
+      description: Brasilia Brazil
+      playlists:
+        - World
+        - South America
+        - Small Towns
+    - url: 1w5eAshOono
+      start-time: 20
+      latitude: -25.428485
+      longitude: -49.265903
+      description: Curitiba Brazil
+      playlists:
+        - World
+        - South America
+        - Cities
+    - url: zSHq0rF0sz8
+      start-time: 31
+      latitude: -25.427975
+      longitude: -49.272233
+      description: Curitiba Brazil
+      playlists:
+        - World
+        - South America
+        - Cities
+    - url: OjcCdyQcvDE
+      start-time: 1
+      latitude: -3.740851
+      longitude: -38.541177
+      description: Fortaleza Brazil
+      playlists:
+        - World
+        - South America
+        - Cities
 
 
 
