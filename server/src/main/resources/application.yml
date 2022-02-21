@@ -825,14 +825,6 @@ game:
         - World
         - North America
         - Cities
-    - url: RSa1s-grI9A
-      start-time: 10
-      latitude: 37.604379
-      longitude: -112.156528
-      description: Bryce Canyon National Park Utah
-      playlists:
-        - World
-        - North America
     - url: bdDtsRh_C1g
       start-time: 2
       latitude: 32.225717
@@ -1194,3 +1186,380 @@ game:
         - World
         - North America
         - Cities
+    - url: sXPjAjir0jw
+      start-time: 40
+      latitude: 45.5035
+      longitude: -73.5685
+      description: Montreal Canada
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: 4jnyy3G3WIA
+      start-time: 42
+      latitude: 43.656037
+      longitude: -79.382201
+      description: Toronto Canada
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: 1gklwia9xqo
+      start-time: 13
+      latitude: 43.674812
+      longitude: -79.388507
+      description: Toronto Canada
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: -2JBgaigpGI
+      start-time: 22
+      latitude: 49.286603
+      longitude: -123.111790
+      description: Vancouver Canada
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: -2JBgaigpGI
+      start-time: 200
+      latitude: 49.284833
+      longitude: -123.114621
+      description: Vancouver Canada
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: -2JBgaigpGI
+      start-time: 743
+      latitude: 49.280440
+      longitude: -123.121418
+      description: Vancouver Canada
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: olMr5JeJK5U
+      start-time: 10
+      latitude: 49.284179
+      longitude: -123.115472
+      description: Vancouver Canada
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: olMr5JeJK5U
+      start-time: 66
+      latitude: 49.283654
+      longitude: -123.116406
+      description: Vancouver Canada
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: 30oX9ZNj598
+      start-time: 150
+      latitude: 49.277715
+      longitude: -123.117467
+      description: Vancouver Canada
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: yxE80teWF6Y
+      start-time: 26
+      latitude: 49.273411
+      longitude: -123.113484
+      description: Vancouver Canada
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: AVPXerDGNmI
+      start-time: 119
+      latitude: 48.425693
+      longitude: -123.367579
+      description: Victoria Canada
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: AVPXerDGNmI
+      start-time: 554
+      latitude: 48.422156
+      longitude: -123.368663
+      description: Victoria Canada
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: 29kP4uqeFPc
+      start-time: 114
+      latitude: 48.414860
+      longitude: -123.365276
+      description: Victoria Canada
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: 29kP4uqeFPc
+      start-time: 300
+      latitude: 48.414726
+      longitude: -123.363411
+      description: Victoria Canada
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: fjBy03Obnt8
+      start-time: 112
+      latitude: 49.326796
+      longitude: -122.949175
+      description: Vancouver Canada
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: vwavVE93Xc4
+      start-time: 18
+      latitude: 45.495502
+      longitude: -73.577380
+      description: Montreal Canada
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: lKVVCWRevro
+      start-time: 120
+      latitude: 51.056527
+      longitude: -114.069277
+      description: Calgary Canada
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: QhYZ21kKEZ8
+      start-time: 14
+      latitude: 49.893994
+      longitude: -97.143049
+      description: Winnipeg Canada
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: Y8Z7WHFZAN0
+      start-time: 35
+      latitude: 49.894929
+      longitude: -97.145052
+      description: Winnipeg Canada
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: tDkvbCpr1so
+      start-time: 10
+      latitude: 49.882290
+      longitude: -97.154382
+      description: Winnipeg Canada
+      playlists:
+        - World
+        - North America
+        - Small Towns
+    - url: 6ntswWEhVLg
+      start-time: 622
+      latitude: 46.813651
+      longitude: -71.206803
+      description: Quebec Canada
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: IRPMleRa-cA
+      start-time: 1940
+      latitude: 46.813707
+      longitude: -71.211128
+      description: Quebec Canada
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: dSV6rD7i9t0
+      start-time: 1497
+      latitude: 46.813469
+      longitude: -71.205233
+      description: Quebec Canada
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: MEZfA_zMM3s
+      start-time: 1748
+      latitude: 48.426588
+      longitude: -123.374546
+      description: Victoria Canada
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: Wep1Qmc1fbE
+      start-time: 60
+      latitude: 51.1731
+      longitude: -115.571205
+      description: Alberta Canada
+      playlists:
+        - World
+        - North America
+        - Small Towns
+    - url: EfFC3I3no-A
+      start-time: 667
+      latitude: 45.494646
+      longitude: -73.578227
+      description: Montreal Canada
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: GmAPAO46AV4
+      start-time: 455
+      latitude: 49.888175
+      longitude: -97.138846
+      description: Winnipeg Canada
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: MSxP25kSLek
+      start-time: 375
+      latitude: 51.08924
+      longitude: -115.360912
+      description: Canmore Canada
+      playlists:
+        - World
+        - North America
+        - Small Towns
+    - url: w6e6KRzV6ZM
+      start-time: 154
+      latitude: 44.642364
+      longitude: -63.579559
+      description: Halifax Canada
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: evK8gnFs7i8
+      start-time: 419
+      latitude: 51.049259
+      longitude: -114.06221
+      description: Calgary Canada (China Town)
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: 0UtyyAdIGcM
+      start-time: 240
+      latitude: 52.127367
+      longitude: -106.65788
+      description: Saskatoon Canada
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: 9fzXZ_2GL_U
+      start-time: 135
+      latitude: 44.646774
+      longitude: -63.569263
+      description: Halifax Canada
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: i_-LCP3q0cA
+      start-time: 315
+      latitude: 46.811844
+      longitude: -71.205451
+      description: Quebec Canada
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: YqiLAKtxBJM
+      start-time: 288
+      latitude: 44.642592
+      longitude: -63.578746
+      description: Halifax Canada
+      playlists:
+        - World
+        - North America
+        - Small Towns
+    - url: 2Q7FlcGXysg
+      start-time: 275
+      latitude: 48.648848
+      longitude: -123.395962
+      description: British Columbia Canada
+      playlists:
+        - World
+        - North America
+        - Small Towns
+    - url: -mlQzMBp4Zc
+      start-time: 75
+      latitude: 49.201556
+      longitude: -122.913607
+      description: British Columbia Canada
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: IdOp2o2jMv8
+      start-time: 200
+      latitude: 49.123891
+      longitude: -123.184259
+      description: Vancouver Canada
+      playlists:
+        - World
+        - North America
+        - Small Towns
+    - url: Eoc36yWlaGw
+      start-time: 647
+      latitude: 43.702448
+      longitude: -79.397364
+      description: Toronto Canada
+      playlists:
+        - World
+        - North America
+        - Cities
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
