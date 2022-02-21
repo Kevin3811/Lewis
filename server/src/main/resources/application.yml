@@ -1770,6 +1770,15 @@ game:
         - World
         - Europe
         - Cities
+    - url: 996_ylB-hEQ
+      start-time: 16
+      latitude: 45.2671
+      longitude: 19.8335
+      description: Novi Sad Serbia
+      playlists:
+        - World
+        - Europe
+        - Cities
       #Finland
     - url: y9NZL6CmUyc
       start-time: 7
@@ -2055,6 +2064,205 @@ game:
       latitude: 41.677903
       longitude: 26.558588
       description: Edirne Turkey
+      playlists:
+        - World
+        - Europe
+        - Cities
+      #Russia
+    - url: PBLFHJhc6ZY
+      start-time: 11
+      latitude: 59.9318
+      longitude: 30.3527
+      description: St Petersburg Russia
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: PBLFHJhc6ZY
+      start-time: 430
+      latitude: 59.9318
+      longitude: 30.3527
+      description: St Petersburg Russia
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: aSyipwo0BzA
+      start-time: 300
+      latitude: 55.748565
+      longitude: 37.588368
+      description: Moscow Russia
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: j1ziJ2aHdxI
+      start-time: 28
+      latitude: 59.924145
+      longitude: 30.383505
+      description: St Petersburg Russia
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: wi_3WwCvzo8
+      start-time: 13
+      latitude: 55.756627
+      longitude: 37.614624
+      description: Moscow Russia
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: CxXjIv7rDig
+      start-time: 40
+      latitude: 55.7539
+      longitude: 37.6208
+      description: Moscow Russia
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: jb16zvCeTWc
+      start-time: 1863
+      latitude: 54.707445
+      longitude: 20.527951
+      description: Kaliningrad Russia
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: j9XeBcaR5I8
+      start-time: 14
+      latitude: 55.757440
+      longitude: 37.622938
+      description: Nikolskaya Russia
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: qaEfELDAW5c
+      start-time: 110
+      latitude: 54.986824
+      longitude: 82.890122
+      description: Novosibirsk Russia
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: UNIus5K5drA
+      start-time: 52
+      latitude: 59.935075
+      longitude: 30.325247
+      description: St Petersburg Russia
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: IDIWc6CR7OU
+      start-time: 40
+      latitude: 54.9833
+      longitude: 82.8964
+      description: Novosibirsk Russia
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: iIeNQ6xzBIU
+      start-time: 35
+      latitude: 52.037908
+      longitude: 113.491912
+      description: Chita Russia
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: MolMMaSPzwI
+      start-time: 19
+      latitude: 52.037589
+      longitude: 113.499286
+      description: Chita Russia
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: bB6DGkrIVZk
+      start-time: 157
+      latitude: 43.113093
+      longitude: 131.891087
+      description: Vladivostok Russia
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: bB6DGkrIVZk
+      start-time: 2120
+      latitude: 43.115211
+      longitude: 131.907252
+      description: Vladivostok Russia
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: bB6DGkrIVZk
+      start-time: 3623
+      latitude: 43.104492
+      longitude: 131.923483
+      description: Vladivostok Russia
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: MxguYwcj2hA
+      start-time: 1265
+      latitude: 43.574744
+      longitude: 39.725041
+      description: Sochi Russia
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: DB2Gq7p3okk
+      start-time: 1102
+      latitude: 55.753714
+      longitude: 37.634727
+      description: Moscow Russia
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: _bpkHB4N2zQ
+      start-time: 17
+      latitude: 43.542703
+      longitude: 39.801984
+      description: Sochi Russia
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: I4p39-Mukzc
+      start-time: 11
+      latitude: 43.446913
+      longitude: 39.902122
+      description: Adler Russia
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: iyWcX-mvtaI
+      start-time: 230
+      latitude: 59.934513
+      longitude: 30.332777
+      description: St Petersburg Russia
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: _GDXJisM99I
+      start-time: 15
+      latitude: 48.739431
+      longitude: 44.545812
+      description: Volgograd Russia
       playlists:
         - World
         - Europe
