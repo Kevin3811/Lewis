@@ -2058,6 +2058,16 @@ game:
         - World
         - Europe
         - Cities
+    - url: Y1QPjQ2I2uY
+      start-time: 19
+      latitude: 43.949414
+      longitude: 4.808819
+      description: Avignon France
+      playlists:
+        - World
+        - Europe
+        - Cities
+        - Small Towns
       #Turkey
     - url: 6eqRZzs8SKQ
       start-time: 80
