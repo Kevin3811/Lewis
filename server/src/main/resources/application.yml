@@ -31,6 +31,7 @@ game:
     - Small Towns
   videos:
     #NA-----------------------------------------------------------------------------------------------------------------
+      #USA
     - url: WruNXhtEbdM
       start-time: 113
       latitude: 40.758
@@ -44,6 +45,15 @@ game:
       start-time: 300
       latitude: 37.7897
       longitude: -122.3972
+      description: San Francisco
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: 0fVVkJtr3aI
+      start-time: 549
+      latitude: 37.790170210231416
+      longitude: -122.40881681843258
       description: San Francisco
       playlists:
         - World
@@ -85,6 +95,48 @@ game:
         - World
         - North America
         - Cities
+    - url: SQSSF15gJcw
+      start-time: 50
+      latitude: 43.8791
+      longitude: -103.4591
+      description: Mount Rushmore South Dakota
+      playlists:
+        - World
+        - North America
+    - url: DYnWMG2cisA
+      start-time: 571
+      latitude: 38.8814
+      longitude: -77.0365
+      description: Washington DC
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: iOs4hOsee7Y
+      start-time: 1
+      latitude: 38.8977
+      longitude: -77.0365
+      description: Washington DC (White House)
+      playlists:
+        - World
+        - North America
+    - url: NjsioVyB6Z8
+      start-time: 2754
+      latitude: 38.889838
+      longitude: -77.011728
+      description: Washington DC
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: xgyd8l7GHvE
+      start-time: 1434
+      latitude: 40.7464
+      longitude: -73.8451
+      description: Queens New York
+      playlists:
+        - World
+        - North America
     - url: U5I0o2JTtug
       start-time: 77
       latitude: 37.762256
@@ -112,6 +164,15 @@ game:
         - World
         - North America
         - Cities
+    - url: dk8dU1BSp6Q
+      start-time: 2
+      latitude: 37.769874
+      longitude: -122.466132
+      description: San Fransico California (Golden Gate Park)
+      playlists:
+        - World
+        - North America
+        - Cities
     - url: 4xgbnavlloM
       start-time: 40
       latitude: 21.3069
@@ -134,6 +195,33 @@ game:
       start-time: 1
       latitude: 42.357113
       longitude: -71.071741
+      description: Boston Massachusetts
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: P4BiNL5yVxk
+      start-time: 28
+      latitude: 42.351945
+      longitude: -71.045715
+      description: Boston Massachusetts
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: J1nObYmCezo
+      start-time: 6
+      latitude: 42.356524
+      longitude: -71.062007
+      description: Boston Massachusetts
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: SwT01Uh75n8
+      start-time: 1
+      latitude: 42.359906
+      longitude: -71.055522
       description: Boston Massachusetts
       playlists:
         - World
@@ -211,11 +299,11 @@ game:
         - World
         - North America
         - Small Towns
-    - url: Nj5caHcD-_E
+    - url: jCcyiF2Uxl4
       start-time: 20
       latitude: 45.382163
       longitude: -122.761511
-      description: Tualtin Oregon
+      description: Tualatin Oregon
       playlists:
         - World
         - North America
@@ -291,6 +379,15 @@ game:
         - World
         - North America
         - Cities
+    - url: QGbieu9OfGo
+      start-time: 685
+      latitude: 43.61704282017843
+      longitude: -116.19955827025062
+      description: Boise Idaho
+      playlists:
+        - World
+        - North America
+        - Cities
     - url: VRmh2gGeBiE
       start-time: 37
       latitude: 41.9742
@@ -307,18 +404,27 @@ game:
       playlists:
         - World
         - North America
+    - url: 6t8AF1B2jpU
+      start-time: 130
+      latitude: 41.8789
+      longitude: -87.6359
+      description: Chicago Illinois (Sears Tower)
+      playlists:
+        - World
+        - North America
+        - Cities
     - url: 3N0oVxBrGuU
       start-time: 35
-      latitude: 33.759415
-      longitude: -84.38767
+      latitude: 33.6407
+      longitude: -84.4277
       description: Hartsfield Jackson Airport Atlanta Georgia
       playlists:
         - World
         - North America
     - url: jSRRaMSRZOE
       start-time: 60
-      latitude: 30.422107
-      longitude: -84.293102
+      latitude: 33.759415
+      longitude: -84.387670
       description: Atlanta Georgia
       playlists:
         - World
@@ -328,6 +434,15 @@ game:
       start-time: 21
       latitude: 36.1147
       longitude: -115.1728
+      description: Las Vegas Nevada
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: l-ImSdlZ77o
+      start-time: 70
+      latitude: 36.102504
+      longitude: -115.172784
       description: Las Vegas Nevada
       playlists:
         - World
@@ -344,8 +459,8 @@ game:
         - Cities
     - url: hamFV1rwJxo
       start-time: 244
-      latitude: 37.770274
-      longitude: -122.444657
+      latitude: 37.769912
+      longitude: -122.447572
       description: San Francisco California
       playlists:
         - World
@@ -379,7 +494,7 @@ game:
         - North America
         - Cities
     - url: B84UXGFVl6E
-      start-time: 30
+      start-time: 35
       latitude: 45.531077
       longitude: -122.653685
       description: Portland Oregon
@@ -549,6 +664,15 @@ game:
         - World
         - North America
         - Small Towns
+    - url: oN2WYWHoul0
+      start-time: 15
+      latitude: 37.8080
+      longitude: -122.4177
+      description: San Francisco California
+      playlists:
+        - World
+        - North America
+        - Cities
     - url: hHA47enXuQc
       start-time: 16
       latitude: 32.747586
@@ -567,7 +691,7 @@ game:
         - World
         - North America
     - url: t-PbhlgkakI
-      start-time: 99
+      start-time: 9
       latitude: 40.759154
       longitude: -73.984944
       description: Times Square New York
@@ -656,6 +780,24 @@ game:
         - World
         - North America
         - Cities
+    - url: BU4uRJccNAI
+      start-time: 5
+      latitude: 37.794018
+      longitude: -79.995344
+      description: Covington Virginia
+      playlists:
+        - World
+        - North America
+        - Small Towns
+    - url: BU4uRJccNAI
+      start-time: 10
+      latitude: 37.115400
+      longitude: -81.523029
+      description: Tazewell Virginia
+      playlists:
+        - World
+        - North America
+        - Small Towns
     - url: g3ZySpbllTQ
       start-time: 5
       latitude: 35.09072
@@ -665,11 +807,57 @@ game:
         - World
         - North America
         - Cities
+    - url: kXtWSjg098I
+      start-time: 17
+      latitude: 35.687421
+      longitude: -105.938518
+      description: Santa Fe New Mexico
+      playlists:
+        - World
+        - North America
+        - Cities
+        - Small Towns
+    - url: Fhg8tvyJbAo
+      start-time: 4
+      latitude: 33.984582
+      longitude: -118.471681
+      description: LA California (Venice Beach)
+      playlists:
+        - World
+        - North America
+        - Cities
     - url: SCudGb7z0OE
       start-time: 68
       latitude: 34.042606
       longitude: -118.257499
       description: LA California
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: hU2EMneLbno
+      start-time: 3128
+      latitude: 34.09197358643018
+      longitude: -118.38036429015096
+      description: LA California
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: qG2J8pdjr8c
+      start-time: 58
+      latitude: 34.070142
+      longitude: -118.403740
+      description: LA California (Rodeo Drive)
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: -mKF83BndXY
+      start-time: 1
+      latitude: 34.072439
+      longitude: -118.403137
+      description: Beverly Hills California
       playlists:
         - World
         - North America
@@ -755,6 +943,15 @@ game:
         - World
         - North America
         - Cities
+    - url: j3YvPb38uqI
+      start-time: 4
+      latitude: 44.972618
+      longitude: -93.274619
+      description: Minneapolis Minnesota
+      playlists:
+        - World
+        - North America
+        - Cities
     - url: GYBeBWkqZ0M
       start-time: 30
       latitude: 29.954086
@@ -825,6 +1022,32 @@ game:
         - World
         - North America
         - Cities
+    - url: RSa1s-grI9A
+      start-time: 1365
+      latitude: 39.944654
+      longitude: -75.173487
+      description: Philadelphia Pennsylvania
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: R7lirHnNy84
+      start-time: 10
+      latitude: 37.604379
+      longitude: -112.156528
+      description: Bryce Canyon National Park Utah
+      playlists:
+        - World
+        - North America
+    - url: jGPm3l9qkJQ
+      start-time: 1
+      latitude: 34.748948
+      longitude: -92.276347
+      description: Little Rock Arkansas
+      playlists:
+        - World
+        - North America
+        - Cities
     - url: bdDtsRh_C1g
       start-time: 2
       latitude: 32.225717
@@ -839,6 +1062,15 @@ game:
       latitude: 37.390001
       longitude: -122.081569
       description: San Jose California
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: ap7ZGs6NEuU
+      start-time: 278
+      latitude: 38.582107
+      longitude: -122.081569
+      description: Sacramento California
       playlists:
         - World
         - North America
@@ -924,6 +1156,15 @@ game:
         - World
         - North America
         - Small Towns
+    - url: gXY64MidsdE
+      start-time: 8
+      latitude: 41.8827
+      longitude: -87.6233
+      description: Chicago Illinois
+      playlists:
+        - World
+        - North America
+        - Cities
     - url: rXCVThalXsk
       start-time: 2
       latitude: 40.517568
@@ -942,11 +1183,47 @@ game:
         - World
         - North America
         - Cities
+    - url: c72TJGMNwjs
+      start-time: 145
+      latitude: 40.345607
+      longitude: -74.657282
+      description: Princeton New Jersey
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: s3axkCaYil8
+      start-time: 1
+      latitude: 40.880165
+      longitude: -74.144593
+      description: Clifton New Jersey
+      playlists:
+        - World
+        - North America
+        - Small Towns
+    - url: aYGJG6D8rVs
+      start-time: 60
+      latitude: 40.73408083239446
+      longitude: -74.16554406568844
+      description: Newark New Jersey
+      playlists:
+        - World
+        - North America
+        - Small Towns
     - url: x5_Pr0p-0tI
       start-time: 1
       latitude: 32.70771
       longitude: -117.160113
       description: San Diego California
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: N1cI697GXt0
+      start-time: 2
+      latitude: 37.788050
+      longitude: -122.406703
+      description: San Francisco California
       playlists:
         - World
         - North America
@@ -969,6 +1246,15 @@ game:
         - World
         - North America
         - Cities
+    - url: XOaglSqbMGA
+      start-time: 147
+      latitude: 33.742570580122596
+      longitude: -118.10395019227222
+      description: LA California
+      playlists:
+        - World
+        - North America
+        - Small Towns
     - url: 2aZa16I7rJw
       start-time: 190
       latitude: 25.776611
@@ -1023,10 +1309,28 @@ game:
         - World
         - North America
         - Cities
+    - url: 6PHApdWRjEY
+      start-time: 93
+      latitude: 41.310377
+      longitude: -72.930226
+      description: New Haven Connecticut
+      playlists:
+        - World
+        - North America
+        - Cities
     - url: H9JHVl_OSe8
       start-time: 68
       latitude: 39.043106
       longitude: -94.588221
+      description: Kansas City Missouri
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: H9JHVl_OSe8
+      start-time: 919
+      latitude: 39.109783
+      longitude: -94.581958
       description: Kansas City Missouri
       playlists:
         - World
@@ -1050,6 +1354,24 @@ game:
         - World
         - North America
         - Cities
+    - url: vUsm31Ow_8E
+      start-time: 21
+      latitude: 42.330976
+      longitude: -83.046791
+      description: Detroit Michigan
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: vUsm31Ow_8E
+      start-time: 3645
+      latitude: 42.334950
+      longitude: -83.042467
+      description: Detroit Michigan
+      playlists:
+        - World
+        - North America
+        - Cities
     - url: 6WZ7gkaF7hQ
       start-time: 505
       latitude: 33.792914
@@ -1068,6 +1390,33 @@ game:
         - World
         - North America
         - Cities
+    - url: Z0F6NcfcRdU
+      start-time: 1970
+      latitude: 34.072204
+      longitude: -118.442648
+      description: LA California (UCLA)
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: qeFXQP_MRRA
+      start-time: 40
+      latitude: 40.782829
+      longitude: -124.164628
+      description: Eureka California
+      playlists:
+        - World
+        - North America
+        - Small Towns
+    - url: yhCEDrCwkN8
+      start-time: 11
+      latitude: 40.791810
+      longitude: -124.161308
+      description: Eureka California
+      playlists:
+        - World
+        - North America
+        - Small Towns
     - url: Yf8J53G0M3Y
       start-time: 135
       latitude: 42.242115
@@ -1104,6 +1453,15 @@ game:
         - World
         - North America
         - Cities
+    - url: IcATDi7Mrq4
+      start-time: 1
+      latitude: 28.375802
+      longitude: -81.549401
+      description: Orlando Florida
+      playlists:
+        - World
+        - North America
+        - Cities
     - url: 8l8yjGTd5UE
       start-time: 130
       latitude: 47.607422
@@ -1127,6 +1485,15 @@ game:
       latitude: 36.15094
       longitude: -86.796596
       description: Nashville Tennessee
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: W4Jo1B43J1U
+      start-time: 35
+      latitude: 35.713010
+      longitude: -83.513626
+      description: Gatlinburg Tennessee
       playlists:
         - World
         - North America
@@ -1176,7 +1543,25 @@ game:
         - World
         - North America
         - Cities
-    #Canada-------------------------------------------------------------------------------------------------------------
+    - url: rAO37L0XkB0
+      start-time: 330
+      latitude: 32.708577
+      longitude: -117.170485
+      description: San Diego California
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: I4NQVvXEQ-o
+      start-time: 14
+      latitude: 34.101615
+      longitude: -118.342204
+      description: Hollywood California
+      playlists:
+        - World
+        - North America
+        - Cities
+      #Canada
     - url: fgbFdV7yL_o
       start-time: 7
       latitude: 43.6426
@@ -1199,6 +1584,24 @@ game:
       start-time: 42
       latitude: 43.656037
       longitude: -79.382201
+      description: Toronto Canada
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: qxbQwIfLzm8
+      start-time: 664
+      latitude: 43.67938906857117
+      longitude: -79.34253292061058
+      description: Toronto Canada
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: 1CdEpsdBq_Y
+      start-time: 934
+      latitude: 43.675812
+      longitude: -79.402544
       description: Toronto Canada
       playlists:
         - World
@@ -1249,19 +1652,19 @@ game:
         - World
         - North America
         - Cities
-    - url: olMr5JeJK5U
-      start-time: 66
-      latitude: 49.283654
-      longitude: -123.116406
+    - url: 30oX9ZNj598
+      start-time: 150
+      latitude: 49.277715
+      longitude: -123.117467
       description: Vancouver Canada
       playlists:
         - World
         - North America
         - Cities
-    - url: 30oX9ZNj598
-      start-time: 150
-      latitude: 49.277715
-      longitude: -123.117467
+    - url: sMR8_58AKpE
+      start-time: 100
+      latitude: 49.284702
+      longitude: -123.124944
       description: Vancouver Canada
       playlists:
         - World
@@ -1308,6 +1711,24 @@ game:
       latitude: 48.414726
       longitude: -123.363411
       description: Victoria Canada
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: 1QwJuqWjV6k
+      start-time: 238
+      latitude: 45.42814037671812
+      longitude: -75.69275703580594
+      description: Ottowa Canada
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: UoqQqgMACRc
+      start-time: 935
+      latitude: 45.41934442011209
+      longitude: -75.67751539023686
+      description: Ottowa Canada
       playlists:
         - World
         - North America
@@ -1528,12 +1949,267 @@ game:
         - World
         - North America
         - Cities
+      #Mexico
+    - url: nJiDPoJX6aA
+      start-time: 398
+      latitude: 20.913841
+      longitude: -100.743784
+      description: San Miguel de Allende Mexico
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: 2mgyttfGvwY
+      start-time: 24
+      latitude: 20.6843
+      longitude: -88.5678
+      description: Yucatan Mexico
+      playlists:
+        - World
+        - North America
+    - url: eTWbjduZhWs
+      start-time: 339
+      latitude: 19.436069
+      longitude: -99.201282
+      description: Mexico City Mexico
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: fteutg-y1No
+      start-time: 98
+      latitude: 19.43709452551656
+      longitude: -99.17599311754455
+      description: Mexico City Mexico
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: 00Tbymx-obU
+      start-time: 50
+      latitude: 19.3608659257223
+      longitude: -99.17109873844099
+      description: Mexico City Mexico
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: It8fVyH3nZQ
+      start-time: 244
+      latitude: 19.422845038094426
+      longitude: -99.17544742971312
+      description: Mexico City Mexico
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: buPgxyJBaug
+      start-time: 926
+      latitude: 19.43367089489441
+      longitude: -99.1531652616682
+      description: Mexico City Mexico
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: RqKtcCuGmX0
+      start-time: 180
+      latitude: 20.677334
+      longitude: -103.348535
+      description: Guadalajara Mexico
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: RqKtcCuGmX0
+      start-time: 1340
+      latitude: 20.677018241994983
+      longitude: -103.34589880934402
+      description: Guadalajara Mexico
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: aQPUbiblOHo
+      start-time: 39
+      latitude: 32.535890
+      longitude: -117.037053
+      description: Tijuana Mexico
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: RZ7csZPrpA4
+      start-time: 1
+      latitude: 21.164616
+      longitude: -86.828082
+      description: Cancun Mexico
+      playlists:
+        - World
+        - North America
+        - Cities
+      #Cuba
+    - url: 63ARQhtaUPs
+      start-time: 45
+      latitude: 23.135270
+      longitude: -82.358601
+      description: Havana Cuba
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: 63ARQhtaUPs
+      start-time: 1110
+      latitude: 23.136237
+      longitude: -82.350164
+      description: Havana Cuba
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: 63ARQhtaUPs
+      start-time: 1500
+      latitude: 23.13922612847534
+      longitude: -82.35136028418576
+      description: Havana Cuba
+      playlists:
+        - World
+        - North America
+        - Cities
+      #Belize
+    - url: 0WWbsRg7FBw
+      start-time: 4
+      latitude: 17.494820
+      longitude: -88.188845
+      description: Belize City Belize
+      playlists:
+        - World
+        - North America
+        - Cities
+      #Costa Rica
+    - url: ehRReaALV5M
+      start-time: 10
+      latitude: 9.933714
+      longitude: -84.075953
+      description: Jan Jose Costa Rica
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: ehRReaALV5M
+      start-time: 490
+      latitude: 9.934645
+      longitude: -84.084827
+      description: Jan Jose Costa Rica
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: v8RTsev_2rQ
+      start-time: 21
+      latitude: 9.932446
+      longitude: -84.073466
+      description: Jan Jose Costa Rica (China Town)
+      playlists:
+        - World
+        - North America
+        - Cities
     #Europe-------------------------------------------------------------------------------------------------------------
-      #UK
+      #England
     - url: NyLF8nHIquM
       start-time: 31
       latitude: 51.516207
       longitude: -0.133839
+      description: London England
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: QXcPdsFgiTQ
+      start-time: 30
+      latitude: 51.530808
+      longitude: -0.124167
+      description: London England
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: f7oUEEI4_6I
+      start-time: 30
+      latitude: 51.514223
+      longitude: -0.151348
+      description: London England
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: EAV0Gl6vJsw
+      start-time: 113
+      latitude: 51.515256
+      longitude: -0.141923
+      description: London England
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: FSIbzC6qGyU
+      start-time: 10
+      latitude: 51.512714
+      longitude: -0.123622
+      description: London England
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: zIqAI8WJhi0
+      start-time: 1
+      latitude: 53.481890
+      longitude: -2.246513
+      description: Manchester England
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: CJyhMaH5WRs
+      start-time: 36
+      latitude: 53.481121
+      longitude: -2.237945
+      description: Manchester England
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: zIqAI8WJhi0
+      start-time: 1046
+      latitude: 53.482138
+      longitude: -2.244276
+      description: Manchester England
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: fok_zZduebo
+      start-time: 28
+      latitude: 51.503208
+      longitude: -0.047608
+      description: London England
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: DAVd95WXCoA
+      start-time: 4
+      latitude: 51.510125
+      longitude: -0.134590
+      description: London England
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: _Dbm3l-bp_g
+      start-time: 8
+      latitude: 51.506362
+      longitude: -0.142305
       description: London England
       playlists:
         - World
@@ -1584,6 +2260,195 @@ game:
         - World
         - Europe
         - Cities
+    - url: jKJ2zDSYns8
+      start-time: 16
+      latitude: 53.406509
+      longitude: -2.983006
+      description: Liverpool England
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: jKJ2zDSYns8
+      start-time: 1794
+      latitude: 53.402120
+      longitude: -2.989976
+      description: Liverpool England
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: G0fWvIxy88A
+      start-time: 589
+      latitude: 53.961462
+      longitude: -1.082405
+      description: York England
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: p-Ld8dhWKxA
+      start-time: 57
+      latitude: 53.744167
+      longitude: -0.339499
+      description: Hull England
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: p-Ld8dhWKxA
+      start-time: 1644
+      latitude: 53.742757
+      longitude: -0.337896
+      description: Hull England
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: zxbaZVPybuc
+      start-time: 12
+      latitude: 50.910312
+      longitude: -1.404739
+      description: Southampton England
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: zxbaZVPybuc
+      start-time: 17
+      latitude: 53.798282
+      longitude: -1.538016
+      description: Leeds England
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: _xqSPG7xFJA
+      start-time: 1
+      latitude: 53.191376
+      longitude: -2.885437
+      description: Chester England
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: tCqeAUFRc_k
+      start-time: 2
+      latitude: 53.342174
+      longitude: -1.778868
+      description: Castleton England
+      playlists:
+        - World
+        - Europe
+        - Small Towns
+    - url: s14Q7cT5_KI
+      start-time: 7
+      latitude: 53.125761
+      longitude: -2.075282
+      description: Leek England
+      playlists:
+        - World
+        - Europe
+        - Small Towns
+    - url: s14Q7cT5_KI
+      start-time: 10
+      latitude: 53.111095
+      longitude: -2.021443
+      description: Rudyard England
+      playlists:
+        - World
+        - Europe
+        - Small Towns
+    - url: lYSsP5WgVWI
+      start-time: 1
+      latitude: 53.026100
+      longitude: -0.597654
+      description: Caythorpe England
+      playlists:
+        - World
+        - Europe
+        - Small Towns
+    - url: u_KU5B3JS2A
+      start-time: 1
+      latitude: 53.022445
+      longitude: -0.583874
+      description: Fulbeck England
+      playlists:
+        - World
+        - Europe
+        - Small Towns
+    - url: u_KU5B3JS2A
+      start-time: 1
+      latitude: 53.109786
+      longitude: -1.564628
+      description: Cromford England
+      playlists:
+        - World
+        - Europe
+        - Small Towns
+    - url: 2fRYpyDZ-Ck
+      start-time: 1
+      latitude: 53.200954
+      longitude: -1.869341
+      description: Earl Sterndale England
+      playlists:
+        - World
+        - Europe
+        - Small Towns
+    - url: cfbgfL8ShHU
+      start-time: 1
+      latitude: 53.078287
+      longitude: -0.813248
+      description: Trent England
+      playlists:
+        - World
+        - Europe
+        - Small Towns
+    - url: rvoQ9fLXf-Y
+      start-time: 8
+      latitude: 52.477067
+      longitude: -1.892532
+      description: Birmingham England
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: rvoQ9fLXf-Y
+      start-time: 1647
+      latitude: 52.477550
+      longitude: -1.897276
+      description: Birmingham England
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: aX3solS4LIc
+      start-time: 16
+      latitude: 51.458471
+      longitude: -2.593007
+      description: Bristol England
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: aX3solS4LIc
+      start-time: 1830
+      latitude: 51.454934
+      longitude: -2.593103
+      description: Bristol England
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: klGjMHwCbs4
+      start-time: 8
+      latitude: 52.205088
+      longitude: 0.118993
+      description: Cambridge England
+      playlists:
+        - World
+        - Europe
+        - Cities
     - url: LhODRz8W2vI
       start-time: 13
       latitude: 51.068701
@@ -1593,6 +2458,108 @@ game:
         - World
         - Europe
         - Small Towns
+    - url: abIHlI083CU
+      start-time: 8
+      latitude: 50.823676
+      longitude: -0.143565
+      description: Brighton England
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: abIHlI083CU
+      start-time: 2899
+      latitude: 50.820779
+      longitude: -0.144928
+      description: Brighton England
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: PgXUyeqkkt0
+      start-time: 1
+      latitude: 53.126425
+      longitude: -1.550322
+      description: Starkholmes England
+      playlists:
+        - World
+        - Europe
+        - Small Towns
+    - url: Rbk7is1NqWc
+      start-time: 20
+      latitude: 54.972331
+      longitude: -1.612211
+      description: Newcastle England
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: ZFQz-zjj3BA
+      start-time: 117
+      latitude: 54.976918411928594
+      longitude: -1.5782998423279397
+      description: Newcastle England
+      playlists:
+        - World
+        - Europe
+        - Cities
+      #Wales
+    - url: E5AnaDiy2C8
+      start-time: 15
+      latitude: 51.481007
+      longitude: -3.185849
+      description: Cardiff Wales
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: E5AnaDiy2C8
+      start-time: 1525
+      latitude: 51.483559
+      longitude: -3.174913
+      description: Cardiff Wales
+      playlists:
+        - World
+        - Europe
+        - Cities
+      #Scotland
+    - url: utohtmBGLqg
+      start-time: 52
+      latitude: 55.856354
+      longitude: -4.257498
+      description: Glasgow Scotland
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: WXYW_cjDT-4
+      start-time: 8
+      latitude: 55.858354
+      longitude: -4.256789
+      description: Glasgow Scotland
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: pXRWvuxsnGk
+      start-time: 28
+      latitude: 55.948602
+      longitude: -3.198846
+      description: Edinburgh Scotland
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: Vqu9-5fvhHU
+      start-time: 16
+      latitude: 56.565020
+      longitude: -3.584648
+      description: Dunkeld Scotland
+      playlists:
+        - World
+        - Europe
+        - Small Towns
+      #Ireland
     - url: Qu6GBZTWJEs
       start-time: 51
       latitude: 52.650180
@@ -1611,11 +2578,93 @@ game:
         - World
         - Europe
         - Cities
+    - url: z1S3pHGjhpg
+      start-time: 1000
+      latitude: 53.3442227291411
+      longitude: -6.264265634379098
+      description: Dublin Ireland
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: kFZQT7obIeU
+      start-time: 1202
+      latitude: 53.343416390411
+      longitude: -6.2644165710968105
+      description: Dublin Ireland
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: kFZQT7obIeU
+      start-time: 2493
+      latitude: 53.343351711762054
+      longitude: -6.259247240968125
+      description: Dublin Ireland
+      playlists:
+        - World
+        - Europe
+        - Cities
     - url: EvaOoKBLxjE
       start-time: 160
       latitude: 53.274251
       longitude: -9.050642
       description: Galway Ireland
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: pmAATS8P5wU
+      start-time: 20
+      latitude: 51.899644
+      longitude: -8.470792
+      description: Cork Ireland
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: pmAATS8P5wU
+      start-time: 1489
+      latitude: 51.893424
+      longitude: -8.470143
+      description: Cork Ireland
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: urUQX83ysJQ
+      start-time: 72
+      latitude: 52.65918011957732
+      longitude: -8.625697827101193
+      description: Limerick Ireland
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: urUQX83ysJQ
+      start-time: 815
+      latitude: 52.65979006409098
+      longitude: -8.630931470038583
+      description: Limerick Ireland
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: YaeUCHw_kNE
+      start-time: 756
+      latitude: 52.259630511939854
+      longitude: -7.107359931642254
+      description: Limerick Ireland
+      playlists:
+        - World
+        - Europe
+        - Cities
+      #Northern Ireland
+    - url: wb3zxvKBm_I
+      start-time: 300
+      latitude: 54.994793924464986
+      longitude: -7.323218813493047
+      description: Derry Londonderry Northern Ireland
       playlists:
         - World
         - Europe
@@ -1630,11 +2679,92 @@ game:
         - World
         - Europe
         - Cities
+    - url: hyNG-vAtu3U
+      start-time: 163
+      latitude: 52.523541044160275
+      longitude: 13.40260671387339
+      description: Berlin Germany
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: 1ToDl0_20lw
+      start-time: 70
+      latitude: 52.508044
+      longitude: 13.390196
+      description: Berlin Germany
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: 1ToDl0_20lw
+      start-time: 651
+      latitude: 52.51360921524542
+      longitude: 13.391304435556538
+      description: Berlin Germany
+      playlists:
+        - World
+        - Europe
+          - Cities
+    - url: CP5Q5JG2jU8
+      start-time: 15
+      latitude: 52.5163
+      longitude: 13.3777
+      description: Berlin Germany
+      playlists:
+        - World
+        - Europe
+        - Cities
     - url: zca688Ecwpk
       start-time: 313
       latitude: 52.516253
       longitude: 13.377159
       description: Berlin Germany
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: CTxS_DNSyqg
+      start-time: 7
+      latitude: 52.5207689261084
+      longitude: 13.394803503664441
+      description: Berlin Germany
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: CTxS_DNSyqg
+      start-time: 2969
+      latitude: 52.51671490983417
+      longitude: 13.38224001689679
+      description: Berlin Germany
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: K1MaFt8CMlw
+      start-time: 396
+      latitude: 52.517141548913976
+      longitude: 13.38836285679969
+      description: Berlin Germany
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: l5Y76IJOY9k
+      start-time: 20
+      latitude: 53.54733484559054
+      longitude: 9.98893105652282
+      description: Hamburg Germany
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: l5Y76IJOY9k
+      start-time: 2390
+      latitude: 53.54927085162139
+      longitude: 9.962473394653943
+      description: Hamburg Germany
       playlists:
         - World
         - Europe
@@ -1661,6 +2791,33 @@ game:
       start-time: 84
       latitude: 48.137642
       longitude: 11.579796
+      description: Munich Germany
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: dLmeq6hU-5E
+      start-time: 6
+      latitude: 53.551526
+      longitude: 10.003662
+      description: Munich Germany
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: dLmeq6hU-5E
+      start-time: 1724
+      latitude: 53.552748
+      longitude: 9.985371
+      description: Munich Germany
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: w-kxsOc3Ors
+      start-time: 1831
+      latitude: 48.140377052399444
+      longitude: 11.577455520710638
       description: Munich Germany
       playlists:
         - World
@@ -1694,6 +2851,281 @@ game:
         - World
         - Europe
         - Cities
+    - url: -PAoZ6fFoUs
+      start-time: 15
+      latitude: 49.759811
+      longitude: 6.644294
+      description: Trier Germany
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: sr5htKv9vso
+      start-time: 8
+      latitude: 50.107259
+      longitude: 8.664136
+      description: Frankfurt Germany
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: 5COC4WMheH0
+      start-time: 23
+      latitude: 50.10899392067607
+      longitude: 8.67308939904165
+      description: Frankfurt Germany
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: 5COC4WMheH0
+      start-time: 1454
+      latitude: 50.114631878163294
+      longitude: 8.687135079535548
+      description: Frankfurt Germany
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: vDZ2PutnKeM
+      start-time: 30
+      latitude: 53.05250489108137
+      longitude: 8.786606513919914
+      description: Bremen Germany
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: scjLxGh17rA
+      start-time: 6
+      latitude: 50.001700
+      longitude: 8.259649
+      description: Mainz Germany
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: 3gU8FCkcIEI
+      start-time: 1981
+      latitude: 51.053093
+      longitude: 13.743622
+      description: Dresden Germany
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: 3gU8FCkcIEI
+      start-time: 715
+      latitude: 51.047632
+      longitude: 13.736038
+      description: Dresden Germany
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: HRK6cfhoInw
+      start-time: 419
+      latitude: 54.319587
+      longitude: 10.133598
+      description: Kiel Germany
+      playlists:
+        - World
+        - Europe
+        - Cities
+      #Austria
+    - url: fk8wrPYr3uU
+      start-time: 155
+      latitude: 48.200711593039095
+      longitude: 16.366639424103962
+      description: Vienna Austria
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: fk8wrPYr3uU
+      start-time: 2008
+      latitude: 48.205145409195445
+      longitude: 16.357961526812705
+      description: Vienna Austria
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: f925yvNeJnM
+      start-time: 681
+      latitude: 48.187078153813246
+      longitude: 16.401772776306817
+      description: Vienna Austria
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: f925yvNeJnM
+      start-time: 2678
+      latitude: 48.20663412477506
+      longitude: 16.38265682622638
+      description: Vienna Austria
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: w28fIL-83Jw
+      start-time: 173
+      latitude: 48.21125706786761
+      longitude: 16.38267892172116
+      description: Vienna Austria
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: VD-jgk6HKOg
+      start-time: 1580
+      latitude: 48.211258574504924
+      longitude: 16.368293088293857
+      description: Vienna Austria
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: CJ9af3RtfLg
+      start-time: 805
+      latitude: 47.799054266362404
+      longitude: 13.046022224696866
+      description: Salzburg Austria
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: CJ9af3RtfLg
+      start-time: 1525
+      latitude: 47.80026023990932
+      longitude: 13.039900884646897
+      description: Salzburg Austria
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: -ZqW5Iotdzw
+      start-time: 360
+      latitude: 48.29620649307692
+      longitude: 14.292041087436198
+      description: Linz Austria
+      playlists:
+        - World
+        - Europe
+        - Cities
+      #Greece
+    - url: fP0GLP6xKKk
+      start-time: 1123
+      latitude: 36.426893
+      longitude: 25.428029
+      description: Santorini Greece
+      playlists:
+        - World
+        - Europe
+        - Cities
+        - Small Towns
+    - url: FxRyNuaSeCg
+      start-time: 9
+      latitude: 37.9715
+      longitude: 23.7257
+      description: Athens Greece
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: ErHr_4FNs74
+      start-time: 172
+      latitude: 37.984862366453974
+      longitude: 23.729605397605557
+      description: Athens Greece
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: YYBeDExdhfQ
+      start-time: 11
+      latitude: 37.97623651253342
+      longitude: 23.725694881948087
+      description: Athens Greece
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: h-9KveQB7Fg
+      start-time: 417
+      latitude: 35.28781098411247
+      longitude: 25.461794372340922
+      description: Crete Greece
+      playlists:
+        - World
+        - Europe
+        - Small Towns
+    - url: lIerm_BIDTQ
+      start-time: 508
+      latitude: 39.35856585169951
+      longitude: 22.950489256132144
+      description: Volos Greece
+      playlists:
+        - World
+        - Europe
+        - Small Towns
+      #Croatia
+    - url: nGSX798Zrd8
+      start-time: 1050
+      latitude: 45.81484840690876
+      longitude: 15.973673738369643
+      description: Zagreb Croatia
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: gN0LSvZbqzs
+      start-time: 327
+      latitude: 45.8089783094493
+      longitude: 15.969216140614282
+      description: Zagreb Croatia
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: keTdoqTGOlw
+      start-time: 662
+      latitude: 44.873031511477535
+      longitude: 13.847035872593201
+      description: Pula Croatia
+      playlists:
+        - World
+        - Europe
+        - Cities
+      #Malta
+    - url: RyeWwaLdnDQ
+      start-time: 10
+      latitude: 35.919718
+      longitude: 14.490902
+      description: Saint Julians Malta
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: hCFT2HkBRnI
+      start-time: 1645
+      latitude: 35.898955
+      longitude: 14.513137
+      description: Valletta Malta
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: P26yiJwSZh4
+      start-time: 20
+      latitude: 35.925592
+      longitude: 14.489313
+      description: Paceville Malta
+      playlists:
+        - World
+        - Europe
+        - Cities
       #Belgium
     - url: DmmEKbLOzTg
       start-time: 55
@@ -1722,11 +3154,38 @@ game:
         - World
         - Europe
         - Cities
+    - url: rg2ydsx1ML0
+      start-time: 388
+      latitude: 51.220674
+      longitude: 4.402755
+      description: Antwerp Belgium
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: ZggwRjfPhIM
+      start-time: 3
+      latitude: 51.054520
+      longitude: 3.725592
+      description: Ghent Belgium
+      playlists:
+        - World
+        - Europe
+        - Cities
       #Sweden
     - url: Jr9x-RB4E1U
       start-time: 16
       latitude: 59.332366
       longitude: 18.064477
+      description: Stockholm Sweden
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: Jr9x-RB4E1U
+      start-time: 1507
+      latitude: 59.327681999888604
+      longitude: 18.073115438463788
       description: Stockholm Sweden
       playlists:
         - World
@@ -1741,10 +3200,28 @@ game:
         - World
         - Europe
         - Cities
+    - url: EjZ-lZ5fHUE
+      start-time: 278
+      latitude: 59.33696827722974
+      longitude: 18.062120534407423
+      description: Stockholm Sweden
+      playlists:
+        - World
+        - Europe
+        - Cities
     - url: aVh_jTIP2cE
       start-time: 18
       latitude: 59.858378
       longitude: 17.645178
+      description: Uppsala Sweden
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: aVh_jTIP2cE
+      start-time: 1622
+      latitude: 59.857792
+      longitude: 17.637226
       description: Uppsala Sweden
       playlists:
         - World
@@ -1756,6 +3233,16 @@ game:
       latitude: 48.145774
       longitude: 17.107378
       description: Bratislava Slovakia
+      playlists:
+        - World
+        - Europe
+        - Cities
+      #Slovenia
+    - url: PuPMREvT7Es
+      start-time: 690
+      latitude: 46.05043171856984
+      longitude: 14.50468538173911
+      description: Ljublijana Slovenia
       playlists:
         - World
         - Europe
@@ -1779,6 +3266,266 @@ game:
         - World
         - Europe
         - Cities
+      #Armenia
+    - url: gnJzjrMrQ7Q
+      start-time: 111
+      latitude: 40.78525513808946
+      longitude: 43.84227456856112
+      description: Gyumri Armenia
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: 5W3SjD5GMCY
+      start-time: 667
+      latitude: 40.792013706577535
+      longitude: 43.84632103895556
+      description: Gyumri Armenia
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: DlRFjag9G5U
+      start-time: 897
+      latitude: 40.18155348361342
+      longitude: 44.51635622700623
+      description: Yerevan Armenia
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: 5UWX3yGPqss
+      start-time: 955
+      latitude: 40.17940578383266
+      longitude: 44.51573512884713
+      description: Yerevan Armenia
+      playlists:
+        - World
+        - Europe
+        - Cities
+      #Azerbaijan
+    - url: Qdq__PK5B0w
+      start-time: 16
+      latitude: 40.37331980892658
+      longitude: 49.84211304047007
+      description: Baku Azerbaijan
+      playlists:
+        - World
+        - Europe
+        - Cities
+      #Georgia
+    - url: HHYTovRc0kM
+      start-time: 2131
+      latitude: 41.69417568732338
+      longitude: 44.8013245832969
+      description: Tbilisi Georgia
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: qvCLFUmhjks
+      start-time: 903
+      latitude: 41.69300434493598
+      longitude: 44.802453088735525
+      description: Tbilisi Georgia
+      playlists:
+        - World
+        - Europe
+        - Cities
+      #Poland
+    - url: UKyT_a-raW4
+      start-time: 13
+      latitude: 52.230147
+      longitude: 21.007235
+      description: Warsaw Poland
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: UKyT_a-raW4
+      start-time: 1717
+      latitude: 52.233766
+      longitude: 21.019204
+      description: Warsaw Poland
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: ZAHhdymOl6Y
+      start-time: 3
+      latitude: 51.778657
+      longitude: 19.451581
+      description: Lodz Poland
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: nF_Hpha2cUs
+      start-time: 1
+      latitude: 53.425096
+      longitude: 14.551013
+      description: Szczecin Poland
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: nF_Hpha2cUs
+      start-time: 450
+      latitude: 53.426658
+      longitude: 14.551908
+      description: Szczecin Poland
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: qkCiR1olRgc
+      start-time: 8
+      latitude: 54.355755
+      longitude: 18.645106
+      description: Gdansk Poland
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: qkCiR1olRgc
+      start-time: 1918
+      latitude: 54.351687
+      longitude: 18.657924
+      description: Gdansk Poland
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: MCSU8kzRO1Y
+      start-time: 300
+      latitude: 51.110222
+      longitude: 17.031119
+      description: Wroclaw Poland
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: V-TraWXFbCs
+      start-time: 2400
+      latitude: 52.405284933019395
+      longitude: 16.93122216544806
+      description: Poznan Poland
+      playlists:
+        - World
+        - Europe
+        - Cities
+      #Ukraine
+    - url: 3PAFFM1m4_o
+      start-time: 5
+      latitude: 50.450681929920265
+      longitude: 30.52327756253499
+      description: Kiev Ukraine
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: 3PAFFM1m4_o
+      start-time: 1770
+      latitude: 50.44088411514213
+      longitude: 30.51986513779345
+      description: Kiev Ukraine
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: B8a7BCLVVpo
+      start-time: 281
+      latitude: 50.45134481477858
+      longitude: 30.52142791372315
+      description: Kiev Ukraine
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: dek89ZTZCUY
+      start-time: 9
+      latitude: 46.48577672822887
+      longitude: 30.7443349274159
+      description: Odessa Ukraine
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: RcUHNvSj9qc
+      start-time: 326
+      latitude: 46.48796520515584
+      longitude: 30.740833617717698
+      description: Ooesa Ukraine
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: ydyOKIzOp5I
+      start-time: 170
+      latitude: 49.8413789796881
+      longitude: 24.031815495250036
+      description: LVIV Ukraine
+      playlists:
+        - World
+        - Europe
+        - Cities
+      #Moldova
+    - url: CISUVZ8siGA
+      start-time: 228
+      latitude: 47.025497
+      longitude: 28.836446
+      description: Chisinau Moldova
+      playlists:
+        - World
+        - Europe
+        - Cities
+      #Hungary
+    - url: ZzvG-JKjvto
+      start-time: 150
+      latitude: 47.499143
+      longitude: 19.053295
+      description: Budapest Hungary
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: 5ZRotN7rNUQ
+      start-time: 80
+      latitude: 47.498961
+      longitude: 19.043594
+      description: Budapest Hungary
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: FyjGmsTMM7U
+      start-time: 923
+      latitude: 47.50214184005197
+      longitude: 19.063036651236928
+      description: Budapest Hungary
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: FyjGmsTMM7U
+      start-time: 2538
+      latitude: 47.50366289128962
+      longitude: 19.05779388158672
+      description: Budapest Hungary
+      playlists:
+        - World
+        - Europe
+        - Cities
+      #Czech Republic
+    - url: J7HIfklyF9w
+      start-time: 600
+      latitude: 50.084407
+      longitude: 14.418807
+      description: Prague Czech Republic
+      playlists:
+        - World
+        - Europe
+        - Cities
       #Finland
     - url: y9NZL6CmUyc
       start-time: 7
@@ -1789,11 +3536,131 @@ game:
         - World
         - Europe
         - Cities
+    - url: y9NZL6CmUyc
+      start-time: 1405
+      latitude: 60.169098597644734
+      longitude: 24.951347753477314
+      description: Helsinki Finland
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: hRu9tCDVEXQ
+      start-time: 6
+      latitude: 60.170591
+      longitude: 24.940500
+      description: Helsinki Finland
+      playlists:
+        - World
+        - Europe
+        - Cities
+      #Switzerland
+    - url: fGxbtg1ytJo
+      start-time: 464
+      latitude: 47.36948584891571
+      longitude: 8.539388575401194
+      description: Zurich Switzerland
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: fGxbtg1ytJo
+      start-time: 1215
+      latitude: 47.37236201368689
+      longitude: 8.540764534832945
+      description: Zurich Switzerland
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: fGxbtg1ytJo
+      start-time: 2645
+      latitude: 47.36811312571651
+      longitude: 8.541778993244794
+      description: Zurich Switzerland
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: A2Wn3WHeVDw
+      start-time: 1
+      latitude: 46.9485374206548
+      longitude: 7.455154643210594
+      description: Bern Switzerland
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: Va1eX2DjkZk
+      start-time: 1
+      latitude: 47.376458692340535
+      longitude: 8.539644688477553
+      description: Zurich Switzerland
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: rwRRrjXxnc8
+      start-time: 20
+      latitude: 47.554701084861115
+      longitude: 7.589254043352984
+      description: Basel Switzerland
+      playlists:
+        - World
+        - Europe
+        - Cities
+      #Denmark
+    - url: MzbczVtv-Vs
+      start-time: 5
+      latitude: 55.680233
+      longitude: 12.584554
+      description: Copenhagen Denmark
+      playlists:
+        - World
+        - Europe
+        - Cities
+      #Norway
+    - url: ZVMJMdE_Xcc
+      start-time: 1
+      latitude: 60.194006
+      longitude: 11.101726
+      description: Oslo Norway
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: f-GlXgqzMsU
+      start-time: 287
+      latitude: 59.913116
+      longitude: 10.734722
+      description: Oslo Norway
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: Cdb46yUYSWE
+      start-time: 205
+      latitude: 60.395087
+      longitude: 5.320227
+      description: Bergen Norway
+      playlists:
+        - World
+        - Europe
+        - Cities
       #Estonia
     - url: rOhHgHm2dFc
       start-time: 5
       latitude: 59.436811
       longitude: 24.742718
+      description: Tallinn Estonia
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: rOhHgHm2dFc
+      start-time: 1556
+      latitude: 59.437758
+      longitude: 24.747365
       description: Tallinn Estonia
       playlists:
         - World
@@ -1818,11 +3685,84 @@ game:
         - World
         - Europe
         - Cities
+    - url: oiZgqkyBUXw
+      start-time: 2998
+      latitude: 56.949950
+      longitude: 24.111021
+      description: Riga Latvia
+      playlists:
+        - World
+        - Europe
+        - Cities
+      #Lithuania
+    - url: k9yu6MIyONc
+      start-time: 330
+      latitude: 54.678085
+      longitude: 25.287539
+      description: Vilnius Lithuania
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: k9yu6MIyONc
+      start-time: 2530
+      latitude: 54.686662
+      longitude: 25.282305
+      description: Vilnius Lithuania
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: ba_zL0p2H7U
+      start-time: 1
+      latitude: 54.899319
+      longitude: 23.886286
+      description: Kaunas Lithuania
+      playlists:
+        - World
+        - Europe
+        - Small Towns
       #Spain
     - url: h_nTvenH1Gs
       start-time: 5
       latitude: 41.373965
       longitude: 2.176127
+      description: Barcelona Spain
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: h_nTvenH1Gs
+      start-time: 2035
+      latitude: 41.38437583042469
+      longitude: 2.170802925120927
+      description: Barcelona Spain
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: V_Yl5Fwujqs
+      start-time: 10
+      latitude: 41.369042
+      longitude: 2.153185
+      description: Barcelona Spain
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: bJlUA-lnvYg
+      start-time: 379
+      latitude: 41.4036
+      longitude: 2.1744
+      description: Barcelona Spain
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: QQ2jhTG5sds
+      start-time: 1415
+      latitude: 41.38428420437139
+      longitude: 2.1753258143983674
       description: Barcelona Spain
       playlists:
         - World
@@ -1837,11 +3777,120 @@ game:
         - World
         - Europe
         - Cities
+    - url: idx41AgnL6U
+      start-time: 728
+      latitude: 40.420249610756095
+      longitude: -3.7034970302613206
+      description: Madrid Spain
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: hbEAJ0Bw7nQ
+      start-time: 1
+      latitude: 40.415388748308516
+      longitude: -3.7073717433299636
+      description: Madrid Spain
+      playlists:
+        - World
+        - Europe
+        - Cities
     - url: 6-mxZGFvBpo
       start-time: 20
       latitude: 40.414264
       longitude: -3.703374
       description: Madrid Spain
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: 6-mxZGFvBpo
+      start-time: 1141
+      latitude: 40.418218818937824
+      longitude: -3.6980219501300993
+      description: Madrid Spain
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: 6-mxZGFvBpo
+      start-time: 463
+      latitude: 40.419749295503514
+      longitude: -3.6996636150547615
+      description: Madrid Spain
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: 67cvBK9haa8
+      start-time: 643
+      latitude: 37.173647
+      longitude: -3.598236
+      description: Granada Spain
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: vthv2GQF9Ec
+      start-time: 504
+      latitude: 37.17382513089518
+      longitude: -3.5931229143510244
+      description: Granada Spain
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: 9m3fojdkPjM
+      start-time: 10
+      latitude: 37.983842
+      longitude: -1.129522
+      description: Murcia Spain
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: CPwzzCuYwQc
+      start-time: 870
+      latitude: 39.47048897885812
+      longitude: -0.3740874409708896
+      description: Valencia Spain
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: ObW7tOqbPzc
+      start-time: 10
+      latitude: 38.345889
+      longitude: -0.490583
+      description: Alicante Spain
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: ObW7tOqbPzc
+      start-time: 2506
+      latitude: 38.34228632149353
+      longitude: -0.47972875858918806
+      description: Alicante Spain
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: CI0aq-lFEOI
+      start-time: 18
+      latitude: 36.838493
+      longitude: -2.467233
+      description: Almeria Spain
+      playlists:
+        - World
+        - Europe
+        - Cities
+      #Gibraltar
+    - url: WSNrXnt_4ws
+      start-time: 177
+      latitude: 36.143011
+      longitude: -5.353948
+      description: Gibraltar
       playlists:
         - World
         - Europe
@@ -1856,6 +3905,105 @@ game:
         - World
         - Europe
         - Cities
+    - url: xrRFKEdtQIc
+      start-time: 765
+      latitude: 45.470440
+      longitude: 9.193158
+      description: Milan Italy
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: w4VwhxaaY8o
+      start-time: 1408
+      latitude: 45.466827773555416
+      longitude: 9.197760834456426
+      description: Milan Italy
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: z2hxcLlKmRs
+      start-time: 360
+      latitude: 43.772425020951225
+      longitude: 11.24910577991382
+      description: Florence Italy
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: zrvaZusWypI
+      start-time: 440
+      latitude: 45.438360
+      longitude: 12.337076
+      description: Venice Italy
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: sScS7mkVIkc
+      start-time: 1437
+      latitude: 45.45631727080399
+      longitude: 12.352341833058764
+      description: Venice Italy
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: sScS7mkVIkc
+      start-time: 2238
+      latitude: 45.45314676160082
+      longitude: 12.351603040871096
+      description: Venice Italy
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: 8CIkhCwu7U4
+      start-time: 44
+      latitude: 45.438247
+      longitude: 10.992151
+      description: Verona Italy
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: 8CIkhCwu7U4
+      start-time: 518
+      latitude: 45.442076
+      longitude: 10.997556
+      description: Verona Italy
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: oHFwUWGN2-w
+      start-time: 1
+      latitude: 45.447824
+      longitude: 11.002870
+      description: Verona Italy
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: d_i1Wre23R4
+      start-time: 1759
+      latitude: 43.320830
+      longitude: 11.330731
+      description: Siena Italy
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: yB5HFvXchfM
+      start-time: 545
+      latitude: 44.107375
+      longitude: 9.725481
+      description: Manarola Italy
+      playlists:
+        - World
+        - Europe
+        - Small Towns
     - url: ncIVCU5M6cc
       start-time: 18
       latitude: 45.398387
@@ -1870,6 +4018,88 @@ game:
       latitude: 45.417013
       longitude: 11.880054
       description: Pudua Italy
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: X4CY6EVQ_1E
+      start-time: 1880
+      latitude: 45.40642404703776
+      longitude: 11.876774560718639
+      description: Pudua Italy
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: VtzDzVGSMLU
+      start-time: 204
+      latitude: 41.891394
+      longitude: 12.491651
+      description: Rome Italy
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: tsnk3ruKUsY
+      start-time: 1
+      latitude: 41.899226
+      longitude: 12.476743
+      description: Rome Italy
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: KDGg6OHNkbs
+      start-time: 363
+      latitude: 41.9009
+      longitude: 12.4833
+      description: Rome Italy
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: 2M7Avt39oF4
+      start-time: 5
+      latitude: 41.9022
+      longitude: 12.4539
+      description: Rome Italy (St Peter's Basilica)
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: XZewdSRquOk
+      start-time: 2182
+      latitude: 41.88917218414101
+      longitude: 12.49735550040864
+      description: Rome Italy
+      playlists:
+        - World
+        - Europe
+        - Cities
+      #Portugal
+    - url: b4_K4sO8Jx4
+      start-time: 350
+      latitude: 38.712658
+      longitude: -9.137146
+      description: Lisbon Portugal
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: OlnmqTgrXMk
+      start-time: 7
+      latitude: 40.20718870789528
+      longitude: -8.42954828047371
+      description: Coimbra Portugal
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: IRHIQ2LCb1k
+      start-time: 500
+      latitude: 41.14601999841861
+      longitude: -8.612357594173831
+      description: Porto Portugal
       playlists:
         - World
         - Europe
@@ -1893,6 +4123,114 @@ game:
         - World
         - Europe
         - Cities
+    - url: fosm2yp_aJA
+      start-time: 845
+      latitude: 52.368560
+      longitude: 4.892370
+      description: Amsterdam Netherlands
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: blXien2Jh_o
+      start-time: 948
+      latitude: 52.30997219279892
+      longitude: 4.764410173911521
+      description: Amsterdam Netherlands
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: XcSzjSCIWV8
+      start-time: 55
+      latitude: 52.37462957225848
+      longitude: 4.897073861075142
+      description: Amsterdam Netherlands
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: XcSzjSCIWV8
+      start-time: 1932
+      latitude: 52.372196451536624
+      longitude: 4.89984534025806
+      description: Amsterdam Netherlands
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: ZiIa1wLuABY
+      start-time: 10
+      latitude: 51.920557
+      longitude: 4.471521
+      description: Rotterdam Netherlands
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: ZiIa1wLuABY
+      start-time: 897
+      latitude: 51.917828
+      longitude: 4.481114
+      description: Rotterdam Netherlands
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: ZiIa1wLuABY
+      start-time: 1815
+      latitude: 51.909318
+      longitude: 4.486043
+      description: Rotterdam Netherlands
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: WoMiTingrq8
+      start-time: 513
+      latitude: 51.91959255348422
+      longitude: 4.476584048697727
+      description: Rotterdam Netherlands
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: s_ioyCRkMPo
+      start-time: 1140
+      latitude: 52.079878
+      longitude: 4.316508
+      description: The Hague Netherlands
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: eK00Pt_HAOo
+      start-time: 852
+      latitude: 52.093374
+      longitude: 5.119547
+      description: Utrecht Netherlands
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: nK25LmMk_Wk
+      start-time: 519
+      latitude: 52.01268398629133
+      longitude: 4.357001060223558
+      description: Delft Netherlands
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: nK25LmMk_Wk
+      start-time: 1748
+      latitude: 52.00772971136732
+      longitude: 4.362709420101455
+      description: Delft Netherlands
+      playlists:
+        - World
+        - Europe
+        - Cities
       #Bulgaria
     - url: ez1KCblQ6iM
       start-time: 8
@@ -1903,6 +4241,33 @@ game:
         - World
         - Europe
         - Cities
+    - url: ez1KCblQ6iM
+      start-time: 635
+      latitude: 42.7006484901199
+      longitude: 23.319802194660383
+      description: Sofia Bulgaria
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: VQ8O4pkRiCE
+      start-time: 60
+      latitude: 42.15238043389909
+      longitude: 24.745784766733426
+      description: Plovdiv Bulgaria
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: 94bTYKxaTaU
+      start-time: 1
+      latitude: 42.60114390271676
+      longitude: 23.030709989078705
+      description: Pernik Bulgaria
+      playlists:
+        - World
+        - Europe
+        - Small Towns
       #Luxembourg
     - url: giHQmVbOuYo
       start-time: 25
@@ -1913,11 +4278,92 @@ game:
         - World
         - Europe
         - Cities
+    - url: giHQmVbOuYo
+      start-time: 862
+      latitude: 49.60957846119773
+      longitude: 6.128054390755159
+      description: Luxembourg
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: giHQmVbOuYo
+      start-time: 1831
+      latitude: 49.610877
+      longitude: 6.132504
+      description: Luxembourg
+      playlists:
+        - World
+        - Europe
+        - Cities
       #France
+    - url: u3ayPmL2KN4
+      start-time: 17
+      latitude: 43.681040
+      longitude: 4.631309
+      description: Arles France
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: N_ilI3jhKBY
+      start-time: 95
+      latitude: 48.58201890194733
+      longitude: 7.749374970005849
+      description: Strasbourg France
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: cLnoiaG4O8A
+      start-time: 1403
+      latitude: 48.58267081686527
+      longitude: 7.741679559943774
+      description: Strasbourg France
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: GhpG7oFqguI
+      start-time: 25
+      latitude: 49.709725
+      longitude: 0.203599
+      description: Normandy France
+      playlists:
+        - World
+        - Europe
+        - Cities
     - url: Ut84Anle7Pc
       start-time: 11
       latitude: 48.859676
       longitude: 2.292323
+      description: Paris France
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: BUgmz30gCVA
+      start-time: 1060
+      latitude: 48.86731690177637
+      longitude: 2.313170794815632
+      description: Paris France
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: BUgmz30gCVA
+      start-time: 2780
+      latitude: 48.864268087405215
+      longitude: 2.300615270138915
+      description: Paris France
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: 9hDEJK-zzUk
+      start-time: 22
+      latitude: 48.8606
+      longitude: 2.3376
       description: Paris France
       playlists:
         - World
@@ -1977,6 +4423,15 @@ game:
         - World
         - Europe
         - Cities
+    - url: CXgfscXlEC0
+      start-time: 65
+      latitude: 48.844962
+      longitude: 2.372113
+      description: Paris France
+      playlists:
+        - World
+        - Europe
+        - Cities
     - url: xEangf-PZ4Q
       start-time: 15
       latitude: 43.553832
@@ -2031,6 +4486,15 @@ game:
         - World
         - Europe
         - Cities
+    - url: ZhY5DaVE4jc
+      start-time: 492
+      latitude: 48.844466
+      longitude: 2.373969
+      description: Lyon France
+      playlists:
+        - World
+        - Europe
+        - Cities
     - url: BLtiVbpVEn0
       start-time: 10
       latitude: 44.835319
@@ -2049,11 +4513,38 @@ game:
         - World
         - Europe
         - Cities
+    - url: YUhyiKAQCZ4
+      start-time: 548
+      latitude: 43.606530
+      longitude: 1.446398
+      description: Toulouse France
+      playlists:
+        - World
+        - Europe
+        - Cities
     - url: arSCDQUFa0s
       start-time: 1
       latitude: 47.212571
       longitude: -1.546158
       description: Nantes France
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: us5Red50s_Q
+      start-time: 393
+      latitude: 50.636349
+      longitude: 3.068642
+      description: Lille France
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: QDhiq1Y9vUE
+      start-time: 1100
+      latitude: 50.627684414785676
+      longitude: 3.0576062896020866
+      description: Lille France
       playlists:
         - World
         - Europe
@@ -2068,6 +4559,52 @@ game:
         - Europe
         - Cities
         - Small Towns
+      #Iceland
+    - url: rlGAuh3tNlY
+      start-time: 20
+      latitude: 64.144875
+      longitude: -21.925058
+      description: Reykjavik Iceland
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: rlGAuh3tNlY
+      start-time: 628
+      latitude: 64.147133
+      longitude: -21.936670
+      description: Reykjavik Iceland
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: pvbBiPJrMRM
+      start-time: 40
+      latitude: 63.864719
+      longitude: -21.146732
+      description: Eyrarbakki Iceland
+      playlists:
+        - World
+        - Europe
+        - Small Towns
+    - url: pvbBiPJrMRM
+      start-time: 40
+      latitude: 65.680938
+      longitude: -18.089497
+      description: Akureyri Iceland
+      playlists:
+        - World
+        - Europe
+        - Small Towns
+    - url: mlSLvuyyRJM
+      start-time: 90
+      latitude: 66.044033
+      longitude: -17.338710
+      description: Husavik Iceland
+      playlists:
+        - World
+        - Europe
+        - Small Towns
       #Turkey
     - url: 6eqRZzs8SKQ
       start-time: 80
@@ -2078,11 +4615,156 @@ game:
         - World
         - Europe
         - Cities
+    - url: mA9lYWyXMYU
+      start-time: 1
+      latitude: 41.016578
+      longitude: 28.976842
+      description: Istanbul Turkey
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: mA9lYWyXMYU
+      start-time: 2178
+      latitude: 40.98775938894809
+      longitude: 29.02626091174296
+      description: Istanbul Turkey
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: SNkdN97hXzw
+      start-time: 93
+      latitude: 41.02563409481808
+      longitude: 28.974133875431964
+      description: Istanbul Turkey
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: SNkdN97hXzw
+      start-time: 1320
+      latitude: 41.03261254853069
+      longitude: 28.97644669108179
+      description: Istanbul Turkey
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: jcnu9Q5Dm2A
+      start-time: 1440
+      latitude: 41.012069
+      longitude: 28.968174
+      description: Istanbul Turkey
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: 2BnFnZwsVP0
+      start-time: 215
+      latitude: 41.043493
+      longitude: 29.005523
+      description: Istanbul Turkey
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: uheHx6BnBJ0
+      start-time: 390
+      latitude: 38.435716
+      longitude: 27.142725
+      description: Izmir Turkey
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: GlOEqZwDWwQ
+      start-time: 673
+      latitude: 38.42982214027265
+      longitude: 27.141838132995318
+      description: Izmir Turkey
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: m-IA0KJ8xF8
+      start-time: 70
+      latitude: 38.428712019399164
+      longitude: 27.13491449230733
+      description: Izmir Turkey
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: ploEnK1nDTk
+      start-time: 40
+      latitude: 39.926486
+      longitude: 32.851705
+      description: Ankara Turkey
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: cf0mP0f5EgM
+      start-time: 223
+      latitude: 37.859435
+      longitude: 27.258773
+      description: Kusadasi Turkey
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: gTuRhOPCWCQ
+      start-time: 1
+      latitude: 40.146802
+      longitude: 26.408075
+      description: Canakkale Turkey
+      playlists:
+        - World
+        - Europe
+        - Cities
+      #Cyprus
+    - url: cFb-MpZa5OI
+      start-time: 18
+      latitude: 35.169757
+      longitude: 33.361321
+      description: Nicosia Cyprus
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: cFb-MpZa5OI
+      start-time: 1131
+      latitude: 35.177031
+      longitude: 33.362583
+      description: Nicosia Cyprus
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: FniQ_pNBmyI
+      start-time: 600
+      latitude: 34.672624
+      longitude: 33.042195
+      description: Limassol Cyprus
+      playlists:
+        - World
+        - Europe
+        - Cities
       #Russia
     - url: PBLFHJhc6ZY
       start-time: 11
       latitude: 59.9318
       longitude: 30.3527
+      description: St Petersburg Russia
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: zDmwKMr7K5s
+      start-time: 2859
+      latitude: 59.943530683492284
+      longitude: 30.360786864943904
       description: St Petersburg Russia
       playlists:
         - World
@@ -2106,6 +4788,24 @@ game:
         - World
         - Europe
         - Cities
+    - url: b0RVfAFap68
+      start-time: 480
+      latitude: 55.74983806924105
+      longitude: 37.62915944902466
+      description: Moscow Russia
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: I4lZZZHsBVI
+      start-time: 20
+      latitude: 55.74726302549024
+      longitude: 37.58194459790947
+      description: Moscow Russia
+      playlists:
+        - World
+        - Europe
+        - Cities
     - url: j1ziJ2aHdxI
       start-time: 28
       latitude: 59.924145
@@ -2124,6 +4824,15 @@ game:
         - World
         - Europe
         - Cities
+    - url: wi_3WwCvzo8
+      start-time: 1185
+      latitude: 55.76941976700287
+      longitude: 37.59713824344326
+      description: Moscow Russia
+      playlists:
+        - World
+        - Europe
+        - Cities
     - url: CxXjIv7rDig
       start-time: 40
       latitude: 55.7539
@@ -2133,10 +4842,37 @@ game:
         - World
         - Europe
         - Cities
+    - url: 7isPVnfYAb0
+      start-time: 579
+      latitude: 55.74789228977697
+      longitude: 37.54423025834437
+      description: Moscow Russia
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: 7isPVnfYAb0
+      start-time: 3007
+      latitude: 55.74031187076816
+      longitude: 37.56803620878266
+      description: Moscow Russia
+      playlists:
+        - World
+        - Europe
+        - Cities
     - url: jb16zvCeTWc
       start-time: 1863
       latitude: 54.707445
       longitude: 20.527951
+      description: Kaliningrad Russia
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: DYStlL3c-8o
+      start-time: 22
+      latitude: 54.720099
+      longitude: 20.501660
       description: Kaliningrad Russia
       playlists:
         - World
@@ -2277,6 +5013,15 @@ game:
         - World
         - Europe
         - Cities
+    - url: 1pQfNy8Ou5A
+      start-time: 764
+      latitude: 57.820235799047445
+      longitude: 28.331286778563094
+      description: Pskov Russia
+      playlists:
+        - World
+        - Europe
+        - Cities
     #Asia---------------------------------------------------------------------------------------------------------------
     - url: XZVBoSteNYA
       start-time: 1
@@ -2386,6 +5131,1082 @@ game:
         - World
         - Asia
         - Cities
+      #Sri Lanka
+    - url: dSfs8JzjUjc
+      start-time: 165
+      latitude: 6.973604322149485
+      longitude: 80.76586839765713
+      description: Nuwara Eliya Sri Lanka
+      playlists:
+        - World
+        - Asia
+        - Small Towns
+      #China
+    - url: WXIfF7TN1QQ
+      start-time: 120
+      latitude: 40.4319
+      longitude: 116.5704
+      description: Great Wall of China
+      playlists:
+        - World
+        - Asia
+    - url: v6t_tG_RWhg
+      start-time: 240
+      latitude: 39.12703980807984
+      longitude: 117.19829420282458
+      description: Tianjin China
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: qztRJrWt-Es
+      start-time: 30
+      latitude: 39.934209
+      longitude: 116.403149
+      description: Beijing China
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: bpY4aDOK-0E
+      start-time: 19
+      latitude: 39.915932
+      longitude: 116.411145
+      description: Beijing China
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: 2uQ58Xwx1V4
+      start-time: 14
+      latitude: 31.240285
+      longitude: 121.490588
+      description: Shanghai China
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: 82WxDwYB9aE
+      start-time: 14
+      latitude: 31.205121
+      longitude: 121.506303
+      description: Shanghai China
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: O3Q0Frnxonw
+      start-time: 8
+      latitude: 31.223192
+      longitude: 121.444977
+      description: Shanghai China
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: O3Q0Frnxonw
+      start-time: 2436
+      latitude: 31.237463
+      longitude: 121.484639
+      description: Shanghai China
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: L8TUTEha4GU
+      start-time: 1
+      latitude: 31.234441307789684
+      longitude: 121.47361825271445
+      description: Shanghai China
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: jEGPEUR7UTc
+      start-time: 45
+      latitude: 36.669156691687185
+      longitude: 117.01882547883685
+      description: Jinan China
+      playlists:
+        - World
+        - Asia
+        - Small Towns
+    - url: 5LArhIB_rVM
+      start-time: 174
+      latitude: 29.538451
+      longitude: 106.514611
+      description: Chongqing China
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: BZ95vp8zCoA
+      start-time: 1
+      latitude: 29.537535
+      longitude: 106.507147
+      description: Chongqing China
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: U3069EeP8Ms
+      start-time: 3
+      latitude: 31.274222
+      longitude: 120.637781
+      description: Suzhou China
+      playlists:
+        - World
+        - Asia
+        - Small Towns
+    - url: U3069EeP8Ms
+      start-time: 18
+      latitude: 31.576486
+      longitude: 120.299125
+      description: Wuxi China
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: z1WC2_K1Bd8
+      start-time: 2
+      latitude: 31.543299
+      longitude: 120.304850
+      description: Wuxi China
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: NpiP5Wu7Rsc
+      start-time: 2
+      latitude: 32.021647
+      longitude: 118.772922
+      description: Nanjing China
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: lYaGhFtJFsI
+      start-time: 2
+      latitude: 31.886462
+      longitude: 120.555504
+      description: Zhangjiagang China
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: c8KFNAwlim0
+      start-time: 15
+      latitude: 30.531136
+      longitude: 114.324987
+      description: Wuhan China
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: zHh_ezLp7_E
+      start-time: 5
+      latitude: 30.539285
+      longitude: 114.354233
+      description: Wuhan China
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: 3kI4ja3-oXM
+      start-time: 5
+      latitude: 30.519551
+      longitude: 114.340924
+      description: Wuhan China
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: 0xC77KW2vW8
+      start-time: 3
+      latitude: 22.544191
+      longitude: 114.086719
+      description: Shenzhen China
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: RUS16cEgeNQ
+      start-time: 2
+      latitude: 32.202342
+      longitude: 119.444744
+      description: Zhenjiang China
+      playlists:
+        - World
+        - Asia
+        - Cities
+      #Mongolia
+    - url: jM0bspKHgHg
+      start-time: 120
+      latitude: 47.9195116385045
+      longitude: 106.91599327690152
+      description: Ulaanbaatar Mongolia
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: F9NwDBL8zmE
+      start-time: 91
+      latitude: 47.852829552770835
+      longitude: 106.76251507669122
+      description: Ulaanbaatar Mongolia
+      playlists:
+        - World
+        - Asia
+        - Cities
+      #Japan
+    - url: qwNoxabhgdw
+      start-time: 1
+      latitude: 34.3926
+      longitude: 132.4523
+      description: Hiroshima Japan (Atomic Bomb Dome)
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: 4WnO4IzHQrE
+      start-time: 1290
+      latitude: 35.659784
+      longitude: 139.744055
+      description: Tokyo Japan (Tokyo Tower)
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: _dWyKj7I9JM
+      start-time: 16
+      latitude: 35.659477
+      longitude: 139.700500
+      description: Tokyo Japan (Shibuya Crossing)
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: 6qGiXY1SB68
+      start-time: 19
+      latitude: 35.659111
+      longitude: 139.700394
+      description: Tokyo Japan (Shibuya)
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: 6qGiXY1SB68
+      start-time: 942
+      latitude: 35.659937
+      longitude: 139.701672
+      description: Tokyo Japan (Shibuya)
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: vHr4qSQ-5XU
+      start-time: 20
+      latitude: 35.698048
+      longitude: 139.707406
+      description: Tokyo Japan
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: 2PqkuJMbHaw
+      start-time: 49
+      latitude: 35.698619
+      longitude: 139.772663
+      description: Tokyo Japan
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: MKcBBVimth0
+      start-time: 1312
+      latitude: 35.669152
+      longitude: 139.696320
+      description: Tokyo Japan
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: Et7O5-CzJZg
+      start-time: 30
+      latitude: 35.695583
+      longitude: 139.702698
+      description: Tokyo Japan
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: wa12902YOnc
+      start-time: 13
+      latitude: 35.692659
+      longitude: 139.699582
+      description: Tokyo Japan
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: vA9GWzLLmxg
+      start-time: 5
+      latitude: 34.662975
+      longitude: 135.502283
+      description: Osaka Japan
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: VYVKQ2OIzh0
+      start-time: 1
+      latitude: 34.733561
+      longitude: 135.500193
+      description: Osaka Japan
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: VYVKQ2OIzh0
+      start-time: 3965
+      latitude: 34.734830
+      longitude: 135.501719
+      description: Osaka Japan
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: 16abSRr5SFg
+      start-time: 1
+      latitude: 34.759983976396406
+      longitude: 135.5473260267193
+      description: Osaka Japan
+      playlists:
+        - World
+        - Asia
+        - Small Towns
+    - url: qArFQa6UYQI
+      start-time: 790
+      latitude: 35.566335103522
+      longitude: 139.5105234965832
+      description: Yokohama Japan
+      playlists:
+        - World
+        - Asia
+        - Small Towns
+    - url: VYiCcH3eXnM
+      start-time: 15
+      latitude: 35.92475135924447
+      longitude:  139.48105219763474
+      description: Kawagoe Japan
+      playlists:
+        - World
+        - Asia
+        - Small Towns
+    - url: VYiCcH3eXnM
+      start-time: 774
+      latitude: 35.92246449609358
+      longitude: 139.48280546108526
+      description: Kawagoe Japan
+      playlists:
+        - World
+        - Asia
+        - Small Towns
+    - url: mVTw26RZpB0
+      start-time: 1
+      latitude: 34.6899703864253
+      longitude: 135.18875244418123
+      description: Kobe Japan
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: VYVKQ2OIzh0
+      start-time: 9
+      latitude: 34.995893
+      longitude: 135.781507
+      description: Kyoto Japan
+      playlists:
+        - World
+        - Asia
+        - Cities
+        - Small Towns
+    - url: Ilu5G-bWhpg
+      start-time: 7
+      latitude: 34.990621664472414
+      longitude: 135.69571944755427
+      description: Kyoto Japan
+      playlists:
+        - World
+        - Asia
+        - Small Towns
+    - url: 4ktuTsk67Jg
+      start-time: 18
+      latitude: 34.979298802530664
+      longitude: 135.70248634919335
+      description: Kyoto Japan
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: cHjKckxsOCs
+      start-time: 315
+      latitude: 38.252057
+      longitude: 140.855769
+      description: Sendai Japan
+      playlists:
+        - World
+        - Asia
+        - Small Towns
+    - url: cHjKckxsOCs
+      start-time: 5400
+      latitude: 38.258976
+      longitude: 140.883444
+      description: Sendai Japan
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: re-wjNxH4Jw
+      start-time: 295
+      latitude: 35.906912
+      longitude: 139.482416
+      description: Kawagoe Japan
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: TGFPQhPuayE
+      start-time: 65
+      latitude: 35.641952
+      longitude: 139.702048
+      description: Tokyo Japan
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: e1J6DYeJFas
+      start-time: 8
+      latitude: 35.170512
+      longitude: 136.880456
+      description: Nagoya Japan
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: PE-P-nCSxHc
+      start-time: 734
+      latitude: 34.297297
+      longitude: 132.318128
+      description: Osaka Japan
+      playlists:
+        - World
+        - Asia
+        - Small Towns
+    - url: LA4_2H_qBp4
+      start-time: 8
+      latitude: 32.746753
+      longitude: 129.879483
+      description: Nagasaki Japan
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: 9UMn6CVizOw
+      start-time: 7
+      latitude: 34.395828
+      longitude: 132.453814
+      description: Hiroshima Japan
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: xFPEt9omvrU
+      start-time: 260
+      latitude: 43.057038
+      longitude: 141.351138
+      description: Sapporo Japan
+      playlists:
+        - World
+        - Asia
+        - Cities
+      #South Korea
+    - url: XWPUsUw-iec
+      start-time: 7
+      latitude: 37.5130
+      longitude: 127.1027
+      description: Seoul South Korea
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: EDTwW05bE8c
+      start-time: 35
+      latitude: 37.476938714015624
+      longitude: 126.95854224547355
+      description: Seoul South Korea
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: YsFQaZpqCXI
+      start-time: 1330
+      latitude: 37.5336127266035
+      longitude: 126.99561168278369
+      description: Seoul South Korea
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: LWp1pVFkMyY
+      start-time: 24
+      latitude: 37.55687395472009
+      longitude: 126.92367477418183
+      description: Seoul South Korea
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: LWp1pVFkMyY
+      start-time: 1105
+      latitude: 37.55179933982506
+      longitude: 126.92139036845316
+      description: Seoul South Korea
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: Ra0iQcSKnlA
+      start-time: 1
+      latitude: 37.57024430261804
+      longitude: 126.98608555626828
+      description: Seoul South Korea
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: Ra0iQcSKnlA
+      start-time: 785
+      latitude: 37.53155831778107
+      longitude: 126.97003817624154
+      description: Seoul South Korea
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: PWWygjlAsG0
+      start-time: 57
+      latitude: 35.14769800799226
+      longitude: 126.91823442492013
+      description: Gwangju South Korea
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: Cv1PZ8JeMvc
+      start-time: 165
+      latitude: 36.329111385992775
+      longitude: 127.42784594310673
+      description: Daejeon South Korea
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: s6VSZuSt3z0
+      start-time: 180
+      latitude: 37.449690263285774
+      longitude: 126.4500343553156
+      description: Incheon South Korea
+      playlists:
+        - World
+        - Asia
+        - Cities
+      #Taiwan
+    - url: eDJlKDsadUU
+      start-time: 66
+      latitude: 25.03392405484381
+      longitude: 121.52850099350493
+      description: Taipei Taiwan
+      playlists:
+        - World
+        - Asia
+        - Cities
+      #Singapore
+    - url: uZocEYAyUSs
+      start-time: 5
+      latitude: 1.295433
+      longitude: 103.857530
+      description: Suntec Singapore
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: uZocEYAyUSs
+      start-time: 3698
+      latitude: 1.280174
+      longitude: 103.855759
+      description: Suntec Singapore
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: aUJl46bEWYo
+      start-time: 23
+      latitude: 1.284562
+      longitude: 103.843794
+      description: Singapore
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: aUJl46bEWYo
+      start-time: 2970
+      latitude: 1.277160
+      longitude: 103.846934
+      description: Singapore
+      playlists:
+        - World
+        - Asia
+        - Cities
+      #Thailand
+    - url: DxP8fc2XYb4
+      start-time: 35
+      latitude: 12.782044
+      longitude: 101.647166
+      description: Bangkok Thailand
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: V8e78zOVdTs
+      start-time: 55
+      latitude: 13.737378956197148
+      longitude: 100.56046514815662
+      description: Bangkok Thailand
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: V8e78zOVdTs
+      start-time: 1564
+      latitude: 13.744175779493565
+      longitude: 100.54221946708913
+      description: Bangkok Thailand
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: Tdhc024I7qI
+      start-time: 16
+      latitude: 13.722810466383411
+      longitude: 100.51849703051644
+      description: Bangkok Thailand
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: 82EpisOdQYQ
+      start-time: 1
+      latitude: 18.787783
+      longitude: 98.993187
+      description: Chiang Mai Thailand
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: 82EpisOdQYQ
+      start-time: 1395
+      latitude: 18.78755022227643
+      longitude: 99.0032099701678
+      description: Chiang Mai Thailand
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: jyxIRzlkO_g
+      start-time: 25
+      latitude: 18.787785
+      longitude: 98.993142
+      description: Chiang Mai Thailand
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: eQML6bnNk7w
+      start-time: 5
+      latitude: 7.003946
+      longitude: 100.470811
+      description: Hat Yai Thailand
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: Dd4NIhP-N_E
+      start-time: 217
+      latitude: 9.709667485013528
+      longitude: 99.98737007154854
+      description: Koh Phangan Thailand
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: R81igPL7U7o
+      start-time: 1630
+      latitude: 14.364633214956877
+      longitude: 100.57746461545538
+      description: Ayutthaya Thailand
+      playlists:
+        - World
+        - Asia
+        - Small Towns
+    - url: wM83864m1W8
+      start-time: 1
+      latitude: 7.884952793354068
+      longitude: 98.38672155859184
+      description: Phuket Thailand
+      playlists:
+        - World
+        - Asia
+        - Small Towns
+    - url: BRgDPVJz5qY
+      start-time: 45
+      latitude: 12.925640763368376
+      longitude: 100.86754623635423
+      description: Pattaya Thailand
+      playlists:
+        - World
+        - Asia
+        - Cities
+      #Malaysia
+    - url: 3qIzs9PQLxk
+      start-time: 14
+      latitude: 3.144270
+      longitude: 101.647166
+      description: Kuala Lumpur Malaysia
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: yLTycPjm0nk
+      start-time: 22
+      latitude: 3.156572
+      longitude: 101.713561
+      description: Kuala Lumpur Malaysia
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: yLTycPjm0nk
+      start-time: 2385
+      latitude: 3.148928
+      longitude: 101.713139
+      description: Kuala Lumpur Malaysia
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: yLTycPjm0nk
+      start-time: 3132
+      latitude: 3.14338738627424
+      longitude: 101.71089747383706
+      description: Kuala Lumpur Malaysia
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: qNIpB8HZo1c
+      start-time: 760
+      latitude: 3.142505090460262
+      longitude: 101.69788416723452
+      description: Kuala Lumpur Malaysia
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: hydz8tf7d7s
+      start-time: 30
+      latitude: 3.145715258283626
+      longitude: 101.69659626468942
+      description: Kuala Lumpur Malaysia
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: hydz8tf7d7s
+      start-time: 960
+      latitude: 3.148020437415137
+      longitude: 101.693805429892
+      description: Kuala Lumpur Malaysia
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: 4yadiyCpbIg
+      start-time: 1
+      latitude: 3.150125129274719
+      longitude: 101.70981220576263
+      description: Kuala Lumpur Malaysia
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: Drk63kz4dLs
+      start-time: 7
+      latitude: 5.419358
+      longitude: 100.336874
+      description: Georgetown Malaysia
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: Drk63kz4dLs
+      start-time: 1320
+      latitude: 5.4157486554639584
+      longitude: 100.3382729452949
+      description: Georgetown Malaysia
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: Ehx9eAxqkMM
+      start-time: 375
+      latitude: 2.194362
+      longitude: 102.248778
+      description: Malacca Malaysia
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: 9NXxQ5vdr4Y
+      start-time: 1836
+      latitude: 2.199277079713519
+      longitude: 102.24823206686297
+      description: Malacca Malaysia
+      playlists:
+        - World
+        - Asia
+        - Cities
+      #Philippines
+    - url: Kb5iHXmZj2o
+      start-time: 8
+      latitude: 14.550134986223945
+      longitude: 121.05284531011861
+      description: Manila Philippines
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: vQvtTm4AMsg
+      start-time: 280
+      latitude: 14.552831393422922
+      longitude: 121.02200558903702
+      description: Manila Philippines
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: 5jOgkcgJT1Q
+      start-time: 50
+      latitude: 14.555348882226296
+      longitude: 121.04760726260567
+      description: Manila Philippines
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: IBPDSua7x1Y
+      start-time: 203
+      latitude: 14.610133544138716
+      longitude: 121.07969704330146
+      description: Manila Philippines
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: IBPDSua7x1Y
+      start-time: 1005
+      latitude: 14.60876391260349
+      longitude: 121.0799432547429
+      description: Manila Philippines
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: E2nssuq1P3U
+      start-time: 285
+      latitude: 14.5571713845781
+      longitude: 121.01807000154754
+      description: Makati Philippines
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: 89N22ZqA1po
+      start-time: 430
+      latitude: 14.62981345401885
+      longitude: 120.99559990158704
+      description: Quezon Philippines
+      playlists:
+        - World
+        - Asia
+        - Cities
+      #Indonesia
+    - url: 9qN2afIuFs8
+      start-time: 1
+      latitude: -6.191873
+      longitude: 106.822980
+      description: Jakarta Indonesia
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: ziUsOvkNMPo
+      start-time: 6
+      latitude: -6.245407
+      longitude: 106.783862
+      description: Jakarta Indonesia
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: VbUPmc-co8E
+      start-time: 198
+      latitude: -6.215940186485246
+      longitude: 106.81702411638781
+      description: Jakarta Indonesia
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: kViB_XQUacM
+      start-time: 209
+      latitude: -6.216883273405814
+      longitude: 106.81913609327546
+      description: Jakarta Indonesia
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: qPRVItJVbPk
+      start-time: 171
+      latitude: -7.2714058781825734
+      longitude: 112.74162299282736
+      description: Surabaya Indonesia
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: LweIN024RMU
+      start-time: 34
+      latitude: -6.921511014137589
+      longitude: 107.61012660469349
+      description: Bandung Indonesia
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: 2Zs2r06xnlM
+      start-time: 15
+      latitude: -8.70993602050667
+      longitude: 115.17231675673584
+      description: Legian Bali Indonesia
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: UBdl77etWOQ
+      start-time: 255
+      latitude: -8.694334190533072
+      longitude: 115.16817012230347
+      description: Bali Indonesia
+      playlists:
+        - World
+        - Asia
+        - Cities
+      #Cambodia
+    - url: cumZmx89FQ4
+      start-time: 650
+      latitude: 11.553781527048464
+      longitude: 104.92743754013121
+      description: Phnom Penh Cambodia
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: MS1fty2j02s
+      start-time: 1127
+      latitude: 11.559393547094782
+      longitude: 104.92000939823654
+      description: Phnom Penh Cambodia
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: IemnHA6Kgls
+      start-time: 1424
+      latitude: 11.570446504666716
+      longitude: 104.92797416471686
+      description: Phnom Penh Cambodia
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: EIxpiLOLNXs
+      start-time: 565
+      latitude: 10.607217380855507
+      longitude: 104.18271636700496
+      description: Kampot Cambodia
+      playlists:
+        - World
+        - Asia
+        - Small Towns
+      #Laos
+    - url: Donphue7pbw
+      start-time: 5
+      latitude: 17.96554252941993
+      longitude: 102.60683501040172
+      description: Vientiane Laos
+      playlists:
+        - World
+        - Asia
+        - Cities
+      #Vietnam
+    - url: _v2w7RxI6S4
+      start-time: 1
+      latitude: 12.252612909908226
+      longitude: 109.18885835266065
+      description: Nha Trang Vietnam
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: -iWzz9rStkU
+      start-time: 61
+      latitude: 10.768067046571304
+      longitude: 106.69526509998005
+      description: Ho Chi Minh Vietnam
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: -iWzz9rStkU
+      start-time: 663
+      latitude: 10.767933431683113
+      longitude: 106.69148160213764
+      description: Ho Chi Minh Vietnam
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: weUhCksnvL8
+      start-time: 7
+      latitude: 10.771541211251654
+      longitude: 106.68569158406115
+      description: Ho Chi Minh Vietnam
+      playlists:
+        - World
+        - Asia
+        - Cities
     #South America------------------------------------------------------------------------------------------------------
       #Brazil
     - url: Nqk9oAHv-NE
@@ -2401,6 +6222,24 @@ game:
       start-time: 1
       latitude: -22.952301
       longitude: -43.186975
+      description: Rio de Janeiro Brazil
+      playlists:
+        - World
+        - South America
+        - Cities
+    - url: 1OHfSncIWIQ
+      start-time: 642
+      latitude: -22.904790057892637
+      longitude: -43.17410595953644
+      description: Rio de Janeiro Brazil
+      playlists:
+        - World
+        - South America
+        - Cities
+    - url: B84O_mCYhNA
+      start-time: 625
+      latitude: -22.90547544929364
+      longitude: -43.176983780498155
       description: Rio de Janeiro Brazil
       playlists:
         - World
@@ -2437,6 +6276,15 @@ game:
       start-time: 11
       latitude: -22.987779
       longitude: -43.196431
+      description: Rio de Janeiro Brazil
+      playlists:
+        - World
+        - South America
+        - Cities
+    - url: -oK1cMqBzfU
+      start-time: 653
+      latitude: -22.949994781366655
+      longitude: -43.19088856473871
       description: Rio de Janeiro Brazil
       playlists:
         - World
@@ -2531,6 +6379,604 @@ game:
         - World
         - South America
         - Cities
+      #Argentina
+    - url: MZi63CeHqzY
+      start-time: 57
+      latitude: -38.037967
+      longitude: -57.540762
+      description: Mar Del Plata Argentina
+      playlists:
+        - World
+        - South America
+        - Cities
+    - url: SaDjNMF7hzo
+      start-time: 32
+      latitude: -34.562153
+      longitude: -58.456777
+      description: Buenos Aires Argentina
+      playlists:
+        - World
+        - South America
+        - Cities
+    - url: SaDjNMF7hzo
+      start-time: 437
+      latitude: -34.563994
+      longitude: -58.454805
+      description: Buenos Aires Argentina
+      playlists:
+        - World
+        - South America
+        - Cities
+    - url: hpNeEP-3PgQ
+      start-time: 25
+      latitude: -34.5585852493013
+      longitude: -58.449412350561914
+      description: Buenos Aires Argentina
+      playlists:
+        - World
+        - South America
+        - Cities
+    - url: LBQv-Wi__Uk
+      start-time: 7
+      latitude: -31.417254
+      longitude: -64.198682
+      description: Cordoba Argentina
+      playlists:
+        - World
+        - South America
+        - Cities
+    - url: LBQv-Wi__Uk
+      start-time: 769
+      latitude: -31.414769
+      longitude: -64.192591
+      description: Cordoba Argentina
+      playlists:
+        - World
+        - South America
+        - Cities
+    - url: 3jmfPf_lSvw
+      start-time: 23
+      latitude: -32.938178
+      longitude: -60.636563
+      description: Santa Fe Argentina
+      playlists:
+        - World
+        - South America
+        - Cities
+    - url: 4FToKQQvBto
+      start-time: 17
+      latitude: -32.930519
+      longitude: -60.649546
+      description: Santa Fe Argentina
+      playlists:
+        - World
+        - South America
+    - url: SrQfVrgthp4
+      start-time: 51
+      latitude: -37.989788
+      longitude: -57.547701
+      description: Mar Del Plata Argentina
+      playlists:
+        - World
+        - South America
+        - Cities
+    - url: SrQfVrgthp4
+      start-time: 698
+      latitude: -37.991187
+      longitude: -57.547319
+      description: Mar Del Plata Argentina
+      playlists:
+        - World
+        - South America
+        - Cities
+    - url: JvbzmkR5t90
+      start-time: 102
+      latitude: -24.789926
+      longitude: -65.408988
+      description: Salta Argentina
+      playlists:
+        - World
+        - South America
+        - Cities
+    - url: tWnqrdjaTk4
+      start-time: 170
+      latitude: -31.627370
+      longitude: -60.713791
+      description: Santa Fe Argentina
+      playlists:
+        - World
+        - South America
+        - Small Towns
+      #Chile
+    - url: X-4uJQhjvX0
+      start-time: 338
+      latitude: -33.439898458877416
+      longitude: -70.65372883503576
+      description: Santiago Chile
+      playlists:
+        - World
+        - South America
+        - Small Towns
+      #Peru
+    - url: Ww8Kp_CP-BE
+      start-time: 2545
+      latitude: -13.1631
+      longitude: -72.5450
+      description: Machu Picchu Peru
+      playlists:
+        - World
+        - South America
+    - url: AM91mhKFKbM
+      start-time: 915
+      latitude: -12.086597
+      longitude: -77.054911
+      description: Lima Peru
+      playlists:
+        - World
+        - South America
+        - Cities
+    - url: cHrpLgl0jbo
+      start-time: 1340
+      latitude: -12.125620
+      longitude: -77.037381
+      description: Lima Peru
+      playlists:
+        - World
+        - South America
+        - Cities
+    - url: EfewkJ2xdfM
+      start-time: 730
+      latitude: -12.101940
+      longitude: -77.035284
+      description: Lima Peru
+      playlists:
+        - World
+        - South America
+        - Cities
+    - url: auoI8MJN5JI
+      start-time: 640
+      latitude: -12.127787340366163
+      longitude: -77.02966911684891
+      description: Lima Peru
+      playlists:
+        - World
+        - South America
+        - Cities
+      #Colombia
+    - url: JTXO-6spfQg
+      start-time: 1
+      latitude: 6.247718
+      longitude: -75.569594
+      description: Medellin Colombia
+      playlists:
+        - World
+        - South America
+        - Cities
+    - url: RZ6slB-uo-U
+      start-time: 35
+      latitude: 6.247449960666475
+      longitude: -75.56775972824863
+      description: Medellin Colombia
+      playlists:
+        - World
+        - South America
+        - Cities
+      #Uruguay
+    - url: dXJYg3Qx6e4
+      start-time: 226
+      latitude: -34.915530
+      longitude: -56.149826
+      description: Montevideo Uruguay
+      playlists:
+        - World
+        - South America
+        - Cities
+    - url: DJmH7qXkT4c
+      start-time: 54
+      latitude: -34.90520471425017
+      longitude: -56.20366813313698
+      description: Montevideo Uruguay
+      playlists:
+        - World
+        - South America
+        - Cities
+    #Africa-------------------------------------------------------------------------------------------------------------
+      #Egypt
+    - url: GtdW4dGUA0w
+      start-time: 168
+      latitude: 29.9792
+      longitude: 31.1342
+      description: Giza Egypt (Pyramids)
+      playlists:
+        - World
+        - Africa
+      #Morocco
+    - url: OsnRSr7LxII
+      start-time: 142
+      latitude: 31.633354
+      longitude: -8.009764
+      description: Marrakech Morocco
+      playlists:
+        - World
+        - Africa
+        - Cities
+    - url: OsnRSr7LxII
+      start-time: 554
+      latitude: 31.635800
+      longitude: -8.014185
+      description: Marrakech Morocco
+      playlists:
+        - World
+        - Africa
+        - Cities
+    - url: tzWlaGgqdFA
+      start-time: 125
+      latitude: 31.631763678239615
+      longitude: -7.989142538347697
+      description: Marrakech Morocco
+      playlists:
+        - World
+        - Africa
+        - Cities
+      #Israel
+    - url: M_uegBh85Ss
+      start-time: 40
+      latitude: 32.08507369067499
+      longitude: 34.804097142167166
+      description: Ramat Gan Israel
+      playlists:
+        - World
+        - Africa
+        - Cities
+    - url: M_uegBh85Ss
+      start-time: 1635
+      latitude: 32.07927573954059
+      longitude: 34.814178509806254
+      description: Ramat Gan Israel
+      playlists:
+        - World
+        - Africa
+        - Cities
+    - url: kovxU4X8nf8
+      start-time: 262
+      latitude: 32.052911507456216
+      longitude: 34.756246967734654
+      description: Tel Aviv Israel
+      playlists:
+        - World
+        - Africa
+        - Cities
+    - url: kovxU4X8nf8
+      start-time: 1689
+      latitude: 29.548720143250698
+      longitude: 34.96761584474161
+      description: Eilat Israel
+      playlists:
+        - World
+        - Africa
+        - Cities
+    - url: kovxU4X8nf8
+      start-time: 2502
+      latitude: 32.05434695791371
+      longitude: 34.750746053401485
+      description: Eilat Israel
+      playlists:
+        - World
+        - Africa
+        - Cities
+      #Jordan
+    - url: JpL4JqoH-FY
+      start-time: 239
+      latitude: 31.955046130364696
+      longitude: 35.93016955303127
+      description: Amman Jordan
+      playlists:
+        - World
+        - Africa
+        - Cities
+      #Iran
+    - url: Yh7SYAeBZAY
+      start-time: 155
+      latitude: 38.07267438388335
+      longitude: 46.28820250501314
+      description: Tabriz Iran
+      playlists:
+        - World
+        - Africa
+        - Cities
+    - url: tmPB_idvcaU
+      start-time: 8
+      latitude: 35.74326513133386
+      longitude: 51.53438994450948
+      description: Tehranpars Iran
+      playlists:
+        - World
+        - Africa
+        - Cities
+      #United Arab Emirates
+    - url: 20j6Hd9-hpk
+      start-time: 1510
+      latitude: 25.245924978031702
+      longitude: 55.359361761462644
+      description: Dubai United Arab Emirates
+      playlists:
+        - World
+        - Africa
+        - Cities
+    - url: 1kZk5LRs_lI
+      start-time: 633
+      latitude: 25.07644285595189
+      longitude: 55.13201440030798
+      description: Dubai United Arab Emirates
+      playlists:
+        - World
+        - Africa
+        - Cities
+    - url: CBKcG3sz6XQ
+      start-time: 720
+      latitude: 25.195319001071013
+      longitude: 55.27665810041056
+      description: Dubai United Arab Emirates
+      playlists:
+        - World
+        - Africa
+        - Cities
+      #Qatar
+    - url: ZhCfnPabDro
+      start-time: 1418
+      latitude: 25.371235041661755
+      longitude: 51.548602155126275
+      description: Doha Qatar
+      playlists:
+        - World
+        - Africa
+        - Cities
+      #Saudi Arabia
+    - url: TmkJKL4YTcU
+      start-time: 189
+      latitude: 21.42154915145064
+      longitude: 39.8234149234536
+      description: Mecca Saudi Arabia
+      playlists:
+        - World
+        - Africa
+        - Cities
+    - url: TmkJKL4YTcU
+      start-time: 1052
+      latitude: 21.419890923653256
+      longitude: 39.8226460229115
+      description: Mecca Saudi Arabia
+      playlists:
+        - World
+        - Africa
+        - Cities
+    #Australia----------------------------------------------------------------------------------------------------------
+      #Australia
+    - url: iif1sA9jhXY
+      start-time: 272
+      latitude: -33.882604
+      longitude: 151.204054
+      description: Sydney Australia
+      playlists:
+        - World
+        - Australia
+        - Cities
+    - url: HKJirwJbD7M
+      start-time: 8
+      latitude: -33.858257
+      longitude: 151.208399
+      description: Sydney Australia
+      playlists:
+        - World
+        - Australia
+        - Cities
+    - url: HKJirwJbD7M
+      start-time: 723
+      latitude: -33.855835
+      longitude: 151.209631
+      description: Sydney Australia
+      playlists:
+        - World
+        - Australia
+        - Cities
+    - url: HKJirwJbD7M
+      start-time: 988
+      latitude: -33.855639
+      longitude: 151.210518
+      description: Sydney Australia
+      playlists:
+        - World
+        - Australia
+        - Cities
+    - url: -et8xSXaru0
+      start-time: 670
+      latitude: -33.873535
+      longitude: 151.211590
+      description: Sydney Australia
+      playlists:
+        - World
+        - Australia
+        - Cities
+    - url: SXNyCg0b2m4
+      start-time: 11
+      latitude: -27.464953
+      longitude: 153.020640
+      description: Brisbane Australia
+      playlists:
+        - World
+        - Australia
+        - Cities
+    - url: o_VHQ5K3TIc
+      start-time: 7
+      latitude: -37.817135
+      longitude: 144.952985
+      description: Melbourne Australia
+      playlists:
+        - World
+        - Australia
+        - Cities
+    - url: g0pqnDcHB1I
+      start-time: 4
+      latitude: -37.818785
+      longitude: 144.968144
+      description: Melbourne Australia
+      playlists:
+        - World
+        - Australia
+        - Cities
+    - url: ds_ohFc1B_o
+      start-time: 20
+      latitude: -37.811550
+      longitude: 144.968515
+      description: Melbourne Australia (China Town)
+      playlists:
+        - World
+        - Australia
+        - Cities
+    - url: gL_1uyPm3Ss
+      start-time: 32
+      latitude: -37.810296
+      longitude: 144.962819
+      description: Melbourne Australia
+      playlists:
+        - World
+        - Australia
+        - Cities
+    - url: 0kxamr4yuuA
+      start-time: 1
+      latitude: -37.808067
+      longitude: 144.956749
+      description: Melbourne Australia (Victoria Market)
+      playlists:
+        - World
+        - Australia
+        - Cities
+    - url: vCo9SZHc2gA
+      start-time: 22
+      latitude: -27.476276
+      longitude: 153.014262
+      description: Brisbane Australia
+      playlists:
+        - World
+        - Australia
+        - Cities
+    - url: EbRit-8oJJM
+      start-time: 35
+      latitude: -27.482182
+      longitude: 153.018777
+      description: Brisbane Australia
+      playlists:
+        - World
+        - Australia
+        - Cities
+    - url: tR3nebf674k
+      start-time: 3
+      latitude: -31.951902
+      longitude: 115.876272
+      description: Perth Australia
+      playlists:
+        - World
+        - Australia
+        - Cities
+    - url: Gt-GtC3cZek
+      start-time: 2
+      latitude: -32.168358
+      longitude: 115.862280
+      description: Perth Australia
+      playlists:
+        - World
+        - Australia
+        - Small Towns
+    - url: SQnjX0CPEuA
+      start-time: 550
+      latitude: -32.038130
+      longitude: 115.868280
+      description: Perth Australia
+      playlists:
+        - World
+        - Australia
+        - Small Towns
+    - url: lLeyKbGtjLM
+      start-time: 21
+      latitude: -34.923098
+      longitude: 138.597259
+      description: Adelaide Australia
+      playlists:
+        - World
+        - Australia
+        - Cities
+    - url: lLeyKbGtjLM
+      start-time: 643
+      latitude: 34.922890
+      longitude: 138.601393
+      description: Adelaide Australia
+      playlists:
+        - World
+        - Australia
+        - Cities
+    - url: lLeyKbGtjLM
+      start-time: 1065
+      latitude: -34.922710
+      longitude: 138.605624
+      description: Adelaide Australia
+      playlists:
+        - World
+        - Australia
+        - Cities
+    - url: lLeyKbGtjLM
+      start-time: 1500
+      latitude: -34.922421
+      longitude: 138.610378
+      description: Adelaide Australia
+      playlists:
+        - World
+        - Australia
+        - Cities
+    - url: F8Jp4NgRuNM
+      start-time: 35
+      latitude: -42.895138
+      longitude: 147.333299
+      description: Hobart Australia (Tasmania)
+      playlists:
+        - World
+        - Australia
+        - Small Towns
+    - url: TQkbDZ-dtzI
+      start-time: 21
+      latitude: -27.995298
+      longitude: 153.430459
+      description: Gold Coast Australia (Surfers Paradise)
+      playlists:
+        - World
+        - Australia
+        - Cities
+    - url: 4lqOioB1Xws
+      start-time: 398
+      latitude: -36.84895875394283
+      longitude: 174.76500048017905
+      description: Auckland New Zealand
+      playlists:
+        - World
+        - Australia
+        - Cities
+    - url: hBLaOSFBFeg
+      start-time: 550
+      latitude: -45.03294199157608
+      longitude: 168.65863930312594
+      description: Queenstown New Zealand
+      playlists:
+        - World
+        - Australia
+        - Small Towns
+    - url: slZSmw53_pI
+      start-time: 445
+      latitude: -45.02845308778988
+      longitude: 168.65584442638811
+      description: Queenstown New Zealand
+      playlists:
+        - World
+        - Australia
+        - Small Towns
 
 
 

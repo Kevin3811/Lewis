@@ -68,6 +68,7 @@ public class GameSettings {
             videoRepository.save(videoEntity);
             log.debug("Added video [{}] to database", video.getUrl());
         }
+        log.info("Added [{}] videos to database", videos.getVideos().size());
     }
 
     private void initGameInstances(){
