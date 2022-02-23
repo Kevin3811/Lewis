@@ -86,6 +86,15 @@ game:
         - World
         - North America
         - Cities
+    - url: ffzPjrxJbKM
+      start-time: 1105
+      latitude: 37.8273
+      longitude: -122.4226
+      description: San Francisco Alcatraz
+      playlists:
+        - World
+        - North America
+        - Cities
     - url: YcjA-aig2Rk
       start-time: 29
       latitude: 40.68981019798533
@@ -1246,6 +1255,14 @@ game:
         - World
         - North America
         - Cities
+    - url: kUfcxMb6Ix4
+      start-time: 2245
+      latitude: 34.1278
+      longitude: -118.3244
+      description: Hollywood California
+      playlists:
+        - World
+        - North America
     - url: XOaglSqbMGA
       start-time: 147
       latitude: 33.742570580122596
@@ -2161,6 +2178,15 @@ game:
         - World
         - Europe
         - Cities
+    - url: 14KzPBFTM20
+      start-time: 894
+      latitude: 51.5013
+      longitude: -0.1415
+      description: London England
+      playlists:
+        - World
+        - Europe
+        - Cities
     - url: zIqAI8WJhi0
       start-time: 1
       latitude: 53.481890
@@ -2296,6 +2322,15 @@ game:
         - World
         - Europe
         - Cities
+    - url: p-Ok9KlSp7ouo
+      start-time: 17
+      latitude: 53.798282
+      longitude: -1.538016
+      description: Leeds England
+      playlists:
+        - World
+        - Europe
+        - Cities
     - url: p-Ld8dhWKxA
       start-time: 1644
       latitude: 53.742757
@@ -2368,11 +2403,11 @@ game:
         - World
         - Europe
         - Small Towns
-    - url: u_KU5B3JS2A
+    - url: S0S17xIEqD8
       start-time: 1
-      latitude: 53.022445
-      longitude: -0.583874
-      description: Fulbeck England
+      latitude: 53.109786
+      longitude: -1.564628
+      description: Camford England
       playlists:
         - World
         - Europe
@@ -5131,6 +5166,15 @@ game:
         - World
         - Asia
         - Cities
+    - url: UxwMSvgIt70
+      start-time: 376
+      latitude: 27.1732
+      longitude: 78.0421
+      description: Agra India
+      playlists:
+        - World
+        - Asia
+        - Cities
       #Sri Lanka
     - url: dSfs8JzjUjc
       start-time: 165
@@ -5271,6 +5315,24 @@ game:
       start-time: 2
       latitude: 31.543299
       longitude: 120.304850
+      description: Wuxi China
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: HzPHcK2dZ3Y
+      start-time: 18
+      latitude: 31.576486
+      longitude: 120.299125
+      description: Wuxi China
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: HzPHcK2dZ3Y
+      start-time: 136
+      latitude: 31.576486
+      longitude: 120.299125
       description: Wuxi China
       playlists:
         - World
@@ -5549,6 +5611,15 @@ game:
         - World
         - Asia
         - Cities
+    - url: rAeN7TdGq4o
+      start-time: 9
+      latitude: 34.995893
+      longitude: 135.781507
+      description: Kyoto Japan
+      playlists:
+        - World
+        - Asia
+        - Small Towns
     - url: cHjKckxsOCs
       start-time: 315
       latitude: 38.252057
@@ -6160,6 +6231,15 @@ game:
         - World
         - Asia
         - Small Towns
+    - url: ZbV2N0Nitgw
+      start-time: 546
+      latitude: 13.41249
+      longitude: 103.86559
+      description: Angkor Wat Cambodia
+      playlists:
+        - World
+        - Asia
+        - Small Towns
       #Laos
     - url: Donphue7pbw
       start-time: 5
@@ -6664,6 +6744,15 @@ game:
         - World
         - Africa
         - Cities
+    - url: rYNewcAVUb4
+      start-time: 2035
+      latitude: 31.77839
+      longitude: 35.23531
+      description: Jerusalem Israel
+      playlists:
+        - World
+        - Africa
+        - Cities
       #Jordan
     - url: JpL4JqoH-FY
       start-time: 239
@@ -6792,6 +6881,15 @@ game:
       start-time: 670
       latitude: -33.873535
       longitude: 151.211590
+      description: Sydney Australia
+      playlists:
+        - World
+        - Australia
+        - Cities
+    - url: 7aCP4-uDIXA
+      start-time: 1406
+      latitude: -33.85903
+      longitude: 151.21643
       description: Sydney Australia
       playlists:
         - World
