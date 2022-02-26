@@ -1,11 +1,16 @@
 <template>
   <div>
-    <div v-if="createGame">
+    <b-modal
+      v-model="createGame"
+      centered
+      title="Create Game"
+      :hide-footer="true"
+    >
       <CreateGame
         :gamemode="selectedGamemode"
         v-on:cancel-create-game="cancelCreateGame"
       />
-    </div>
+    </b-modal>
     <div class="main">
       <h3>Game Mode</h3>
       <div class="deck">
