@@ -9,10 +9,14 @@ spring:
   h2:
     console:
       enabled: true
-#Access local database console from http://localhost:80/h2-console
+#Access local database console from http://localhost:8081/h2-console
 logging:
   level:
     root: INFO
+#    org:
+#      hibernate:
+#        SQL: DEBUG
+#        type: TRACE
 server:
   port: 8081
   ssl:
@@ -7075,36 +7079,3 @@ game:
         - World
         - Australia
         - Small Towns
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

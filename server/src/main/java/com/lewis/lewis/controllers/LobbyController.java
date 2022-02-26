@@ -48,29 +48,6 @@ public class LobbyController {
         return playlists;
     }
 
-    @GetMapping("/playlists-videos")
-    public List<Videos.Video> getVideosInPlaylist(@RequestParam(value="playlists") List<String> playlists){
-        List<Videos.Video> videos = new ArrayList<>();
-        if(playlists == null || playlists.isEmpty()){
-            playlists = new ArrayList<>();
-            playlists.add("World");
-        }
-        videoRepository.findByPlaylistsIn(playlists).forEach(video ->{
-            videos.add(Videos.Video.builder()
-                    .latitude(video.getLatitude())
-                    .longitude(video.getLongitude())
-                    .playlists(video.getPlaylists())
-                    .startTime(video.getStartTime())
-                    .url(video.getUrl())
-                    .description(video.getDescription())
-                    .build());
-        });
-        log.info("Videos: [{}]", videos);
-        //randomize order of videos
-        Collections.shuffle(videos);
-        return videos;
-    }
-
     @PostMapping("/create-lobby")
     public ResponseEntity<List<Videos.Video>> createLobby(@RequestBody Game game){
         ResponseEntity<List<Videos.Video>> response;
@@ -84,15 +61,25 @@ public class LobbyController {
             game.getRoundCount() != null && game.getRoundLength() != null){
             //Set the videos for the lobby and then add the game object to the game instances
             List<Videos.Video> videos = new ArrayList<>();
-            videoRepository.findByPlaylistsIn(game.getIncludedPlaylists()).forEach(video ->{
-                videos.add(Videos.Video.builder()
-                        .latitude(video.getLatitude())
-                        .longitude(video.getLongitude())
-                        .playlists(video.getPlaylists())
-                        .startTime(video.getStartTime())
-                        .url(video.getUrl())
-                        .description(video.getDescription())
-                        .build());
+            videoRepository.findDistinctByPlaylistsIn(game.getIncludedPlaylists()).forEach(video ->{
+                //TODO: Do the filtering in the sql instead of the java code
+                boolean inFilter = false;
+                for(String playlist : game.getExcludedPlaylists()){
+                    if(video.getPlaylists().contains(playlist)){
+                        inFilter = true;
+                        break;
+                    }
+                }
+                if(!inFilter){
+                    videos.add(Videos.Video.builder()
+                            .latitude(video.getLatitude())
+                            .longitude(video.getLongitude())
+                            .playlists(video.getPlaylists())
+                            .startTime(video.getStartTime())
+                            .url(video.getUrl())
+                            .description(video.getDescription())
+                            .build());
+                }
             });
             //Randomize order of videos
             Collections.shuffle(videos);

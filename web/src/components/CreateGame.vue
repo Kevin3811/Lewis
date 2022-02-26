@@ -1,68 +1,95 @@
 <template>
-  <div class="createGame">
-    <div class="form">
-      <b-form @submit="submit" autocomplete="off">
-        <!--username-->
-        <b-form-group
-          id="input-group-1"
-          label="Display Name:"
-          label-for="input-1"
-        >
-          <b-form-input
-            id="input-1"
-            v-model="username"
-            type="text"
-            placeholder="username"
-            required
-          ></b-form-input>
-        </b-form-group>
-        <!--round length-->
-        <b-form-group
-          id="input-group-2"
-          label="Round Length:"
-          label-for="input-2"
-          class="roundLength"
-        >
-          <b-form-select
-            id="input-2"
-            v-model="roundLength"
-            :options="roundLengths"
-            required
-          ></b-form-select>
-        </b-form-group>
-        <!--round count-->
-        <b-form-group
-          id="input-group-3"
-          label="Round Count:"
-          label-for="input-3"
-          class="roundCount"
-        >
-          <b-form-select
-            id="input-3"
-            v-model="roundCount"
-            :options="roundCounts"
-            required
-          ></b-form-select>
-        </b-form-group>
-        <div class="playlists">
-          <div
-            v-for="playlist in playlists"
-            :key="playlist"
-            :class="{
-              playlist: true,
-              selectedPlaylist: selectedPlaylists.includes(playlist),
-            }"
-            v-on:click="togglePlaylist(playlist)"
-          >
-            {{ playlist }}
-          </div>
-        </div>
-        <div class="footer">
-          <b-button v-on:click="cancel" variant="danger">Cancel</b-button>
-          <b-button type="submit" variant="primary">{{ startButton }}</b-button>
-        </div>
-      </b-form>
-    </div>
+  <div>
+    <b-container>
+      <div class="form">
+        <b-form @submit="submit" autocomplete="off" ref="form">
+          <b-row align-h="center">
+            <!--username-->
+            <b-form-group
+              id="input-group-1"
+              label="Display Name:"
+              label-for="input-1"
+            >
+              <b-form-input
+                id="input-1"
+                v-model="username"
+                type="text"
+                placeholder="username"
+                required
+              ></b-form-input>
+            </b-form-group>
+          </b-row>
+          <b-row align-h="center">
+            <!--round length-->
+            <b-col align-self="center">
+              <b-form-group
+                id="input-group-2"
+                label="Round Length:"
+                label-for="input-2"
+              >
+                <b-form-select
+                  id="input-2"
+                  v-model="roundLength"
+                  :options="roundLengths"
+                  required
+                ></b-form-select>
+              </b-form-group>
+            </b-col>
+            <!--round count-->
+            <b-col align-self="center">
+              <b-form-group
+                id="input-group-3"
+                label="Round Count:"
+                label-for="input-3"
+              >
+                <b-form-select
+                  id="input-3"
+                  v-model="roundCount"
+                  :options="roundCounts"
+                  required
+                ></b-form-select>
+              </b-form-group>
+            </b-col>
+          </b-row>
+          <!-- Playlist select -->
+          <b-row>
+            <b-col>
+              <b-form-group label="Included Playlists">
+                <b-form-checkbox-group
+                  v-model="includedPlaylists"
+                  v-on:change="includedChanged"
+                  :options="includedPlaylistOptions"
+                  stacked
+                >
+                </b-form-checkbox-group>
+              </b-form-group>
+            </b-col>
+            <b-col>
+              <b-form-group label="Excluded Playlists">
+                <b-form-checkbox-group
+                  v-model="excludedPlaylists"
+                  v-on:change="excludedChanged"
+                  :options="excludedPlaylistOptions"
+                  stacked
+                >
+                </b-form-checkbox-group>
+              </b-form-group>
+            </b-col>
+          </b-row>
+          <!-- Footer buttons -->
+          <b-row class="mt-3">
+            <b-col>
+              <b-button v-on:click="cancel" variant="danger">Cancel</b-button>
+            </b-col>
+            <b-col>
+              <b-button type="submit" variant="primary">{{
+                startButton
+              }}</b-button>
+            </b-col>
+          </b-row>
+        </b-form>
+      </div>
+    </b-container>
   </div>
 </template>
 
@@ -81,8 +108,10 @@ export default {
       username: "user",
       roundLength: 180,
       roundCount: 10,
-      playlist: undefined,
-      selectedPlaylists: [],
+      includedPlaylists: [],
+      excludedPlaylists: [],
+      includedPlaylistOptions: [],
+      excludedPlaylistOptions: [],
       roundLengths: [
         { text: "30 Seconds", value: 30 },
         { text: "1 Minute", value: 60 },
@@ -109,9 +138,6 @@ export default {
     };
   },
   computed: {
-    playlists() {
-      return this.$store.getters.getPlaylists;
-    },
     startButton() {
       if (this.gamemode === "singleplayer") {
         return "Start";
@@ -120,7 +146,44 @@ export default {
       }
     },
   },
+  mounted() {
+    //Need to make separate object arrays for include and exclude list so they don't share the same disabled properties
+    this.$store.getters.getPlaylists.forEach((playlist) => {
+      this.includedPlaylistOptions.push({
+        text: playlist,
+        value: playlist,
+        disabled: false,
+      });
+      this.excludedPlaylistOptions.push({
+        text: playlist,
+        value: playlist,
+        disabled: false,
+      });
+    });
+  },
   methods: {
+    //Disable the corresponding playlists in the exclude list
+    includedChanged(included) {
+      this.excludedPlaylistOptions.forEach((playlist, i) => {
+        const index = included.findIndex((p) => p === playlist.value);
+        if (index !== -1) {
+          this.excludedPlaylistOptions[i].disabled = true;
+        } else {
+          this.excludedPlaylistOptions[i].disabled = false;
+        }
+      });
+    },
+    //Disable the correspondnig playlists in the include list
+    excludedChanged(excluded) {
+      this.includedPlaylistOptions.forEach((playlist, i) => {
+        const index = excluded.findIndex((p) => p === playlist.value);
+        if (index !== -1) {
+          this.includedPlaylistOptions[i].disabled = true;
+        } else {
+          this.includedPlaylistOptions[i].disabled = false;
+        }
+      });
+    },
     async submit(event) {
       //Prevent default to prevent page from refreshing when submitting form
       event.preventDefault();
@@ -148,7 +211,8 @@ export default {
         roundCount: this.roundCount,
         currentRound: 0,
         roundLength: this.roundLength,
-        includedPlaylists: this.selectedPlaylists,
+        includedPlaylists: this.includedPlaylists,
+        excludedPlaylists: this.excludedPlaylists,
       };
       let videos = await lobbyApi.createGame(game);
       this.$store.dispatch("setVideos", videos);
@@ -174,6 +238,7 @@ export default {
         lobbyApi.startGame(lobbyCode);
         this.$router.push({ name: "Singleplayer" });
       } else {
+        //If it's multiplayer, don't start the game right away and go to the waiting room instead
         this.$router.replace({
           name: "Multiplayer",
           params: { lobbyCode: lobbyCode },
@@ -183,109 +248,12 @@ export default {
     cancel() {
       this.$emit("cancel-create-game");
     },
-    togglePlaylist(playlist) {
-      if (this.selectedPlaylists.includes(playlist)) {
-        this.selectedPlaylists.splice(
-          this.selectedPlaylists.indexOf(playlist),
-          1
-        );
-      } else {
-        this.selectedPlaylists.push(playlist);
-      }
-    },
   },
 };
 </script>
 
 <style scoped>
-.createGame {
-  width: 25%;
-  height: 40%;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  border-radius: 15px;
-  background-color: #17a2b8;
-  opacity: 0.95;
-
-  margin: auto;
-}
 .form {
   padding: 15px;
-  text-align: center;
-}
-.roundLength {
-  width: 45%;
-  float: left;
-}
-.roundCount {
-  width: 45%;
-  float: right;
-}
-.footer {
-  display: flex;
-  position: absolute;
-  bottom: 10px;
-  left: 0;
-  right: 0;
-  justify-content: space-between;
-  margin: 0 7% 3% 7%;
-}
-.playlists {
-  display: flex;
-  width: 100%;
-  display: inline-block;
-}
-.cancel-button {
-  background-color: rgba(255, 0, 0, 0.5);
-  color: white;
-  cursor: pointer;
-  border-radius: 5px;
-  justify-content: center;
-  width: 100px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-}
-.cancel-button:hover {
-  transform: scale(1.05);
-}
-.submit-button {
-  margin-left: 20%;
-  background-color: green;
-  color: white;
-  text-align: center;
-  cursor: pointer;
-  border-radius: 5px;
-  justify-content: center;
-  width: 100px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-}
-.submit-button:hover {
-  transform: scale(1.05);
-}
-.playlist {
-  background-color: gray;
-  opacity: 0.7;
-  border-radius: 5px;
-  align-items: center;
-  margin: 1.5%;
-  padding: 0 3px 0 3px;
-  height: 30px;
-  display: inline-block;
-  position: relative;
-}
-.playlist:hover {
-  cursor: pointer;
-  transform: scale(1.05);
-}
-.selectedPlaylist {
-  background-color: gray;
-  opacity: 1;
 }
 </style>

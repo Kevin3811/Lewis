@@ -6,7 +6,7 @@ export default {
   state: {
     gamemode: "",
     showLobbyAnswers: true,
-    playlists: [],
+    playlists: [], //Holds all possible playlists that can be selected
     videos: [],
     lobbyCode: undefined,
     roundLength: undefined,

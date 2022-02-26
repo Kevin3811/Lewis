@@ -7,6 +7,8 @@ import {
   CardPlugin,
   FormPlugin,
   ModalPlugin,
+  LayoutPlugin,
+  FormCheckboxPlugin,
 } from "bootstrap-vue";
 import "leaflet/dist/leaflet.css";
 import { Icon } from "leaflet";
@@ -23,6 +25,9 @@ Vue.use(IconsPlugin);
 Vue.use(CardPlugin);
 Vue.use(FormPlugin);
 Vue.use(ModalPlugin);
+Vue.use(LayoutPlugin);
+Vue.use(FormCheckboxPlugin);
+
 Vue.use(VueRouter);
 
 delete Icon.Default.prototype._getIconUrl;
