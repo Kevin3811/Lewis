@@ -1,86 +1,111 @@
 <template>
   <div class="guess" ref="draggableContainer">
-    <div class="guess-header" draggable="true" v-on:mousedown="dragMouseDown">
-      <span class="guess-text">Place Guess</span>
-      <span v-if="currentUser.guessed" class="distance"
-        >{{ currentGuess.distance }} away</span
+    <b-container>
+      <b-row
+        style="height: 35px;"
+        class="guess-header w-100"
+        draggable="true"
+        v-on:mousedown="dragMouseDown"
+        align-v="center"
+        no-gutters
       >
-      <span class="exit" v-on:click="exit">x</span>
-    </div>
-    <l-map
-      style="height: 300px"
-      :zoom="zoom"
-      :center="center"
-      v-on:click="mapClick($event)"
-    >
-      <l-tile-layer
-        :url="url"
-        :attribution="attribution"
-        :subdomains="subdomains"
-      ></l-tile-layer>
-      <!-- Guess lat lon default to undefined. Only display marker once there is a guess -->
-      <div v-if="guessLat !== undefined || guessLon !== undefined">
-        <l-marker :lat-lng="[guessLat, guessLon]">
-          <l-icon icon-url="/redmarker.png"> </l-icon>
-          <l-tooltip :options="{ opacity: 0.4 }">
-            {{ playerUsername }}: {{ currentGuess.distance }}
-          </l-tooltip>
-        </l-marker>
-      </div>
-      <!-- Show Answer -->
-      <div v-if="currentUser.guessed || roundOver">
-        <l-marker :lat-lng="[this.video.latitude, this.video.longitude]">
-          <l-icon icon-url="/greenmarker.png"> </l-icon>
-          <l-tooltip :options="{ opacity: 0.6 }">Correct Answer</l-tooltip>
-        </l-marker>
-        <!-- Line connecting answer and player guess. Only attempt to draw line if a guess was made -->
-        <l-geo-json
-          v-if="currentUser.guessed"
-          :geojson="guessGeoJson"
-        ></l-geo-json>
-      </div>
-      <!-- Show all other player answers -->
-      <div v-if="showLobbyAnswers && (roundOver || currentUser.guessed)">
-        <div v-for="guess in lobbyGuesses" :key="guess.clientCode">
-          <div
-            v-if="
-              guess.clientCode !== playerClientCode &&
-                (guess.latGuess !== undefined || guess.lonGuess !== undefined)
-            "
-          >
-            <l-marker :lat-lng="[guess.latGuess, guess.lonGuess]">
-              <l-icon icon-url="/bluemarker.png"> </l-icon>
-              <l-tooltip :options="{ opacity: 0.6 }">
-                {{ guess.username }}: {{ guess.distance }}
+        <b-col cols="2" style="text-align: left;">
+          Place Guess
+        </b-col>
+        <b-col sylte="align-content: center;">
+          <div v-if="currentUser.guessed" style="text-align: center;">
+            {{ currentGuess.distance }} away
+          </div>
+        </b-col>
+        <b-col cols="2" style="text-align: right;">
+          Place Holder
+        </b-col>
+      </b-row>
+      <b-row>
+        <l-map
+          style="height: 515px;"
+          :zoom="zoom"
+          :center="center"
+          v-on:click="mapClick($event)"
+        >
+          <l-tile-layer
+            :url="url"
+            :attribution="attribution"
+            :subdomains="subdomains"
+          ></l-tile-layer>
+          <!-- Guess lat lon default to undefined. Only display marker once there is a guess -->
+          <div v-if="guessLat !== undefined || guessLon !== undefined">
+            <l-marker :lat-lng="[guessLat, guessLon]">
+              <l-icon icon-url="/redmarker.png"> </l-icon>
+              <l-tooltip :options="{ opacity: 0.4 }">
+                {{ playerUsername }}: {{ currentGuess.distance }}
               </l-tooltip>
             </l-marker>
           </div>
-        </div>
-      </div>
-    </l-map>
-    <!--Bottom cance, skip/next, and guess buttons-->
-    <div class="footer">
-      <div class="footer-buttons">
-        <span class="cancel-button" v-on:click="exit">Cancel</span>
-        <div v-if="currentUser.host">
-          <span
-            class="next-button"
-            v-on:click="next"
-            v-if="currentUser.guessed || roundOver"
-            >Next</span
+          <!-- Show Answer -->
+          <div v-if="currentUser.guessed || roundOver">
+            <l-marker :lat-lng="[this.video.latitude, this.video.longitude]">
+              <l-icon icon-url="/greenmarker.png"> </l-icon>
+              <l-tooltip :options="{ opacity: 0.6 }">Correct Answer</l-tooltip>
+            </l-marker>
+            <!-- Line connecting answer and player guess. Only attempt to draw line if a guess was made -->
+            <l-geo-json
+              v-if="currentUser.guessed"
+              :geojson="guessGeoJson"
+            ></l-geo-json>
+          </div>
+          <!-- Show all other player answers -->
+          <div v-if="showLobbyAnswers && (roundOver || currentUser.guessed)">
+            <div v-for="guess in lobbyGuesses" :key="guess.clientCode">
+              <div
+                v-if="
+                  guess.clientCode !== playerClientCode &&
+                    (guess.latGuess !== undefined ||
+                      guess.lonGuess !== undefined)
+                "
+              >
+                <l-marker :lat-lng="[guess.latGuess, guess.lonGuess]">
+                  <l-icon icon-url="/bluemarker.png"> </l-icon>
+                  <l-tooltip :options="{ opacity: 0.6 }">
+                    {{ guess.username }}: {{ guess.distance }}
+                  </l-tooltip>
+                </l-marker>
+              </div>
+            </div>
+          </div>
+        </l-map>
+      </b-row>
+      <!--Bottom cance, skip/next, and guess buttons-->
+      <b-row
+        class="w-100"
+        style="height: 50px;"
+        :no-gutters="true"
+        align-v="center"
+      >
+        <b-col style="text-align: center">
+          <b-button v-on:click="exit">Close</b-button>
+        </b-col>
+        <b-col style="text-align: center">
+          <div v-if="currentUser.host">
+            <b-button
+              variant="primary"
+              v-if="currentUser.guessed || roundOver"
+              v-on:click="next"
+              >Next</b-button
+            >
+            <b-button variant="danger" v-else v-on:click="next">Skip</b-button>
+          </div>
+        </b-col>
+        <b-col style="text-align: center">
+          <b-button
+            variant="success"
+            :disabled="currentUser.guessed || roundOver"
+            v-on:click="guess"
+            >Guess</b-button
           >
-          <span class="cancel-button" v-on:click="next" v-else>Skip</span>
-        </div>
-        <span
-          :class="{
-            guessButton: !currentUser.guessed && !roundOver,
-            disabledGuessButton: currentUser.guessed || roundOver,
-          }"
-          v-on:click="guess"
-          >Guess</span
-        >
-      </div>
-    </div>
+        </b-col>
+      </b-row>
+    </b-container>
   </div>
 </template>
 
@@ -109,7 +134,7 @@ export default {
   },
   data() {
     return {
-      zoom: 1,
+      zoom: 2,
       center: [47.41322, -1.219482],
       // url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
       url: "https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}&hl=en", //map
@@ -268,121 +293,21 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .guess {
-  resize: both;
   width: 600px;
   height: 600px;
   position: absolute;
   right: 0;
   bottom: 0;
   z-index: 100;
-  border-radius: 15px;
+  border-radius: 10px;
   align-content: center;
+  background-color: gray;
 }
 .guess-header {
   color: white;
-  background-color: gray;
-  opacity: 0.8;
   cursor: grab;
   width: 100%;
-  min-height: 25px;
-}
-.guess-header:hover {
-  opacity: 1;
-}
-.guess-text {
-  margin-left: 5px;
-  align-items: center;
-  width: 33%;
-  float: left;
-}
-.distance {
-  color: white;
-  align-items: center;
-}
-.exit {
-  color: red;
-  padding-left: 10px;
-  padding-right: 10px;
-  font-size: 1em;
-  cursor: pointer;
-  float: right;
-}
-.exit:hover {
-  background: white;
-}
-.footer {
-  background-color: gray;
-  opacity: 0.6;
-  height: 40px;
-}
-.footer-buttons {
-  width: 100%;
-  height: 100%;
-  align-items: center;
-  display: flex;
-}
-.cancel-button {
-  padding: 3px;
-  background-color: rgb(141, 0, 0);
-  color: white;
-  cursor: pointer;
-  border-radius: 5px;
-  align-items: center;
-  display: inline-block;
-  position: relative;
-  margin: auto;
-  user-select: none;
-}
-.next-button {
-  background: rgb(0, 0, 255);
-  padding: 3px;
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
-  align-items: center;
-  display: inline-block;
-  position: relative;
-  margin: auto;
-  user-select: none;
-}
-.guessButton {
-  padding: 3px;
-  background-color: green;
-  color: white;
-  cursor: pointer;
-  border-radius: 5px;
-  align-items: center;
-  display: inline-block;
-  position: relative;
-  margin: auto;
-  user-select: none;
-}
-.cancel-button:hover {
-  background-color: red;
-  transform: scale(1.05);
-}
-.next-button:hover {
-  background-color: rgb(49, 49, 255);
-  transform: scale(1.05);
-}
-.guessButton:hover {
-  background-color: rgb(0, 204, 0);
-  transform: scale(1.05);
-}
-.disabledGuessButton {
-  padding: 3px;
-  background-color: green;
-  opacity: 0.5;
-  color: white;
-  cursor: not-allowed;
-  border-radius: 5px;
-  align-items: center;
-  display: inline-block;
-  position: relative;
-  margin: auto;
-  pointer-events: none;
-  user-select: none;
 }
 </style>

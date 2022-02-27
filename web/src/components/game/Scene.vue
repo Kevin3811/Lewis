@@ -63,18 +63,17 @@
         </div>
       </div>
     </div>
-    <div v-if="isGuessing">
-      <Guess
-        :video="currentVideo"
-        v-on:guessPanelMoved="guessPanelMoved"
-        v-on:markerPlaced="markerPlaced"
-        :roundOver="roundOver"
-        :guessPanel="guessPanel"
-        :gamemode="gamemode"
-        :guessLat="markerLat"
-        :guessLon="markerLon"
-      />
-    </div>
+    <Guess
+      :video="currentVideo"
+      v-on:guessPanelMoved="guessPanelMoved"
+      v-on:markerPlaced="markerPlaced"
+      :roundOver="roundOver"
+      :guessPanel="guessPanel"
+      :gamemode="gamemode"
+      :guessLat="markerLat"
+      :guessLon="markerLon"
+      v-if="isGuessing"
+    />
     <!--Guess Button-->
     <div v-on:click="guessButton" class="guess-button">Guess</div>
   </div>
