@@ -1,11 +1,11 @@
 module.exports = {
-  // lintOnSave: false,
+  lintOnSave: false,
   devServer: {
     port: 8080,
     https: true,
     proxy: {
       "/lobby": {
-        target: "http://localhost:8081",
+        target: "https://localhost:8081",
       },
     },
   },
