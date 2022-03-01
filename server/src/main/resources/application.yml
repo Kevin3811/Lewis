@@ -17,9 +17,20 @@ logging:
 #      hibernate:
 #        SQL: DEBUG
 #        type: TRACE
+
+#ssl gets overridden in prod environment
 server:
   port: 8081
   ssl:
+    enabled: true
+    key-store-type: PKCS12
+    key-store: classpath:keystore/localkey.p12
+    key-store-password: password
+    key-alias: localkey
+  http2:
+    enabled: true
+security:
+  basic:
     enabled: false
 
 game:
