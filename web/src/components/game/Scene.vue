@@ -16,7 +16,14 @@
     </div>
     <div class="controls">
       <div>Round: {{ currentRound }} / {{ roundCount }}</div>
-      <div>Time Left: {{ secondsLeft }}</div>
+      <div
+        :class="{
+          'font-weight-bold text-danger bg-dark':
+            secondsLeft <= 15 && secondsLeft % 2 === 0,
+        }"
+      >
+        Time Left: {{ secondsLeft }}
+      </div>
       <div class="slider">
         <p>Volume ({{ volumePercent }}%)</p>
         <input
@@ -263,7 +270,7 @@ export default {
   text-align: center;
   color: white;
   background: gray;
-  opacity: 0.8;
+  opacity: 0.9;
   border-radius: 7px;
   min-width: 150px;
 }
