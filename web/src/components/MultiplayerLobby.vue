@@ -32,7 +32,9 @@
           class="mb-2 mb-sm-0"
           required
         ></b-form-input>
-        <b-button type="submit" variant="primary">Enter Lobby</b-button>
+        <b-button type="submit" variant="primary" :disabled="lobbyEntered"
+          >Enter Lobby</b-button
+        >
       </b-form>
     </div>
     <div v-for="player in players" :key="player.clientCode">
@@ -114,6 +116,7 @@ export default {
       this.$store.dispatch("setPlayer", player);
       //Add player to lobby server side
       lobbyApi.addPlayerToLobby(player);
+      this.lobbyEntered = true;
       console.log("enter");
     },
   },
