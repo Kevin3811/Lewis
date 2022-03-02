@@ -99,7 +99,12 @@
         <b-col style="text-align: center">
           <b-button
             variant="success"
-            :disabled="currentUser.guessed || roundOver"
+            :disabled="
+              currentUser.guessed ||
+                roundOver ||
+                guessLat === undefined ||
+                guessLon === undefined
+            "
             v-on:click="guess"
             >Guess</b-button
           >
