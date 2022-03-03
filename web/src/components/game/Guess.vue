@@ -42,20 +42,13 @@
               </l-tooltip>
             </l-marker>
           </div>
-          <!-- Show Answer -->
-          <div v-if="currentUser.guessed || roundOver">
+          <!-- Show all other player answers -->
+          <div v-if="roundOver || currentUser.guessed">
+            <!-- Show Answer -->
             <l-marker :lat-lng="[this.video.latitude, this.video.longitude]">
               <l-icon icon-url="/greenmarker.png"> </l-icon>
-              <l-tooltip :options="{ opacity: 0.6 }">Correct Answer</l-tooltip>
+              <l-tooltip :options="{ opacity: 0.7 }">Correct Answer</l-tooltip>
             </l-marker>
-            <!-- Line connecting answer and player guess. Only attempt to draw line if a guess was made -->
-            <l-geo-json
-              v-if="currentUser.guessed"
-              :geojson="guessGeoJson"
-            ></l-geo-json>
-          </div>
-          <!-- Show all other player answers -->
-          <div v-if="showLobbyAnswers && (roundOver || currentUser.guessed)">
             <div v-for="guess in lobbyGuesses" :key="guess.clientCode">
               <div
                 v-if="
@@ -64,13 +57,23 @@
                       guess.lonGuess !== undefined)
                 "
               >
+                <!-- Marker where everyone else guessed -->
                 <l-marker :lat-lng="[guess.latGuess, guess.lonGuess]">
                   <l-icon icon-url="/bluemarker.png"> </l-icon>
-                  <l-tooltip :options="{ opacity: 0.6 }">
+                  <l-tooltip :options="{ opacity: 0.7 }">
                     {{ guess.username }}: {{ guess.distance }}
                   </l-tooltip>
                 </l-marker>
               </div>
+              <!-- Line connecting answer and player guess. Only attempt to draw line if a guess was made -->
+              <!-- Green line for current user, gray line for other users -->
+              <l-geo-json
+                :geojson="calculateGeoJsonLine(guess)"
+                :optionsStyle="{
+                  color:
+                    guess.clientCode === playerClientCode ? 'green' : 'gray',
+                }"
+              ></l-geo-json>
             </div>
           </div>
         </l-map>
@@ -199,28 +202,6 @@ export default {
     showLobbyAnswers() {
       return this.$store.getters.getShowLobbyAnswers;
     },
-    guessGeoJson() {
-      let line = undefined;
-      if (this.currentUser.guessed) {
-        line = {
-          type: "FeatureCollection",
-          features: [
-            {
-              type: "Feature",
-              properties: {},
-              geometry: {
-                type: "LineString",
-                coordinates: [
-                  [this.video.longitude, this.video.latitude],
-                  [this.guessLon, this.guessLat],
-                ],
-              },
-            },
-          ],
-        };
-      }
-      return line;
-    },
     currentUser() {
       return this.$store.getters.getPlayer;
     },
@@ -229,6 +210,26 @@ export default {
     },
   },
   methods: {
+    calculateGeoJsonLine(guess) {
+      let line = undefined;
+      line = {
+        type: "FeatureCollection",
+        features: [
+          {
+            type: "Feature",
+            properties: {},
+            geometry: {
+              type: "LineString",
+              coordinates: [
+                [this.video.longitude, this.video.latitude],
+                [guess.lonGuess, guess.latGuess],
+              ],
+            },
+          },
+        ],
+      };
+      return line;
+    },
     exit() {
       this.$store.dispatch("setIsGuessing", false);
     },
@@ -306,7 +307,7 @@ export default {
   right: 0;
   bottom: 0;
   z-index: 100;
-  border-radius: 10px;
+  border-radius: 5px;
   align-content: center;
   background-color: gray;
 }
