@@ -58,6 +58,7 @@ function unsubscribe() {
   playerSub.unsubscribe();
   gameSub.unsubscribe();
   roundSub.unsubscribe();
+  console.log("Websocket unsubscribed");
 }
 
 export default {
