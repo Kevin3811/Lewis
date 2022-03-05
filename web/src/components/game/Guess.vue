@@ -12,13 +12,26 @@
         <b-col cols="2" style="text-align: left;">
           Place Guess
         </b-col>
-        <b-col sylte="align-content: center;">
+        <b-col style="align-content: center;">
           <div v-if="currentUser.guessed" style="text-align: center;">
             {{ currentGuess.distance }} away
           </div>
         </b-col>
-        <b-col cols="2" style="text-align: right;">
-          Place Holder
+        <b-col cols="3" style="text-align: right;">
+          <b-dropdown :text="selectedMap.name" right size="sm">
+            <b-dropdown-item v-on:click="selectMap('native')"
+              >Native Languages</b-dropdown-item
+            >
+            <b-dropdown-item v-on:click="selectMap('basic')"
+              >Basic Map</b-dropdown-item
+            >
+            <b-dropdown-item v-on:click="selectMap('terrain')"
+              >Terrain Map</b-dropdown-item
+            >
+            <b-dropdown-item v-on:click="selectMap('hybrid')"
+              >Hybrid Map</b-dropdown-item
+            >
+          </b-dropdown>
         </b-col>
       </b-row>
       <b-row>
@@ -29,9 +42,15 @@
           v-on:click="mapClick($event)"
         >
           <l-tile-layer
-            :url="url"
+            v-if="selectedMap.subdomains !== undefined"
+            :url="selectedMap.url"
             :attribution="attribution"
-            :subdomains="subdomains"
+            :subdomains="selectedMap.subdomains"
+          ></l-tile-layer>
+          <l-tile-layer
+            v-else
+            :url="selectedMap.url"
+            :attribution="attribution"
           ></l-tile-layer>
           <!-- Guess lat lon default to undefined. Only display marker once there is a guess -->
           <div v-if="guessLat !== undefined || guessLon !== undefined">
@@ -144,13 +163,35 @@ export default {
     return {
       zoom: 2,
       center: [47.41322, -1.219482],
-      // url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-      url: "https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}&hl=en", //map
-      // url: "https://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}&hl=en",  //terrain (satellite view)
-      // url: "https://{s}.google.com/vt/lyrs=y&x={x}&y={y}&z={z}&hl=en", //hybrid
+      maps: {
+        native: {
+          name: "Native Languages",
+          url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+          subdomains: ["a", "b", "c"],
+        },
+        basic: {
+          name: "Basic Map",
+          url: "https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}&hl=en",
+          subdomains: ["mt0", "mt1", "mt2", "mt3"],
+        },
+        terrain: {
+          name: "Terrain Map",
+          url: "https://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}&hl=en",
+          subdomains: ["mt0", "mt1", "mt2", "mt3"],
+        },
+        hybrid: {
+          name: "Hybrid Map",
+          url: "https://{s}.google.com/vt/lyrs=y&x={x}&y={y}&z={z}&hl=en",
+          subdomains: ["mt0", "mt1", "mt2", "mt3"],
+        },
+      },
+      selectedMap: {
+        name: "Select Map",
+        url: "https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}&hl=en",
+        subdomains: ["mt0", "mt1", "mt2", "mt3"],
+      },
       attribution:
         '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-      subdomains: ["mt0", "mt1", "mt2", "mt3"],
       english: true,
       nativeLanguages: false,
       distance: "",
@@ -210,6 +251,9 @@ export default {
     },
   },
   methods: {
+    selectMap(map) {
+      this.selectedMap = this.maps[map];
+    },
     calculateGeoJsonLine(guess) {
       let line = undefined;
       line = {
