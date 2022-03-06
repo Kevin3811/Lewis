@@ -32,17 +32,17 @@
           </div>
         </b-col>
         <b-col cols="3" style="text-align: center; height: 100%">
-          <b-dropdown :text="selectedMap.name" right size="sm">
-            <b-dropdown-item v-on:click="selectMap('native')"
+          <b-dropdown :text="mapType" right size="sm">
+            <b-dropdown-item v-on:click="selectMap('Native Languages')"
               >Native Languages</b-dropdown-item
             >
-            <b-dropdown-item v-on:click="selectMap('basic')"
+            <b-dropdown-item v-on:click="selectMap('Basic Map')"
               >Basic Map</b-dropdown-item
             >
-            <b-dropdown-item v-on:click="selectMap('terrain')"
+            <b-dropdown-item v-on:click="selectMap('Terrain Map')"
               >Terrain Map</b-dropdown-item
             >
-            <b-dropdown-item v-on:click="selectMap('hybrid')"
+            <b-dropdown-item v-on:click="selectMap('Hybrid Map')"
               >Hybrid Map</b-dropdown-item
             >
           </b-dropdown>
@@ -67,7 +67,7 @@
               :zoom="mapZoom"
             ></vl-view>
             <vl-layer-tile id="osm">
-              <vl-source-xyz :urls="selectedMap.urls"></vl-source-xyz>
+              <vl-source-xyz :urls="maps[mapType].urls"></vl-source-xyz>
             </vl-layer-tile>
             <!-- Show where the current marker is placed -->
             <div v-if="guessLat !== undefined || guessLon !== undefined">
@@ -264,11 +264,16 @@ export default {
       required: false,
       default: 0,
     },
+    mapType: {
+      type: String,
+      required: false,
+      default: "Basic Map",
+    },
   },
   data() {
     return {
       maps: {
-        native: {
+        "Native Languages": {
           name: "Native Languages",
           urls: [
             "https://a.tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -276,7 +281,7 @@ export default {
             "https://c.tile.openstreetmap.org/{z}/{x}/{y}.png",
           ],
         },
-        basic: {
+        "Basic Map": {
           name: "Basic Map",
           urls: [
             "https://mt0.google.com/vt/lyrs=m&x={x}&y={y}&z={z}&hl=en",
@@ -285,7 +290,7 @@ export default {
             "https://mt3.google.com/vt/lyrs=m&x={x}&y={y}&z={z}&hl=en",
           ],
         },
-        terrain: {
+        "Terrain Map": {
           name: "Terrain Map",
           urls: [
             "https://mt0.google.com/vt/lyrs=s&x={x}&y={y}&z={z}&hl=en",
@@ -294,7 +299,7 @@ export default {
             "https://mt3.google.com/vt/lyrs=s&x={x}&y={y}&z={z}&hl=en",
           ],
         },
-        hybrid: {
+        "Hybrid Map": {
           name: "Hybrid Map",
           urls: [
             "https://mt0.google.com/vt/lyrs=y&x={x}&y={y}&z={z}&hl=en",
@@ -303,15 +308,6 @@ export default {
             "https://mt3.google.com/vt/lyrs=y&x={x}&y={y}&z={z}&hl=en",
           ],
         },
-      },
-      selectedMap: {
-        name: "Select Map",
-        urls: [
-          "https://mt0.google.com/vt/lyrs=m&x={x}&y={y}&z={z}&hl=en",
-          "https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}&hl=en",
-          "https://mt2.google.com/vt/lyrs=m&x={x}&y={y}&z={z}&hl=en",
-          "https://mt3.google.com/vt/lyrs=m&x={x}&y={y}&z={z}&hl=en",
-        ],
       },
       attribution:
         '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
@@ -364,7 +360,7 @@ export default {
   },
   methods: {
     selectMap(map) {
-      this.selectedMap = this.maps[map];
+      this.$emit("mapType", map);
     },
     calculateGeoJsonLine(guess) {
       if (
