@@ -78,6 +78,7 @@
       v-on:mapMove="mapMove"
       v-on:mapPan="onMapPan"
       v-on:mapZoom="onMapZoom"
+      v-on:mapType="onMapType"
       :roundOver="roundOver"
       :guessPanel="guessPanel"
       :gamemode="gamemode"
@@ -90,6 +91,7 @@
       :mapLat="mapLat"
       :mapLon="mapLon"
       :mapZoom="mapZoom"
+      :mapType="mapType"
       v-if="isGuessing"
     />
     <!--Guess Button-->
@@ -123,6 +125,7 @@ export default {
       mapZoom: undefined,
       mapLat: undefined,
       mapLon: undefined,
+      mapType: undefined,
     };
   },
   computed: {
@@ -263,6 +266,9 @@ export default {
     },
     onMapZoom(zoom) {
       this.mapZoom = zoom;
+    },
+    onMapType(map) {
+      this.mapType = map;
     },
   },
   onDestroy() {
