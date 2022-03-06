@@ -1,23 +1,37 @@
 <template>
-  <div class="guess" ref="draggableContainer">
-    <b-container>
+  <!-- <div class="guess" ref="draggableContainer"> -->
+  <vue-draggable-resizable
+    :w="width"
+    :h="height"
+    :x="x"
+    :y="y"
+    v-on:resizing="onResize"
+    v-on:dragstop="onMove"
+    :drag-handle="'.drag-handle'"
+    class-name-handle="custom-handle"
+    class-name-dragging="dragging"
+    :active="true"
+  >
+    <b-container class="h-100" fluid>
+      <!-- Header: Label, distance, map selector -->
       <b-row
-        style="height: 35px;"
-        class="guess-header w-100"
-        draggable="true"
-        v-on:mousedown="dragMouseDown"
+        style="height: 35px; background-color: gray; margin: 0 -15px 0 -15px;"
         align-v="center"
+        class="drag-handle"
         no-gutters
       >
-        <b-col cols="2" style="text-align: left;">
+        <b-col cols="2" style="text-align: center; color: white; height: 100%">
           Place Guess
         </b-col>
-        <b-col style="align-content: center;">
-          <div v-if="currentUser.guessed" style="text-align: center;">
+        <b-col style="align-content: center; height: 100%">
+          <div
+            v-if="currentUser.guessed"
+            style="text-align: center; color: white;"
+          >
             {{ currentGuess.distance }} away
           </div>
         </b-col>
-        <b-col cols="3" style="text-align: right;">
+        <b-col cols="3" style="text-align: center; height: 100%">
           <b-dropdown :text="selectedMap.name" right size="sm">
             <b-dropdown-item v-on:click="selectMap('native')"
               >Native Languages</b-dropdown-item
@@ -34,73 +48,127 @@
           </b-dropdown>
         </b-col>
       </b-row>
-      <b-row>
-        <l-map
-          style="height: 515px;"
-          :zoom="zoom"
-          :center="center"
-          v-on:click="mapClick($event)"
-        >
-          <l-tile-layer
-            v-if="selectedMap.subdomains !== undefined"
-            :url="selectedMap.url"
-            :attribution="attribution"
-            :subdomains="selectedMap.subdomains"
-          ></l-tile-layer>
-          <l-tile-layer
-            v-else
-            :url="selectedMap.url"
-            :attribution="attribution"
-          ></l-tile-layer>
-          <!-- Guess lat lon default to undefined. Only display marker once there is a guess -->
-          <div v-if="guessLat !== undefined || guessLon !== undefined">
-            <l-marker :lat-lng="[guessLat, guessLon]">
-              <l-icon icon-url="/redmarker.png"> </l-icon>
-              <l-tooltip :options="{ opacity: 0.4 }">
-                {{ playerUsername }}: {{ currentGuess.distance }}
-              </l-tooltip>
-            </l-marker>
-          </div>
-          <!-- Show all other player answers -->
-          <div v-if="roundOver || currentUser.guessed">
-            <!-- Show Answer -->
-            <l-marker :lat-lng="[this.video.latitude, this.video.longitude]">
-              <l-icon icon-url="/greenmarker.png"> </l-icon>
-              <l-tooltip :options="{ opacity: 0.7 }">Correct Answer</l-tooltip>
-            </l-marker>
-            <div v-for="guess in lobbyGuesses" :key="guess.clientCode">
-              <div
-                v-if="
-                  guess.clientCode !== playerClientCode &&
-                    (guess.latGuess !== undefined ||
-                      guess.lonGuess !== undefined)
-                "
-              >
-                <!-- Marker where everyone else guessed -->
-                <l-marker :lat-lng="[guess.latGuess, guess.lonGuess]">
-                  <l-icon icon-url="/bluemarker.png"> </l-icon>
-                  <l-tooltip :options="{ opacity: 0.7 }">
-                    {{ guess.username }}: {{ guess.distance }}
-                  </l-tooltip>
-                </l-marker>
-              </div>
-              <!-- Line connecting answer and player guess. Only attempt to draw line if a guess was made -->
-              <!-- Green line for current user, gray line for other users -->
-              <l-geo-json
-                :geojson="calculateGeoJsonLine(guess)"
-                :optionsStyle="{
-                  color:
-                    guess.clientCode === playerClientCode ? 'green' : 'gray',
+      <!-- Map -->
+      <b-row style="height: calc(100% - 35px - 50px); margin: 0 0 0 -30px;">
+        <b-col class="h-100 w-100">
+          <vl-map
+            :load-tiles-while-animating="true"
+            :load-tiles-while-interacting="true"
+            v-on:click="mapClick"
+            v-on:pointermove="onMapPointerMove"
+            data-projection="EPSG:4326"
+            style="height: 100%; width: calc(100% + 30px)"
+            ref="map"
+          >
+            <vl-layer-tile id="osm">
+              <vl-source-xyz :urls="selectedMap.urls"></vl-source-xyz>
+            </vl-layer-tile>
+            <!-- Show where the current marker is placed -->
+            <div v-if="guessLat !== undefined || guessLon !== undefined">
+              <!-- Tooltip hovers -->
+              <vl-overlay v-if="currentPosition" :position="currentPosition">
+                <div
+                  style="background: #fff; box-shadow: 2px 2px 10px rgba(2,2,2,0.1); padding: 2px; opacity: 0.7; border-radius: 3px"
+                >
+                  {{ currentName }} {{ currentDistance }}
+                </div>
+              </vl-overlay>
+              <!-- Player guess marker -->
+              <vl-feature
+                :properties="{
+                  name: `${playerUsername}: `,
+                  distance: guess.distance,
+                  currentUser: true,
                 }"
-              ></l-geo-json>
+              >
+                <vl-geom-point
+                  :coordinates="[guessLon, guessLat]"
+                ></vl-geom-point>
+                <vl-style-box>
+                  <vl-style-icon
+                    src="/redmarker.png"
+                    :scale="0.4"
+                    :anchor="[0.5, 1]"
+                  ></vl-style-icon>
+                </vl-style-box>
+              </vl-feature>
+              <!-- Geojson connecting user guess to anwers -->
+              <vl-feature v-if="hasGuessed">
+                <vl-geom-line-string
+                  :coordinates="calculateGeoJsonLine(currentGuess)"
+                >
+                </vl-geom-line-string>
+                <vl-style>
+                  <vl-style-stroke color="green" :width="3"></vl-style-stroke>
+                </vl-style>
+              </vl-feature>
             </div>
-          </div>
-        </l-map>
+            <!-- Show all other player answers -->
+            <div v-if="roundOver || hasGuessed">
+              <!-- Show answer -->
+              <vl-feature :properties="{ name: 'Answer' }">
+                <vl-geom-point
+                  :coordinates="[
+                    Number(video.longitude),
+                    Number(video.latitude),
+                  ]"
+                ></vl-geom-point>
+                <vl-style-box>
+                  <vl-style-icon
+                    src="/greenmarker.png"
+                    :scale="0.4"
+                    :anchor="[0.5, 1]"
+                  ></vl-style-icon>
+                </vl-style-box>
+              </vl-feature>
+              <!-- Show everyone else's guesses -->
+              <div v-for="guess in lobbyGuesses" :key="guess.clientCode">
+                <div
+                  v-if="
+                    guess.clientCode !== playerClientCode &&
+                      (guess.latGuess !== undefined ||
+                        guess.lonGuess !== undefined)
+                  "
+                >
+                  <vl-feature
+                    :properties="{
+                      name: guess.username,
+                      distance: guess.distance,
+                      currentUser: false,
+                    }"
+                  >
+                    <vl-geom-point
+                      :coordinates="[
+                        Number(guess.lonGuess),
+                        Number(guess.latGuess),
+                      ]"
+                    ></vl-geom-point>
+                    <vl-style-box>
+                      <vl-style-icon
+                        src="/bluemarker.png"
+                        :scale="0.8"
+                        :anchor="[0.5, 1]"
+                      ></vl-style-icon>
+                    </vl-style-box>
+                  </vl-feature>
+                  <!-- Geojson connecting guesses to anwers -->
+                  <vl-feature>
+                    <vl-geom-line-string
+                      :coordinates="calculateGeoJsonLine(guess)"
+                    />
+                    <vl-style>
+                      <vl-style-stroke :width="3"></vl-style-stroke>
+                    </vl-style>
+                  </vl-feature>
+                </div>
+              </div>
+            </div>
+          </vl-map>
+        </b-col>
       </b-row>
-      <!--Bottom cance, skip/next, and guess buttons-->
+      <!--Footer: Cancel, skip/next, and guess buttons-->
       <b-row
-        class="w-100"
-        style="height: 50px;"
+        style="height: 50px; margin: 0 -15px 0 -15px; background-color: gray"
         :no-gutters="true"
         align-v="center"
       >
@@ -133,24 +201,21 @@
         </b-col>
       </b-row>
     </b-container>
-  </div>
+  </vue-draggable-resizable>
+  <!-- </div> -->
 </template>
 
 <script>
-import {
-  LMap,
-  LTileLayer,
-  LMarker,
-  LIcon,
-  LTooltip,
-  LGeoJson,
-} from "vue2-leaflet";
+import VueDraggableResizable from "vue-draggable-resizable";
 import { calculateDistanceAndScore } from "../../scripts/geocalculator.js";
 import lobbyApi from "../../api/lobby";
+import * as proj from "ol/proj";
 
 export default {
   name: "Guess",
-  components: { LMap, LTileLayer, LMarker, LIcon, LTooltip, LGeoJson },
+  components: {
+    VueDraggableResizable,
+  },
   props: {
     video: Object,
     roundOver: Boolean,
@@ -158,6 +223,26 @@ export default {
     gamemode: String,
     guessLat: Number,
     guessLon: Number,
+    width: {
+      type: Number,
+      required: false,
+      default: 600,
+    },
+    height: {
+      type: Number,
+      required: false,
+      default: 600,
+    },
+    x: {
+      type: Number,
+      required: false,
+      default: 0,
+    },
+    y: {
+      type: Number,
+      required: false,
+      default: 0,
+    },
   },
   data() {
     return {
@@ -166,29 +251,48 @@ export default {
       maps: {
         native: {
           name: "Native Languages",
-          url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-          subdomains: ["a", "b", "c"],
+          urls: [
+            "https://a.tile.openstreetmap.org/{z}/{x}/{y}.png",
+            "https://b.tile.openstreetmap.org/{z}/{x}/{y}.png",
+            "https://c.tile.openstreetmap.org/{z}/{x}/{y}.png",
+          ],
         },
         basic: {
           name: "Basic Map",
-          url: "https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}&hl=en",
-          subdomains: ["mt0", "mt1", "mt2", "mt3"],
+          urls: [
+            "https://mt0.google.com/vt/lyrs=m&x={x}&y={y}&z={z}&hl=en",
+            "https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}&hl=en",
+            "https://mt2.google.com/vt/lyrs=m&x={x}&y={y}&z={z}&hl=en",
+            "https://mt3.google.com/vt/lyrs=m&x={x}&y={y}&z={z}&hl=en",
+          ],
         },
         terrain: {
           name: "Terrain Map",
-          url: "https://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}&hl=en",
-          subdomains: ["mt0", "mt1", "mt2", "mt3"],
+          urls: [
+            "https://mt0.google.com/vt/lyrs=s&x={x}&y={y}&z={z}&hl=en",
+            "https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}&hl=en",
+            "https://mt2.google.com/vt/lyrs=s&x={x}&y={y}&z={z}&hl=en",
+            "https://mt3.google.com/vt/lyrs=s&x={x}&y={y}&z={z}&hl=en",
+          ],
         },
         hybrid: {
           name: "Hybrid Map",
-          url: "https://{s}.google.com/vt/lyrs=y&x={x}&y={y}&z={z}&hl=en",
-          subdomains: ["mt0", "mt1", "mt2", "mt3"],
+          urls: [
+            "https://mt0.google.com/vt/lyrs=y&x={x}&y={y}&z={z}&hl=en",
+            "https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}&hl=en",
+            "https://mt2.google.com/vt/lyrs=y&x={x}&y={y}&z={z}&hl=en",
+            "https://mt3.google.com/vt/lyrs=y&x={x}&y={y}&z={z}&hl=en",
+          ],
         },
       },
       selectedMap: {
         name: "Select Map",
-        url: "https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}&hl=en",
-        subdomains: ["mt0", "mt1", "mt2", "mt3"],
+        urls: [
+          "https://mt0.google.com/vt/lyrs=m&x={x}&y={y}&z={z}&hl=en",
+          "https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}&hl=en",
+          "https://mt2.google.com/vt/lyrs=m&x={x}&y={y}&z={z}&hl=en",
+          "https://mt3.google.com/vt/lyrs=m&x={x}&y={y}&z={z}&hl=en",
+        ],
       },
       attribution:
         '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
@@ -203,6 +307,9 @@ export default {
         pixelLeft: undefined,
         pixelTop: undefined,
       },
+      currentPosition: undefined,
+      currentName: undefined,
+      currentDistance: "",
     };
   },
   mounted() {
@@ -212,9 +319,6 @@ export default {
       this.positions = this.guessPanel;
       this.$refs.draggableContainer.style.top = this.positions.pixelTop;
       this.$refs.draggableContainer.style.left = this.positions.pixelLeft;
-      //TODO: Use relative pixel values so it adjusts for different monitor resolutions when moving to new screen
-      // console.log(this.$refs.draggableContainer.parentNode.clientWidth);
-      // console.log(this.$refs.draggableContainer.parentNode.clientHeight);
     }
   },
   computed: {
@@ -249,30 +353,32 @@ export default {
     currentGuess() {
       return this.$store.getters.getGuess;
     },
+    hasGuessed() {
+      return this.$store.getters.getHasGuessed;
+    },
   },
   methods: {
     selectMap(map) {
       this.selectedMap = this.maps[map];
     },
     calculateGeoJsonLine(guess) {
-      let line = undefined;
-      line = {
-        type: "FeatureCollection",
-        features: [
-          {
-            type: "Feature",
-            properties: {},
-            geometry: {
-              type: "LineString",
-              coordinates: [
-                [this.video.longitude, this.video.latitude],
-                [guess.lonGuess, guess.latGuess],
-              ],
-            },
-          },
-        ],
-      };
-      return line;
+      if (
+        guess === undefined ||
+        guess.lonGuess === undefined ||
+        guess.latGuess === undefined ||
+        this.video === undefined ||
+        this.video.longitude === undefined ||
+        this.video.latitude === undefined
+      ) {
+        return [
+          [0, 0],
+          [0, 0],
+        ];
+      }
+      return [
+        [Number(this.video.longitude), Number(this.video.latitude)],
+        [Number(guess.lonGuess), Number(guess.latGuess)],
+      ];
     },
     exit() {
       this.$store.dispatch("setIsGuessing", false);
@@ -280,12 +386,13 @@ export default {
     mapClick(event) {
       if (event && !this.currentUser.guessed && !this.roundOver) {
         this.$emit("markerPlaced", {
-          guessLat: event.latlng.lat,
-          guessLon: event.latlng.lng,
+          guessLat: event.coordinate[1],
+          guessLon: event.coordinate[0],
         });
       }
     },
     guess() {
+      console.log("guessed");
       this.$store.dispatch("setGuessed", true);
       this.distance = calculateDistanceAndScore(
         this.guessLat,
@@ -307,57 +414,57 @@ export default {
     next() {
       lobbyApi.nextRound(this.$store.getters.getLobbyCode);
     },
-    dragMouseDown(event) {
-      event.preventDefault();
-      // get the mouse cursor position at startup:
-      this.positions.clientX = event.clientX;
-      this.positions.clientY = event.clientY;
-      document.onmousemove = this.elementDrag;
-      document.onmouseup = this.closeDragElement;
+    onResize(x, y, width, height) {
+      this.$refs.map.updateSize();
+      this.$emit("mapResize", width, height);
     },
-    elementDrag(event) {
-      event.preventDefault();
-      this.positions.movementX = this.positions.clientX - event.clientX;
-      this.positions.movementY = this.positions.clientY - event.clientY;
-      this.positions.clientX = event.clientX;
-      this.positions.clientY = event.clientY;
-      // set the element's new position:
-      this.$refs.draggableContainer.style.top =
-        this.$refs.draggableContainer.offsetTop -
-        this.positions.movementY +
-        "px";
-      this.$refs.draggableContainer.style.left =
-        this.$refs.draggableContainer.offsetLeft -
-        this.positions.movementX +
-        "px";
-      //Keep track of absolute pixel position to place window same spot if guess is re-opened
-      this.positions.pixelLeft = this.$refs.draggableContainer.style.left;
-      this.positions.pixelTop = this.$refs.draggableContainer.style.top;
+    onMove(x, y) {
+      this.$emit("mapMove", x, y);
     },
-    closeDragElement() {
-      document.onmouseup = null;
-      document.onmousemove = null;
-      this.$emit("guessPanelMoved", this.positions);
+    //Reference code: https://jsfiddle.net/ghettovoice/r4ejqk93/37/
+    async onMapPointerMove({ pixel }) {
+      let hitFeature = await this.$refs.map.forEachFeatureAtPixel(
+        pixel,
+        (feature) => feature
+      );
+
+      if (hitFeature) {
+        this.mapCursor = "pointer";
+        this.currentPosition = proj.transform(
+          hitFeature.getGeometry().getCoordinates(),
+          "EPSG:3857",
+          "EPSG:4326"
+        );
+        this.currentName = hitFeature.get("name");
+        if (hitFeature.get("currentUser")) {
+          this.currentDistance = this.currentGuess.distance;
+        } else {
+          this.currentDistance = hitFeature.get("distance");
+        }
+      } else {
+        this.mapCursor = "default";
+        this.currentPosition = this.currentName = undefined;
+      }
     },
   },
 };
 </script>
 
 <style>
-.guess {
-  width: 600px;
-  height: 600px;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  z-index: 100;
-  border-radius: 5px;
-  align-content: center;
-  background-color: gray;
-}
-.guess-header {
-  color: white;
+.drag-handle:hover {
   cursor: grab;
-  width: 100%;
+}
+.dragging {
+  cursor: grabbing;
+}
+.custom-handle {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+}
+.custom-handle-br {
+  bottom: -7px;
+  right: -7px;
+  cursor: se-resize;
 }
 </style>

@@ -71,4 +71,7 @@ export default {
   getMarkerLon: (state) => {
     return state.markerLon;
   },
+  getHasGuessed: (state) => {
+    return state.guessed;
+  },
 };
