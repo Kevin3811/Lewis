@@ -10,12 +10,13 @@ import {
   LayoutPlugin,
   FormCheckboxPlugin,
 } from "bootstrap-vue";
-import "leaflet/dist/leaflet.css";
-import { Icon } from "leaflet";
 import VueRouter from "vue-router";
+import VueLayers from "vuelayers";
 
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
+import "vuelayers/dist/vuelayers.css";
+
 import router from "./router";
 
 Vue.config.productionTip = false;
@@ -27,15 +28,9 @@ Vue.use(FormPlugin);
 Vue.use(ModalPlugin);
 Vue.use(LayoutPlugin);
 Vue.use(FormCheckboxPlugin);
+Vue.use(VueLayers);
 
 Vue.use(VueRouter);
-
-delete Icon.Default.prototype._getIconUrl;
-Icon.Default.mergeOptions({
-  iconRetinaUrl: require("leaflet/dist/images/marker-icon-2x.png"),
-  iconUrl: require("leaflet/dist/images/marker-icon.png"),
-  shadowUrl: require("leaflet/dist/images/marker-shadow.png"),
-});
 
 new Vue({
   render: (h) => h(App),

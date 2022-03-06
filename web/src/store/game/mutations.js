@@ -75,6 +75,7 @@ export default {
   },
   setGuessed(state, guessed) {
     state.player.guessed = guessed;
+    state.guessed = guessed;
   },
   setRoundOver(state, roundOver) {
     state.roundOver = roundOver;

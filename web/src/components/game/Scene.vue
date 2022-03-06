@@ -1,6 +1,6 @@
 <template>
   <div class="scene">
-    <div class="video-container">
+    <div class="video-container" ref="video">
       <div class="video-foreground">
         <Youtube
           :video-id="currentVideo.url"
@@ -74,11 +74,17 @@
       :video="currentVideo"
       v-on:guessPanelMoved="guessPanelMoved"
       v-on:markerPlaced="markerPlaced"
+      v-on:mapResize="mapResize"
+      v-on:mapMove="mapMove"
       :roundOver="roundOver"
       :guessPanel="guessPanel"
       :gamemode="gamemode"
       :guessLat="markerLat"
       :guessLon="markerLon"
+      :width="guessWidth"
+      :height="guessHeight"
+      :x="guessX"
+      :y="guessY"
       v-if="isGuessing"
     />
     <!--Guess Button-->
@@ -105,6 +111,10 @@ export default {
       countDownTimer: undefined,
       secondsLeft: undefined,
       guessPanel: undefined,
+      guessWidth: 600,
+      guessHeight: 600,
+      guessX: undefined,
+      guessY: undefined,
     };
   },
   computed: {
@@ -173,6 +183,8 @@ export default {
     window.addEventListener("resize", this.resizeEvent);
   },
   mounted() {
+    this.guessX = this.$refs.video.clientWidth / 2 - this.guessWidth / 2;
+    this.guessY = this.$refs.video.clientHeight / 2 - this.guessHeight / 2;
     this.player.setVolume(this.volumePercent);
     //Start count down timer
     this.startTimer();
@@ -224,6 +236,14 @@ export default {
     markerPlaced(event) {
       this.$store.dispatch("setMarkerLat", event.guessLat);
       this.$store.dispatch("setMarkerLon", event.guessLon);
+    },
+    mapResize(width, height) {
+      this.guessWidth = width;
+      this.guessHeight = height;
+    },
+    mapMove(x, y) {
+      this.guessX = x;
+      this.guessY = y;
     },
   },
   onDestroy() {
