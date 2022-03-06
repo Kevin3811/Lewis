@@ -76,6 +76,8 @@
       v-on:markerPlaced="markerPlaced"
       v-on:mapResize="mapResize"
       v-on:mapMove="mapMove"
+      v-on:mapPan="onMapPan"
+      v-on:mapZoom="onMapZoom"
       :roundOver="roundOver"
       :guessPanel="guessPanel"
       :gamemode="gamemode"
@@ -85,6 +87,9 @@
       :height="guessHeight"
       :x="guessX"
       :y="guessY"
+      :mapLat="mapLat"
+      :mapLon="mapLon"
+      :mapZoom="mapZoom"
       v-if="isGuessing"
     />
     <!--Guess Button-->
@@ -115,6 +120,9 @@ export default {
       guessHeight: 600,
       guessX: undefined,
       guessY: undefined,
+      mapZoom: undefined,
+      mapLat: undefined,
+      mapLon: undefined,
     };
   },
   computed: {
@@ -175,6 +183,9 @@ export default {
           this.$router.replace({ name: "End" });
         }, 1000);
       } else {
+        this.mapZoom = 0;
+        this.mapLat = 0;
+        this.mapLon = 0;
         this.startTimer();
       }
     },
@@ -244,6 +255,14 @@ export default {
     mapMove(x, y) {
       this.guessX = x;
       this.guessY = y;
+    },
+    onMapPan(coords) {
+      //[lon, lat]
+      this.mapLat = coords[1];
+      this.mapLon = coords[0];
+    },
+    onMapZoom(zoom) {
+      this.mapZoom = zoom;
     },
   },
   onDestroy() {

@@ -60,6 +60,12 @@
             style="height: 100%; width: calc(100% + 30px)"
             ref="map"
           >
+            <vl-view
+              v-on:update:zoom="onMapZoom($event)"
+              v-on:update:center="onMapPan($event)"
+              :center="[mapLon, mapLat]"
+              :zoom="mapZoom"
+            ></vl-view>
             <vl-layer-tile id="osm">
               <vl-source-xyz :urls="selectedMap.urls"></vl-source-xyz>
             </vl-layer-tile>
@@ -243,11 +249,24 @@ export default {
       required: false,
       default: 0,
     },
+    mapLat: {
+      type: Number,
+      required: false,
+      default: 0,
+    },
+    mapLon: {
+      type: Number,
+      required: false,
+      default: 0,
+    },
+    mapZoom: {
+      type: Number,
+      required: false,
+      default: 0,
+    },
   },
   data() {
     return {
-      zoom: 2,
-      center: [47.41322, -1.219482],
       maps: {
         native: {
           name: "Native Languages",
@@ -299,14 +318,6 @@ export default {
       english: true,
       nativeLanguages: false,
       distance: "",
-      positions: {
-        clientX: undefined,
-        clientY: undefined,
-        movementX: 0,
-        movementY: 0,
-        pixelLeft: undefined,
-        pixelTop: undefined,
-      },
       currentPosition: undefined,
       currentName: undefined,
       currentDistance: "",
@@ -314,12 +325,6 @@ export default {
   },
   mounted() {
     console.log("Current Video: ", this.video);
-    //Only reposition guess window if it was already repositioned before
-    if (this.guessPanel !== undefined) {
-      this.positions = this.guessPanel;
-      this.$refs.draggableContainer.style.top = this.positions.pixelTop;
-      this.$refs.draggableContainer.style.left = this.positions.pixelLeft;
-    }
   },
   computed: {
     playerUsername() {
@@ -420,6 +425,13 @@ export default {
     },
     onMove(x, y) {
       this.$emit("mapMove", x, y);
+    },
+    onMapZoom(zoom) {
+      this.$emit("mapZoom", zoom);
+    },
+    onMapPan(coords) {
+      //[lon, lat]
+      this.$emit("mapPan", coords);
     },
     //Reference code: https://jsfiddle.net/ghettovoice/r4ejqk93/37/
     async onMapPointerMove({ pixel }) {
