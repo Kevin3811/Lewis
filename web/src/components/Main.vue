@@ -11,7 +11,14 @@
         v-on:cancel-create-game="cancelCreateGame"
       />
     </b-modal>
-    <div class="main">
+    <div
+      class="main"
+      :style="{
+        'background-image': `${backgroundImages[new Date().getDate() % 4]}`,
+        'background-repeat': 'no-repeat',
+        'background-size': 'cover',
+      }"
+    >
       <h3>Game Mode</h3>
       <div class="deck">
         <b-card
@@ -71,6 +78,12 @@ export default {
       cardStyle: `max-width: 20rem; cursor: pointer; background-color:gray; max-height: 25rem; min-height: 25rem; text-align: center;`,
       createGame: false,
       showModal: false,
+      backgroundImages: [
+        "url(./winter.jpg)",
+        "url(./spring.jpg)",
+        "url(./summer.jpg)",
+        "url(./fall.jpg)",
+      ],
     };
   },
   computed: {
@@ -107,8 +120,7 @@ export default {
 
 <style scoped>
 .main {
-  display: flex;
-  flex-direction: column;
+  min-height: 100vh;
 }
 h3 {
   text-align: center;
