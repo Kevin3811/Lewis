@@ -19,27 +19,19 @@
         'background-size': 'cover',
       }"
     >
-      <h3>Game Mode</h3>
-      <div class="deck">
-        <b-card
-          footer="Singleplayer"
-          img-top
-          img-src="./singleplayer.png"
-          img-height="300px;"
-          :style="cardStyle"
-          class="mb-2"
-          v-on:click="play('singleplayer')"
-        >
-        </b-card>
-        <b-card
-          footer="Multiplayer"
-          img-top
-          img-src="./multiplayer.png"
-          img-height="300px;"
-          :style="cardStyle"
-          class="mb-2"
-          v-b-modal.lobbyselect
-        ></b-card>
+      <div class="home-content">
+        <h1 class="home-text outline">Explorer Lewis</h1>
+        <h3 class="home-text outline">
+          Explore the world and test your geographical knowledge
+        </h3>
+        <div class="gamemode-buttons">
+          <b-button class="play-button" v-on:click="play('singleplayer')"
+            >Singleplayer</b-button
+          >
+          <b-button class="play-button" v-on:click="play('multiplayer')"
+            >Multiplayer</b-button
+          >
+        </div>
       </div>
       <!--For multiplayer create or join lobby-->
       <!--Change ok button to cancel button since there isn't a way to only display cancel-->
@@ -118,20 +110,23 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .main {
+  position: relative;
   min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: multiply;
+  font-family: Tahoma, Verdana, sans-serif;
 }
-h3 {
-  text-align: center;
-  padding-top: 1em;
-  padding-bottom: 1.5em;
-}
-.deck {
-  flex-flow: row wrap;
-  display: flex;
+.home-content {
   justify-content: center;
+  padding-top: 20%;
+}
+.gamemode-buttons {
+  display: flex;
   column-gap: 4em;
+  justify-content: center;
+  padding: 1em;
 }
 #nav a.router-link-exact-active {
   background-color: gray;
@@ -144,4 +139,18 @@ h3 {
 .modalButton {
   margin: auto;
 }
+.play-button {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: rgb(255, 255, 255);
+  border-color: rgba(0, 0, 0, 0.1);
+  font-size: 1.5em;
+}
+.home-text {
+  color: white;
+  text-align: center;
+}
+/* .outline {
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+} */
 </style>
