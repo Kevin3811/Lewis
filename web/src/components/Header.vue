@@ -4,7 +4,7 @@
       <b-navbar-brand
         tag="h1"
         style="cursor: pointer; color: white; font-size: 2em;"
-        >Lewis & Clark</b-navbar-brand
+        >Lewis</b-navbar-brand
       >
     </router-link>
   </b-navbar>

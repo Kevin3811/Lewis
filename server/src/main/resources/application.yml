@@ -6402,15 +6402,6 @@ game:
       playlists:
         - World
         - South America
-    - url: 7VOHFV9Pl9M
-      start-time: 14
-      latitude: -22.950923
-      longitude: -43.213026
-      description: Rio de Janeiro Brazil
-      playlists:
-        - World
-        - South America
-        - Cities
     - url: aE6BBlB4r_Y
       start-time: 5
       latitude: -22.949465
