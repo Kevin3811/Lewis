@@ -288,7 +288,7 @@ export default {
   width: 100%;
   top: -60px;
   height: calc(100% + 120px);
-  z-index: -1;
+  z-index: 1;
 }
 .video-foreground {
   pointer-events: none;
@@ -307,8 +307,10 @@ export default {
   left: 50%;
   color: white;
   cursor: pointer;
+  z-index: 2;
 }
 .controls {
+  position: relative;
   float: right;
   margin-top: 5px;
   margin-right: 15px;
@@ -318,6 +320,7 @@ export default {
   opacity: 0.9;
   border-radius: 7px;
   min-width: 150px;
+  z-index: 2;
 }
 .video-buttons {
   flex-flow: row;

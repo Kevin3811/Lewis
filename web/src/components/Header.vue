@@ -1,5 +1,5 @@
 <template>
-  <b-navbar toggleable="lg" variant="info" type="info">
+  <b-navbar toggleable="lg" variant="info" type="info" class="nav">
     <router-link :to="{ name: 'Home' }">
       <b-navbar-brand
         tag="h1"
@@ -20,3 +20,8 @@ export default {
   methods: {},
 };
 </script>
+<style scoped>
+.nav {
+  z-index: 1000;
+}
+</style>

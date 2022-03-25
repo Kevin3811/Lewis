@@ -1,214 +1,219 @@
 <template>
-  <!-- <div class="guess" ref="draggableContainer"> -->
-  <vue-draggable-resizable
-    :w="width"
-    :h="height"
-    :x="x"
-    :y="y"
-    v-on:resizing="onResize"
-    v-on:dragstop="onMove"
-    :drag-handle="'.drag-handle'"
-    class-name-handle="custom-handle"
-    class-name-dragging="dragging"
-    :active="true"
-  >
-    <b-container class="h-100" fluid>
-      <!-- Header: Label, distance, map selector -->
-      <b-row
-        style="height: 35px; background-color: gray; margin: 0 -15px 0 -15px;"
-        align-v="center"
-        class="drag-handle"
-        no-gutters
-      >
-        <b-col cols="2" style="text-align: center; color: white; height: 100%">
-          Place Guess
-        </b-col>
-        <b-col style="align-content: center; height: 100%">
-          <div
-            v-if="currentUser.guessed"
-            style="text-align: center; color: white;"
+  <div class="map">
+    <vue-draggable-resizable
+      :w="width"
+      :h="height"
+      :x="x"
+      :y="y"
+      v-on:resizing="onResize"
+      v-on:dragstop="onMove"
+      :drag-handle="'.drag-handle'"
+      class-name-handle="custom-handle"
+      class-name-dragging="dragging"
+      :active="true"
+    >
+      <b-container class="h-100" fluid>
+        <!-- Header: Label, distance, map selector -->
+        <b-row
+          style="height: 35px; background-color: gray; margin: 0 -15px 0 -15px;"
+          align-v="center"
+          class="drag-handle"
+          no-gutters
+        >
+          <b-col
+            cols="2"
+            style="text-align: center; color: white; height: 100%"
           >
-            {{ currentGuess.distance }} away
-          </div>
-        </b-col>
-        <b-col cols="3" style="text-align: center; height: 100%">
-          <b-dropdown :text="mapType" right size="sm">
-            <b-dropdown-item v-on:click="selectMap('Native Languages')"
-              >Native Languages</b-dropdown-item
+            Place Guess
+          </b-col>
+          <b-col style="align-content: center; height: 100%">
+            <div
+              v-if="currentUser.guessed"
+              style="text-align: center; color: white;"
             >
-            <b-dropdown-item v-on:click="selectMap('Basic Map')"
-              >Basic Map</b-dropdown-item
-            >
-            <b-dropdown-item v-on:click="selectMap('Terrain Map')"
-              >Terrain Map</b-dropdown-item
-            >
-            <b-dropdown-item v-on:click="selectMap('Hybrid Map')"
-              >Hybrid Map</b-dropdown-item
-            >
-          </b-dropdown>
-        </b-col>
-      </b-row>
-      <!-- Map -->
-      <b-row style="height: calc(100% - 35px - 50px); margin: 0 0 0 -30px;">
-        <b-col class="h-100 w-100">
-          <vl-map
-            :load-tiles-while-animating="true"
-            :load-tiles-while-interacting="true"
-            v-on:click="mapClick"
-            v-on:pointermove="onMapPointerMove"
-            data-projection="EPSG:4326"
-            style="height: 100%; width: calc(100% + 30px)"
-            ref="map"
-          >
-            <vl-view
-              v-on:update:zoom="onMapZoom($event)"
-              v-on:update:center="onMapPan($event)"
-              :center="[mapLon, mapLat]"
-              :zoom="mapZoom"
-            ></vl-view>
-            <vl-layer-tile id="osm">
-              <vl-source-xyz :urls="maps[mapType].urls"></vl-source-xyz>
-            </vl-layer-tile>
-            <!-- Show where the current marker is placed -->
-            <div v-if="guessLat !== undefined || guessLon !== undefined">
-              <!-- Tooltip hovers -->
-              <vl-overlay v-if="currentPosition" :position="currentPosition">
-                <div
-                  style="background: #fff; box-shadow: 2px 2px 10px rgba(2,2,2,0.1); padding: 2px; opacity: 0.7; border-radius: 3px"
-                >
-                  {{ currentName }} {{ currentDistance }}
-                </div>
-              </vl-overlay>
-              <!-- Player guess marker -->
-              <vl-feature
-                :properties="{
-                  name: `${playerUsername}: `,
-                  distance: guess.distance,
-                  currentUser: true,
-                }"
-              >
-                <vl-geom-point
-                  :coordinates="[guessLon, guessLat]"
-                ></vl-geom-point>
-                <vl-style-box>
-                  <vl-style-icon
-                    src="/redmarker.png"
-                    :scale="0.4"
-                    :anchor="[0.5, 1]"
-                  ></vl-style-icon>
-                </vl-style-box>
-              </vl-feature>
-              <!-- Geojson connecting user guess to anwers -->
-              <vl-feature v-if="hasGuessed">
-                <vl-geom-line-string
-                  :coordinates="calculateGeoJsonLine(currentGuess)"
-                >
-                </vl-geom-line-string>
-                <vl-style>
-                  <vl-style-stroke color="green" :width="3"></vl-style-stroke>
-                </vl-style>
-              </vl-feature>
+              {{ currentGuess.distance }} away
             </div>
-            <!-- Show all other player answers -->
-            <div v-if="roundOver || hasGuessed">
-              <!-- Show answer -->
-              <vl-feature :properties="{ name: 'Answer' }">
-                <vl-geom-point
-                  :coordinates="[
-                    Number(video.longitude),
-                    Number(video.latitude),
-                  ]"
-                ></vl-geom-point>
-                <vl-style-box>
-                  <vl-style-icon
-                    src="/greenmarker.png"
-                    :scale="0.4"
-                    :anchor="[0.5, 1]"
-                  ></vl-style-icon>
-                </vl-style-box>
-              </vl-feature>
-              <!-- Show everyone else's guesses -->
-              <div v-for="guess in lobbyGuesses" :key="guess.clientCode">
-                <div
-                  v-if="
-                    guess.clientCode !== playerClientCode &&
-                      (guess.latGuess !== undefined ||
-                        guess.lonGuess !== undefined)
-                  "
-                >
-                  <vl-feature
-                    :properties="{
-                      name: guess.username,
-                      distance: guess.distance,
-                      currentUser: false,
-                    }"
+          </b-col>
+          <b-col cols="3" style="text-align: center; height: 100%">
+            <b-dropdown :text="mapType" right size="sm">
+              <b-dropdown-item v-on:click="selectMap('Native Languages')"
+                >Native Languages</b-dropdown-item
+              >
+              <b-dropdown-item v-on:click="selectMap('Basic Map')"
+                >Basic Map</b-dropdown-item
+              >
+              <b-dropdown-item v-on:click="selectMap('Terrain Map')"
+                >Terrain Map</b-dropdown-item
+              >
+              <b-dropdown-item v-on:click="selectMap('Hybrid Map')"
+                >Hybrid Map</b-dropdown-item
+              >
+            </b-dropdown>
+          </b-col>
+        </b-row>
+        <!-- Map -->
+        <b-row style="height: calc(100% - 35px - 50px); margin: 0 0 0 -30px;">
+          <b-col class="h-100 w-100">
+            <vl-map
+              :load-tiles-while-animating="true"
+              :load-tiles-while-interacting="true"
+              v-on:click="mapClick"
+              v-on:pointermove="onMapPointerMove"
+              data-projection="EPSG:4326"
+              style="height: 100%; width: calc(100% + 30px)"
+              ref="map"
+            >
+              <vl-view
+                v-on:update:zoom="onMapZoom($event)"
+                v-on:update:center="onMapPan($event)"
+                :center="[mapLon, mapLat]"
+                :zoom="mapZoom"
+              ></vl-view>
+              <vl-layer-tile id="osm">
+                <vl-source-xyz :urls="maps[mapType].urls"></vl-source-xyz>
+              </vl-layer-tile>
+              <!-- Show where the current marker is placed -->
+              <div v-if="guessLat !== undefined || guessLon !== undefined">
+                <!-- Tooltip hovers -->
+                <vl-overlay v-if="currentPosition" :position="currentPosition">
+                  <div
+                    style="background: #fff; box-shadow: 2px 2px 10px rgba(2,2,2,0.1); padding: 2px; opacity: 0.7; border-radius: 3px"
                   >
-                    <vl-geom-point
-                      :coordinates="[
-                        Number(guess.lonGuess),
-                        Number(guess.latGuess),
-                      ]"
-                    ></vl-geom-point>
-                    <vl-style-box>
-                      <vl-style-icon
-                        src="/bluemarker.png"
-                        :scale="0.8"
-                        :anchor="[0.5, 1]"
-                      ></vl-style-icon>
-                    </vl-style-box>
-                  </vl-feature>
-                  <!-- Geojson connecting guesses to anwers -->
-                  <vl-feature>
-                    <vl-geom-line-string
-                      :coordinates="calculateGeoJsonLine(guess)"
-                    />
-                    <vl-style>
-                      <vl-style-stroke :width="3"></vl-style-stroke>
-                    </vl-style>
-                  </vl-feature>
+                    {{ currentName }} {{ currentDistance }}
+                  </div>
+                </vl-overlay>
+                <!-- Player guess marker -->
+                <vl-feature
+                  :properties="{
+                    name: `${playerUsername}: `,
+                    distance: guess.distance,
+                    currentUser: true,
+                  }"
+                >
+                  <vl-geom-point
+                    :coordinates="[guessLon, guessLat]"
+                  ></vl-geom-point>
+                  <vl-style-box>
+                    <vl-style-icon
+                      src="/redmarker.png"
+                      :scale="0.4"
+                      :anchor="[0.5, 1]"
+                    ></vl-style-icon>
+                  </vl-style-box>
+                </vl-feature>
+                <!-- Geojson connecting user guess to anwers -->
+                <vl-feature v-if="hasGuessed">
+                  <vl-geom-line-string
+                    :coordinates="calculateGeoJsonLine(currentGuess)"
+                  >
+                  </vl-geom-line-string>
+                  <vl-style>
+                    <vl-style-stroke color="green" :width="3"></vl-style-stroke>
+                  </vl-style>
+                </vl-feature>
+              </div>
+              <!-- Show all other player answers -->
+              <div v-if="roundOver || hasGuessed">
+                <!-- Show answer -->
+                <vl-feature :properties="{ name: 'Answer' }">
+                  <vl-geom-point
+                    :coordinates="[
+                      Number(video.longitude),
+                      Number(video.latitude),
+                    ]"
+                  ></vl-geom-point>
+                  <vl-style-box>
+                    <vl-style-icon
+                      src="/greenmarker.png"
+                      :scale="0.4"
+                      :anchor="[0.5, 1]"
+                    ></vl-style-icon>
+                  </vl-style-box>
+                </vl-feature>
+                <!-- Show everyone else's guesses -->
+                <div v-for="guess in lobbyGuesses" :key="guess.clientCode">
+                  <div
+                    v-if="
+                      guess.clientCode !== playerClientCode &&
+                        (guess.latGuess !== undefined ||
+                          guess.lonGuess !== undefined)
+                    "
+                  >
+                    <vl-feature
+                      :properties="{
+                        name: guess.username,
+                        distance: guess.distance,
+                        currentUser: false,
+                      }"
+                    >
+                      <vl-geom-point
+                        :coordinates="[
+                          Number(guess.lonGuess),
+                          Number(guess.latGuess),
+                        ]"
+                      ></vl-geom-point>
+                      <vl-style-box>
+                        <vl-style-icon
+                          src="/bluemarker.png"
+                          :scale="0.8"
+                          :anchor="[0.5, 1]"
+                        ></vl-style-icon>
+                      </vl-style-box>
+                    </vl-feature>
+                    <!-- Geojson connecting guesses to anwers -->
+                    <vl-feature>
+                      <vl-geom-line-string
+                        :coordinates="calculateGeoJsonLine(guess)"
+                      />
+                      <vl-style>
+                        <vl-style-stroke :width="3"></vl-style-stroke>
+                      </vl-style>
+                    </vl-feature>
+                  </div>
                 </div>
               </div>
+            </vl-map>
+          </b-col>
+        </b-row>
+        <!--Footer: Cancel, skip/next, and guess buttons-->
+        <b-row
+          style="height: 50px; margin: 0 -15px 0 -15px; background-color: gray"
+          :no-gutters="true"
+          align-v="center"
+        >
+          <b-col style="text-align: center">
+            <b-button v-on:click="exit">Close</b-button>
+          </b-col>
+          <b-col style="text-align: center">
+            <div v-if="currentUser.host">
+              <b-button
+                variant="primary"
+                v-if="currentUser.guessed || roundOver"
+                v-on:click="next"
+                >Next</b-button
+              >
+              <b-button variant="danger" v-else v-on:click="next"
+                >Skip</b-button
+              >
             </div>
-          </vl-map>
-        </b-col>
-      </b-row>
-      <!--Footer: Cancel, skip/next, and guess buttons-->
-      <b-row
-        style="height: 50px; margin: 0 -15px 0 -15px; background-color: gray"
-        :no-gutters="true"
-        align-v="center"
-      >
-        <b-col style="text-align: center">
-          <b-button v-on:click="exit">Close</b-button>
-        </b-col>
-        <b-col style="text-align: center">
-          <div v-if="currentUser.host">
+          </b-col>
+          <b-col style="text-align: center">
             <b-button
-              variant="primary"
-              v-if="currentUser.guessed || roundOver"
-              v-on:click="next"
-              >Next</b-button
+              variant="success"
+              :disabled="
+                currentUser.guessed ||
+                  roundOver ||
+                  guessLat === undefined ||
+                  guessLon === undefined
+              "
+              v-on:click="guess"
+              >Guess</b-button
             >
-            <b-button variant="danger" v-else v-on:click="next">Skip</b-button>
-          </div>
-        </b-col>
-        <b-col style="text-align: center">
-          <b-button
-            variant="success"
-            :disabled="
-              currentUser.guessed ||
-                roundOver ||
-                guessLat === undefined ||
-                guessLon === undefined
-            "
-            v-on:click="guess"
-            >Guess</b-button
-          >
-        </b-col>
-      </b-row>
-    </b-container>
-  </vue-draggable-resizable>
-  <!-- </div> -->
+          </b-col>
+        </b-row>
+      </b-container>
+    </vue-draggable-resizable>
+  </div>
 </template>
 
 <script>
@@ -459,6 +464,10 @@ export default {
 </script>
 
 <style>
+.map {
+  position: absolute;
+  z-index: 2;
+}
 .drag-handle:hover {
   cursor: grab;
 }
