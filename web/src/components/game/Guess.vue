@@ -466,7 +466,7 @@ export default {
 <style>
 .map {
   position: absolute;
-  z-index: 2;
+  z-index: 3;
 }
 .drag-handle:hover {
   cursor: grab;

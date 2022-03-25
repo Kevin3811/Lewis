@@ -22,6 +22,6 @@ export default {
 </script>
 <style scoped>
 .nav {
-  z-index: 1000;
+  z-index: 2;
 }
 </style>
