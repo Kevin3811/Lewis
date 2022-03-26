@@ -252,8 +252,9 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .form {
   padding: 15px;
+  user-select: none;
 }
 </style>

@@ -120,7 +120,7 @@ export default {
 }
 .home-content {
   justify-content: center;
-  padding-top: 20%;
+  padding-top: 15%;
 }
 .gamemode-buttons {
   display: flex;
