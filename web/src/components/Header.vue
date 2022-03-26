@@ -20,7 +20,7 @@ export default {
   methods: {},
 };
 </script>
-<style scoped>
+<style>
 .nav {
   z-index: 2;
 }

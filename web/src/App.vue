@@ -35,11 +35,12 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .app {
   height: 100%;
   min-height: 100%;
   max-height: 100%;
   background-color: rgb(34, 34, 34);
+  user-select: none;
 }
 </style>

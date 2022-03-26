@@ -5,6 +5,8 @@
       :h="height"
       :x="x"
       :y="y"
+      :min-width="250"
+      :min-height="200"
       v-on:resizing="onResize"
       v-on:dragstop="onMove"
       :drag-handle="'.drag-handle'"
@@ -15,26 +17,29 @@
       <b-container class="h-100" fluid>
         <!-- Header: Label, distance, map selector -->
         <b-row
-          style="height: 35px; background-color: gray; margin: 0 -15px 0 -15px;"
+          style="height: 35px; background-color: gray; margin: 0 -15px 0 -15px; overflow: hidden;"
           align-v="center"
           class="drag-handle"
           no-gutters
         >
           <b-col
             cols="2"
-            style="text-align: center; color: white; height: 100%"
+            style="text-align: center; color: white; height: 100%; margin-top: 2px;"
           >
             Place Guess
           </b-col>
           <b-col style="align-content: center; height: 100%">
             <div
               v-if="currentUser.guessed"
-              style="text-align: center; color: white;"
+              style="text-align: center; color: white; height: 100%; margin-top: 2px;"
             >
               {{ currentGuess.distance }} away
             </div>
           </b-col>
-          <b-col cols="3" style="text-align: center; height: 100%">
+          <b-col
+            cols="3"
+            style="text-align: center; height: 100%; margin-top: 2px;"
+          >
             <b-dropdown :text="mapType" right size="sm">
               <b-dropdown-item v-on:click="selectMap('Native Languages')"
                 >Native Languages</b-dropdown-item
@@ -45,14 +50,13 @@
               <b-dropdown-item v-on:click="selectMap('Terrain Map')"
                 >Terrain Map</b-dropdown-item
               >
-              <b-dropdown-item v-on:click="selectMap('Hybrid Map')"
-                >Hybrid Map</b-dropdown-item
-              >
             </b-dropdown>
           </b-col>
         </b-row>
         <!-- Map -->
-        <b-row style="height: calc(100% - 35px - 50px); margin: 0 0 0 -30px;">
+        <b-row
+          style="height: calc(100% - 35px - 50px); background-color: rgba(128, 128, 128, 0.6);"
+        >
           <b-col class="h-100 w-100">
             <vl-map
               :load-tiles-while-animating="true"
@@ -60,7 +64,7 @@
               v-on:click="mapClick"
               v-on:pointermove="onMapPointerMove"
               data-projection="EPSG:4326"
-              style="height: 100%; width: calc(100% + 30px)"
+              style="height: 100%; width: calc(100% + 30px); margin-left: -15px; margin-right: -15px;"
               ref="map"
             >
               <vl-view
@@ -297,15 +301,6 @@ export default {
         },
         "Terrain Map": {
           name: "Terrain Map",
-          urls: [
-            "https://mt0.google.com/vt/lyrs=s&x={x}&y={y}&z={z}&hl=en",
-            "https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}&hl=en",
-            "https://mt2.google.com/vt/lyrs=s&x={x}&y={y}&z={z}&hl=en",
-            "https://mt3.google.com/vt/lyrs=s&x={x}&y={y}&z={z}&hl=en",
-          ],
-        },
-        "Hybrid Map": {
-          name: "Hybrid Map",
           urls: [
             "https://mt0.google.com/vt/lyrs=y&x={x}&y={y}&z={z}&hl=en",
             "https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}&hl=en",
