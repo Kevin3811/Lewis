@@ -17,7 +17,7 @@
       <b-container class="h-100" fluid>
         <!-- Header: Label, distance, map selector -->
         <b-row
-          style="height: 35px; background-color: gray; margin: 0 -15px 0 -15px; overflow: hidden;"
+          style="height: 35px; background-color: gray; margin: 0 -15px 0 -15px;"
           align-v="center"
           class="drag-handle"
           no-gutters
@@ -36,10 +36,7 @@
               {{ currentGuess.distance }} away
             </div>
           </b-col>
-          <b-col
-            cols="3"
-            style="text-align: center; height: 100%; margin-top: 2px;"
-          >
+          <b-col cols="3" style="text-align: center; margin-top: -2px">
             <b-dropdown :text="mapType" right size="sm">
               <b-dropdown-item v-on:click="selectMap('Native Languages')"
                 >Native Languages</b-dropdown-item
