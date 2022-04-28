@@ -5036,15 +5036,6 @@ game:
         - World
         - Europe
         - Cities
-    - url: I4p39-Mukzc
-      start-time: 11
-      latitude: 43.446913
-      longitude: 39.902122
-      description: Adler Russia
-      playlists:
-        - World
-        - Europe
-        - Cities
     - url: iyWcX-mvtaI
       start-time: 230
       latitude: 59.934513
@@ -5426,15 +5417,6 @@ game:
         - World
         - Asia
         - Cities
-    - url: F9NwDBL8zmE
-      start-time: 91
-      latitude: 47.852829552770835
-      longitude: 106.76251507669122
-      description: Ulaanbaatar Mongolia
-      playlists:
-        - World
-        - Asia
-        - Cities
       #Japan
     - url: qwNoxabhgdw
       start-time: 1
@@ -5785,15 +5767,6 @@ game:
       latitude: 35.14769800799226
       longitude: 126.91823442492013
       description: Gwangju South Korea
-      playlists:
-        - World
-        - Asia
-        - Cities
-    - url: Cv1PZ8JeMvc
-      start-time: 165
-      latitude: 36.329111385992775
-      longitude: 127.42784594310673
-      description: Daejeon South Korea
       playlists:
         - World
         - Asia
@@ -6793,15 +6766,6 @@ game:
       start-time: 633
       latitude: 25.07644285595189
       longitude: 55.13201440030798
-      description: Dubai United Arab Emirates
-      playlists:
-        - World
-        - Africa
-        - Cities
-    - url: CBKcG3sz6XQ
-      start-time: 720
-      latitude: 25.195319001071013
-      longitude: 55.27665810041056
       description: Dubai United Arab Emirates
       playlists:
         - World
