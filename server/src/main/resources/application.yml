@@ -387,8 +387,8 @@ game:
         - Cities
     - url: iNUoL1K-VY4
       start-time: 12
-      latitude: 25.776288
-      longitude: -80.187334
+      latitude: 40.724692187291495
+      longitude: -73.99869107670725
       description: Manhattan New York
       playlists:
         - World
@@ -5023,15 +5023,6 @@ game:
       latitude: 55.753714
       longitude: 37.634727
       description: Moscow Russia
-      playlists:
-        - World
-        - Europe
-        - Cities
-    - url: _bpkHB4N2zQ
-      start-time: 17
-      latitude: 43.542703
-      longitude: 39.801984
-      description: Sochi Russia
       playlists:
         - World
         - Europe

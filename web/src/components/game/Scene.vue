@@ -14,12 +14,18 @@
     <div>
       <Scores />
     </div>
-    <div class="controls">
+    <div
+      :class="{
+        'bg-dark': secondsLeft <= 15 && secondsLeft % 2 === 0,
+        controls: true,
+      }"
+    >
       <div>Round: {{ currentRound }} / {{ roundCount }}</div>
       <div
         :class="{
           'font-weight-bold text-danger bg-dark':
             secondsLeft <= 15 && secondsLeft % 2 === 0,
+          controls: true,
         }"
       >
         Time Left: {{ secondsLeft }}
