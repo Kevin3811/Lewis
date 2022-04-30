@@ -1,5 +1,5 @@
 <template>
-  <div class="scores">
+  <div :class="{ scores: true, guessed: newGuess }">
     <h4 class="leaderboardheader">Scores</h4>
     <div
       v-for="lobbyUser in lobbyUsers"
@@ -10,7 +10,7 @@
         user: true,
       }"
     >
-      <Score :user="lobbyUser" />
+      <Score :user="lobbyUser" v-on:onGuessed="onGuessed" />
     </div>
   </div>
 </template>
@@ -23,6 +23,12 @@ export default {
   components: {
     Score,
   },
+  data() {
+    return {
+      newGuess: false,
+      guessTimer: undefined,
+    };
+  },
   computed: {
     lobbyUsers() {
       return this.$store.getters.getLobbyInScoreOrder;
@@ -32,6 +38,18 @@ export default {
     },
     currentRound() {
       return this.$store.getters.getCurrentRound;
+    },
+  },
+  methods: {
+    onGuessed() {
+      if (this.guessTimer !== undefined || this.newGuess) {
+        clearTimeout(this.guessTimer);
+      }
+      this.newGuess = true;
+      this.guessTimer = setTimeout(() => {
+        this.newGuess = false;
+        clearTimeout(this.guessTimer);
+      }, 250);
     },
   },
 };
@@ -67,5 +85,9 @@ export default {
 .user {
   display: inline-block;
   width: 100%;
+}
+.guessed {
+  background-color: green;
+  opacity: 0.8;
 }
 </style>

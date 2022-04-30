@@ -25,6 +25,7 @@ export default {
         (guess) => guess.round === this.currentRound
       );
       if (guess !== undefined) {
+        this.$emit("onGuessed");
         return guess.score;
       } else {
         return undefined;
