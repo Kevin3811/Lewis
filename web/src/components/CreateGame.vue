@@ -54,7 +54,10 @@
           <!-- Playlist select -->
           <b-row>
             <b-col>
-              <b-form-group label="Included Playlists">
+              <b-form-group
+                label="Included Playlists"
+                description="Leaving empty will include all"
+              >
                 <b-form-checkbox-group
                   v-model="includedPlaylists"
                   v-on:change="includedChanged"
@@ -65,7 +68,10 @@
               </b-form-group>
             </b-col>
             <b-col>
-              <b-form-group label="Excluded Playlists">
+              <b-form-group
+                label="Excluded Playlists"
+                description="Leaving empty will exclude none"
+              >
                 <b-form-checkbox-group
                   v-model="excludedPlaylists"
                   v-on:change="excludedChanged"

@@ -42,7 +42,9 @@ public class LobbyController {
     public List<String> getPlaylists(){
         List<String> playlists = new ArrayList<>();
         playlistRepository.findAll().forEach(playlist -> {
-            playlists.add(playlist.getName());
+            if(!playlist.getName().equals("World")){
+                playlists.add(playlist.getName());
+            }
         });
         log.info("Playlists: [{}]", playlists);
         return playlists;
