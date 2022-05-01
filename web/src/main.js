@@ -9,6 +9,7 @@ import {
   ModalPlugin,
   LayoutPlugin,
   FormCheckboxPlugin,
+  ToastPlugin,
 } from "bootstrap-vue";
 import VueRouter from "vue-router";
 import VueLayers from "vuelayers";
@@ -28,6 +29,7 @@ Vue.use(FormPlugin);
 Vue.use(ModalPlugin);
 Vue.use(LayoutPlugin);
 Vue.use(FormCheckboxPlugin);
+Vue.use(ToastPlugin);
 Vue.use(VueLayers);
 
 Vue.use(VueRouter);

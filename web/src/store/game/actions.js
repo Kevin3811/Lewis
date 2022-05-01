@@ -18,6 +18,7 @@ export default {
     context.commit("setRoundOver", false);
     context.commit("setMarkerLat", undefined);
     context.commit("setMarkerLon", undefined);
+    context.commit("websocketError", false);
   },
   resetPlayersPreviousRound(context) {
     context.commit("resetPlayersPreviousRound");
@@ -133,5 +134,8 @@ export default {
     context.dispatch("setGuessed", false);
 
     context.dispatch("setCurrentRound", context.getters.getCurrentRound + 1);
+  },
+  websocketError(context, errorStatus) {
+    context.commit("websocketError", errorStatus);
   },
 };

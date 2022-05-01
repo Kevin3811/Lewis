@@ -74,4 +74,7 @@ export default {
   getHasGuessed: (state) => {
     return state.guessed;
   },
+  getWebsocketError: (state) => {
+    return state.websocketError;
+  },
 };

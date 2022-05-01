@@ -86,4 +86,7 @@ export default {
   setMarkerLon(state, markerLon) {
     state.markerLon = markerLon;
   },
+  websocketError(state, errorStatus) {
+    state.websocketError = errorStatus;
+  },
 };

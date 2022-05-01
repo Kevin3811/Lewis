@@ -14,6 +14,18 @@
     <div>
       <Scores />
     </div>
+    <div class="errorAlert">
+      <b-toast
+        id="websocketToast"
+        title="Error"
+        variant="danger"
+        toaster="b-toaster-bottom-left"
+        :no-auto-hide="true"
+        :solid="true"
+        :visible="websocketError"
+        >Error connecting to websocket</b-toast
+      >
+    </div>
     <div
       :class="{
         'bg-dark': secondsLeft <= 15 && secondsLeft % 2 === 0,
@@ -180,6 +192,9 @@ export default {
     },
     markerLon() {
       return this.$store.getters.getMarkerLon;
+    },
+    websocketError() {
+      return this.$store.getters.getWebsocketError;
     },
   },
   watch: {

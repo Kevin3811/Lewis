@@ -33,6 +33,7 @@ export default {
     roundOver: false,
     markerLat: undefined,
     markerLon: undefined,
+    websocketError: false,
   },
   actions,
   mutations,
