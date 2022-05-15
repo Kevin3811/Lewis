@@ -42,14 +42,14 @@ export default {
   },
   methods: {
     onGuessed() {
-      if (this.guessTimer !== undefined || this.newGuess) {
-        clearTimeout(this.guessTimer);
-      }
-      this.newGuess = true;
-      this.guessTimer = setTimeout(() => {
-        this.newGuess = false;
-        clearTimeout(this.guessTimer);
-      }, 250);
+      // if (this.guessTimer !== undefined || this.newGuess) {
+      //   clearTimeout(this.guessTimer);
+      // }
+      // this.newGuess = true;
+      // this.guessTimer = setTimeout(() => {
+      //   this.newGuess = false;
+      //   clearTimeout(this.guessTimer);
+      // }, 250);
     },
   },
 };

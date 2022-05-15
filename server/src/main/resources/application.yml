@@ -1072,15 +1072,6 @@ game:
         - World
         - North America
         - Cities
-    - url: bdDtsRh_C1g
-      start-time: 2
-      latitude: 32.225717
-      longitude: -110.967128
-      description: Tucson Arizona
-      playlists:
-        - World
-        - North America
-        - Small Towns
     - url: mz97fPJfFvM
       start-time: 8
       latitude: 37.390001
@@ -1593,6 +1584,24 @@ game:
         - World
         - North America
         - Cities
+    - url: M6Folv-4jy4
+      start-time: 1049
+      latitude: 39.98614964107604
+      longitude: -83.00531751590967
+      description: Columbus Ohio
+      playlists:
+        - World
+        - North America
+        - Cities
+    - url: B63jA9qpcJ4
+      start-time: 313
+      latitude: 39.764818
+      longitude: -84.188350
+      description: Dayton Ohio
+      playlists:
+        - World
+        - North America
+        - Cities
       #Canada
     - url: fgbFdV7yL_o
       start-time: 7
@@ -1992,7 +2001,7 @@ game:
         - North America
         - Cities
     - url: 2mgyttfGvwY
-      start-time: 24
+      start-time: 120
       latitude: 20.6843
       longitude: -88.5678
       description: Yucatan Mexico
@@ -2142,6 +2151,16 @@ game:
       latitude: 9.932446
       longitude: -84.073466
       description: Jan Jose Costa Rica (China Town)
+      playlists:
+        - World
+        - North America
+        - Cities
+      #Panama
+    - url: xQm1_bn7EXg
+      start-time: 455
+      latitude: 8.98338920552419
+      longitude: -79.5236883004021
+      description: Panama City Panama
       playlists:
         - World
         - North America
@@ -2333,15 +2352,6 @@ game:
       latitude: 53.744167
       longitude: -0.339499
       description: Hull England
-      playlists:
-        - World
-        - Europe
-        - Cities
-    - url: p-Ok9KlSp7ouo
-      start-time: 17
-      latitude: 53.798282
-      longitude: -1.538016
-      description: Leeds England
       playlists:
         - World
         - Europe
@@ -4126,6 +4136,15 @@ game:
         - World
         - Europe
         - Cities
+    - url: nhb-4SD9k3E
+      start-time: 1406
+      latitude: 40.83364960494457
+      longitude: 14.24734205779099
+      description: Naples Italy
+      playlists:
+        - World
+        - Europe
+        - Cities
       #Portugal
     - url: b4_K4sO8Jx4
       start-time: 350
@@ -4892,24 +4911,6 @@ game:
         - World
         - Europe
         - Cities
-    - url: 7isPVnfYAb0
-      start-time: 579
-      latitude: 55.74789228977697
-      longitude: 37.54423025834437
-      description: Moscow Russia
-      playlists:
-        - World
-        - Europe
-        - Cities
-    - url: 7isPVnfYAb0
-      start-time: 3007
-      latitude: 55.74031187076816
-      longitude: 37.56803620878266
-      description: Moscow Russia
-      playlists:
-        - World
-        - Europe
-        - Cities
     - url: jb16zvCeTWc
       start-time: 1863
       latitude: 54.707445
@@ -5018,15 +5019,6 @@ game:
         - World
         - Europe
         - Cities
-    - url: DB2Gq7p3okk
-      start-time: 1102
-      latitude: 55.753714
-      longitude: 37.634727
-      description: Moscow Russia
-      playlists:
-        - World
-        - Europe
-        - Cities
     - url: iyWcX-mvtaI
       start-time: 230
       latitude: 59.934513
@@ -5050,6 +5042,25 @@ game:
       latitude: 57.820235799047445
       longitude: 28.331286778563094
       description: Pskov Russia
+      playlists:
+        - World
+        - Europe
+        - Cities
+      #Albania
+    - url: 0goexBzIUPU
+      start-time: 6
+      latitude: 41.327817824791325
+      longitude: 19.815917027479394
+      description: Tirana Albania
+      playlists:
+        - World
+        - Europe
+        - Cities
+    - url: 0goexBzIUPU
+      start-time: 600
+      latitude: 41.327817824791325
+      longitude: 19.815917027479394
+      description: Tirana Albania
       playlists:
         - World
         - Europe
@@ -5399,8 +5410,8 @@ game:
         - Asia
         - Cities
       #Mongolia
-    - url: jM0bspKHgHg
-      start-time: 120
+    - url: cNf7En4aKLk
+      start-time: 480
       latitude: 47.9195116385045
       longitude: 106.91599327690152
       description: Ulaanbaatar Mongolia
@@ -5776,6 +5787,15 @@ game:
       start-time: 66
       latitude: 25.03392405484381
       longitude: 121.52850099350493
+      description: Taipei Taiwan
+      playlists:
+        - World
+        - Asia
+        - Cities
+    - url: 43OGN5GDqdI
+      start-time: 243
+      latitude: 25.041071962440867
+      longitude: 121.28989064812312
       description: Taipei Taiwan
       playlists:
         - World
@@ -6752,6 +6772,25 @@ game:
         - World
         - Africa
         - Cities
+    - url: pDYkd2NSWtE
+      start-time: 28
+      latitude: 35.707607438785665
+      longitude: 51.39026836374454
+      description: Tehran Iran
+      playlists:
+        - World
+        - Africa
+        - Cities
+      #Mozambique
+    - url: suPYDIY3Lg4
+      start-time: 33
+      latitude: -25.968838456177956
+      longitude: 32.56913061388236
+      description: Maputo Baixa Mozambique
+      playlists:
+        - World
+        - Africa
+        - Cities
       #United Arab Emirates
     - url: 1kZk5LRs_lI
       start-time: 633
@@ -6787,6 +6826,46 @@ game:
       latitude: 21.419890923653256
       longitude: 39.8226460229115
       description: Mecca Saudi Arabia
+      playlists:
+        - World
+        - Africa
+        - Cities
+      #South Africa
+    - url: E_qQ88Utnc0
+      start-time: 222
+      latitude: -26.144795
+      longitude: 28.039881
+      description: Johannesburg South Africa
+      playlists:
+        - World
+        - Africa
+        - Cities
+      #Madagascar
+    - url: XSFwSXbLSbc
+      start-time: 73
+      latitude: -18.909224
+      longitude: 47.523061
+      description: Antananarivo Madagascar
+      playlists:
+        - World
+        - Africa
+        - Cities
+      #Ethiopia
+    - url: eVy1pouLl0U
+      start-time: 465
+      latitude: 8.990138
+      longitude: 38.786363
+      description: Addis Ababa Ethiopia
+      playlists:
+        - World
+        - Africa
+        - Cities
+      #Nigeria
+    - url: g1af9kKnI9o
+      start-time: 1276
+      latitude: 6.5075371350836395
+      longitude: 3.3600009754193687
+      description: Lagos Nigeria
       playlists:
         - World
         - Africa
