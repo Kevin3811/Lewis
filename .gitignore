@@ -24,3 +24,5 @@ docker/lewis-backend.tar
 docker/lewis-frontend.tar
 
 **/.gradle/**
+**/.run/**
+package-lock.json
