@@ -25,4 +25,3 @@ docker/lewis-frontend.tar
 
 **/.gradle/**
 **/.run/**
-package-lock.json
