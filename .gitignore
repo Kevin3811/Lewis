@@ -22,3 +22,5 @@ pnpm-debug.log*
 *.sw?
 docker/lewis-backend.tar
 docker/lewis-frontend.tar
+
+**/.gradle/**
